@@ -1,0 +1,136 @@
+% UICTEST.TEX
+% This is a test file for my port of UICTHESI
+% to LaTeX 2e. This is based in part on UCTHESIS.
+%
+
+\documentclass{uicthesi}
+
+\begin{document}
+
+% Declarations for Front Matter
+
+\title{The Elements of Theses}
+\author{Perry H. Disdainful}
+\pdegrees{B.A. (University of Northern South Dakota at Hoople) 1978\\
+M.S. (Ed's School of Quantum Mechanics and Muffler Repair Shop) 1989}
+\degree{Doctor of Philosophy in Aboriginal Basketry}
+
+\maketitle
+\copyrightpage
+
+
+\dedication
+{\null\vfil
+{\large
+\begin{center}
+To myself,\\\vspace{12pt}
+Perry H. Disdainful,\\\vspace{12pt}
+the only person worthy of my company.
+\end{center}}
+\vfil\null}
+
+
+\acknowledgements
+{I want to ``thank'' my committee, without whose ridiculous demands, I
+would have graduated so, so, very much faster.}
+
+\preface
+This preface is purely optional at UIC.
+
+\tableofcontents
+\listoftables
+\listoffigures
+\listofabbreviations
+\begin{list}
+{}
+{\setlength
+   {\labelwidth}{1in}
+    \setlength{\leftmargin}{1.5in}
+    \setlength{\labelsep}{.5in}
+    \setlength{\rightmargin}{\leftmargin}}
+\item[AMS\hfill] American Mathematical Society
+\item[CTAN\hfill] Comprehensive \TeX\ Archive Network
+\item[TUG\hfill] \TeX\ Users Group
+\item[UIC\hfill] University of Illinois at Chicago
+\item[UICTHESI\hfill] Thesis formatting system for use at UIC.
+\end{list}
+ 
+\summary
+A summary is required.
+
+\chapter{Introduction}
+
+Every dissertation should have an introduction.  You might not realize
+it, but the introduction should introduce the concepts, backgrouand,
+and goals of the dissertation.
+
+\section{A Section}
+
+Most chapters have sections. Neat huh?
+
+\subsection{A Subsection}
+
+Some chapters have subsections too! Cool!
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|r|}
+  \hline 
+Title & Author \\
+\hline
+War And Peace & Leo Tolstoy \\
+The Great Gatsby & F. Scott Fitzgerald \\ \hline
+\end{tabular}
+\caption{A normalsize table.}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{A small table.}
+\begin{tabular}{|l|r|}
+  \hline 
+Title & Author \\
+\hline
+War And Peace & Leo Tolstoy \\
+The Great Gatsby & F. Scott Fitzgerald \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\chapter{Previous Work}
+
+Some other research was once performed.
+
+\begin{figure}
+\caption{A first figure.}
+\end{figure}
+
+\begin{figure}
+\caption{A second figure.}
+\end{figure}
+
+\chapter{Conclusion}
+
+A conclusion is a good thing to have. Hopefully it is a good one!
+
+\appendices
+\newpage
+\appendix
+
+\chapter{Some Ancillary Stuff}
+
+Ancillary material should be put in appendices.
+
+\chapter{Some More Ancillary Stuff}
+
+Here is yet another appendix! Wahoo!
+
+\nocite{*}
+\bibformb
+\bibliography{uictest}
+\newpage
+\vita
+This is where the vita goes.  Its organization is left as an exercise.
+
+\end{document}
