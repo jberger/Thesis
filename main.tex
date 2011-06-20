@@ -5,11 +5,21 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{ifthen}
 %\usepackage{euler}
 
 \usepackage{graphicx}
 \graphicspath{{./images/}}
 \DeclareGraphicsExtensions{.png,.pdf,.jpg}
+
+%% Special handling for using biblatex vs bibtex ==
+\newboolean{usebiblatex}
+\setboolean{usebiblatex}{false}
+\ifthenelse{\boolean{usebiblatex}}{%
+  \usepackage{biblatex}%
+  \addbibresource{bibliography.bib}%
+}{}
+%% ==
 
 \title{Title}
 \author{Joel Berger}
@@ -56,6 +66,7 @@ The preface.
     \setlength{\leftmargin}{1.5in}
     \setlength{\labelsep}{.5in}
     \setlength{\rightmargin}{\leftmargin}}
+\item[AG\hfill] Analytic Gaussian (Model)
 \item[DTEM\hfill] Dynamic Transmission Electron Microscopy
 \item[UEM\hfill] Ultrafast Electron Microscopy
 \item[UIC\hfill] University of Illinois at Chicago
@@ -71,6 +82,8 @@ A summary is required.
 \section{Motivation/Previous Modeling Efforts}
 
 \section{Model of Michalik and Sipe}
+
+This section introduces the Analytic Gaussian model of Michalik and Sipe.\cite{michalik_analytic_2006}
 
 \section{Extension to Include External Forces}
 
@@ -101,8 +114,16 @@ A summary is required.
 %\appendix
 %\newpage
 %\input fontsym
-%\bibformb
-%\bibliography{uictman}
+
+%% Special handling for using biblatex vs bibtex ==
+\ifthenelse{\boolean{usebiblatex}}{
+  \printbibliography
+}{
+  \bibformc
+  \bibliography{bibliography}
+}
+%% ==
+
 %\vita
 %This is where the vita goes.  Its organization is left as an exercise.
 %Hint: see the list of abbreviations.

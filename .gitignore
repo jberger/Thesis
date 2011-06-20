@@ -24,3 +24,9 @@ main.pdf
 *.out
 *.synctex.gz
 *.fdb_latexmk
+
+*.run.xml
+*-blx.bib
+
+.project
+.texlipse
