@@ -1,0 +1,15 @@
+\section{Model of Michalik and Sipe}
+
+This section introduces the Analytic Gaussian model of Michalik and Sipe.\cite{michalik_analytic_2006}
+
+For a classical set of $N$ particles (labelled $i$), distributed 6D space (3 position, 3 momentum) by 
+\begin{gather}
+  f_{{\scriptscriptstyle D}}(\vec{r}, \vec{p}; t) = 
+  \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p}) \\
+  \text{which satisfies} \quad \int d^{3}x\,d^{3}p \; f_{{\scriptscriptstyle D}}(\vec{r}, \vec{p}; t) = N
+\end{gather}
+of mass $m$ which interact with some potential $V(\vec{r}_{i} - \vec{r}_{j})$, their motion is governed by the equations
+\begin{gather}
+  \frac{d\vec{r}_{i}(t)}{dt} = \frac{\vec{p}_{i}(t)}{m}\\
+  \frac{d\vec{p}_{i}(t)}{dt} = -\sum\limits_{j} \frac{d}{d\vec{r}_{i}} V(\vec{r}_{i} - \vec{r}_{j})
+\end{gather}

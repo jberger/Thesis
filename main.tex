@@ -1,8 +1,8 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 \documentclass{uicthesi}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{esint}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{ifthen}
@@ -21,6 +21,8 @@
   \addbibresource{bibliography.bib}
 }{}
 %% ==
+
+\providecommand{\smallT}{\ensuremath{{\scriptscriptstyle T}}}
 
 \title{Title}
 \author{Joel Berger}
@@ -82,11 +84,9 @@ A summary is required.
 
 \section{Motivation/Previous Modeling Efforts}
 
-\section{Model of Michalik and Sipe}
+\include{ms_model}
 
-This section introduces the Analytic Gaussian model of Michalik and Sipe.\cite{michalik_analytic_2006}
-
-\section{Extension to Include External Forces}
+\include{external_forces}
 
 \section{Validation of Analytic Gaussian Model}
 

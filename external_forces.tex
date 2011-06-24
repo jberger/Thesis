@@ -1,0 +1,30 @@
+\section{Extension to Include External Forces}
+
+General form of (possibly multiple) external force ($\vec{F}_{ext}$) contributions
+\begin{equation}
+  \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{force}_{ij} + \sum K^{ext}_{ij}
+\end{equation}
+in the basis
+\begin{equation}
+  U_{i} = \lbrace x, p_x, y, p_y, z, p_z \rbrace
+\end{equation}
+and
+\begin{equation}
+  K^{ext}_{ij} = \frac{1}{N} \iint U_i U_j \left [ \frac{\partial}{\partial \vec{p}} f(\vec{r}, \vec{p}; t) \right ] \cdot \vec{F}_{ext}\;d^{3}x\,d^{3}p
+\end{equation}
+
+For example, if $\vec{F}$ is a static field given by $\frac{qV}{d}\hat{z}$ then $K^{ext} = \hat{0}$. However, if the external force is a lensing field given by $\vec{F} = -M\cdot(x\hat{x}+y\hat{y})$ then 
+\begin{equation}
+  K^{ext} = M \cdot 
+  \begin{pmatrix}
+    K^{lens}_{\smallT} & 0 & 0 \\
+    0 & K^{lens}_{\smallT} & 0 \\
+    0 & 0 & 0
+  \end{pmatrix}
+  \qquad \text{where} \qquad
+  K^{ext} = 
+  \begin{pmatrix}
+    0 & \sigma_{\smallT} \\
+    \sigma_{\smallT} & 2 \gamma_{\smallT}
+  \end{pmatrix}
+\end{equation}
