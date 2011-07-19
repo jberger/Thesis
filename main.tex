@@ -6,11 +6,19 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{ifthen}
+
 %\usepackage{euler}
+%\usepackage{breqn}
 
 \usepackage{graphicx}
 \graphicspath{{./images/}}
 \DeclareGraphicsExtensions{.png,.pdf,.jpg}
+
+%% My convenience fuctions
+\providecommand{\vecprime}[1]{\vec{#1}\,^{\prime}}
+
+\providecommand{\smallT}{\ensuremath{{\scriptscriptstyle T}}}
+\providecommand{\smallD}{\ensuremath{{\scriptscriptstyle D}}}
 
 %% Special handling for using biblatex vs bibtex ==
 \newboolean{usebiblatex}
@@ -21,8 +29,6 @@
   \addbibresource{bibliography.bib}
 }{}
 %% ==
-
-\providecommand{\smallT}{\ensuremath{{\scriptscriptstyle T}}}
 
 \title{Title}
 \author{Joel Berger}

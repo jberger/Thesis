@@ -4,12 +4,28 @@ This section introduces the Analytic Gaussian model of Michalik and Sipe.\cite{m
 
 For a classical set of $N$ particles (labelled $i$), distributed 6D space (3 position, 3 momentum) by 
 \begin{gather}
-  f_{{\scriptscriptstyle D}}(\vec{r}, \vec{p}; t) = 
+  f_{\smallD}(\vec{r}, \vec{p}; t) = 
   \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p}) \\
-  \text{which satisfies} \quad \int d^{3}x\,d^{3}p \; f_{{\scriptscriptstyle D}}(\vec{r}, \vec{p}; t) = N
+  \text{which satisfies} \quad \int d^{3}x\,d^{3}p \; f_{\smallD}(\vec{r}, \vec{p}; t) = N
 \end{gather}
 of mass $m$ which interact with some potential $V(\vec{r}_{i} - \vec{r}_{j})$, their motion is governed by the equations
+\begin{subequations}\label{eq:std_motion}
 \begin{gather}
   \frac{d\vec{r}_{i}(t)}{dt} = \frac{\vec{p}_{i}(t)}{m}\\
   \frac{d\vec{p}_{i}(t)}{dt} = -\sum\limits_{j} \frac{d}{d\vec{r}_{i}} V(\vec{r}_{i} - \vec{r}_{j})
 \end{gather}
+\end{subequations}
+Now consider the time evolution of $f_{\smallD}$
+\begin{equation}
+  \frac{\partial f_{\smallD}}{\partial t} = 
+  \frac{d\vec{r}}{dt} \frac{\partial f_{\smallD}}{\partial \vec{r}} 
+  + \frac{\partial f_{\smallD}}{\partial \vec{p}} \frac{d\vec{p}}{dt}
+\end{equation}
+but with \ref{eq:std_motion} the final discreet evolution equation is
+%TODO find missing minus sign!
+\begin{equation}
+  \frac{d}{dt} f_{\smallD}(\vec{r}, \vec{p}; t) =
+  -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f_{\smallD}(\vec{r}, \vec{p}; t)
+  + \frac{\partial}{\partial \vec{p}} f_{\smallD} (\vec{r}, \vec{p}; t)
+  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f_{\smallD}(\vecprime{r},\vecprime{p};t)
+\end{equation}
