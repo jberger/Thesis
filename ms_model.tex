@@ -2,6 +2,8 @@
 
 This section introduces the Analytic Gaussian model of Michalik and Sipe.\cite{michalik_analytic_2006}
 
+\subsection{Formal Evolution}
+
 For a classical set of $N$ particles (labelled $i$), distributed 6D space (3 position, 3 momentum) by 
 \begin{gather}
   f_{\smallD}(\vec{r}, \vec{p}; t) = 
@@ -28,4 +30,78 @@ but with \ref{eq:std_motion} the final discreet evolution equation is
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f_{\smallD}(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f_{\smallD} (\vec{r}, \vec{p}; t)
   \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f_{\smallD}(\vecprime{r},\vecprime{p};t)
+\end{equation}
+%TODO ensemble av and mean-field
+Final equation:
+\begin{equation}
+  \frac{d}{dt} f(\vec{r}, \vec{p}; t) =
+  -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f(\vec{r}, \vec{p}; t)
+  + \frac{\partial}{\partial \vec{p}} f (\vec{r}, \vec{p}; t)
+  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f(\vecprime{r},\vecprime{p};t)
+\end{equation}
+
+\subsection{Gaussian Distribution}
+
+Distribution function:
+\begin{equation}
+  f(\vec{r}, \vec{p}; t) = C(t)\exp \left[ - \Gamma(\vec{r}, \vec{p}; t) \right]
+\end{equation}
+where
+\begin{equation}
+  \Gamma(\vec{r}, \vec{p}; t) =
+  \frac{x^2 + y^2}{2 \sigma_{\smallT}} + \frac{z^2}{2 \sigma_{z}}
+  + \frac{
+    [p_x - (\gamma_{\smallT}/\sigma_{\smallT}) x ]^2 
+    + [p_y - (\gamma_{\smallT}/\sigma_{\smallT}) y ]^2
+  }{2 \eta_{\smallT}}
+  + \frac{ [p_z - (\gamma_{z}/\sigma_{z}) z ]^2 }{2 \eta_{z}}
+\end{equation}
+In this form, the normalization constant, given by
+\begin{equation}
+  \int f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p} = N
+\end{equation}
+is
+\begin{equation}
+  C(t) = \frac{N}{(2\pi)^3} 
+  \left( 
+    \frac{1}{\sigma_{\smallT}^2\eta_{\smallT}^2\sigma_{z}\eta_{z}}
+  \right)^{\frac{1}{2}}
+\end{equation}
+These equations may be viewed from a matrix perspective if we define the ``coordinate vection'' $u = (x, p_x, y, p_y, z, p_z)$. In this space,
+\begin{equation}
+  \Gamma(\vec{r}, \vec{p}; t) = \frac{1}{2}\sum\limits_{ij} A_{ij} u_i u_j
+\end{equation}
+where
+\begin{equation}
+  A = 
+  \begin{pmatrix}
+    a_{\smallT} & 0 & 0 \\
+    0 & a_{\smallT} & 0 \\
+    0 & 0 & a_{z}
+  \end{pmatrix}
+  \qquad \text{and} \qquad
+  a_{\alpha} = 
+  \begin{pmatrix}
+    1/\sigma_{\alpha} + \gamma_{\alpha}^2/(\eta_{\alpha} \sigma_{\alpha}) & \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) \\
+    \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) & 1/\eta_{\alpha}
+  \end{pmatrix}
+\end{equation}
+with ${\scriptstyle \alpha} = \smallT \text{ or } z$. This form allows the isolation of any of the six parameters using
+\begin{equation}
+  (A^{-1})_{ij} = \frac{1}{N} \int f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
+\end{equation}
+which yields
+\begin{equation}
+  A = 
+  \begin{pmatrix}
+    a_{\smallT}^{-1} & 0 & 0 \\
+    0 & a_{\smallT}^{-1} & 0 \\
+    0 & 0 & a_{z}^{-1}
+  \end{pmatrix}
+  \qquad \text{and} \qquad
+  a_{\alpha} = 
+  \begin{pmatrix}
+    \sigma_{\alpha} & \gamma_{\alpha} \\
+    \gamma_{\alpha} & \eta_{\alpha} + \gamma_{\alpha}^2/\sigma_{\alpha}
+  \end{pmatrix}
 \end{equation}
