@@ -31,3 +31,5 @@ uictman.pdf
 
 .project
 .texlipse
+
+tmp/*
