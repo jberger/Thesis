@@ -101,9 +101,17 @@ which yields
     0 & 0 & a_{z}^{-1}
   \end{pmatrix}
   \qquad \text{and} \qquad
-  a_{\alpha} = 
+  a^{-1}_{\alpha} = 
   \begin{pmatrix}
     \sigma_{\alpha} & \gamma_{\alpha} \\
     \gamma_{\alpha} & \eta_{\alpha} + \gamma_{\alpha}^2/\sigma_{\alpha}
+  \end{pmatrix}
+\end{equation}
+Taking the time derivative of the components of $A^{-1}$
+\begin{equation}
+  \frac{d}{dt} a^{-1}_{\alpha} = 
+  \begin{pmatrix}
+    \dfrac{d\sigma_{\alpha}}{dt} & \dfrac{d\gamma_{\alpha}}{dt} \\
+    \dfrac{d\gamma_{\alpha}}{dt} & \dfrac{d\eta_{\alpha}}{dt} + 2\dfrac{\gamma_{\alpha}}{\sigma_{\alpha}}\dfrac{d\gamma_{\alpha}}{dt}- \dfrac{\gamma^{2}_{\alpha}}{\sigma^{2}_{\alpha}}\dfrac{d\sigma_{\alpha}}{dt}
   \end{pmatrix}
 \end{equation}
