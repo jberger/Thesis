@@ -35,7 +35,7 @@ but with \ref{eq:std_motion} the final discreet evolution equation is
 \end{equation}
 %TODO ensemble av and mean-field
 Final equation:
-\begin{equation}
+\begin{equation} \label{eq:formal_evolution}
   \frac{d}{dt} f(\vec{r}, \vec{p}; t) =
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f (\vec{r}, \vec{p}; t)
@@ -115,3 +115,5 @@ Taking the time derivative of the components of $A^{-1}$
     \dfrac{d\gamma_{\alpha}}{dt} & \dfrac{d\eta_{\alpha}}{dt} + 2\dfrac{\gamma_{\alpha}}{\sigma_{\alpha}}\dfrac{d\gamma_{\alpha}}{dt}- \dfrac{\gamma^{2}_{\alpha}}{\sigma^{2}_{\alpha}}\dfrac{d\sigma_{\alpha}}{dt}
   \end{pmatrix}
 \end{equation}
+These components, when viewed in the context of \ref{eq:formal_evolution}, form the left hand side (LHS) of the differential equations governing the evolution of $\sigma_{\alpha}$, $\gamma_{\alpha}$, and $\eta_{\alpha}$, which will be established in the upcoming sections.
+
