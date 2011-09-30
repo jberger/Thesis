@@ -6,13 +6,28 @@ This section introduces the Analytic Gaussian model of Michalik and Sipe \cite{m
 
 \subsection{Formal Evolution} \label{sec:formal_evolution}
 
-For a classical set of $N$ particles (labelled by the index $i$), distributed 6D space (3 position, 3 momentum) by 
-\begin{gather}
+Before one may describe the evolution of a pulse of electrons, one must first learn to describe the pulse.
+Rather than record the position of each electron, commonly one writes a distribution function for the electrons.
+A distribution function describes the location of a number of objects in a certain space.
+This space may be a 1D line, a 3D space, or even a 6D phase space (three spatial dimensions and three momentum dimensions).
+The functional form may be chosen to appropriately characterize the objects in a natural way, however one property is true for all distribution functions: when integrated over all relevant space, all objects should be accounted for.
+In $n$ dimensional space, with $N$ objects, this normalization condition on a distribution function $f$ can be written mathematically as
+\begin{equation}
+N = \int\limits_{\text{all space}} \!\!\! f(\vec{x}) \; d^{n}x
+\end{equation}
+which for 6D phase space is written as
+\begin{equation} \label{eq:normalization}
+n = \int f_{\smallD}(\vec{r}, \vec{p}; t) \; d^{3}x\,d^{3}p
+\end{equation}
+This notation suggests to the reader that the distribution function is implicitly a function of time as well as of the spatial and momentum dimensions.
+
+For a classical set of $N$ particles (labelled by the index $i$), distributed in 6D space (3 position, 3 momentum) by 
+\begin{equation}
   f_{\smallD}(\vec{r}, \vec{p}; t) = 
-  \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p}) \\
-  \text{which satisfies} \quad \int d^{3}x\,d^{3}p \; f_{\smallD}(\vec{r}, \vec{p}; t) = N
-\end{gather}
-of mass $m$ which interact with some potential $V(\vec{r}_{i} - \vec{r}_{j})$, their motion is governed by the equations
+  \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p})
+\end{equation}
+which automatically satisfies \ref{eq:normalization}.
+The particles have mass $m$ which interact with some potential $V(\vec{r}_{i} - \vec{r}_{j})$, their motion is governed by the equations
 \begin{subequations}\label{eq:std_motion}
 \begin{gather}
   \frac{d\vec{r}_{i}(t)}{dt} = \frac{\vec{p}_{i}(t)}{m}\\
