@@ -80,11 +80,7 @@ This parameterization defines the spatial uncertainty $\sigma$, the local moment
 The ``chirp'' of a pulse quantifies the difference in local momentum from one side of the pulse to the other.
 For example, in a pulse which is normally (positively) chirped longitudinally, the front of the pulse with be moving faster than the back.
 
-The normalization constant, is found by integrating the entire distribution and knowing that this will contain all $N$ electrons
-\begin{equation}
-  \int f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p} = N
-\end{equation}
-is
+The normalization constant $C(t)$, for $N$ total particles, is found by applying equation \ref{eq:formal_evolution}
 \begin{equation}
   C(t) = \frac{N}{(2\pi)^3} 
   \left( 
@@ -114,11 +110,12 @@ where
     \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) & 1/\eta_{\alpha}
   \end{pmatrix}
 \end{equation}
-with ${\scriptstyle \alpha} = \smallT \text{ or } z$. This form allows the isolation of any of the six parameters using
+with ${\scriptstyle \alpha} = \smallT \text{ or } z$. 
+A nice property of Gaussians of this form is the convenient ``Multidimensional Gaussian Integral'' given by
 \begin{equation}
-  (A^{-1})_{ij} = \frac{1}{N} \int f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
+  (A^{-1})_{ij} = \frac{1}{N} \int u_i u_j f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
 \end{equation}
-which yields
+Application of this integral yields
 \begin{equation}
   A = 
   \begin{pmatrix}
