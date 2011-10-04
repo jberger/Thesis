@@ -41,13 +41,13 @@ Now consider the time evolution of $f_{\smallD}$
   + \frac{\partial f_{\smallD}}{\partial \vec{p}} \frac{d\vec{p}}{dt}
 \end{equation}
 but with \ref{eq:std_motion} the final discreet evolution equation is
-%TODO find missing minus sign!
 \begin{equation}
   \frac{d}{dt} f_{\smallD}(\vec{r}, \vec{p}; t) =
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f_{\smallD}(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f_{\smallD} (\vec{r}, \vec{p}; t)
   \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f_{\smallD}(\vecprime{r},\vecprime{p};t)
 \end{equation}
+where the extra minus sign comes from the change of perspective of \ref{eq:std_motion} from the frame of the individual particle $i$ to the observer frame.
 %TODO ensemble av and mean-field
 Final equation:
 \begin{equation} \label{eq:formal_evolution}
@@ -115,6 +115,7 @@ A nice property of Gaussians of this form is the convenient ``Multidimensional G
 \begin{equation}
   (A^{-1})_{ij} = \frac{1}{N} \int u_i u_j f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
 \end{equation}
+which is a common form of integral analysis in Quantum Field Theory (see for example Peskin and Schroeder Equation 9.70). 
 Application of this integral yields
 \begin{equation}
   A = 
