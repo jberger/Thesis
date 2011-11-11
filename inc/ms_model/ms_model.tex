@@ -166,3 +166,34 @@ Collecting and expanding terms where possible gives these forms of the $K$ terms
     = & \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \int d\vecprime{r} V(\vec{r} - \vecprime{r}) \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right)
   \end{split}
 \end{gather}
+Obviously the $K^{flow}$ term is far easier to evaluate
+\begin{equation}
+  K^{flow} = 
+  \begin{pmatrix}
+    k^{flow}_{\smallT} & 0 & 0 \\
+    0 & k^{flow}_{\smallT} & 0 \\
+    0 & 0 & k^{flow}_{z}
+  \end{pmatrix}
+  \quad \text{and} \quad
+  k^{flow}_{\alpha} = 
+  \begin{pmatrix}
+    \dfrac{2\sigma_{\alpha}}{m} & \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) \\
+    \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) & 0
+  \end{pmatrix}
+\end{equation}
+
+\subsection{The Differential Equation System}
+
+The results of the previous analyses culminate in the differential equation set
+\begin{subequations}
+\begin{gather}
+  \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
+  \frac{d\gamma_{\alpha}}{dt} = \frac{1}{m} \left(\eta_{\alpha} + \frac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) 
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi)\\
+  \frac{d\eta_{\alpha}}{dt} = - \frac{2 \gamma_{\alpha} \eta_{\alpha}}{m \sigma_{\alpha}}
+\end{gather}
+\end{subequations}
+which depends on the ellipticity parameter
+\begin{equation}
+  \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}}
+\end{equation}
