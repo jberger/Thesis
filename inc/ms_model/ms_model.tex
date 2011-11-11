@@ -143,8 +143,26 @@ Taking the time derivative of the components of $A^{-1}$
   \end{pmatrix}
 \end{equation}
 Since time derivative of \ref{eq:gaussian_integral} is simply
-\begin{equation} \label{eq:gaussian_integral}
+\begin{equation} \label{eq:gaussian_integral_dt}
   \frac{d}{dt}(A^{-1})_{ij} = \frac{1}{N} \int u_i u_j \frac{df(\vec{r}, \vec{p}; t)}{dt} d\vec{r} d\vec{p}
 \end{equation}
 these components, when viewed in the context of \ref{eq:formal_evolution}, form the left hand side (LHS) of the system of differential equations governing the evolution of $\sigma_{\alpha}$, $\gamma_{\alpha}$, and $\eta_{\alpha}$, which will be established in the upcoming sections.
 
+\subsection{Generating the Differential Equations}
+
+Inserting \ref{eq:formal_evolution} into \ref{eq:gaussian_integral_dt} yields two integral terms, one related to the propagation of a non-charged Gaussian beam, the other adds the influence of the internal force due to Coulomb repulsion.
+These terms will be denoted $K^{flow}$ and $K^{int}$ respectively.
+\begin{equation} \label{eq:gaussian_integral_dt}
+  \frac{d}{dt}(A^{-1})_{ij} = K^{flow}_{ij} + K^{int}_{ij}
+\end{equation}
+Collecting and expanding terms where possible gives these forms of the $K$ terms
+\begin{gather}
+  K^{flow}_{ij} \equiv -\frac{1}{N} \int u_i u_j \frac{\vec{p}}{m} \frac{\partial f}{\partial \vec{r}} d\vec{r} d\vec{p} \\
+  K^{int}_{ij} \equiv \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial \Phi(\vec{r};t)}{\partial \vec{r}} d\vec{r} d\vec{p} \\
+  n(\vec{r};t) \equiv \int d\vec{p} f(\vec{r},\vec{p};t) 
+    = \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right) \\
+  \begin{split}
+    \Phi(\vec{r};t) \equiv & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) \\
+    = & \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \int d\vecprime{r} V(\vec{r} - \vecprime{r}) \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right)
+  \end{split}
+\end{gather}
