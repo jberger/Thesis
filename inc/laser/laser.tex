@@ -1,0 +1,51 @@
+%This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+\section{Yb:KGW Laser System}
+\subsection{Introduction}
+% Draws from:
+% High-power, femtosecond, thermal-lens-shaped Yb:KGW oscillator
+% Joel A. Berger, Michael J. Greco, and W. Andreas Schroeder
+% 9 June 2008 / Vol. 16, No. 12 / OPTICS EXPRESS
+
+% page 8630
+Ytterbium-doped potassium gadolinium tungstate (\ce{Yb$:$KGd(WO4)2} or Yb:KGW) is becoming a widely used solid-state gain medium for ultrafast laser systems.
+As with other Yb-doped laser crystals [1], this is primarily due to the gain medium’s advantageous absorption properties for direct laser diode pumping at 980nm, its broad emission bandwidth around 1040nm, and consequent small ($\sim$ 6\%) quantum defect that results in a relatively low thermal load. 
+Mode-locked (ML), diode-pumped, Yb:KGW laser oscillators generating pulses with sub-picosecond durations at average output powers in excess of 1W have been demonstrated [2-5] and are now available commercially [6,7].
+Such lasers have used dichroic mirrors [2,4,8,9], polarization-coupling [5], or more complex optical geometries (e.g., thin disk lasers [6,10]) to pump the laser crystal in an efficient manner.
+
+% page 8631
+The spectroscopic properties of the biaxial Yb:KGW laser crystal [11] indicate that the optimum diode pumping arrangement is for 980nm radiation polarized parallel to the optical $N_m$-axis since the crystal has the largest absorption cross-section in this configuration and, hence, the smallest absorption saturation intensity to drive the gain medium into a quasi 4-level system or to achieve transparency at the emission wavelength [1].
+However, as is the case for Yb-doped potassium yttrium tungstate (Yb:KYW) [12,13], mode-locked Yb:KGW lasers should ideally oscillate with radiation polarized parallel to the optical $N_p$-axis to access the broadest gain bandwidth around 1040nm, where the emission cross-section is comparable to that along the optical $N_m$-axis [5,11]. This optimal requirement for orthogonal linear pump and laser polarizations led Holtom [5] to employ a polarization-coupling scheme to diode pump longitudinally a 10W, sub-500fs, Yb:KGW laser.
+
+%TODO is this first sentance correct or should I use "I" voice?
+In this section, a high-power, femtosecond Yb:KGW oscillator is presented that also accesses the broader emission bandwidth parallel to the optical $N_p$-axis (parallel to the crystallographic $b$-axis), yet employs a simpler geometry for polarized diode-pumping on the strongest 980nm absorption line parallel to the optical $N_m$-axis (rotated by $\sim\,20^\circ$ from the crystallographic $a$-axis [11,14,15]).
+The laser head design is based on the thermal lens shaping (TLS) technique developed in-house for astigmatism compensation in diode-pumped Nd-doped lasers with Brewster-cut gain media [16].
+It employs a simple single layer \ce{SiO2} anti-reflection coating on the gain medium to provide minimal loss for $p$-polarized intracavity 1040nm laser radiation and less than 0.5\% surface reflection for orthogonal $s$-polarized 980nm pump light.
+The result is a simple and robust, soliton mode-locked and directly diode-pumped, solid-state laser oscillator delivering over 4W of average output power in a 63MHz train of pulses with a duration less than 300fs.
+Frequency doubling of this laser output in a 2mm Brewster-cut Lithium triborate (LBO) crystal provides 1.65W of average power at 520nm.
+
+The Watt-level green output power from the frequency-doubled sub-picosecond Yb:KGW oscillator corresponds to a visible peak laser pulse power in excess of 100kW, which is well-suited for further frequency conversion through harmonic generation or pumping of an ultrashort pulse optical parametric oscillator.
+%TODO change voice/check ->
+To our knowledge, the generation of subpicosecond green peak pulse powers greater than 100kW by frequency doubling the output of a laser oscillator has only been demonstrated for high-power thin-disk [17,18] and cavity-dumped [19] Yb-doped solid-state lasers, although externally-doubled commercial Ytterbium femtosecond oscillators [6,7,20,21] and oscillators with rod-like Yb-fiber gain media [22] can be expected to yield comparable peak green pulse powers.
+%TODO replace to "This output will then be use to ..." and link to something from previous
+%In our case, the visible femtosecond pulses will be used as the driving laser radiation source for an ultrafast electron microscope [23] – a technology that seeks to combine the sub-nanometer spatial resolution of electron microscopy with the sub-picosecond temporal resolution afforded by today’s ultrashort pulse laser systems.
+%Critical to this technology is likely to be the development of a femtosecond photo-electron gun with a low spatial emittance [25].
+%The coherent control of photoemission through visible laser-driven plasmon excitations on large-area (a few mm2), gold or silver, nano-patterned photocathodes may provide a mechanism by which this can be achieved [25].
+
+\subsection{Laser Head Design}
+
+The design of the laser head follows the example of Holtom [5], which ensures efficient pumping and access to the broadest emission bandwidth of Yb:KGW, while also employing the thermal lens shaping (TLS) technique to compensate for astigmatism [16].
+To ensure efficient operation of a Yb:KGW laser, the dominant absorption feature at 980nm for radiation polarized parallel to the optical $N_m$-axis ($\sim\,20^\circ$ from the crystallographic a-axis) should be pumped using high brightness diode lasers.
+On the other hand, as with \ce{Yb$:$KY(WO4)2} [12,13], the broadest emission bandwidth for ultrashort pulse generation occurs for radiation polarized parallel to the optical $N_p$-axis (parallel to the crystallographic $b$-axis [5]) in this biaxial material. 
+%page 8632
+Instead of using a polarization-coupled pumping geometry [5] to ensure these optimum pump-lasing conditions, we employ the non-Brewster crystal geometry and cut shown in Fig. 1(a), where a single 193nm-thick \ce{SiO2} anti-reflection coating is applied to both polished 3x10mm Yb:KGW crystal faces.
+At an angle of incidence of 32.3$^\circ$, this coating theoretically has zero reflection loss for $p$-polarized 1040nm laser radiation parallel to the $b$-axis propagating perpendicular to the $a$-$b$ plane of the crystal (Fig. 1(b)); i.e., the preferred optical $N_p$-axis with refractive index $n_p$ = 1.98 [11,15].
+The \ce{SiO2} coating also has an appropriate bandwidth for femtosecond laser operation in excess of 100nm (to the
+0.1\% reflection points) for $p$-polarized radiation centered at 1040nm.
+On the other hand, the $\sim$ 0.4\% reflection loss per surface for $s$-polarized 1040nm radiation is sufficient to suppress $s$-polarized oscillation in a laser resonator.
+In addition, the same anti-reflection coating has less than 0.5\% reflection loss for $s$-polarized 980nm pump radiation (polarized parallel to the $a$-axis of the Yb:KGW crystal) at incidence angles between 21 and 39$^\circ$ (Fig. 1(b)).
+Thus, in this Yb:KGW laser crystal geometry, the largest absorption cross-section associated with the optical $N_m$-axis is accessed with about 94\% efficiency ($\cos 20^\circ = 0.94$) by the $s$-polarized pump radiation.
+
+% insert figure 1 here
+
+
