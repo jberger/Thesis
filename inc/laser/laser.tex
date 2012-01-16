@@ -116,7 +116,7 @@ Consequently, for our laser polarized along the optical $N_p$-axis [5], there is
 \subsection{The Yb:KGW laser cavity}
 
 The diode-pumped TLS Yb:KGW laser head is placed in the 2.35m-long, asymmetric z-fold cavity shown in Fig. 3(a).
-The two focusing gain section mirrors each have a group velocity dispersion (GVD) of -1300($\pm$150) fs$^2$ (Layertec GmbH [32]), a radius of curvature $R$ = 50cm, and are positioned 29.5cm from the gain medium.
+The two focusing gain section mirrors each have a group velocity dispersion (GVD) of $-1300 ( \pm 150 ) \text{fs}^2$ (Layertec GmbH [32]), a radius of curvature $R$ = 50cm, and are positioned 29.5cm from the gain medium.
 The 5$^\circ$ angle of incidence on the gain section mirrors results in minimal astigmatism, although any net round-trip cavity astigmatism can be compensated for by the TLS technique.
 The longer 75cm arm of the resonator is terminated by a concave ($R$ = 1m and angle of incidence $< 2^\circ$) high reflector
 % insert figure 3
@@ -130,4 +130,30 @@ The clear implication is therefore that the net thermal lens due to the dominant
 This result is in apparent contradiction to some recent measurements of relatively large negative thermo-optic coefficients in Yb:KGW [11], but is consistent with other determinations of the pump-induced thermal focal length for laser oscillation polarized parallel to the optical $N_p$-axis [5,34].
 
 \subsection{Mode-locked laser operation}
+
+In the cavity configuration depicted in Fig. 3(a), self-starting mode-locked (ML) operation was observed for output powers greater than $\sim$2W and $z \approx 42$cm.
+The maximum (or optimum) mode-locked output power obtained without the emergence of DC spectral components was 3.5W, with a sech$^2$ pulse duration of 250fs (Fig. 4(a)).
+The insertion of two plane dispersion compensation mirrors each with a GVD of $-700\text{fs}^2$ (Layertec GmbH [32]) into the short arm of the cavity generated higher mode-locked output powers with longer pulse durations.
+For example, with two reflections off each mirror (an additional $-5600\text{fs}^2$ of round-trip GVD), the pulse duration increased to 347fs (Fig. 4(b)) at an optimum mode-locked output power of $5.0$W.
+This trend is consistent with the expected ‘soliton’ modelocking regime; that is, the SBR only initiates the mode-locking mechanism, which is quickly dominated by self-phase modulation in the Yb:KGW gain medium balanced by the net negative GVD in the cavity [2].
+
+The laser is capable of generating shorter ML pulse durations.
+Replacement of one of the $-1300 ( \pm 150 ) \text{fs}^2$ z-fold mirrors with a conventional $R = 50$cm high reflector and the insertion of $-880\text{fs}^2$ of negative GVD per round trip (a pair of $-220\text{fs}^2$ dispersion compensating mirrors) generated $\sim220$fs pulses at 24A of diode current, 2W of output power, and a SBR position $z = 43.2$cm.
+However, ML operation was significantly less stable under these conditions, indicating that either the cavity is operating close to the net zero GVD point or that the finite gain bandwidth is influencing the ML operation.
+We also note that in this case the optimum SBR position $z$ is larger than that for higher power 3.5W ML operation with a negative cavity GVD of $-5,200\text{fs}^2$ per round-trip (Fig. 4(a)), but is always less than the 50cm focal length of the concave high reflector.
+This is due to the need to match the absorption-induced thermal bowing of the SBR (i.e., the radius of curvature of its front surface mirror) to the radius of curvature of the intra-cavity laser mode [35].
+In general, good ML operation is achieved with the SBR positioned within $\pm$1cm from the optimum $z$ distance.
+
+Figure 5 shows the laser's output power as a function of diode current for the cavity configuration depicted in Fig. 3(a); a total negative GVD of $-5,200\text{fs}^2$ per round-trip and a 7\% transmission output coupler.
+Soliton mode-locked (ML) operation is observed for diode currents greater than 23A, corresponding to a continuous-wave (cw) output power of 1.8W.
+Between diode currents (output powers) of 23 and 25A (1.8 and 2.3W), the resonator operates mainly in the cw mode, but will transition to ML operation upon being subjected to a perturbation.
+The switching to ML operation is accompanied by a 250mW increase in output
+%page 8637
+power indicating a higher cavity Q for ML operation.
+This is consistent both with the laser accessing more of the available inhomogeneous gain bandwidth and with our resonator design favoring operation with a strong Kerr lens in the Yb:KGW gain medium.
+Given a value of $n^2 \approx 15 \cdot 10^{-16}\text{cm}^2/\text{W}$ for 1040nm radiation polarized parallel to the KGW crystal’s optical $N_p$-axis [36-38] and a calculated peak pulse irradiance of $\sim$4GW/cm$^2$ in the gain medium at 24A, we expect a Kerr lens strength of approximately 2m$^-1$.
+From Fig. 3(b), we see that the resulting increase in the strength of the lensing in the Yb:KGW crystal will result in a reduction of the laser mode size in the gain medium, which produces a better spatial match to gain duct produced by the laser diode pumps (less absorptive loss), thus generating an increase in output power.
+
+% figure 4
+
 
