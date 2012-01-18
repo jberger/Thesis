@@ -12,14 +12,29 @@
   % crystal
   \draw [thick,fill=white]
     (0,0) node [circle] (crystal1) {}
-    -- ++(57.7:3)
+    -- ++(57.7:5)
       coordinate [pos=0.5] (laserin)
       node [pos=1,circle] (crystal2) {}
-    -- ++(-32.3:0.9)
+    -- ++(-32.3:1.5)
       node [circle] (crystal3) {}
-    -- ++(237.7:3)
+    -- ++(237.7:5)
       node [circle] (crystal4) {}
     -- cycle
+  ;
+  % dimension
+  \coordinate (longdim1) at ($(crystal4)+(-32.3:0.4)$);
+  \coordinate (longdim2) at ($(crystal3)+(-32.3:0.4)$);
+  \coordinate (shortdim1) at ($(crystal2)+(57.7:0.4)$);
+  \coordinate (shortdim2) at ($(crystal3)+(57.7:0.4)$);
+  \draw [thick,<->]
+    (longdim1)
+    -- (longdim2)
+    node [pos=0.3,below right] {10cm} 
+  ;
+  \draw [thick,<->]
+    (shortdim1)
+    -- (shortdim2)
+    node [pos=0.5,above right] {3cm} 
   ;
   % coating
   \begin{pgfonlayer}{background}
@@ -40,11 +55,11 @@
   ;
   % beam
   \draw [very thick, ->]
-    ($(laserin) - (1.5,0)$)
+    ($(laserin) - (2,0)$)
     -- (laserin)
-      node [pos=0.2] (anglebeam) {}
-    -- ++(-15.7:0.936)
-    -- ++(1,0)
+      node [pos=0.4] (anglebeam) {}
+    -- ++(-15.7:1.59)
+    -- ++(2,0)
   ;
   % input angle marker
   \draw
@@ -52,15 +67,32 @@
     to [out=220,in=90] (anglebeam)
     node [above left] {$32.3^\circ$}
   ;
-  %axes
-  \node [draw,blue,circle,inner sep=1pt] 
-    at (0.5,0) (axes) {$\cdot$}
+  % coord axes
+  \node [draw,blue,circle,inner sep=3pt, right=0.5 of crystal1] 
+    (axes) {}
   ;
-  \draw [blue,->] 
+  \node [draw,blue,fill,circle,inner sep=1.5pt]
+    at (axes.center) {}
+  ;
+  \draw [blue,thick,->] 
     (axes)
-      node [below right] {x}
-    -- ++(74.3:0.4)
-      node [right] {y}
+      node [left] {$y$}
+    -- ++(74.3:0.7)
+      node [left] {$x$}
+  ;
+  % crystal axes
+  \node [draw,circle,inner sep=3pt]
+    at (crystal4) 
+    (craxes) {}
+  ;
+  \node [draw,fill,circle,inner sep=1.5pt]
+    at (craxes.center) {}
+  ;
+  \draw [very thick,dashed,->] 
+    (craxes)
+      node [left] {$a$-axis}
+    -- ++(74.3:3.5)
+      node [right] {$b$-axis}
   ;
 \end{tikzpicture}
 
