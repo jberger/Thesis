@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage{tikz}
-\usetikzlibrary{calc,positioning}
+\usetikzlibrary{calc,positioning,intersections}
 
 \pgfdeclarelayer{background}
 \pgfsetlayers{background,main}
@@ -54,7 +54,7 @@
     -- +(147.7:-0.5)
   ;
   % beam
-  \draw [very thick, ->]
+  \draw [very thick, ->, name path=beam]
     ($(laserin) - (2,0)$)
     -- (laserin)
       node [pos=0.4] (anglebeam) {}
@@ -88,11 +88,17 @@
   \node [draw,fill,circle,inner sep=1.5pt]
     at (craxes.center) {}
   ;
-  \draw [very thick,dashed,->] 
+  \draw [very thick,dashed,->,name path=cryaxis] 
     (craxes)
       node [left] {$a$-axis}
     -- ++(74.3:3.5)
       node [right] {$b$-axis}
+  ;
+  % right angle
+  \draw [name intersections={of=beam and cryaxis,by={int}}]
+    ($(int)+(74.3:0.2)$)
+    -- ++(-15.7:0.2)
+    -- ++(74.3:-0.2)
   ;
 \end{tikzpicture}
 
