@@ -13,7 +13,7 @@
   \draw [thick,fill=white]
     (0,0) node [circle] (crystal1) {}
     -- ++(57.7:5)
-      coordinate [pos=0.5] (laserin)
+      coordinate [pos=0.5] (beam in)
       node [pos=1,circle] (crystal2) {}
     -- ++(-32.3:1.5)
       node [circle] (crystal3) {}
@@ -22,14 +22,14 @@
     -- cycle
   ;
   % dimension
-  \coordinate (longdim1) at ($(crystal4)+(-32.3:0.4)$);
-  \coordinate (longdim2) at ($(crystal3)+(-32.3:0.4)$);
+  \coordinate (longdim1) at ($(crystal1)+(147.7:0.4)$);
+  \coordinate (longdim2) at ($(crystal2)+(147.7:0.4)$);
   \coordinate (shortdim1) at ($(crystal2)+(57.7:0.4)$);
   \coordinate (shortdim2) at ($(crystal3)+(57.7:0.4)$);
   \draw [thick,<->]
     (longdim1)
     -- (longdim2)
-    node [pos=0.3,below right] {10cm} 
+    node [pos=0.8,above left] {10cm} 
   ;
   \draw [thick,<->]
     (shortdim1)
@@ -48,24 +48,23 @@
   \end{pgfonlayer}
   % normal
   \draw [dashed]
-    (laserin)
+    (beam in)
     -- +(147.7:1.5)
-      node [pos=0.75] (angledash) {}
     -- +(147.7:-0.5)
   ;
   % beam
+  \coordinate (beam start) at ($(beam in) - (2,0)$);
   \draw [very thick, ->, name path=beam]
-    ($(laserin) - (2,0)$)
-    -- (laserin)
-      node [pos=0.4] (anglebeam) {}
+    (beam start)
+    -- (beam in)
     -- ++(-15.7:1.59)
     -- ++(2,0)
   ;
   % input angle marker
   \draw
-    (angledash)
-    to [out=220,in=90] (anglebeam)
-    node [above left] {$32.3^\circ$}
+    ($(beam in)!1cm!(beam start)$)
+      node [above left] {$32.3^\circ$}
+    arc [start angle=180, end angle=147.7, radius=1cm]
   ;
   % coord axes
   \node [draw,blue,circle,inner sep=3pt, right=0.5 of crystal1] 
@@ -93,6 +92,12 @@
       node [left] {$a$-axis}
     -- ++(74.3:3.5)
       node [right] {$b$-axis}
+  ;
+  % internal angle marker
+  \draw 
+    ($(crystal4)!1.5cm!(crystal3)$)
+    arc [start angle=57.7, end angle=73.4, radius=1.5cm]
+      node [pin={290:{$15.7^\circ$}}] {}
   ;
   % right angle
   \draw [name intersections={of=beam and cryaxis,by={int}}]
