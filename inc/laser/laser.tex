@@ -26,11 +26,11 @@ Frequency doubling of this laser output in a 2mm Brewster-cut Lithium triborate 
 
 The Watt-level green output power from the frequency-doubled sub-picosecond Yb:KGW oscillator corresponds to a visible peak laser pulse power in excess of 100kW, which is well-suited for further frequency conversion through harmonic generation or pumping of an ultrashort pulse optical parametric oscillator.
 %TODO change voice/check ->
-To our knowledge, the generation of subpicosecond green peak pulse powers greater than 100kW by frequency doubling the output of a laser oscillator has only been demonstrated for high-power thin-disk\cite{Brunner_powerful_2004,Marchese_pulse_energy_06} and cavity-dumped\cite{Palmer_microjoule_07} Yb-doped solid-state lasers, although externally-doubled commercial Ytterbium femtosecond oscillators\cite{website_amplitude,website_solar,website_high_q,website_time_bandwidth} and oscillators with rod-like Yb-fiber gain media [22] can be expected to yield comparable peak green pulse powers.
+To our knowledge, the generation of subpicosecond green peak pulse powers greater than 100kW by frequency doubling the output of a laser oscillator has only been demonstrated for high-power thin-disk\cite{Brunner_powerful_2004,Marchese_pulse_energy_06} and cavity-dumped\cite{Palmer_microjoule_07} Yb-doped solid-state lasers, although externally-doubled commercial Ytterbium femtosecond oscillators\cite{website_amplitude,website_solar,website_high_q,website_time_bandwidth} and oscillators with rod-like Yb-fiber gain media\cite{Ortac_pulse_2007} can be expected to yield comparable peak green pulse powers.
 %TODO replace to "This output will then be use to ..." and link to something from previous
-%In our case, the visible femtosecond pulses will be used as the driving laser radiation source for an ultrafast electron microscope [23] – a technology that seeks to combine the sub-nanometer spatial resolution of electron microscopy with the sub-picosecond temporal resolution afforded by today’s ultrashort pulse laser systems.
-%Critical to this technology is likely to be the development of a femtosecond photo-electron gun with a low spatial emittance [25].
-%The coherent control of photoemission through visible laser-driven plasmon excitations on large-area (a few mm2), gold or silver, nano-patterned photocathodes may provide a mechanism by which this can be achieved [25].
+%In our case, the visible femtosecond pulses will be used as the driving laser radiation source for an ultrafast electron microscope \cite{king_ultrafast_2005} – a technology that seeks to combine the sub-nanometer spatial resolution of electron microscopy with the sub-picosecond temporal resolution afforded by today’s ultrashort pulse laser systems.
+%Critical to this technology is likely to be the development of a femtosecond photo-electron gun with a low spatial emittance\cite{zawadzka_evanescent_2001}.
+%The coherent control of photoemission through visible laser-driven plasmon excitations on large-area (a few mm2), gold or silver, nano-patterned photocathodes may provide a mechanism by which this can be achieved\cite{zawadzka_evanescent_2001}.
 
 \subsection{Laser Head Design}
 
@@ -48,13 +48,13 @@ Thus, in this Yb:KGW laser crystal geometry, the largest absorption cross-sectio
 
 % insert figure 1 here
 
-Efficient pumping is achieved with two, 35W, dual-axis collimated and TM-polarized laser diode arrays operating at 980nm (HLU35C10x5-980 from LIMO GmbH [26]).
-The $\sim$3nm emission linewidth of the two laser diode arrays is well matched to the 3.7nm fullwidth half-maximum (FWHM) 980nm absorption line of Yb:KGW \cite{Paunescu_diode_2004,Biswal_thermo_optical_05} [27].
+Efficient pumping is achieved with two, 35W, dual-axis collimated and TM-polarized laser diode arrays operating at 980nm (HLU35C10x5-980 from LIMO GmbH\cite{website_limo}).
+The $\sim$3nm emission linewidth of the two laser diode arrays is well matched to the 3.7nm fullwidth half-maximum (FWHM) 980nm absorption line of Yb:KGW \cite{Paunescu_diode_2004,Biswal_thermo_optical_05,website_EKSPLA}.
 Moreover, the two dual-axis collimated laser diodes have full-angle $1/e^2$ intensity beam divergences of $\theta_y \approx$ 4.4mrad and $\theta_x \approx$ 6.8mrad in the horizontal ($x$-direction parallel to the emitter array) and vertical ($y$) directions respectively. 
 With 100mm focal length lenses, this allows the pump radiation to be focused to a pump spot diameter 2W $\approx$ 400$\mu$m, yielding a maximum incident pump irradiance of $\sim$28kW/cm$^2$ from one laser diode array.
 The Yb concentration was chosen to be 2\% atomic doping to ensure that more than 90\% of the pump radiation was absorbed over the 3mm Yb:KGW crystal thickness.
-With the employed counter-propagating pump geometry, the resultant maximum average pump irradiance over the crystal length is then roughly 3 times the $\sim$6kW/cm$^2$ saturation intensity of the dominant 980nm absorption line [28].
-The laser crystal was obtained from NovaPhase [29].
+With the employed counter-propagating pump geometry, the resultant maximum average pump irradiance over the crystal length is then roughly 3 times the $\sim$6kW/cm$^2$ saturation intensity of the dominant 980nm absorption line\cite{Brunner_powerful_2004}.
+The laser crystal was obtained from NovaPhase\cite{website_nova}.
 
 To ensure a stigmatic laser resonator, we also employ the thermal lens shaping (TLS) technique\cite{Rimington_thermal_lens_2004} to compensate for the astigmatism induced by the non-normal incidence geometry of the laser crystal. 
 For the employed non-Brewster crystal cut (Fig. 1(a)), a ray
@@ -72,7 +72,7 @@ is the on-axis temperature, is given by
 \end{equation}
 Here, $\frac{dn}{dT}$ and $n$ are the thermo-optic coefficient and refractive index of the medium respectively (in this case for radiation polarized along the optical $N_p$-axis), $\theta_1$ is the 32.3$^\circ$ angle of incidence, $\theta_2$ = 15.7$^\circ$ is the angle of refraction (as $n_p$ = 1.98 \cite{Biswal_thermo_optical_05,pujol_crystalline_1999}), and $\Delta$ is the fraction of the crystal length $l$ contributing to the bowing of the crystal faces under thermal
 expansion with coefficient $\alpha T$ \cite{Rimington_thermal_lens_2004}.
-Generally, $\Delta \approx W l$ , where $W$ is the transverse size (radius) of the pumped region [30].
+Generally, $\Delta \approx W l$ , where $W$ is the transverse size (radius) of the pumped region\cite{Koechner_thermal_1970}.
 In our case, $l \approx$ 3mm and $W \approx$ 0.2mm, so that $\Delta < 0.1$, implying that the thermal duct due to a non-zero $\frac{dn}{dT}$ primarily determines the required $B_T$/$A_T$ ratio.
 In other words, for the potassium gadolinium tungstate (\ce{KGd(WO4)2}) crystal geometry of Fig. 1(a), we expect from \ref{eq:laser_ratio_ba} to require $\dfrac{B_\smallT}{A_\smallT} \approx \dfrac{ \cos^2 \theta_2 }{ \cos^2 \theta_1 } = 1.3$.
 
@@ -83,7 +83,7 @@ The spatial pump distribution needed to generate the required $B_T/A_T$ ratio ca
 \end{equation}
 where $\kappa$ is the thermal diffusion coefficient.
 Thermal diffusion in the third $z$-direction has been neglected due to the relatively uniform longitudinal heat deposition resulting from our counter-propagating pump geometry\cite{Rimington_thermal_lens_2004}.
-The specifications of our dual-axis collimated diodes [26] indicate that heat source can be written as
+The specifications of our dual-axis collimated diodes\cite{website_limo} indicate that heat source can be written as
 \begin{equation}
   Q(x,y) = Q_0 \exp \left[ - \frac{x^2}{W_x^2} - \left( \frac{y^2}{W_y^2} \right)^3 \right]
   \quad\text{;}
@@ -105,35 +105,35 @@ For example, when the pump and laser beams are exactly overlapped at the center 
 Clearly, this can be readily accommodated by the $W_x = 0.3$mm horizontal pump spot size when $w_x \approx 180\mu$m.
 However, even though $W_x > w_x$, the Gaussian (rather than super-Gaussian) horizontal pump mode profile is still expected to assist in ensuring TEM$_{00}$-mode operation since the net horizontal gain profile (gain minus absorptive loss) will fall off more rapidly than the pump profile for a quasi-three level Yb-doped gain medium\cite{Brenier_new_criteria}.
 
-We note that the above thermal lens analysis neglects the anisotropy of the thermal conductivity $\kappa$ in potassium gadolinium tungstate (\ce{KGd(WO4)2}) \cite{Biswal_thermo_optical_05,mochalov_laser_1997} and stress-induced refractive index changes [31].
-For the employed crystal cut in our TLS geometry (Fig. 1(a)), the anisotropy in $\kappa$ \cite{mochalov_laser_1997} [27] is not expected to have a significant effect; the laser head geometry dictates that the dominant pump-induced heat conduction will be in the saggital ($y$) direction along the crystal $a$-axis where $\kappa \approx 2.6$W/(mK) (heat extraction only through the top and bottom 3x10mm crystal faces), so that the 46\% larger value of $\kappa$ along the $b$-axis ($x$) direction at 3.8W/(mK) should not have a large influence on the heat conduction.
+We note that the above thermal lens analysis neglects the anisotropy of the thermal conductivity $\kappa$ in potassium gadolinium tungstate (\ce{KGd(WO4)2}) \cite{Biswal_thermo_optical_05,mochalov_laser_1997} and stress-induced refractive index changes\cite{Yumashev_laser_2007}.
+For the employed crystal cut in our TLS geometry (Fig. 1(a)), the anisotropy in $\kappa$ \cite{mochalov_laser_1997,website_EKSPLA} is not expected to have a significant effect; the laser head geometry dictates that the dominant pump-induced heat conduction will be in the saggital ($y$) direction along the crystal $a$-axis where $\kappa \approx 2.6$W/(mK) (heat extraction only through the top and bottom 3x10mm crystal faces), so that the 46\% larger value of $\kappa$ along the $b$-axis ($x$) direction at 3.8W/(mK) should not have a large influence on the heat conduction.
 The refractive index
 %page 8635
 changes due to stress in the pumped gain medium are difficult to quantify since the substantial variations in the reported values of the thermo-optic coefficients in KGW make it impossible to extract either the sign or magnitude of the stress dependence of the refractive index\cite{website_time_bandwidth}.
-Moreover, nearly all analyses of thermal lensing effects Nd:KGW and Yb:KGW lasers have been performed for laser radiation polarized along the optical $N_m$-axis, which accesses the largest emission cross-section for both Nd- and Yb-doping [31,34].
+Moreover, nearly all analyses of thermal lensing effects Nd:KGW and Yb:KGW lasers have been performed for laser radiation polarized along the optical $N_m$-axis, which accesses the largest emission cross-section for both Nd- and Yb-doping\cite{Yumashev_laser_2007,Hellstrom_efficient_2006}.
 Consequently, for our laser polarized along the optical $N_p$-axis\cite{Holtom_mode_locked_2006}, there is insufficient information to include accurately the effects of stress-induced refractive index changes.
 
 \subsection{The Yb:KGW laser cavity}
 
 The diode-pumped TLS Yb:KGW laser head is placed in the 2.35m-long, asymmetric z-fold cavity shown in Fig. 3(a).
-The two focusing gain section mirrors each have a group velocity dispersion (GVD) of $-1300 ( \pm 150 ) \text{fs}^2$ (Layertec GmbH [32]), a radius of curvature $R$ = 50cm, and are positioned 29.5cm from the gain medium.
+The two focusing gain section mirrors each have a group velocity dispersion (GVD) of $-1300 ( \pm 150 ) \text{fs}^2$ (Layertec GmbH\cite{website_layertec}), a radius of curvature $R$ = 50cm, and are positioned 29.5cm from the gain medium.
 The 5$^\circ$ angle of incidence on the gain section mirrors results in minimal astigmatism, although any net round-trip cavity astigmatism can be compensated for by the TLS technique.
 The longer 75cm arm of the resonator is terminated by a concave ($R$ = 1m and angle of incidence $< 2^\circ$) high reflector
 % insert figure 3
 %page 8636
-focusing the intracavity radiation on a saturable Bragg reflector (SBR) with a 1\% reflectivity modulation depth at 1040nm (BATOP GmbH [33]) positioned a distance $z$ from the focusing mirror.
+focusing the intracavity radiation on a saturable Bragg reflector (SBR) with a 1\% reflectivity modulation depth at 1040nm (BATOP GmbH\cite{website_BATOP}) positioned a distance $z$ from the focusing mirror.
 The shorter 63cm arm is terminated by a plane output coupler with a 7\% transmission at 1040nm.
 As a free-running oscillator (SBR focusing section replaced by flat high reflector at $d_2$ = 75cm), the laser produced over 6W of TEM$_{00}$ ($M^2 < 1.2$) output power.
 
 The stability analysis of our diode-pumped Yb:KGW laser (Fig. 3(b)), clearly indicates that the resonator configuration is unstable for thermal focal lengths less than about $-6m^{-1}$ (diopters) and is unlikely to oscillate for negative thermal focal lengths as this requires a vertical TEM$_{00}$-mode size $w_y$ greater than 180$\mu$m in the Yb:KGW gain medium --- a value that would result in strong absorptive losses due to the restrictive $W_y = 200\mu$m super-Gaussian vertical pump beam size in the Yb-doped crystal.
 The clear implication is therefore that the net thermal lens due to the dominant thermal duct is positive; that is, the sum of the refractive index change due to the thermo-optic coefficient and stress for 1040nm laser radiation polarized along the optical $N_p$-axis (crystal $b$-axis) is positive.
-This result is in apparent contradiction to some recent measurements of relatively large negative thermo-optic coefficients in Yb:KGW \cite{Biswal_thermo_optical_05}, but is consistent with other determinations of the pump-induced thermal focal length for laser oscillation polarized parallel to the optical $N_p$-axis\cite{Holtom_mode_locked_2006} [34].
+This result is in apparent contradiction to some recent measurements of relatively large negative thermo-optic coefficients in Yb:KGW \cite{Biswal_thermo_optical_05}, but is consistent with other determinations of the pump-induced thermal focal length for laser oscillation polarized parallel to the optical $N_p$-axis\cite{Holtom_mode_locked_2006,Hellstrom_efficient_2006}.
 
 \subsection{Mode-locked laser operation}
 
 In the cavity configuration depicted in Fig. 3(a), self-starting mode-locked (ML) operation was observed for output powers greater than $\sim$2W and $z \approx 42$cm.
 The maximum (or optimum) mode-locked output power obtained without the emergence of DC spectral components was 3.5W, with a sech$^2$ pulse duration of 250fs (Fig. 4(a)).
-The insertion of two plane dispersion compensation mirrors each with a GVD of $-700\text{fs}^2$ (Layertec GmbH [32]) into the short arm of the cavity generated higher mode-locked output powers with longer pulse durations.
+The insertion of two plane dispersion compensation mirrors each with a GVD of $-700\text{fs}^2$ (Layertec GmbH\cite{website_layertec}) into the short arm of the cavity generated higher mode-locked output powers with longer pulse durations.
 For example, with two reflections off each mirror (an additional $-5600\text{fs}^2$ of round-trip GVD), the pulse duration increased to 347fs (Fig. 4(b)) at an optimum mode-locked output power of $5.0$W.
 This trend is consistent with the expected ‘soliton’ modelocking regime; that is, the SBR only initiates the mode-locking mechanism, which is quickly dominated by self-phase modulation in the Yb:KGW gain medium balanced by the net negative GVD in the cavity\cite{Brunner_diode_pumped}.
 
@@ -141,7 +141,7 @@ The laser is capable of generating shorter ML pulse durations.
 Replacement of one of the $-1300 ( \pm 150 ) \text{fs}^2$ z-fold mirrors with a conventional $R = 50$cm high reflector and the insertion of $-880\text{fs}^2$ of negative GVD per round trip (a pair of $-220\text{fs}^2$ dispersion compensating mirrors) generated $\sim220$fs pulses at 24A of diode current, 2W of output power, and a SBR position $z = 43.2$cm.
 However, ML operation was significantly less stable under these conditions, indicating that either the cavity is operating close to the net zero GVD point or that the finite gain bandwidth is influencing the ML operation.
 We also note that in this case the optimum SBR position $z$ is larger than that for higher power 3.5W ML operation with a negative cavity GVD of $-5,200\text{fs}^2$ per round-trip (Fig. 4(a)), but is always less than the 50cm focal length of the concave high reflector.
-This is due to the need to match the absorption-induced thermal bowing of the SBR (i.e., the radius of curvature of its front surface mirror) to the radius of curvature of the intra-cavity laser mode [35].
+This is due to the need to match the absorption-induced thermal bowing of the SBR (i.e., the radius of curvature of its front surface mirror) to the radius of curvature of the intra-cavity laser mode\cite{Schieffer_dual_passive_2006}.
 In general, good ML operation is achieved with the SBR positioned within $\pm$1cm from the optimum $z$ distance.
 
 Figure 5 shows the laser's output power as a function of diode current for the cavity configuration depicted in Fig. 3(a); a total negative GVD of $-5,200\text{fs}^2$ per round-trip and a 7\% transmission output coupler.
@@ -151,7 +151,7 @@ The switching to ML operation is accompanied by a 250mW increase in output
 %page 8637
 power indicating a higher cavity Q for ML operation.
 This is consistent both with the laser accessing more of the available inhomogeneous gain bandwidth and with our resonator design favoring operation with a strong Kerr lens in the Yb:KGW gain medium.
-Given a value of $n^2 \approx 15 \cdot 10^{-16}\text{cm}^2/\text{W}$ for 1040nm radiation polarized parallel to the KGW crystal’s optical $N_p$-axis [36-38] and a calculated peak pulse irradiance of $\sim$4GW/cm$^2$ in the gain medium at 24A, we expect a Kerr lens strength of approximately 2m$^-1$.
+Given a value of $n^2 \approx 15 \cdot 10^{-16}\text{cm}^2/\text{W}$ for 1040nm radiation polarized parallel to the KGW crystal’s optical $N_p$-axis\cite{Major_characterization_2003,Selivanov_nonlinear_2006,Vodchits_zscan_2006} and a calculated peak pulse irradiance of $\sim$4GW/cm$^2$ in the gain medium at 24A, we expect a Kerr lens strength of approximately 2m$^-1$.
 From Fig. 3(b), we see that the resulting increase in the strength of the lensing in the Yb:KGW crystal will result in a reduction of the laser mode size in the gain medium, which produces a better spatial match to gain duct produced by the laser diode pumps (less absorptive loss), thus generating an increase in output power.
 
 % figure 4
@@ -176,12 +176,12 @@ The ML output from the femtosecond Yb:KGW laser with a net negative GVD of $-5,2
 The crystal is uncoated and cut for frequency doubling with the fundamental $p$-polarized radiation at 1046nm incident at Brewster’s angle --- a geometry that ensures both minimum loss for the fundamental radiation and, more importantly, a high damage threshold.
 The doubling crystal is positioned at the focus of a $z$-fold comprising a 1040nm high reflector with a radius of curvature of 75mm followed by a collimating mirror with a radius of curvature of 100mm reflective at both the fundamental and second harmonic wavelengths.
 At the 3.5W ML output power, with a pulse duration of 250fs, the estimated focal irradiance for the fundamental is $\sim50\text{GW}/\text{cm}^2$ in the LBO doubling crystal.
-Two plane dispersion compensation mirrors, each with a GVD of $-220\text{fs}^2$ (Layertec GmbH [32]), inserted before the $z$-fold doubling geometry compensate for propagation through the 6mm-thick fused silica output coupler, reflections off standard optics, etc.
+Two plane dispersion compensation mirrors, each with a GVD of $-220\text{fs}^2$ (Layertec GmbH\cite{website_layertec}), inserted before the $z$-fold doubling geometry compensate for propagation through the 6mm-thick fused silica output coupler, reflections off standard optics, etc.
 After the collimating
 %page 8639
 mirror, a standard flat dichroic beamsplitter then separates the reflected $s$-polarized 523nm radiation from the transmitted $p$-polarized fundamental.
 
-This frequency doubling geometry for LBO is chosen to be close to the optimum for efficient short pulse doubling [39,40] defined by limits imposed by group-velocity walk-off between the fundamental and second harmonic pulses, spatial walk-off in the critical phase-matching, and the ratio of the confocal parameter of the focused fundamental wave to the LBO crystal length.
+This frequency doubling geometry for LBO is chosen to be close to the optimum for efficient short pulse doubling \cite{wang_efficiency_2003,Saltiel_second_harmonic_2004} defined by limits imposed by group-velocity walk-off between the fundamental and second harmonic pulses, spatial walk-off in the critical phase-matching, and the ratio of the confocal parameter of the focused fundamental wave to the LBO crystal length.
 In addition, the $z$-fold configuration allows for astigmatism compensation (e.g., due to the Brewster LBO crystal) of the second harmonic output by adjustment of the angle of incidence on the second collimating mirror.
 
 Figure 5 shows the resultant frequency-doubled green power for the ML Yb:KGW laser.
@@ -206,7 +206,7 @@ The 250fs ML pulses generated at 3.5W of average output power and a 63.5MHz repe
 The resultant efficient frequency doubling, which exceeds 60\% at a ML fundamental power of $\sim$3W, yields 1.65W of average power at 523nm ---
 %page 8640
 a peak green pulse power of $\sim$130kW.
-This femtosecond visible output will be used as the driving pulsed laser radiation source for an ultrafast electron microscope [23].
+This femtosecond visible output will be used as the driving pulsed laser radiation source for an ultrafast electron microscope\cite{king_ultrafast_2005}.
 
 %% Acknowledgements
 % This research was supported in part by the National Science Foundation under award DMR-
