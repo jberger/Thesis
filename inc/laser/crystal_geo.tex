@@ -1,13 +1,3 @@
-\documentclass{article}
-
-\usepackage{tikz}
-\usetikzlibrary{calc,positioning,intersections}
-
-\pgfdeclarelayer{background}
-\pgfsetlayers{background,main}
-
-\begin{document}
-
 \begin{tikzpicture}
   % crystal
   \draw [thick,fill=white]
@@ -42,6 +32,7 @@
       (crystal1.120)
       -- (crystal2.180)
       -- (crystal3.300)
+        node [right,align=left] {193nm \ce{SiO2}\\AR coating} 
       -- (crystal4.0)
       -- cycle
     ;
@@ -59,6 +50,12 @@
     -- (beam in)
     -- ++(-15.7:1.59)
     -- ++(2,0)
+      coordinate [pos=0.6] (polarization)
+  ;
+  \draw [thick,<->]
+    ($(polarization)+(0,0.3)$)
+    -- ++(0,-0.6)
+      node [align=left,below right] {1040nm laser\\radiation\\($p$-polarized)}
   ;
   % input angle marker
   \draw
@@ -106,6 +103,4 @@
     -- ++(74.3:-0.2)
   ;
 \end{tikzpicture}
-
-\end{document}
 
