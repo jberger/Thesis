@@ -52,7 +52,7 @@ Thus, in this Yb:KGW laser crystal geometry, the largest absorption cross-sectio
     \input{crystal_geo}
   }
   \caption{
-\subref{fig:crystal_geo} Top view of the 3x3x10mm AR coated Yb:KGW laser crystal showing the crystal cut, the direction of propagation of p-polarized laser radiation at 1040nm, and the $x$ (tangential) and $y$ (saggital) directions (in blue) employed in the thermal analysis;
+\protect\subref{fig:crystal_geo} Top view of the 3x3x10mm AR coated Yb:KGW laser crystal showing the crystal cut, the direction of propagation of p-polarized laser radiation at 1040nm, and the $x$ (tangential) and $y$ (saggital) directions (in blue) employed in the thermal analysis;
 (b) Calculated reflectivity of the 193nm \ce{SiO2} AR coating as a function of incidence angle for $p$-polarized 1040nm laser radiation (solid line) and $s$-polarized 980nm pump radiation (dashed line).
 }
 \end{figure}
@@ -128,7 +128,20 @@ The diode-pumped TLS Yb:KGW laser head is placed in the 2.35m-long, asymmetric z
 The two focusing gain section mirrors each have a group velocity dispersion (GVD) of $-1300 ( \pm 150 ) \text{fs}^2$ (Layertec GmbH\cite{website_layertec}), a radius of curvature $R$ = 50cm, and are positioned 29.5cm from the gain medium.
 The 5$^\circ$ angle of incidence on the gain section mirrors results in minimal astigmatism, although any net round-trip cavity astigmatism can be compensated for by the TLS technique.
 The longer 75cm arm of the resonator is terminated by a concave ($R$ = 1m and angle of incidence $< 2^\circ$) high reflector
-% insert figure 3
+
+\begin{figure}
+  \centering
+  \subfloat[][]{
+    \label{fig:laser_schematic}
+    \input{schematic}
+  }
+  \caption{
+\protect\subref{fig:laser_schematic} Schematic of the femtosecond TLS Yb:KGW oscillator (LD = laser diode, OC = output coupler, SBR = saturable Bragg reflector).
+(b) Laser mode size in the center of the Yb:KGW gain medium ($w$) as a function of the strength of the lensing ($1/f$) in the gain medium (thermal and Kerr) obtained from a resonator stability analysis with $z \approx 42$cm for both the tangential ($x$, red line) and saggital ($y$, dashed black line) directions.
+The 0.2mm (HW1/eM) vertical super-Gaussian pump spot size is indicated by the horizontal line.
+}
+\end{figure}
+
 %page 8636
 focusing the intracavity radiation on a saturable Bragg reflector (SBR) with a 1\% reflectivity modulation depth at 1040nm (BATOP GmbH\cite{website_BATOP}) positioned a distance $z$ from the focusing mirror.
 The shorter 63cm arm is terminated by a plane output coupler with a 7\% transmission at 1040nm.
