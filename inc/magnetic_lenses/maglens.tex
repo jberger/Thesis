@@ -105,6 +105,7 @@ This gap can be much smaller than the total width of the coil turns, and yet con
   \draw [thick, dashed]
     (0,3)
     -- (0,-3)
+      node [pos=0,above] {Axis of Electron Microscope Column}
   ;
   \draw [very thick,<->] 
     (S top) 
@@ -119,7 +120,30 @@ This gap can be much smaller than the total width of the coil turns, and yet con
   \node [rotate=90] at (-1.6,-0.5) {Windings};
   \node [red,rotate=90] at (1.6,-0.5) {Field Lines};
 \end{tikzpicture}
+\caption{Side-view schematic of a shielded magnetic lens with a pole-piece. The windings (current loops) are contained within the shielding. The magnetic field created by these windings is contained inside the shielding except in the gap.}
 \end{figure}
 
-El-Kareh and El-Kareh \cite{el-kareh_electron_1970} provides an analysis of symmetric lenses with magnetic shielding and a pole-piece in chapter 8, with the most useful information being in section 8.7.
+El-Kareh and El-Kareh \cite{el-kareh_electron_1970} provide an analysis of symmetric lenses with magnetic shielding and a pole-piece in chapter 8, with the most useful information being in section 8.7.
+They define
+\begin{subequations}
+\begin{gather}
+  k^2 \equiv \frac{e}{8 m V_r} B_0^2 R^2 \\
+  \beta \equiv k^2 V_r / (NI)^2 \label{eq:elkareh_k2}
+\end{gather}
+\end{subequations}
+where $N$ is the number of loops, $I$ is the current in a single loop, $B_0$ is the maximum axial magnetic field strength, $R$ is the bore radius and $V_r$ is the relativity corrected acceleration potential, given by
+\begin{equation}
+  V_r = V ( 1 + \frac{0.978 \cdot 10^{-6}}{\text{Volt}} V )
+\end{equation}
+They then derive a number of formulae and tabulate the results for a variety of parameters.
+Using these tabulated results, and for a choice of parameters one can determine the number of ampere-turns ($NI$) to create a certain focal length.
+
+%TODO check S and D as I seem to remember we have S=0.1in
+%TODO need a description of the steel inner tube causing an effective diameter larger than the actual bore
+For the UEM, I chose a bore diameter $D$=0.3in and a pole-piece gap $S$=0.5in, for an ratio $S/D=0.6$.
+By their table 8.2a this results in $\beta=0.0104$. Then, to create a focal length of 4in ($f/R=16$) table 8.17 gives a value for $k^2 \approx 0.05$.
+Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx385$A.
+
+To further ease the burden on the lenses, I actually created two, one placed to either side of the RF cavity. As each has 100 turns, a current of only 2A is needed to drive the two lenses in series.
+
 
