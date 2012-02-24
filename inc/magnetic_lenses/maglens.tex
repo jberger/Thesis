@@ -1,0 +1,56 @@
+\subsection{Motivation}
+% montgomery_some_1961
+% el-kareh_electron_1970
+
+In many ways, an electron beam can be thought of in terms of an optical equivalent system. 
+Of course there are notable exceptions; photons don't repel each other; photon energies are hard to change.
+Electron optical systems do have an analogous system to the lens, in this case using magnetic fields rather than glass. 
+The magnetic lens is a common element in electron microscopes and other electron-optical systems.
+%TODO refs needed
+
+Magnetic lenses present some challenges for Ultrafast Electron Microscopy.
+First, the beams are likely to be much larger and thus a UEM will need large-aperture lenses.
+Second, and more importantly, near a lens crossover (i.e. focus), the charge density can increase rapidly.
+This charge density can lead to an unacceptable amount of space-charge interaction (see section \ref{sec:model_results}).
+
+\subsection{Introduction to Magnetic Lenses}
+
+A simple magnetic lens is just a solenoid.
+The axis the lens is collinear with the axis of the microscope column.
+Initially one would think that electrons moving parallel to this axis would not be affected by the magnetic field lines in the solenoid, however the contribution of the fringing field must be taken into consideration.
+As electrons propagate through the solenoid the fringing magnetic field imparts an azimuthal velocity.
+This ``tumbling'' around the axis, along with the axial magnetic field, is what causes the inward-directed force. 
+
+A full description of the motion of the electrons is easily derived \cite{el-kareh_electron_1970},
+\begin{subequations} \label{eq:lens_eq_of_motion}
+\begin{gather}
+  m \ddot{r} = -e B_z r \dot{\theta} + m r \dot{\theta}^2                 \\
+  \frac{d}{dt} ( m r^2 \dot{\theta} ) = e r \dot{r} B_z - e r B_r \dot{z} \\
+  m \ddot{z} = e B_r r \dot{\theta}
+\end{gather}
+\end{subequations}
+however, attempting to further seperate these equations quickly highlights the tightly coupled nature of the motion of the electron in this system.
+The full description of the off-axis field of a real (non-infinite) air-core solenoid is also surprisingly complicated.
+Montgomery and Terrell \cite{montgomery_some_1961} provide a full treatment for many lens configurations, including a tractable treatment for a single current loop of radius $a$ in cylindrical coordinates, 
+\begin{subequations} \label{eq:field_of_loop}
+\begin{gather}
+  H_z = \frac{2I}{\sqrt{Q}} \left(   F(k) + \frac{ a^2 - r^2 - z^2 }{ (1-k^2) Q } E(k) \right) \\
+  H_r = \frac{2I}{\sqrt{Q}} \left( - F(k) + \frac{ a^2 + r^2 + z^2 }{ (1-k^2) Q } E(k) \right) \\
+  Q \equiv (a+r)^2 + z^2 \\
+  k \equiv \sqrt{ 4 a r / Q }
+\end{gather}
+\end{subequations}
+%%TODO I can't decide whether the Q and k definitions should be numbered or not
+%where
+%\begin{gather*}
+%  Q \equiv (a+r)^2 + z^2 \\
+%  k \equiv \sqrt{ 4 a r / Q }
+%\end{gather*}
+and $F(k)$ and $E(k)$ are the complete elliptic integrals of the first and second kind respectively.
+An even more accurate solenoid can be modeled by appropriately summing the fields of many such loops. 
+
+\subsection{Design}
+
+While in principle one could design a magnetic lens using equations \ref{eq:lens_eq_of_motion} and \ref{eq:field_of_loop}, the process wouldn't be very practical or instructive.
+Further --- as suggested by the use of the $H$ field in \ref{eq:field_of_loop} --- better performance of the lens can be achieved by concentrating the field using materials with high magnetic permeablility; this component is called a ``pole piece''.
+
