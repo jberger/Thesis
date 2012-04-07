@@ -1,0 +1,49 @@
+\subsection{Theoretical Basis}
+
+\subsubsection{Band Structure}
+
+\subsubsection{Population of Upper Conduction Band}
+
+\subsubsection{Absorption into Upper Conduction Band}
+
+In order to quantify the behavior of emission from this upper conduction band it is necessary to calculate the absorption $\alpha_0$ into this band.
+The text `Optoelectronics' [cite] has a formula for absorption in terms of the energy gap $E_g$, the effective masses and a few optical properties.
+\begin{equation} \label{eq:absorption_optoelectronics}
+  \alpha_0(\omega) = \frac{ q^2 x_{vc}^2 (2 m_r)^{3/2} }{ \lambda \varepsilon_0 \hbar^3 n_{op} } \sqrt{\hbar\omega - E_g}
+\end{equation}
+Here $\omega$ and $\lambda$ are the frequency and wavelength of the incoming photons respectively.
+$m_r$ is the reduced mass of the system given by
+\begin{equation}
+  \frac{1}{m_r} = \frac{1}{m_c} + \frac{1}{m_v}
+\end{equation}
+in terms of the effective mass of the valence holes ($m_v$) and conduction electrons ($m_c$).
+The quantity $x_{vc}^2$ is
+\begin{equation}
+  x_{vc}^2 = \frac{1}{3} \frac{\hbar^2}{E_g^2} \frac{E_p}{m_0}
+\end{equation}
+$m_0$ is the standard electron mass. $E_p$ is the Kane energy which is normally calculated from the matrix elements of the band structure.
+It can be estimated using [Optoelectronics] (5.C.19)
+\begin{equation}
+  \frac{m_c}{m_0} = \left( 1 + \frac{E_p}{E_g} \right)^{-1}
+\end{equation}
+A further approximation is made owing to the difficulty in finding accurate data on these upper conduction bands.
+Visually one can recognize that the curvature of the valence band this upper conduction band are comparable, meaning that approximating $ m_c \approx m_v $ is reasonable for order of magnitude calculations. With this approximation, \ref{eq:absorption_optoelectronics} becomes 
+\begin{equation}
+    \alpha_0(\omega) = \frac{ q^2 x_{vc}^2 m_v^{3/2} }{ \lambda \varepsilon_0 \hbar^3 n_{op} } \sqrt{\hbar\omega - E_g}
+\end{equation}
+
+\begin{table} 
+  \begin{tabular}{|l|l|c|c|c|}
+      \hline
+    Material  & UC Band & $m_v$ $(m_0)$ & $E_g$ (eV) & $n_{op}$ \\
+      \hline\hline
+    \ce{GaSb} & $\Gamma(8c)$ & 0.28 & 3.77 & 1.45 \\
+    \ce{InSb} & $\Gamma(8c)$ & 0.45 & 3.45 & 1.40 \\
+      \hline
+  \end{tabular}
+  \caption{Data and results from analysis of the absorption into upper conduction bands of useful III-V semiconductors.}
+  \label{table:absorption}
+\end{table}
+Using data collected from [Springer Ref], \ref{table:absorption} shows the results of these calculations for useful III-V semiconductors.
+
+
