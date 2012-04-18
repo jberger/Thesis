@@ -1,3 +1,5 @@
+%This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
 \subsection{Motivation}
 % montgomery_some_1961
 % el-kareh_electron_1970
@@ -58,69 +60,13 @@ The field lines exit the shielding in the gap and it is this field that acts as 
 This gap can be much smaller than the total width of the coil turns, and yet contain in a field commensurate with the full coil.
 
 \begin{figure}
-\centering
-\begin{tikzpicture}
-  \foreach \n in {0,0.1,...,0.6}{
-    \draw [red] (0.75,-0.5) ellipse [x radius=\n,y radius=0.6];
+  \centering
+  \input{polepiece-schematic}
+  \caption{
+    Side-view schematic of a shielded magnetic lens with a pole-piece.
+    The windings (current loops) are contained within the shielding.
+    The magnetic field created by these windings is contained inside the shielding except in the gap.
   }
-  \foreach \n in {0,0.1,...,0.6}{
-    \draw [red] (-0.75,-0.5) ellipse [x radius=\n,y radius=0.6];
-  }
-  \draw [fill=blue!50] 
-    (-0.5,0)
-    -- ++(0,2)
-    -- ++(-2,0)
-    -- ++(0,-5)
-      node [pos=0.5,left,align=right] {Magnetic\\Shielding}
-    -- ++(2,0)
-    -- ++(0,2)
-      coordinate [pos=0] (D left)
-    -- ++(-0.5,0)
-      coordinate [pos=0.5] (S top)
-    -- ++(0,-1.5)
-    -- ++(-1,0)
-    -- ++(0,4)
-    -- ++(1,0)
-    -- ++(0,-1.5)
-    -- ++(0.5,0)
-      coordinate [pos=0.5] (S bottom)
-    -- cycle
-  ;
-  \draw [fill=blue!50] 
-    (0.5,0)
-    -- ++(0,2)
-    -- ++(2,0)
-    -- ++(0,-5)
-    -- ++(-2,0)
-    -- ++(0,2)
-      coordinate [pos=0] (D right)
-    -- ++(0.5,0)
-    -- ++(0,-1.5)
-    -- ++(1,0)
-    -- ++(0,4)
-    -- ++(-1,0)
-    -- ++(0,-1.5)
-    -- cycle
-  ;
-  \draw [thick, dashed]
-    (0,3)
-    -- (0,-3)
-      node [pos=0,above] {Axis of Electron Microscope Column}
-  ;
-  \draw [very thick,<->] 
-    (S top) 
-    -- (S bottom)
-      node [pos=0.5,fill=white] {$S$}
-  ;
-  \draw [very thick,<->] 
-    (D left) 
-    -- (D right)
-      node [below,pos=0.5,align=center] {$D$\\$(=2R)$}
-  ;
-  \node [rotate=90] at (-1.6,-0.5) {Windings};
-  \node [red,rotate=90] at (1.6,-0.5) {Field Lines};
-\end{tikzpicture}
-\caption{Side-view schematic of a shielded magnetic lens with a pole-piece. The windings (current loops) are contained within the shielding. The magnetic field created by these windings is contained inside the shielding except in the gap.}
 \end{figure}
 
 El-Kareh and El-Kareh \cite{el-kareh_electron_1970} provide an analysis of symmetric lenses with magnetic shielding and a pole-piece in chapter 8, with the most useful information being in section 8.7.
@@ -144,6 +90,8 @@ For the UEM, I chose a bore diameter $D=2R=$0.1in and a pole-piece gap $S$=0.5in
 By their table 8.2a this results in $\beta=0.0146$. Then, to create a focal length of 4in ($f/R=16$) table 8.13 gives a value for $k^2 \approx 0.06$.
 Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx356$A.
 
-To further ease the burden on the lenses, I actually created two, one placed to either side of the RF cavity. As each has 100 turns, a current of only 2A is needed to drive the two lenses in series. The oxygen-free copper wire coils remain cool to the touch under these operating conditions.
+To further ease the burden on the lenses, I actually created two, one placed to either side of the RF cavity.
+As each has 100 turns, a current of only 2A is needed to drive the two lenses in series.
+The oxygen-free copper wire coils remain cool to the touch under these operating conditions.
 
 
