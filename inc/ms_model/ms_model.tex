@@ -134,7 +134,12 @@ Application of this integral yields
     \gamma_{\alpha} & \eta_{\alpha} + \gamma_{\alpha}^2/\sigma_{\alpha}
   \end{pmatrix}
 \end{equation}
-Taking the time derivative of the components of $A^{-1}$
+
+Since time derivative of \ref{eq:gaussian_integral} is simply
+\begin{equation} \label{eq:gaussian_integral_dt}
+  \frac{d}{dt}(A^{-1})_{ij} = \frac{1}{N} \int u_i u_j \frac{df(\vec{r}, \vec{p}; t)}{dt} d\vec{r} d\vec{p}
+\end{equation}
+and the time derivative of the components of $A^{-1}$ are
 \begin{equation} \label{eq:dainvdt}
   \frac{d}{dt} a^{-1}_{\alpha} = 
   \begin{pmatrix}
@@ -142,17 +147,13 @@ Taking the time derivative of the components of $A^{-1}$
     \dfrac{d\gamma_{\alpha}}{dt} & \dfrac{d\eta_{\alpha}}{dt} + 2\dfrac{\gamma_{\alpha}}{\sigma_{\alpha}}\dfrac{d\gamma_{\alpha}}{dt}- \dfrac{\gamma^{2}_{\alpha}}{\sigma^{2}_{\alpha}}\dfrac{d\sigma_{\alpha}}{dt}
   \end{pmatrix}
 \end{equation}
-Since time derivative of \ref{eq:gaussian_integral} is simply
-\begin{equation} \label{eq:gaussian_integral_dt}
-  \frac{d}{dt}(A^{-1})_{ij} = \frac{1}{N} \int u_i u_j \frac{df(\vec{r}, \vec{p}; t)}{dt} d\vec{r} d\vec{p}
-\end{equation}
 these components, when viewed in the context of \ref{eq:formal_evolution}, form the left hand side (LHS) of the system of differential equations governing the evolution of $\sigma_{\alpha}$, $\gamma_{\alpha}$, and $\eta_{\alpha}$, which will be established in the upcoming sections.
 
 \subsection{Generating the Differential Equations}
 
 Inserting \ref{eq:formal_evolution} into \ref{eq:gaussian_integral_dt} yields two integral terms, one related to the propagation of a non-charged Gaussian beam, the other adds the influence of the internal force due to Coulomb repulsion.
 These terms will be denoted $K^{flow}$ and $K^{int}$ respectively.
-\begin{equation} \label{eq:gaussian_integral_dt}
+\begin{equation} \label{eq:gaussian_integral_dt_k}
   \frac{d}{dt}(A^{-1})_{ij} = K^{flow}_{ij} + K^{int}_{ij}
 \end{equation}
 Collecting and expanding terms where possible gives these forms of the $K$ terms
@@ -226,7 +227,8 @@ which, although piecewise, is a smooth and well behaved function.
 
 \subsection{The Differential Equation System}
 
-The results of the previous analyses culminate in the differential equation set
+When these $K$ matrices are summed (\ref{eq:gaussian_integral_dt_k}) to form the right hand side (RHS) of the differential equations and compared to LHS derived above (\ref{eq:dainvdt}), the non-zero elements finally yield a system of differential equations which govern the dynamics of these Gaussian beam parameters.
+
 \begin{subequations} \label{eq:ag_original}
 \begin{gather}
   \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
