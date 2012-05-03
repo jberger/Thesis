@@ -208,13 +208,22 @@ The parameter $\xi$ is the ellipticity parameter, defined as
 \begin{equation}
   \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}}
 \end{equation}
-Note that the original paper of Michalik and Sipe contained an error which incorrectly defined $\xi$; this was corrected in an erratum\cite{michalik_erratum:_2008}.
+Note that the original paper of Michalik and Sipe contained an error which incorrectly defined $\xi$; this was corrected in an erratum \cite{michalik_erratum:_2008}.
 The family of $L$ functions are
 \begin{gather}
   L_{\smallT}(\xi) = \frac{3}{2} \left( L(\xi) + \frac{\xi^2 L(\xi) - \xi}{ 1 - \xi^2 } \right) \\
   L_{z}(\xi) = \frac{ 3 \xi^2 }{ \xi^2 - 1} \left( \xi L(\xi) - 1 \right) \\
   L(\xi) = \frac{1}{2} \int_0^{\pi} \frac{1}{1+\xi\sin(\theta)} d\theta
 \end{gather}
+The integral function $L(\xi)$ can be evaluated to the piecewise function
+\begin{equation}
+  L(\xi) = 
+  \begin{cases}
+    \frac{ \arcsin \sqrt{1-\xi^2} }{ \sqrt{1-\xi^2} } & 0 \le \xi \le 1 \\
+    \frac{ \ln\left( \xi + \sqrt{\xi^2 - 1} \right) }{ \sqrt{\xi^2 - 1} } & \xi \ge 1
+  \end{cases}
+\end{equation}
+which, although piecewise, is a smooth and well behaved function.
 
 \subsection{The Differential Equation System}
 
@@ -226,11 +235,6 @@ The results of the previous analyses culminate in the differential equation set
     + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi)\\
   \frac{d\eta_{\alpha}}{dt} = - \frac{2 \gamma_{\alpha} \eta_{\alpha}}{m \sigma_{\alpha}}
 \end{gather}
-\end{subequations}
-which depends on the ellipticity parameter
-\begin{equation}
-  \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}}
-\end{equation}
 
 \subsection{Implications of Liouville's Theorem}
 
