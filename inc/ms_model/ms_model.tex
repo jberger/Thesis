@@ -181,6 +181,40 @@ Obviously the $K^{flow}$ term is far easier to evaluate
     \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) & 0
   \end{pmatrix}
 \end{equation}
+These analyses will be referred to while deriving the influence of external forces.
+%TODO internal reference
+
+The $K^{force}$ integrals, related to the internal force of the pulse's Coulombic repulsion, are far more complicated to evaluate.
+For more information about the derivation, see \cite{michalik_analytic_2006}.
+The final matrices are
+\begin{equation}
+  K^{force} = 
+  \begin{pmatrix}
+    k^{force}_{\smallT} & 0 & 0 \\
+    0 & k^{force}_{\smallT} & 0 \\
+    0 & 0 & k^{force}_{z}
+  \end{pmatrix}
+\end{equation}
+where
+\begin{equation}
+  k^{force}_{\alpha} = 
+  \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{2\pi^{1/2}\sigma_{\alpha}^{1/2}} L_{\alpha}(\xi)
+  \begin{pmatrix}
+    0 & 1 \\
+    1 & \dfrac{2 \gamma_{\alpha}}{\sigma_{\alpha}}
+  \end{pmatrix}
+\end{equation}
+The parameter $\xi$ is the ellipticity parameter, defined as
+\begin{equation}
+  \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}}
+\end{equation}
+Note that the original paper of Michalik and Sipe contained an error which incorrectly defined $\xi$; this was corrected in an erratum\cite{michalik_erratum:_2008}.
+The family of $L$ functions are
+\begin{gather}
+  L_{\smallT}(\xi) = \frac{3}{2} \left( L(\xi) + \frac{\xi^2 L(\xi) - \xi}{ 1 - \xi^2 } \right) \\
+  L_{z}(\xi) = \frac{ 3 \xi^2 }{ \xi^2 - 1} \left( \xi L(\xi) - 1 \right) \\
+  L(\xi) = \frac{1}{2} \int_0^{\pi} \frac{1}{1+\xi\sin(\theta)} d\theta
+\end{gather}
 
 \subsection{The Differential Equation System}
 
@@ -214,7 +248,7 @@ Using \ref{eq:ag_original} it is easy to show that
 This analysis shows that the Analytic Gaussian model explicitly obeys the Liouville Theorem.
 
 Not only is this an interesting result, but it can be both instructive and computationally useful.
-We can rewrite \ref{eq:define_big_gamma} as $\eta_{\alpha} = \Gamma_{\alpha}^2 / \sigma_{\alpha}$ and substitute into \ref{eq:ag_original}.
+By rewriting \ref{eq:define_big_gamma} as $\eta_{\alpha} = \Gamma_{\alpha}^2 / \sigma_{\alpha}$ and substituting into \ref{eq:ag_original}.
 \begin{subequations} \label{eq:ag_big_gamma}
 \begin{gather}
   \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
@@ -222,7 +256,7 @@ We can rewrite \ref{eq:define_big_gamma} as $\eta_{\alpha} = \Gamma_{\alpha}^2 /
     + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi)
 \end{gather}
 \end{subequations}
-These four equations now contain all of the information previously contained in six, making this much less computationally intensive.
+these four equations now contain all of the information previously contained in six. Having fewer equations, and fewer mathematical operations, makes this set of equations much less computationally intensive.
 Further, now one can see that these $\Gamma$ constants can be thought of as some minimum/intrinsic action of the pulse. 
 This will become more apparent when in future sections
 %TODO include internal reference
