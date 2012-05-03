@@ -1,17 +1,33 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-\section{Extension to Include External Forces} \label{sec:external_forces}
+\subsection{Extension to Include External Forces} \label{sec:external_forces}
 
-General form of (possibly multiple) external force ($\vec{F}_{ext}$) contributions
+\ref{eq:potential_integral} is the entry point for the internal Coulombing repulsion force; since both potentials and integrals are linear, one may add additional potentials so that it becomes
 \begin{equation}
-  \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij}
+  \begin{split}
+    \Phi(\vec{r};t) \rightarrow & \int d\vecprime{r} \left( V(\vec{r} - \vecprime{r}) + \sum V_{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
+    = & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum \int d\vecprime{r} V_{ext}(\vec{r}) n(\vecprime{r}; t) \\
+    = & \Phi(\vec{r};t) + \Phi_{ext}(\vec{r};t)
+  \end{split}
 \end{equation}
-again in the basis defined in \ref{eq:coordinate_vector} is given by
+This form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^{force}$ (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
+\begin{equation}
+  \begin{split}
+    K^{force}_{ij} \rightarrow & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \Phi_{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
+    \equiv & K^{int}_{ij} + \sum K^{ext}_{ij}
+  \end{split}
+\end{equation}
+where $K^{int}$ is simply the old $K^{force}$. Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force is given by
 \begin{equation}
   K^{ext}_{ij} = \frac{1}{N} \iint u_i u_j \left [ \frac{\partial}{\partial \vec{p}} f(\vec{r}, \vec{p}; t) \right ] \cdot \vec{F}_{ext}\;d^{3}x\,d^{3}p
 \end{equation}
+Finally, the general form of \ref{eq:gaussian_integral_dt_k} for (possibly multiple) external force ($\vec{F}_{ext}$) contributions is now
+\begin{equation}
+  \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij}
+\end{equation}
 
-For example, if $\vec{F}$ is a static field given by $\frac{qV}{d}\hat{z}$ then $K^{ext} = \hat{0}$. However, if the external force is a lensing field given by $\vec{F} = -M\cdot(x\hat{x}+y\hat{y})$ then 
+\subsection{Specific Forms of External Forces}
+If $\vec{F}$ is a static field given by $\frac{qV}{d}\hat{z}$ then $K^{ext} = \hat{0}$. However, if the external force is a lensing field given by $\vec{F} = -M\cdot(x\hat{x}+y\hat{y})$ then 
 \begin{equation}
   K^{ext} = M \cdot 
   \begin{pmatrix}

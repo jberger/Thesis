@@ -152,20 +152,19 @@ these components, when viewed in the context of \ref{eq:formal_evolution}, form 
 \subsection{Generating the Differential Equations}
 
 Inserting \ref{eq:formal_evolution} into \ref{eq:gaussian_integral_dt} yields two integral terms, one related to the propagation of a non-charged Gaussian beam, the other adds the influence of the internal force due to Coulomb repulsion.
-These terms will be denoted $K^{flow}$ and $K^{int}$ respectively.
+These terms will be denoted $K^{flow}$ and $K^{force}$ respectively.
 \begin{equation} \label{eq:gaussian_integral_dt_k}
   \frac{d}{dt}(A^{-1})_{ij} = K^{flow}_{ij} + K^{int}_{ij}
 \end{equation}
 Collecting and expanding terms where possible gives these forms of the $K$ terms
 \begin{gather}
   K^{flow}_{ij} \equiv -\frac{1}{N} \int u_i u_j \frac{\vec{p}}{m} \frac{\partial f}{\partial \vec{r}} d\vec{r} d\vec{p} \\
-  K^{int}_{ij} \equiv \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial \Phi(\vec{r};t)}{\partial \vec{r}} d\vec{r} d\vec{p} \\
+  \label{eq:Kforce}
+  K^{force}_{ij} \equiv \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial \Phi(\vec{r};t)}{\partial \vec{r}} d\vec{r} d\vec{p} \\
   n(\vec{r};t) \equiv \int d\vec{p} f(\vec{r},\vec{p};t) 
     = \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right) \\
-  \begin{split}
-    \Phi(\vec{r};t) \equiv & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) \\
-    = & \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \int d\vecprime{r} V(\vec{r} - \vecprime{r}) \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right)
-  \end{split}
+    \label{eq:potential_integral}
+    \Phi(\vec{r};t) \equiv \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t)
 \end{gather}
 Obviously the $K^{flow}$ term is far easier to evaluate
 \begin{equation}
@@ -182,7 +181,6 @@ Obviously the $K^{flow}$ term is far easier to evaluate
     \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) & 0
   \end{pmatrix}
 \end{equation}
-These analyses will be referred to while deriving the influence of external forces (Section \ref{sec:external_forces}).
 
 The $K^{force}$ integrals, related to the internal force of the pulse's Coulombic repulsion, are far more complicated to evaluate.
 For more information about the derivation, see \cite{michalik_analytic_2006}.
