@@ -1,3 +1,56 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
 \subsection{Determining Appropriate Initial Conditions} \label{sec:initial_conditions}
+For a DTEM or UED apparatus, where the electron pulse is produced in a laser-driven photo-electron gun, the implementation of the AG model of Michalik and Sipe \cite{michalik_analytic_2006} requires knowledge of the initial ($ t = 0 $) bunch parameters immediately after generation at the photocathode surface inside the acceleration region of the gun.
+For the purposes of this paper, we will make a simple approximation to the behavior of the gun in order to provide generic initial conditions for the electron pulse.
+
+For single-photon photoemission process with a spatially cylindrically symmetric incident Gaussian laser beam with Gaussian temporal irradiance profile 
+\begin{equation}\label{eq:laser_form}
+I ( x , y , t ) = I_{0} \exp \left ( - \frac{ ( x^{2} +y^{2} ) }{ w^{2} } - \frac{ t^{ 2 } }{ \tau^{ 2 } } \right ) \text{ ,}
+\end{equation}
+where $w$ is the half-width 1/e maximum (HW1/eM) of the spatial irradiance distribution, $\tau$ is the HW1/e pulse duration and $I_{0}$ is the peak pulse irradiance, the electron pulse's initial spatial variance is
+\begin{equation}
+\sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \text{ .}
+\end{equation}
+For the longitudinal direction, and in the limit where dispersion effects in the acceleration region of the electron gun can be neglected, we may write
+\begin{equation} \label{eq:initial_sigma_z}
+\sigma_{ z } ( 0 ) = ( \Delta z)^{2} = \frac{ ( v_{{ \scriptscriptstyle 0}} \tau )^{2} }{ 2 } \text{ ,}
+\end{equation}
+with the velocity of the pulse in the lab frame $v_{{ \scriptscriptstyle 0}} = \sqrt{ 2 e V / m_{e} d } $, where $ V $ and $ d $ are the potential and cathode-anode separation of the gun's DC acceleration region respectively.
+For spatially-uniform photoemission from a planar photocathode, we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial spatial momentum chirp in the electron bunch. Immediately after photo-generation, however, it is strictly inaccurate to say that $ \gamma_{ z } ( 0 ) = 0 $.
+This is because the excess photoemission energy $ \Delta E = \hbar \omega - \Phi $, associated with the electron emission from a material with work function $\Phi$ using photons of energy $ \hbar \omega $ (which gives the maximum initial velocity of an electron, $ v_{max} = \sqrt{ 2 \Delta E/m_{e} } $), can produce an initial momentum chirp.
+Nonetheless, the initial non-zero nature of $ \gamma_{z} $ is quickly dominated by the evolution of the pulse, so this approximation will suffice in the region far from the gun.
+
+The single-photon photoemission analysis of Jensen \textit{et al.}\cite{jensen_theoretical_2006} indicates that for a metallic photocathode the transverse momentum variance at $ t = 0 $ is given by
+\begin{equation} \label{eq:jensen_eta}
+( \Delta p_{x} )^{2} = ( \Delta p_{y} )^{2} = \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} \epsilon_{\smallF} ( \hbar \omega - \Phi ) } { \hbar \omega + \epsilon_{\smallF} } \; \text{,}
+\end{equation}
+in the limit where the Fermi energy $ \epsilon_{\smallF} $ of the metal photocathode and excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
+From a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
+This implies that the uncertainty in the longitudinal direction is half that of the transverse directions; that is to say
+\begin{equation}
+( \Delta p_{ z } )^{2} = \left ( \frac{\Delta p_{ x , y }}{ 2 } \right )^{2} \text{,}
+\end{equation}
+so that
+\begin{equation}
+\eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
+\end{equation}
+
+These initial conditions at $t=0$ for an incident Gaussian laser pulse of the form given in \ref{eq:laser_form}, will be used for the remainder of this paper.
+\begin{subequations} \label{eq:summary}
+\begin{gather}
+\sigma_{ \smallT } ( 0 ) = \frac{ w^{ 2 } }{ 2 } \\
+\sigma_{ z } ( 0 ) = \frac{ ( v_{{ \scriptscriptstyle 0}} \tau )^{ 2 } }{ 2 } \\
+%alternative formulation + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
+\gamma_{ \smallT } ( 0 ) = 0 \\
+\gamma_{ z } ( 0 ) = 0 \\
+\eta_{ \smallT } ( 0 ) = \frac{ m_{e} \epsilon_{ F } ( \hbar \omega - \Phi ) }{ 3 ( \hbar \omega + \epsilon_{ \smallF } ) } \\
+\eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
+\end{gather}
+\end{subequations}
+
+We recognize that these initial conditions for an electron pulse generated by a laser-driven DC gun are idealized in that they neglect several important effects; in particular, the interplay of dispersive ($ \eta_{i}(0) \neq 0 $) and space-charge effects in the acceleration region of the photoelectron gun and transverse and longitudinal effects due to the divergence of the DC field in the vicinity of the gun anode.\cite{berger_dc_2009,togawa_ceb6_2007}
+Such effects and the limits of the validity of \ref{eq:initial_sigma_z}, within the context of the AG model, will be presented elsewhere as they require \textit{a priori} this presented extension of the AG model.
+However, \ref{eq:summary} also represent a defined set of initial conditions that allows the effect of electron optics (i.e., magnetic lenses and RF cavities) on electron pulse propagation to be more readily understood.
+Moreover, they reflect the fact that the majority of DC photoelectron guns are driven by laser pulses with spatial and temporal profiles that are close to Gaussian.\cite{williamson_clocking_1997,sciaini_electronic_2009}
+Only for specialized cases, such as the generation of uniform ellipsoid electron bunch shapes, is spatial and temporal manipulation of the incident laser pulse considered.\cite{luiten_how_2004,li_generating_2008}
