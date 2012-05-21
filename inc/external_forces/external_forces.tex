@@ -2,18 +2,6 @@
 
 \subsection{Extension to Include External Forces} \label{sec:external_forces}
 
-\subsubsection{Validity and Limitations}
-
-The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
-As a result, the extension reflects a first-order (i.e., linear force) analysis of the effects of electron optics upon electron pulse propagation.
-Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes,\cite{michalik_analytic_2006,michalik_evolution_2009} including the uniform ellipsoid.\cite{luiten_how_2004}
-This successful benchmarking is due primarily to the versatility of the AG model which results from its use of transverse and longitudinal pulse position and momentum variances.
-Consequently, the AG approach is applicable to both the single electron per pulse limit,\cite{lobastov_four-dimensional_2005} where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate.\cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}
-It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
-Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
-
-Further, these analyses are performed in the non-relativistic limit, which is a reasonable approximation for the typical 20-200keV electron energies employed in UED and electron microscopy.  Extension to include relativistic effects is conceptually straightforward using standard transformations between the laboratory and electron pulse reference frames.
-
 \subsubsection{Mathematical Formulation of External Force Contribution}
 \ref{eq:potential_integral} is the entry point for the internal Coulombic repulsion force; since both potentials and integrals are linear, one may add additional potentials so that it becomes
 \begin{equation}
@@ -54,6 +42,9 @@ However, in the lab frame, where  $ \Delta E = p \Delta p / m_{e} $, there is an
 
 \subsubsection{Linear External Forces}
 
+%External forces that vary with position in the pulse reference frame (i.e., are not constant) act to change the electron pulse propagation dynamics, most often by affecting $\gamma_{\alpha}$ --- the spatial dependence of the local relative mean electron momenta.
+%Below, we consider two examples of electron optical elements that are being used, or are under consideration, for controlling and manipulating the space-time dynamics of electron pulses in DTEM and UED instrumentation; namely, magnetic lenses for spatial focusing and RF pulse compression cavities.
+
 For the case of a perfect lens, or in the longitudinal direction a perfect RF compression element, with a parabolic potential, the external force is linear with distance from the center of the electron pulse: 
 \begin{equation} \label{eq:linear_force}
 \vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \text{ .}
@@ -82,3 +73,15 @@ M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha} \text{.}
 \end{pmatrix} \text{ .}
 \end{equation}
 which by \ref{eq:dainvdt} yields an additional term $M_{\alpha} \sigma_{\alpha}$ which is added to the original $\dfrac{d \gamma_{\alpha}}{d t}$ equation.
+
+\subsubsection{Validity and Limitations}
+
+The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
+As a result, the extension reflects a first-order (i.e., linear force) analysis of the effects of electron optics upon electron pulse propagation.
+Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes,\cite{michalik_analytic_2006,michalik_evolution_2009} including the uniform ellipsoid.\cite{luiten_how_2004}
+This successful benchmarking is due primarily to the versatility of the AG model which results from its use of transverse and longitudinal pulse position and momentum variances.
+Consequently, the AG approach is applicable to both the single electron per pulse limit,\cite{lobastov_four-dimensional_2005} where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate.\cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}
+It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
+Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
+
+Further, these analyses are performed in the non-relativistic limit, which is a reasonable approximation for the typical 20-200keV electron energies employed in UED and electron microscopy.  Extension to include relativistic effects is conceptually straightforward using standard transformations between the laboratory and electron pulse reference frames.
