@@ -2,6 +2,17 @@
 
 \subsection{Extension to Include External Forces} \label{sec:external_forces}
 
+\subsubsection{Validity and Limitations}
+
+The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
+As a result, the extension reflects a first-order (i.e., linear force) analysis of the effects of electron optics upon electron pulse propagation.
+Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes,\cite{michalik_analytic_2006,michalik_evolution_2009} including the uniform ellipsoid.\cite{luiten_how_2004}
+This successful benchmarking is due primarily to the versatility of the AG model which results from its use of transverse and longitudinal pulse position and momentum variances.
+Consequently, the AG approach is applicable to both the single electron per pulse limit,\cite{lobastov_four-dimensional_2005} where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate.\cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}
+It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
+Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
+
+\subsubsection{Mathematical Formulation of External Force Contribution}
 \ref{eq:potential_integral} is the entry point for the internal Coulombic repulsion force; since both potentials and integrals are linear, one may add additional potentials so that it becomes
 \begin{equation}
   \begin{split}
@@ -26,7 +37,7 @@ Finally, the general form of \ref{eq:gaussian_integral_dt_k} for (possibly multi
   \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij}
 \end{equation}
 
-\subsection{Specific Forms of External Forces}
+\subsubsection{Specific Forms of External Forces}
 If $\vec{F}$ is a static field given by $\frac{qV}{d}\hat{z}$ then $K^{ext} = \hat{0}$. However, if the external force is a lensing field given by $\vec{F} = -M\cdot(x\hat{x}+y\hat{y})$ then 
 \begin{equation}
   K^{ext} = M \cdot 
