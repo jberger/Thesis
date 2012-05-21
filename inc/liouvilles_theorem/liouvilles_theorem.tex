@@ -1,0 +1,31 @@
+%This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+\subsection{Implications of Liouville's Theorem}
+
+One of the most well known theorems in physics (and mathematics) is Liouville's Theorem.
+This theorem can be summarized succinctly as a `the total phase space of a system is conserved.'
+%TODO find a good reference for this
+
+To evaluate the effect of this theorem on these equations, consider the time derivative of the product $\sigma_{\alpha} \eta_{\alpha}$.
+Using \ref{eq:ag_original} it is easy to show that
+\begin{gather}
+  \frac{d}{dt} (\sigma_{\alpha} \eta_{\alpha}) = \sigma_{\alpha} \frac{d \eta_{\alpha}}{dt} + \eta_{\alpha} \frac{d \sigma_{\alpha}}{dt} = 0\\
+  \label{eq:define_big_gamma}
+  \therefore \sigma_{\alpha} \eta_{\alpha} \equiv \Gamma_{\alpha}^2 = \text{Constant}
+\end{gather}
+This analysis shows that the Analytic Gaussian model explicitly obeys the Liouville Theorem.
+
+Not only is this an interesting result, but it can be both instructive and computationally useful.
+By rewriting \ref{eq:define_big_gamma} as $\eta_{\alpha} = \Gamma_{\alpha}^2 / \sigma_{\alpha}$ and substituting into \ref{eq:ag_original}.
+\begin{subequations} \label{eq:ag_big_gamma}
+\begin{gather}
+  \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
+  \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2 + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi)
+\end{gather}
+\end{subequations}
+these four equations now contain all of the information previously contained in six. Having fewer equations, and fewer mathematical operations, makes this set of equations much less computationally intensive.
+Further, now one can see that these $\Gamma$ constants can be thought of as some minimum/intrinsic action of the pulse. 
+This will become more apparent when in future sections
+%TODO include internal reference
+it is shown that at the focal point of a lens, $\gamma_{\alpha}$ goes through zero.
