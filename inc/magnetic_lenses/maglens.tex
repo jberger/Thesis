@@ -90,8 +90,17 @@ For the UEM, I chose a bore diameter $D=2R=$0.1in and a pole-piece gap $S$=0.5in
 By their table 8.2a this results in $\beta=0.0146$. Then, to create a focal length of 4in ($f/R=16$) table 8.13 gives a value for $k^2 \approx 0.06$.
 Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx356$A.
 
-To further ease the burden on the lenses, I actually created two, one placed to either side of the RF cavity.
-As each has 100 turns, a current of only 2A is needed to drive the two lenses in series.
-The oxygen-free copper wire coils remain cool to the touch under these operating conditions.
+To manage the divergence created by an RF cavity, two lenses are employed (one before and one after the cavity), forming a lens system of a similar effective focal length.
+For the purposes of design, one can make a reasonable approximation that the two lenses together may together provide the total number of needed amp-turns.
+As each has 100 turns, a current of only about 2A is needed to drive the two lenses in series.
 
+\subsection{Thermal Properties}
+
+%TODO need reference for equation and \alpha_{Cu}
+Since the lenses have no cooling devices, it was prudent to characterize the thermal response to a moderate current load.
+Resistance of metals changes as a function of temperature by $ R = R_0 [ 1 + \alpha ( T - T_0 ) ] $, where $\alpha$ is a material contant; for copper, $\alpha = 3.9 * 10^{-3} \text{K}^{-1}$. 
+One can calculate the temperature increase of the system by monitoring the change in resistance.
+Maintaining a constant current of 4A through the lens, the voltage drop increased from 1.22V ($R_0 = 0.305\Omega$) to 1.25V ($R=0.3125\Omega$) as the lens warmed.
+The resultant temperature increase is only $T - T_0 = 2\text{K}$.
+This result is easily confirmed manually; the oxygen-free copper wire coils remain cool to the touch under these operating conditions.
 
