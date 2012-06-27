@@ -105,7 +105,7 @@ We connect $z^{\prime}$ to $t$ through $ v_{{ \scriptscriptstyle 0}} $; the kine
 
 In the longitudinal ($ z $) direction, a resonant radio-frequency (RF) cavity can be used in a UEM column or UED experiment \cite{oudheusden_electron_2007,fill_sub-fs_2006} to act as a pulse compression or `temporal focusing' element.
 Although there are many possible resonant cavity structures,\cite{oudheusden_electron_2007,humphries_principles_1986} for simplicity, this analysis will consider only the evacuated cylindrical (or `pillbox') $\text{TM}_{010}$ cavity for which the electrons propagate down the axis.\cite{fill_sub-fs_2006,humphries_principles_1986}
-The known mathematical forms of the electric and magnetic components of this resonant mode together with a super-Gaussian envelope function (\Eq \eqref{eq:reg_of_influence}) allow the three main effects of a pill-box RF cavity element on the electron pulse to be described within the approximation of the linear force extension to the AG model: the primary action of the pulse compression (or acceleration and expansion dependent upon the relative RF phase), and the transverse lens effects due to the magnetic component of the $\text{TM}_{010}$ resonance and the electric RF cavity fringe fields at its entrance and exit apertures.\cite{kim_rf_1989}
+The known mathematical forms of the electric and magnetic components of this resonant mode together with a super-Gaussian envelope function (\ref{eq:reg_of_influence}) allow the three main effects of a pill-box RF cavity element on the electron pulse to be described within the approximation of the linear force extension to the AG model: the primary action of the pulse compression (or acceleration and expansion dependent upon the relative RF phase), and the transverse lens effects due to the magnetic component of the $\text{TM}_{010}$ resonance and the electric RF cavity fringe fields at its entrance and exit apertures.\cite{kim_rf_1989}
 
 The spatial dependence of the axial RF electric field experienced by the electron pulse in a TM$_{010}$ cavity of radius $a$ may be written as
 \begin{equation} \label{eq:RF_Efield}
@@ -119,24 +119,24 @@ For the $\text{TM}_{010}$ oscillation mode, the RF frequency is given by
 \end{equation}
 where $c$ is the speed of light in a vacuum and $ k = 2.405 $ is the first zero of the $\operatorname{ J_{0} }$ Bessel function.
 
-For the usual case of a spatially compact electron pulse with respect to the dimension of the RF cavity (i.e., $ \Omega z \ll v_{{ \scriptscriptstyle 0}} $ and $ \sqrt{\sigma_{\smallT}} \ll a $), \Eq \eqref{eq:RF_Efield} can be rewritten as
+For the usual case of a spatially compact electron pulse with respect to the dimension of the RF cavity (i.e., $ \Omega z \ll v_{{ \scriptscriptstyle 0}} $ and $ \sqrt{\sigma_{\smallT}} \ll a $), \ref{eq:RF_Efield} can be rewritten as
 \begin{equation} \label{eq:RF_Efield_approx}
   E ( r , z , z^{\prime} ) = E_{0} \biggl [ \sin \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) - \frac{ \Omega z }{ v_{{ \scriptscriptstyle 0}} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) \biggr ] \text{,}
 \end{equation}
-which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \Eq \eqref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device.
-The second term then gives the desired form (see \Eq \eqref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
+which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device.
+The second term then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
 \begin{equation} \label{eq:RF_Force_z}
   \boldsymbol{F}_{ z , RF } = - \left [ \frac{ e \Omega E_{0} }{ v_{{ \scriptscriptstyle 0}} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
 \end{equation}
 
 By considering the impulse exerted by the RF cavity field on the electrons in the pulse, it is straightforward to show that pulse compression (when $\phi = 0$) is maximized for $ \Omega d / (2 v_{{ \scriptscriptstyle 0}} ) = \pi /2 $; that is, the time of flight of the electron pulse through the RF cavity of length $ d $ is equal to half the RF period.
 Such a calculation assumes that the pulse velocity $v_{{ \scriptscriptstyle 0}}$ is constant; so that, the condition that $ \phi = 0 $ when the pulse is at the center of the RF cavity (i.e., when the pulse is at $ z^{\prime} = 0 $) is readily met.
-As suggested by the acceleration term in \Eq \eqref{eq:RF_Efield_approx}, this is only a good approximation if the RF field amplitude $E_{0}$ is sufficiently small to not affect the velocity of the peak of the pulse as it propagates through the cavity.
+As suggested by the acceleration term in \ref{eq:RF_Efield_approx}, this is only a good approximation if the RF field amplitude $E_{0}$ is sufficiently small to not affect the velocity of the peak of the pulse as it propagates through the cavity.
 As a result, in practice, the phase $\phi$ of the RF field is adjusted to optimize the performance of the cavity.
 
 The two main effects contributing to the transverse lens of a $\text{TM}_{010}$-mode RF cavity, its magnetic field component and electric fringe field aperture effects, may also be included within the linear force approximation.
 The azimuthal magnetic component of the resonant mode oscillates 90$^{\circ}$ out of phase with the electric component and with a $\operatorname{ J_{1} }$ Bessel radial form; i.e., $ \operatorname{ J_{1} }( k r / a ) \sim k r / a $ for small $r$.
-Symmetry and Gauss' Law dictate that in the vicinity of the axial center of the entrance and exit apertures of the RF cavity there exists a radial component of the oscillating electric field determined by $ E_{r} = -\left ( r / 2 \right ) \left ( \partial E_{z} / \partial z \right )_{r=0} $,\cite{kim_rf_1989} where the form of the axial electric field for $\text{TM}_{010}$ oscillation (\Eq \eqref{eq:RF_Efield}) implies that, in the context of this analysis, its axial gradient is solely dependent upon the envelope function for the RF cavity (\Eq \eqref{eq:reg_of_influence}).
+Symmetry and Gauss' Law dictate that in the vicinity of the axial center of the entrance and exit apertures of the RF cavity there exists a radial component of the oscillating electric field determined by $ E_{r} = -\left ( r / 2 \right ) \left ( \partial E_{z} / \partial z \right )_{r=0} $,\cite{kim_rf_1989} where the form of the axial electric field for $\text{TM}_{010}$ oscillation (\ref{eq:RF_Efield}) implies that, in the context of this analysis, its axial gradient is solely dependent upon the envelope function for the RF cavity (\ref{eq:reg_of_influence}).
 In practice, of course, the exact form of $E_{r}(z)$ is strongly tied to the size and shape of the RF cavity apertures, as illustrated by $1 \frac{1}{2}$-cell RF photo-gun designs.\cite{mcdonald_design_1988}
 For the case of an evacuated cavity, these two contributions result in a net force,
 \begin{equation} \label{eq:RF_Force_r}
@@ -144,7 +144,7 @@ For the case of an evacuated cavity, these two contributions result in a net for
     \frac{ v_{{ \scriptscriptstyle 0}} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right )
    \right ] r \hat{\operatorname{ \boldsymbol{r} }} \text{.}
 \end{equation}
-In obtaining \Eq \eqref{eq:RF_Force_r}, which is also of the form for use in \Eq \eqref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \Eq \eqref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
+In obtaining \ref{eq:RF_Force_r}, which is also of the form for use in \ref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \ref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
 For the examples shown below under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{{\scriptscriptstyle 0}} / \Omega $,\cite{kim_rf_1989} even though its magnitude is maximized for $\phi = 0$.
 Other effects, such as magnetic fringe field aperture effects, could also be included, but are significantly weaker.
 
