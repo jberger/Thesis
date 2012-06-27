@@ -29,6 +29,8 @@
 \providecommand{\smallF}[0]{ { \scriptscriptstyle F } }
 %\providecommand{\smallZ}{\ensuremath{{\scriptscriptstyle Z}}}
 
+\providecommand{\abbr}[2]{\item[#1\hfill] #2}
+
 %% Special handling for using biblatex vs bibtex ==
 \newboolean{usebiblatex}
 \setboolean{usebiblatex}{false}
@@ -84,12 +86,17 @@ The preface.
    \setlength{\labelsep}{.5in}
    \setlength{\rightmargin}{\leftmargin}}
 
-  \item[AG\hfill] Analytic Gaussian (Model)
-  \item[DTEM\hfill] Dynamic Transmission Electron Microscopy
-  \item[LHS\hfill] Left Hand Side
-  \item[RHS\hfill] Right Hand Side
-  \item[UEM\hfill] Ultrafast Electron Microscopy
-  \item[UIC\hfill] University of Illinois at Chicago
+  \abbr{AG}{Analytic Gaussian (Model)}
+  \abbr{DTEM}{Dynamic Transmission Electron Microscopy}
+  \abbr{FWHM}{Full-Width Half Maximum}
+  \abbr{HW1/eM}{Half-Width 1/e Maximum}
+  \abbr{LHS}{Left Hand Side}
+  \abbr{RHS}{Right Hand Side}
+  \abbr{RF}{Radio Frequency}
+  \abbr{TM$_{010}$}{Tranvserse Magnetic 010 Mode}
+  \abbr{UED}{Ultrafast Electron Diffraction}
+  \abbr{UEM}{Ultrafast Electron Microscope}
+  \abbr{UIC}{University of Illinois at Chicago}
 \end{list}
  
 \summary
