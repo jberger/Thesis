@@ -1,8 +1,8 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-\subsection{Formal Extension to Include Generic External Forces} \label{sec:external_forces}
+\section{Formal Extension to Include Generic External Forces} \label{sec:external_forces}
 
-\subsubsection{Mathematical Formulation of External Force Contribution}
+\subsection{Mathematical Formulation of External Force Contribution}
 \ref{eq:potential_integral} is the entry point for the internal Coulombic repulsion force; since both potentials and integrals are linear, one may add additional potentials so that it becomes
 \begin{equation}
   \begin{split}
@@ -27,7 +27,7 @@ Finally, the general form of \ref{eq:gaussian_integral_dt_k} for (possibly multi
   \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij}
 \end{equation}
 
-\subsubsection{Constant External Forces}
+\subsection{Constant External Forces}
 
 For constant static forces having no dependence in $ x $, $ y $, $ z $, or $ t $, one can readily show that there is no effect on the pulse propagation parameters $ \sigma_{ \alpha } $, $ \eta_{ \alpha } $, and $ \gamma_{ \alpha } $.
 For example, consider a field consider a field $ \vec{E} = -E \hat{z} $ such that electrons are accelerated in the positive $ z $ direction by $ \vec{F}_{ext} = qE \hat{z} = q ( V / d ) \hat{z} $, so that from \ref{eq:Kint} we have
@@ -40,7 +40,7 @@ but it is clear that no function of this form multiplying $ f $, which is a Gaus
 Of course, this is only true in the pulse frame, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m_{e} $ is unchanged.
 However, in the lab frame, where  $ \Delta E = p \Delta p / m_{e} $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
 
-\subsubsection{Linear External Forces}
+\subsection{Linear External Forces}
 
 %External forces that vary with position in the pulse reference frame (i.e., are not constant) act to change the electron pulse propagation dynamics, most often by affecting $\gamma_{\alpha}$ --- the spatial dependence of the local relative mean electron momenta.
 %Below, we consider two examples of electron optical elements that are being used, or are under consideration, for controlling and manipulating the space-time dynamics of electron pulses in DTEM and UED instrumentation; namely, magnetic lenses for spatial focusing and RF pulse compression cavities.
@@ -74,7 +74,7 @@ M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha} \text{.}
 \end{equation}
 which by \ref{eq:dainvdt} yields an additional term $M_{\alpha} \sigma_{\alpha}$ which is added to the original $\dfrac{d \gamma_{\alpha}}{d t}$ equation.
 
-\subsubsection{Validity and Limitations}
+\subsection{Validity and Limitations}
 
 The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
 As a result, the extension reflects a first-order (i.e., linear force) analysis of the effects of electron optics upon electron pulse propagation.
@@ -87,9 +87,9 @@ Verification of the validity (and determination of the limits) of the extended A
 Further, these analyses are performed in the non-relativistic limit, which is a reasonable approximation for the typical 20-200keV electron energies employed in UED and electron microscopy.
 Extension to include relativistic effects is conceptually straightforward using standard transformations between the laboratory and electron pulse reference frames.
 
-\subsection{Practical Extension to Include Magnetic Lenses and RF Cavities}
+\section{Practical Extension to Include Magnetic Lenses and RF Cavities}
 
-\subsubsection{Region of Influence}
+\subsection{Region of Influence}
 
 To specify the physical region of influence of the lenses, it is convenient to redefine $M_{i}$ to include a super-Gaussian envelope in $z^{\prime}$, the position of the peak of the pulse in the lab frame;
 \begin{equation} \label{eq:reg_of_influence}
@@ -99,13 +99,13 @@ where $z_{lens}^{\prime}$ is the position of the center of the lens, $L_{lens}$ 
 The order parameter defines the ``sharpness'' of the edge of the region of influence with integer values ranging from 1 (a simple Gaussian) through $\infty$ (a top-hat).
 We connect $z^{\prime}$ to $t$ through $ v_{{ \scriptscriptstyle 0}} $; the kinetic equations are simply defined for the position of the peak of the pulse.
 
-\subsubsection{Magnetic Lenses}
+\subsection{Magnetic Lenses}
 
 A magnetic lens may be modeled using one linear force contribution.
 Unfortunately, it is not practical to write an analytic form of the magnitude of this term; the field distribution is very complicated to describe\cite{montgomery_some_1961} and the ``lensing'' action is actually a compound force (first rotating the beam, then lensing).
 We have found that in practice, characterizing a specific magnetic lens ($M_{\smallT}(I)$ where $I$ is the current in the magnetic lens) is much easier than attempting to find a generic functional form.
 
-\subsubsection{RF Cavities}
+\subsection{RF Cavities}
 
 In the longitudinal ($ z $) direction, a resonant radio-frequency (RF) cavity can be used in a UEM column or UED experiment \cite{oudheusden_electron_2007,fill_sub-fs_2006} to act as a pulse compression or `temporal focusing' element.
 The model of the RF cavity is different from the magnetic lens in two distinct ways.
