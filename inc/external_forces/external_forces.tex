@@ -2,23 +2,44 @@
 
 \section{Formal Extension to Include Generic External Forces} \label{sec:external_forces}
 
+Besides a set of initial conditions, the Analytic Gaussian model presented by Michalik and Sipe (see Section \ref{sec:ms_model}) is only useful for modeling free-space propagation.
+This is because there is no allowance for external forces, such as those imparted by the ``optical'' elements of an electron microscope column.
+
 \subsection{Mathematical Formulation of External Force Contribution}
-\ref{eq:potential_integral} is the entry point for the internal Coulombic repulsion force; since both potentials and integrals are linear, one may add additional potentials so that it becomes
+
+While the free-space AG model does not contain any external forces, it does include an internal force.
+The Coulomb force is included to model the repulsion of the pulse's electrons from each other.
+Because this force is self-influencing, it is the major souce of complexity in the model; indeed without this term, a complete analytic solutions is possible, which is identically ``Gaussian'' optics.\cite{michalik_analytic_2006}
+
+The internal Coulombic repulsion force enters the model in \ref{eq:potential_integral}.
+Since both potentials and integrals are linear, one may add additional potentials so that it becomes
+\begin{equation}
+  V(\vec{r} - \vecprime{r}) \rightarrow V(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r})
+\end{equation}
+Following this new term through the derivation, we see that
 \begin{equation}
   \begin{split}
-    \Phi(\vec{r};t) \rightarrow & \int d\vecprime{r} \left( V(\vec{r} - \vecprime{r}) + \sum V_{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
-    = & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum \int d\vecprime{r} V_{ext}(\vec{r}) n(\vecprime{r}; t) \\
-    = & \Phi(\vec{r};t) + \Phi_{ext}(\vec{r};t)
+    \Phi(\vec{r};t) = & \int d\vecprime{r} \left( V(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
+    = & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum_{k} \int d\vecprime{r} V_{k}^{ext}(\vec{r}) n(\vecprime{r}; t) \\
+    \equiv & \Phi^{int}(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t)
   \end{split}
 \end{equation}
-This form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^{force}$ (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
+Therefore each external force contributes an additional term defined as
+\begin{equation}
+  \Phi^{ext}(\vec{r};t) \equiv \int d\vecprime{r} V^{ext}(\vec{r}) n(\vecprime{r}; t)
+\end{equation}
+These external terms are not self-influencing, and thus are not subject to the complexities of the internal Coulombic repulsion force. For clarity we now define $\Phi^{int}(\vec{r};t)$ as the old $\Phi(\vec{r};t)$, which results from the Coulomb force, while our new $K^{force}$ now includes these exteral terms.
+
+This form of $\Phi(\vec{r};t)$ can now be substituted into the definition of $K^{force}$ matrix (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
 \begin{equation}
   \begin{split}
-    K^{force}_{ij} \rightarrow & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \Phi_{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
-    \equiv & K^{int}_{ij} + \sum K^{ext}_{ij}
+    K^{force}_{ij} = & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
+    \equiv & K^{int}_{ij} + \sum_{k} (K_{k}^{ext})_{ij}
   \end{split}
 \end{equation}
-where $K^{int}$ is simply the old $K^{force}$. Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force is given by
+Like the potential integrals, we are left with an additional matrix for each external force. Again, for clarity, we now define $K^{int}$ as the $K$ matrix resulting from the internal Coulombic repulsion.
+
+Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force is given by
 \begin{equation} \label{eq:Kint}
   K^{ext}_{ij} = \frac{1}{N} \iint u_i u_j \left [ \frac{\partial}{\partial \vec{p}} f(\vec{r}, \vec{p}; t) \right ] \cdot \vec{F}_{ext}\;d^{3}x\,d^{3}p
 \end{equation}
