@@ -33,10 +33,11 @@
 
 %% Special handling for using biblatex vs bibtex ==
 \newboolean{usebiblatex}
-\setboolean{usebiblatex}{false}
+\setboolean{usebiblatex}{true}
 
 \ifthenelse{\boolean{usebiblatex}}{
   \usepackage{biblatex}
+  %\usepackage{biblatex-chicago}
   \addbibresource{bibliography.bib}
   \addbibresource{biblaser.bib}
 }{}
