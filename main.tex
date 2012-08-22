@@ -31,6 +31,9 @@
 
 \providecommand{\abbr}[2]{\item[#1\hfill] #2}
 
+\usepackage{color}
+\providecommand{\fixme}[1]{\textcolor{red}{#1}}
+
 %% Special handling for using biblatex vs bibtex ==
 \newboolean{usebiblatex}
 \setboolean{usebiblatex}{true}
@@ -98,6 +101,7 @@ The preface.
   \abbr{HW1/eM}{Half-Width 1/e Maximum}
   \abbr{LHS}{Left Hand Side}
   \abbr{ML}{Mode-Locked}
+  \abbr{PAPE}{Plasmon-Assisted Photoemission}
   \abbr{Q}{Quality Factor}
   \abbr{RHS}{Right Hand Side}
   \abbr{RF}{Radio Frequency}
