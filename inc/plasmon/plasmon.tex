@@ -11,16 +11,44 @@ While this geometry is common, due to fears about the lack of heat conduction th
 In this geometry, the plasmon is driven on a periodic surface rather than a flat surface attached to glass.
 Futher, in this geometry the back surface is now free to be attached to a heat sink.
 
-\subsection{Driving the Plasmon}
+\subsection{Driving the Surface Plasmon}
+
+As the name suggests, a plasmon is the quasiparticle of plasma oscillation.
+Electrons in a material can couple with electromagnetic fields, in this case a laser field, and oscillate accordingly.
+When this occurs at the surface of a material, the resultant quasiparticles are called ``surface plasmon-polaritons.''
+Since these will be the only plasmons discussed in this paper, the word ``plasmon'' will be used interchangeably for the name ``surface plasmon-polaritons.''
+%TODO should this be formalized, either one way (SPP) or the other
+
+The mathematical formalism of surface plasmon-polaritons is a lengthy subject and well described elsewhere \cite{cottam_introduction_2004,concepts_2002}.
 
 Every material has an intrinsic plasma frequency given by 
 \begin{equation}
-  \omega_{P} = \sqrt{\frac{n e^2}{\varepsilon_{0} m^*}}
+  \omega_{P} = \sqrt{\frac{\rho_{e} e^2}{\varepsilon_{0} m^*}}
 \end{equation}
-where $n$ is the electron density and $m*$ is the effective mass of the material.
+where $\rho_{e}$ is the electron density and $m*$ is the effective mass of the material.
+And in the most simple (undamped) approximations, the dielectric function of the material may be written in terms of this constant.
+\begin{equation} \label{eq:dielectric_as_omega}
+  \varepsilon(\omega) = 1 - \frac{ \omega_{P}^2 }{ \omega^2 }
+\end{equation}
+
+At the interface of a vacuum and such a simple material material, contstraints on the material parameters which may allow surface plasmons result in the condition that the dielectric constant at the oscillation frequency of the surface plasmon $ \varepsilon(\omega_{SP}) = -1 $.
+Substituting this result into \ref{eq:dielectric_as_omega} show that this frequency of oscillation is simply related to intrinsic plasma frequency by
+\begin{equation}
+  \omega_{SP} = \omega_{P} / \sqrt{2}
+\end{equation}
+
+Further, plasmons carry momentum whose magnitude is given by
+\begin{equation}
+  k_{P}^2 = \frac{\omega^2}{c^2} \left( \frac{\varepsilon_{1} \varepsilon_{2}}{\varepsilon_{1} + \varepsilon_{2}} \right)
+\end{equation}
+but of course for a vacuum interface this is simplified to 
+\begin{equation}
+  k_{SP}^2 = \frac{\omega^2}{c^2} \left( \frac{ \varepsilon }{ 1 + \varepsilon } \right)
+\end{equation}
+
 In order to drive a plasmon on the surface of a material, the portion of the laser wave-vector parallel to the plasmon ($k_{Lx}$) must be matched to the wave-vector of the surface plasmon.
 \begin{equation}
-  k_{P} = k_{Lx} + i k_{G}
+  k_{SP} = k_{Lx} + \imath k_{G}
 \end{equation}
 
 
