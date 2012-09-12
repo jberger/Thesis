@@ -46,11 +46,24 @@ but of course for a vacuum interface this is simplified to
   k_{SP}^2 = \frac{\omega^2}{c^2} \left( \frac{ \varepsilon }{ 1 + \varepsilon } \right)
 \end{equation}
 
-In order to drive a plasmon on the surface of a material, the portion of the laser wave-vector parallel to the plasmon ($k_{Lx}$) must be matched to the wave-vector of the surface plasmon.
+In the grating coupling scheme (shown in \ref{fig:plasmon_schematic}) a laser of wavelength $\lambda$ is incident on a material with a grating of period $d$, making an angle $\theta$ from the surface normal. A surface plasmon is driven when the portion of the laser wave-vector parallel to the plasmon ($k_{Lx}$) and a fourier component ($k_{G} = 2 \pi / d$) of the grating matches the wave-vector of the surface plasmon
 \begin{equation}
-  k_{SP} = k_{Lx} + \imath k_{G}
+  k_{SP} = k_{Lx} + n k_{G}
 \end{equation}
+where $n$ here is an integer.
+Which reduces to 
+\begin{equation} \label{eq:plasmon_condition}
+  \frac{ \varepsilon }{ 1 + \varepsilon } = \sin \theta + \frac{ n \lambda }{ d }
+\end{equation}
+For a given grating period, \ref{eq:plasmon_condition} determines the angle of incidence that the laser must make with the surface in order to drive the plasmon.
+Further, it is used to design the grating, allowing for angles that the microscope column will accept.
 
+\begin{figure}
+  \centering
+  \input{grating_schematic}
+  \caption{Schematic diagram of a grating coupling geometry for driving a surface plasmon}
+  \label{fig:plasmon_schematic}
+\end{figure}
 
 \section{Experimental Attempts}
 
