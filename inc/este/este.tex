@@ -1,5 +1,6 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
+% the content of this section is a modification of our APL paper on ESTE
 \section{Excited State Themionic Emission Photocathodes}
 
 %TODO consider moving this paragraph to chapter intro 
@@ -58,3 +59,15 @@ More significantly, using $\Delta p_x = \sqrt{m_0 k_B T_e}$ (i.e., assuming the 
 On the other hand, employing a mass of 0.3$m_0$ for the electrons in GaSb allows an average electron temperature (over the $\sim$4ps laser pulse duration) of about 1,200K to be extracted using the AG model simulation --- a value much more consistent with the proposed ESTE mechanism and the expected cooling rate by LO phonon emission.
 In fact, at the maximum $\sim$0.2nJ incident UV laser pulse energy up to 108 electrons/pulse could be excited into the upper $\Gamma_8$ conduction band, of which one in $\exp[\phi/(k_B T_e)] \approx$ 20,000 are above the effective 0.99eV work function, thus agreeing with the observed yield of $\sim$10$^3$ electrons/pulse (Figure 3).
 We also note that the normalized transverse rms emittance $\varepsilon_{\smallT}$ of this UV laser-driven ultrafast GaSb electron source is more than a factor of two less than that expected from a standard Cu photocathode ($\phi$ = 4.31eV and assuming $\Delta p_x = \sqrt{m_0 ( \hbar \omega - \phi ) / 3 }$, where $\hbar \omega$ is the incident photon energy [4,5]) irradiated at the same 261nm wavelength.
+
+Very similar results are observed with the $p$-type InSb photocathode except that the Fourier plane spot size is 30-40\%  larger and the electron yield is a factor of 1.7 higher.
+The increased rms transverse momentum for the same ESTE process is consistent with the larger $\sim$0.5$m_0$ effective mass of the upper $\Gamma_8$ conduction band in InSb, the expected higher initial temperature of the electron distribution, and the marginally slower cooling process associated with the lower 24meV LO phonon energy.
+The resultant higher average electron temperature $T_e$ also contributes to the increased electron yield that is likely further enhanced by a larger absorption into the upper $\Gamma_8$ conduction band (due to its larger effective mass) and a 4\% lower $p$-polarized reflectance for the 60$^{\circ}$ incident UV laser radiation [17]. 
+
+The dependence of $\Delta p_x$ on $m^*$ is readily explained through a consideration of energy and momentum conservation in transmission across a boundary with a potential step associated with the effective photoelectric work function $\phi$.
+Inside the material, an electron with an energy $E$ greater than $\phi$ has a maximum momentum of $\sqrt{2 m^* (E-\phi) }$ parallel to the boundary if it is to be emitted.
+As this momentum component is conserved in emission from the material surface into the vacuum, the rms transverse momentum $\Delta p_x$ of the electron source clearly must scale with $\sqrt{m_*}$ as observed in the experiment.
+This is, of course, the \textit{sine qua non} of angle-resolved photoemission studies [22] where determination of the electron emission angle and energy allows the effective mass parallel to the sample surface to be determined.
+We note that the electron effective mass also causes the narrow emission cone reported for $p$-type GaAs(100) negative electron affinity photocathodes [23], where surface cesiation lowers the vacuum level below the $\Gamma_6$-valley minimum ($m^* = 0.067m_0$)  to allow for direct emission of electrons excited into the conduction band.
+For direct single-photon photoemission, we would therefore also expect to require that the expression describing the rms transverse momentum to be written as $\Delta p_x = \sqrt{m^* ( \hbar \omega - \phi ) / 3 }$.
+Efforts are currently underway to determine if this is indeed the case using a variety of metal photocathodes and the $\sim$ps, 261nm laser radiation source. 
