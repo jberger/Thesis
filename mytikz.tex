@@ -5,3 +5,15 @@
 \pgfsetlayers{background,main}
 
 \usepackage{gnuplot-lua-tikz}
+
+% when inputdata is true, show full figure, otherwise don't include data which takes a long time
+\newboolean{inputdata}
+\setboolean{inputdata}{false}
+
+\providecommand{\inputdata}[1]{
+  \ifthenelse{\boolean{inputdata}}{
+    \input{#1}
+  }{
+    \node{Content hidden (#1)};
+  }
+}
