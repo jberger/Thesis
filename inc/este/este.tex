@@ -14,9 +14,15 @@ Direct observation of the transverse momentum distribution for excited-state the
 \begin{figure}
   \centering
   \input{fig1}
+  \caption{
+    Simulations of the electron pulse propagation through the apparatus using the extended AG model.  
+    Solid line: The spatial beam width (normalized to that at the photocathode $\Delta x_0$) with the magnetic lens strengths adjusted to ensure that the detector is at their back focal plane (Fourier plane).
+    Dashed line: The case when the strength of the magnetic lenses is increased by a factor of two to focus the electron beam on the YAG scintillator detector.
+  }
+  \label{fig:este-sim}
 \end{figure}
 
-Figure 1 depicts the experimental technique used to determine directly the transverse momentum distributions (and hence $\Delta p_x$) of the laser-driven electron sources.
+\ref{fig:este-sim} depicts the experimental technique used to determine directly the transverse momentum distributions (and hence $\Delta p_x$) of the laser-driven electron sources.
 The primary laser radiation source for the studies is a home-built, diode-pumped and thermal-lens-shaped, femtosecond Yb:KGW oscillator\cite{berger_high-power_2008} delivering 250fs duration pulses at 1047nm and a 63MHz repetition rate (see Section \ref{sec:laser}).
 This 2W average power laser is frequency doubled in a 3mm lithium triborate (LBO) crystal with 50\% efficiency to yield $\sim$200fs green pulses at 523nm (photon energy, $\hbar \omega$ = 2.37eV).
 Further doubling with a cylindrical focusing geometry in a 7mm $\beta$-barium borate (BBO) crystal yields 261nm ($\hbar \omega$ = 4.75eV) UV pulses with a duration of $\sim$4ps (due to the 600fs/mm group velocity mismatch between the green and generated UV).
@@ -27,7 +33,7 @@ A YAG scintillator placed 27.5cm after the second magnetic lens detects the spat
 
 To ensure that the transverse momentum distribution is observed, the YAG scintillator must be positioned at the back focal plane (the Fourier plane) of the lens system.
 This is readily achieved by appropriate adjustment of the current $I$ in the magnetic lens coils; specifically, after determining the current required to focus the electron beam onto the scintillator, optical imaging relations together with the $I^2$ dependence of the magnetic lens strength are used to find the current that ensures that the average lens to scintillator distance equals the focal length of the lens system.
-Simulation of the experimental apparatus (employing the extended AG model, see Section \ref{sec:external_forces} ), also shown in Figure 1, confirms that this procedure places the YAG scintillator at the back focal plane of the lens system to within a $\pm$0.5cm error.
+Simulation of the experimental apparatus (employing the extended AG model, see Section \ref{sec:external_forces} ), also shown in \ref{fig:este-sim}, confirms that this procedure places the YAG scintillator at the back focal plane of the lens system to within a $\pm$0.5cm error.
 This simulation also confirms that for our experimental conditions (less than 5,000 electrons/pulse and $\Delta x > $ 30$\mu$m) space-charge effects do not influence the observations.
 Additionally, and as expected from optical considerations, the modeling shows that the spatial beam size in the Fourier plane is independent of the incident laser spot size on the photocathode (i.e., the electron source size, $\Delta x_0$). 
 
@@ -41,7 +47,7 @@ Moreover, when $2\hbar \omega \approx \phi$, the dependence of the yield on the 
 Consequently, the observed increase in $\Delta p_x$ with incident pulse energy must be due to a heating effect; specifically, laser heating of the free electron Fermi gas as two-photon excitation is instantaneous and the $\sim$200fs green laser pulse duration excludes any coupling to the lattice which occurs on the time scale of a few picoseconds\cite{chen_semiclassical_2006}.
 The solid line in Figure 2 is the predicted variation derived using a simple zero free parameter model of this effect.
 Using the known optical properties of gold\cite{johnson_optical_1972}, which give a reflectance $R_p$ = 0.53 and an absorption depth of 20nm, and the temperature-dependent heat capacity of a free electron Fermi gas, the model evaluates the average temperature of the laser-heated electron gas that may be two-photon excited assuming that only electrons within a few nanometers of the surface can be emitted, as the mean free path for electrons in Au is $\sim$4nm\cite{seah_quantitative_1979}.
-This average electron temperature $T_e$ is then used in the AG model simulation of the experiment (Figure 1) to determine the expected Fourier plane spot size on the YAG scintillator; that is, using an initial $\Delta p_x = \sqrt{m_0 k_B T_e}$.  The dashed lines indicate the expected trends for a $\pm$10\% error in the laser spot size $\Delta x_0$ incident on the gold cathode surface.
+This average electron temperature $T_e$ is then used in the AG model simulation of the experiment (\ref{fig:este-sim}) to determine the expected Fourier plane spot size on the YAG scintillator; that is, using an initial $\Delta p_x = \sqrt{m_0 k_B T_e}$.  The dashed lines indicate the expected trends for a $\pm$10\% error in the laser spot size $\Delta x_0$ incident on the gold cathode surface.
 The close agreement between the data and the simulation strongly supports our interpretation of the emission mechanism and, as expected, that the effective mass of a free electron in Au is equal to the rest mass $m_0$\cite{johnson_optical_1972}.
 
 Figure 3 depicts the results obtained for GaSb and InSb photocathode materials under pulsed UV (261nm) laser irradiation using the same experimental technique.
