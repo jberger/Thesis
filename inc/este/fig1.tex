@@ -1,3 +1,27 @@
 \begin{tikzpicture}
+  \fill [blue!20] 
+    (1.3,0.95)
+    -- ++(0.7,0)
+    -- ++(0,7.5)
+    -- ++(-0.7,0)
+      node [black, above, pos=0.5, align=center] {Acceleration\\Region}
+    -- cycle
+  ;
+  \fill [blue!20]
+    (4.4,0.95)
+    -- ++(2,0)
+    -- ++(0,7.5)
+    -- ++(-2,0)
+      node [black, pos=0.5, above, align=center] {Magnetic\\Lenses}
+    -- cycle
+  ;
+  \fill [blue!20] 
+    (10.5,0.95)
+    -- ++(0.7,0)
+    -- ++(0,7.5)
+    -- ++(-0.7,0)
+      node [black, above, pos=0.5] {Detector}
+    -- cycle
+  ;
   \inputdata{fig1data}
 \end{tikzpicture}
