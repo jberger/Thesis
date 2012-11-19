@@ -61,7 +61,17 @@ Using the known optical properties of gold\cite{johnson_optical_1972}, which giv
 This average electron temperature $T_e$ is then used in the AG model simulation of the experiment (\ref{fig:este-sim}) to determine the expected Fourier plane spot size on the YAG scintillator; that is, using an initial $\Delta p_x = \sqrt{m_0 k_B T_e}$.  The dashed lines indicate the expected trends for a $\pm$10\% error in the laser spot size $\Delta x_0$ incident on the gold cathode surface.
 The close agreement between the data and the simulation strongly supports our interpretation of the emission mechanism and, as expected, that the effective mass of a free electron in Au is equal to the rest mass $m_0$\cite{johnson_optical_1972}.
 
-Figure 3 depicts the results obtained for GaSb and InSb photocathode materials under pulsed UV (261nm) laser irradiation using the same experimental technique.
+\begin{figure}
+  \centering
+  \input{fig3}
+  \caption{
+    Number of electrons emitted per pulse as a function of the incident 261nm, UV laser pulse energy for GaSb (open squares) and InSb (filled circles): Linear efficiency dependences are shown by the solid lines.
+    The laser pulse energy invariance of the Fourier plane electron beam size (HWe$^{-1}$M right axis; open squares) for GaSb and a representative raw Fourier plane beam image is also shown.
+  }
+  \label{fig:este-semicond}
+\end{figure}
+
+\ref{fig:este-semicond} depicts the results obtained for GaSb and InSb photocathode materials under pulsed UV (261nm) laser irradiation using the same experimental technique.
 Both samples are cut from [100]-oriented polished wafers; the GaSb is undoped and the InSb is moderately $p$-type.
 Prior studies\cite{gobeli_photoelectric_1965} indicate that single-photon photoemission should not possible for either semiconductor --- the effective photoemission work functions (about 4.8eV for undoped GaSb and 4.89eV for $p$-type InSb (Fermi level pinned at valence band maximum)) being greater than the 4.75eV photon energy even when the 34meV Schottky barrier suppression due to the applied 8kV/cm DC field is included\cite{dowell_quantum_2009}.
 Nonetheless, for both zincblende semiconductors, significant laser-driven emission (more than expected for a single-photon field emission process) is observed with a yield nearly linearly proportional to the $\sim$4ps UV laser pulse energy.
@@ -76,10 +86,10 @@ By comparison with the $\Gamma_6$ conduction band Fr\"ohlich coupling constant i
 This means that even without population decay mechanisms the temperature of the exited electron distribution $T_e$ drops at a rate of $\sim$1,600K/ps in both semiconductors.
 We note that the close proximity of the lower and unconfined (in momentum space) $\Gamma_7$ upper conduction band to the $\Gamma_8$ band will likely result in a fast population decay, so that the observed ESTE process should have an intrinsic latency of much less than the $\sim$4ps UV laser pulse duration.
 
-Figure 3 also shows that the measured Fourier plane electron beam spot size for GaSb is independent of the UV laser pulse energy, as would be expected for the proposed emission process.
+\ref{fig:este-semicond} also shows that the measured Fourier plane electron beam spot size for GaSb is independent of the UV laser pulse energy, as would be expected for the proposed emission process.
 More significantly, using $\Delta p_x = \sqrt{m_0 k_B T_e}$ (i.e., assuming the emitted electrons have a mass $m_0$ in the semiconductor), simulation of the experiment with the extended AG model\cite{berger_semi-analytic_2010} indicates that the observed GaSb Fourier plane spot size of 0.45($\pm$0.03)mm (HWe$^{-1}$M) would be due to an electron temperature $T_e \approx$ 360K which is associated with negligible thermionic emission ($\exp[-\phi/(k_B T_e)] \sim 10^{-15}$).
 On the other hand, employing a mass of 0.3$m_0$ for the electrons in GaSb allows an average electron temperature (over the $\sim$4ps laser pulse duration) of about 1,200K to be extracted using the AG model simulation --- a value much more consistent with the proposed ESTE mechanism and the expected cooling rate by LO phonon emission.
-In fact, at the maximum $\sim$0.2nJ incident UV laser pulse energy up to 108 electrons/pulse could be excited into the upper $\Gamma_8$ conduction band, of which one in $\exp[\phi/(k_B T_e)] \approx$ 20,000 are above the effective 0.99eV work function, thus agreeing with the observed yield of $\sim$10$^3$ electrons/pulse (Figure 3).
+In fact, at the maximum $\sim$0.2nJ incident UV laser pulse energy up to 108 electrons/pulse could be excited into the upper $\Gamma_8$ conduction band, of which one in $\exp[\phi/(k_B T_e)] \approx$ 20,000 are above the effective 0.99eV work function, thus agreeing with the observed yield of $\sim$10$^3$ electrons/pulse (\ref{fig:este-semicond}).
 We also note that the normalized transverse rms emittance $\varepsilon_{\smallT}$ of this UV laser-driven ultrafast GaSb electron source is more than a factor of two less than that expected from a standard Cu photocathode ($\phi$ = 4.31eV and assuming $\Delta p_x = \sqrt{m_0 ( \hbar \omega - \phi ) / 3 }$, where $\hbar \omega$ is the incident photon energy\cite{dowell_quantum_2009,jensen_emittance_2010}) irradiated at the same 261nm wavelength.
 
 Very similar results are observed with the $p$-type InSb photocathode except that the Fourier plane spot size is 30-40\%  larger and the electron yield is a factor of 1.7 higher.
