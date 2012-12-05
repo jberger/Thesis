@@ -117,11 +117,23 @@ This thickness of gold is several times thicker than the skin depth of green lig
 \begin{figure}
   \centering
   \input{power_seq}
-  \caption{}
+  \caption{
+    Photoemission characteristics of laser-driven plasmons on a one-dimensional periodic gold surface.
+    Top: Electron emission strength as a function of incident 523nm femtosecond laser pulse intensity for coherently-driven plasmons (top curve)
+      % with parabolic fit to initial dependence (dashed curve)
+      and comparative emission from a plane gold surface under the same irradiantion conditions.
+    Bottom: Two-dimensional electron momentum distributions for plasmon-assisted emission (A-D) and two-photon field emission from gold (E) at the laser intensities indicated on the top graph.
+    The circular aperture visible in B-D is the 6mm-diameter bore of the magnetic focusing lens.
+    The orientation of the grating lines of the periodic gold surface with respect to the emission in A-D is parallel to the broadening seen in B-D.
+  }
   \label{fig:pape}
 \end{figure}
 
 % Content taken from 2010 ANL report
+Note that for this measurement, relative emission efficiencies are calculated from the integration of the luminosity detected on the YAG scintillator screen.
+The scintillator and CCD camera detection scheme was also shown to be linear (i.e., integrated signal proportional to number of electrons per pulse) for at least $10^4$ electrons per pulse, using the known linearity of single-photon photoemission from Ta irradiated by our 261nm ultraviolet laser source.
+As a result, the detection scheme will accurately determine any laser power law dependence to the electron emission from the photocathode.
+
 Strong enhanced phototemission was observed for only a narrow $\pm$5mrad range of incidence angles $\theta$ around the expected plasmon resonance angle of 39$^{\circ}$.
 Moreover, this enhanced laser-driven electron emission was only observed for $p$-polarized incident 523nm femtosecond laser radiation.
 These two properties are known characteristics of plasmon-assisted photoemission.
@@ -129,23 +141,44 @@ These two properties are known characteristics of plasmon-assisted photoemission
 As seen in \ref{fig:pape}, at low incident laser intensities, below about 25MW/cm$^2$, the emission from the nano-patterned photocathode at the plasmon resonance condition is very similar to that observed from a flat gold surface neighboring the FIB-milled region.
 Specifically, the strength of both emissions have a quadratic dependence on the incident laser intensity.
 This is consistent with a two-photon field emission process --- it requires the absorption of two 2.37eV (green) photons for an electron to acquire sufficient energy to allow any significant field emission as gold has a work function of 5.1eV.
-Moreover, both emissions have similar momentum distributions \fixme{(images A and E)}, again indicating a similar emission process.
+Moreover, both emissions have similar momentum distributions (\ref{fig:pape} A and E), again indicating a similar emission process.
 The only difference is that the emission from the nano-patterned region is 3-4 times more efficient.
 This is readily explained by the fact that the periodic surface modulation results in a local enhancement of the $\sim$1MV/m DC gun field at the peaks of the modulation which, through the Schottky effect, then presents a reduced barrier for field emission.
 
 Above $\sim$32MW/cm$^2$, there is a rapid and dramatic increase in the emission efficiency for the nano-patterned photocathode.
 This can be explained by a suppression of the barrier to photoemission below the two-photon excitation energy, thus allowing direct two-photon photoemission.
 This is likely caused by the laser-excited surface plasmon since a similar increase from the neighboring flat gold surface is not present.
-The observed distinct changes in the momentum distributions \fixme{(images B and C)} in this laser intensity range support this argument.
-In \fixme{image B}, at a laser intensity of $\sim$30MW/cm$^2$, there is already a distinct broadening of the momentum distribution in the direction parallel to the wavevector $k_G$ of the sinusoidal modulation on the photocathode (i.e., perpendicular to the FIB-milled grooves). 
-This broadening becomes the dominant feature of the electron emission above $\sim$32MW/cm$^2$; indeed, it becomes so severe that at laser intensities above $\sim$37MW/cm$^2$ the 6mm-diameter bore of the magnetic lenses becomes a strong limiting aperture for the resulting beam --- as is clearly seen in \fixme{image D} and by the cut-off in the detected electron signal (YAG fluorescence).
+The observed distinct changes in the momentum distributions (\ref{fig:pape} B and C) in this laser intensity range support this argument.
+In \ref{fig:pape} B, at a laser intensity of $\sim$30MW/cm$^2$, there is already a distinct broadening of the momentum distribution in the direction parallel to the wavevector $k_G$ of the sinusoidal modulation on the photocathode (i.e., perpendicular to the FIB-milled grooves). 
+This broadening becomes the dominant feature of the electron emission above $\sim$32MW/cm$^2$; indeed, it becomes so severe that at laser intensities above $\sim$37MW/cm$^2$ the 6mm-diameter bore of the magnetic lenses becomes a strong limiting aperture for the resulting beam --- as is clearly seen in \ref{fig:pape} D and by the cut-off in the detected electron signal (YAG fluorescence).
 
 \subsection{Sinusoidal Grating, Rotated}
+
+In principle this unexpected increase in transverse momentum could be caused by either of two effects.
+The first is the divergence of the plasmon's electric field ($\partial E_{plasmon} / \partial x$) parallel to the surface plasmon vector $k_{SP}$ (assumed here to be in the $x$ direction).
+The second is the one dimensional local field enhancement of the accelerating electric field due to the peaks in the sinusoidal shape of the surface (parallel to the grating vector $k_G$); this is commonly known as the ``lightning rod'' effect.
+
+Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
+However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
 
 \begin{figure}
   \centering
   \input{rotated}
-  \caption{}
+  \caption{
+    Comparison of the colinear (above) and rotated (below) plasmonic excitation geometries.
+    The vector diagrams (left) are related to the corresponding momentum distribution image (right).
+    That the distribution is shown to be rotated by the same $45^{\circ}$ as the grating (the original colinear line is shown dashed) is evidence that the grating is the cause of the increased momentum distribution.
+  }
+  \label{fig:rotated}
 \end{figure}
+
+\ref{fig:rotated} shows the comparison of the grating vector geometries for the original scheme (top) and one in which the grating is rotated by $45^{\circ}$ (bottom).
+For this rotation, the laser angle must be increased from $39^{\circ}$ to $47^{\circ}$.
+
+The results are shown to the right in \ref{fig:rotated}.
+As the divergence is clearly shown to be rotated by $45^{\circ}$ with respect to the colinear case, this experiment demonstrates that the cause of the divergence increase is due to the local field enhancements near the peaks of the grating.
+
+This result is commensurate with the results shown by Zawadzka et al \cite{zawadzka_evanescent_2001}, who showed a reduced divergence in the Kretschmann geometry.
+As that geometry does not employ a patterned surface, it would is not subject to such local field enhancements of the accelerating electric field.
 
 \subsection{Trenched Grating}
