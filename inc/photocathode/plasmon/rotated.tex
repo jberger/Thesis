@@ -3,11 +3,11 @@
     (0,0) -- ++(3,0) 
       node [pos=0.5,below,black,align=center] {$k_L \sin \theta$\\$\theta \approx 39^{\circ}$}
   ;
-  \draw [thick,->,blue]
+  \draw [thick,->,red]
     (3,0) -- ++(2,0)
       node [pos=0.5,below,black] {$k_G$}
   ;
-  \draw [thick,->,red]
+  \draw [thick,->,blue]
     (0,0.2) -- ++(5,0)
       node [pos=0.5,black,above] {$k_{SP}$}
   ;
@@ -22,17 +22,17 @@
     (3,-3.5) -- (4,-3.5)
       node [above,black,pos=0.8] {$45^{\circ}$}
   ;
-  \draw [thick,->,blue]
+  \draw [thick,->,red]
     (3,-3.5) -- ++(1.4,1.4)
-      node [pos=0.2,above left,black] {$k_G$}
+      node [pos=0.4,left,black] {$k_G$}
       coordinate [pos=1] (end)
   ;
-  \draw [thick,->,red]
+  \draw [thick,->,blue]
     (0,-3.5) -- (end)
       node [pos=0.5,black,above] {$k_{SP}$}
   ;
   \node at (7,-3) {\includegraphics{rotated.png}};
-  \draw [very thick,red,dashed] 
+  \draw [very thick,green,dashed] 
     (6,-2.7) -- ++(9:2.2)
       node [pos=0.7,below, white] {$45^{\circ}$}
       coordinate [pos=1] (rotate end)
