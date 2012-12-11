@@ -155,9 +155,13 @@ This broadening becomes the dominant feature of the electron emission above $\si
 
 \subsection{Sinusoidal Grating, Rotated}
 
-In principle this unexpected increase in transverse momentum could be caused by either of two effects.
-The first is the divergence of the plasmon's electric field ($\partial E_{plasmon} / \partial x$) parallel to the surface plasmon vector $k_{SP}$ (assumed here to be in the $x$ direction).
-The second is the one dimensional local field enhancement of the accelerating electric field due to the peaks in the sinusoidal shape of the surface (parallel to the grating vector $k_G$); this is commonly known as the ``lightning rod'' effect.
+In principle this unexpected increase in transverse momentum could be caused by any of three effects.
+The first, and most easily ruled out, is that the electric field of the laser itself could affect the electrons, causing the divergence.
+The possibility is easily dismissed as the effect is not observed when off the grating.
+The second possible cause is the divergence of the plasmon's own electric field ($\partial E_{plasmon} / \partial x$).
+This field is parallel to the surface plasmon vector $k_{SP}$ (assumed here to be in the $x$ direction).
+The third possible cause is local field enhancement of the accelerating electric field due to the peaks in the sinusoidal shape of the surface, commonly known as the ``lightning rod'' effect.
+For the employed one dimensional grating, this effect is necessarily parallel to the grating vector $k_G$.
 
 Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
 However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
@@ -167,8 +171,9 @@ However, if instead the grating is rotated --- and the laser incidence angle is 
   \input{rotated}
   \caption{
     Comparison of the colinear (above) and rotated (below) plasmonic excitation geometries.
-    The vector diagrams (left) are related to the corresponding momentum distribution image (right).
-    That the distribution is shown to be rotated by the same $45^{\circ}$ as the grating (the original colinear line is shown dashed) is evidence that the grating is the cause of the increased momentum distribution.
+    This rotation separates the directionality of effects caused by the laser, plasmon field and grating.
+    Each vector diagrams (left) is shown next to a representative observed momentum distribution image (right).
+    The increased divergence is shown to be rotated by the same $45^{\circ}$ as the grating (the original colinear line is shown dashed); evidence that the grating is the cause of the deleterious effect.
   }
   \label{fig:rotated}
 \end{figure}
@@ -183,3 +188,25 @@ This result is commensurate with the results shown by Zawadzka et al \cite{zawad
 As that geometry does not employ a patterned surface, it would is not subject to such local field enhancements of the accelerating electric field.
 
 \subsection{Trenched Grating}
+
+In an attempt to mitigate the effect of the surface peaks on the accelerating field, a new pattern was commissioned and prepared in a similar manner to the original.
+This new photocathode featured long trenches of an approximately square profile, arranged periodically across the surface.
+This periodicity should have been sufficient to facilitate the generation of the plasmon.
+Although the structure should be less disruptive to the accelerating electric field, this photocathode performed markedly worse than its sinusoidal predecessor.
+Indeed, no evidence of sucessful plasmon oscillation was demonstrated after repeated attempts.
+
+Though the cause of the failure may never be known for certain, several causes are suspected.
+Now that the surface is not purely sinusoidal, the surface has multiple Fourier components.
+This may mean that the laser may not couple as efficiently to the plasmon, requiring increased laser power for oscillation. 
+Additionally, the non-smooth surface may cause increaded difficulty for propagating the plasmon for large distances.
+Finally, upon further investigation of the surface by SEM, evidence seen of incomplete filling of the gold into the trenches, which may have interrupted creation or propagation of the plasmon.
+
+\subsection{Discussion}
+
+Although plasmonic photocathodes are still an interesting field of research in photocathode physics, we have concluded that they are not a promising candidate for an electron source for UEM at this time.
+They have been difficult to manufacture and thus would be expensive for owners.
+They are very intolerant to misalignment and would therefore be problematic for users.
+Finally, the cannot be shown to produce the performance needed to justify the previous concerns.
+
+Other nano-engineered surfaces, including quantum-wells, are still being considered for future work.
+
