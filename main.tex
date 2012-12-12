@@ -21,6 +21,8 @@
 \DeclareGraphicsExtensions{.png,.pdf,.jpg}
 \input{mytikz}
 \setboolean{inputdata}{true}
+\usepackage{fancyvrb}
+\input{pygments}
 
 %% My convenience fuctions
 \providecommand{\vecprime}[1]{\vec{#1}\,^{\prime}}
@@ -115,6 +117,8 @@ In the following chapter I will present a model which builds on and extends thos
 
   \subimport{inc/extension/external_forces/}{external_forces}
 
+  \subimport{inc/extension/implementation/}{implementation}
+
 \section{Model Results, Predictions and Implications} \label{sec:model_results}
 
 \chapter{Prototype Instrument}
@@ -141,10 +145,12 @@ In the following chapter I will present a model which builds on and extends thos
 
 \chapter{Experimental Results}
 
- 
+%uncomment when multiple appedicies are used 
 %\appendices
-%\appendix
-%\newpage
+\appendix
+  \subimport{inc/extension/implementation/}{appendix-script}
+
+\newpage
 
 %% Special handling for using biblatex vs bibtex ==
 \ifthenelse{\boolean{usebiblatex}}{

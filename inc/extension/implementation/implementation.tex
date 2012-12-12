@@ -1,0 +1,33 @@
+\section{Implementation}
+
+%The model presented in this chapter is deceptively hard to implement.
+%As noted by Michalik and Sipe in their original paper \cite{michalik_analytic_2006}, in the absence of space-charge, the solution of the system of equations in \ref{eq:ag_original} may be solved analytically and result in the standard equations of Gaussian optics.
+%With the inclusion of space-charge (that is the inclusion of electron-electron repulsion) the system must be solved by numerical methods.
+%The scaling of the terms requires special consideration of error-handling.
+
+%This problem is exacerbated when including the external forces.
+%The necessity of limiting the region of influence of electron-optical elements (\ref{eq:reg_of_influence}) adds terms with Gaussian envelopes
+
+The model presented in this chapter was initially implemented in Wolfram's Mathematica.
+While this implementation provided the results needed, it was inflexible and overly confusing.
+The limitations of the Mathematica language precluded abstracting the model sufficiently to cover all common use cases.
+
+Recently the model was rewritten in Perl, and is called \verb!Physics::UEMColumn!.
+Perl is a dynamic scripting language known for its versitility and flexibility.
+In this implementation, the model is implemented as a decoupled set of high-level object-oriented classes.
+
+\verb!Physics::UEMColumn! has been released as open source software under the terms of the Artistic License (a derivative of the GNU General Public License), which allows for free use of the software.
+The current state of development of the simulation toolkit is publically available at \url{https://github.com/jberger/Physics-UEMColumn}.
+Releases of the toolkit are available via the Comprehensive Perl Archive Network (CPAN), which is a central repository of software developed for Perl, a standard tool for the language.
+The CPAN has several tracker sites, see for example \url{https://metacpan.org/module/Physics::UEMColumn}.
+
+A simulation script is composed of creating instances of the classes that represent the column, the pulse, electron-optical elements like magnetic lenses and RF cavities.
+These objects act as containers for the information about the physical object that they represent.
+Further they manage progammatic tasks related to those objects.
+For example, electron-optical element objects manage the Gaussian region-of-influence (\ref{eq:reg_of_influence}) and calculate the force that their fields apply to the pulse.
+This allows for clean, managable and extensible code.
+
+These objects are managed by a central ``simulation'' class (called \verb!Physics::UEMColumn!) which handles the time evolution of the system.
+The source package contains an example script analogous to the optical Cooke triplet, containing a magnetic lens, RF cavity and another magnetic lens.
+This script is included as Appendix \ref{sec:script}.
+
