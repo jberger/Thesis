@@ -1,0 +1,90 @@
+int 
+  C1=1, // Label for grounded segments
+  C2=5, // Label for HV segment(s)
+  C3=10; // Label for vacuum segments
+real 
+  D=1, // Larger ID
+  L=0.25, // Separation of plates
+  R=0.1, // Radius of curvature of anode
+  d=2*R, // Anode ID
+  lf=0.2, // Placement of back plate behind end of curved segment
+  l=(D-2*R-d)/2, // Calculated remaining distance
+  pts=50, // Number of point PER UNIT LENGTH on the edges
+  V=-10; // Voltage on cathode
+
+border C10(t=0,1) 
+ {x=L; y=D-l+l*t; label=C1;}
+border C11(t=1,0) 
+ {x=L*t; y=D; label=C3;}
+border C12(t=1,0) 
+ {x=0; y=D*t; label=C2;}
+border C13(t=0,1) 
+ {x=L*t; y=0; label=C3;}
+border C14(t=0,1) 
+ {x=L; y=l*t; label=C1;}
+border C15(t=pi,pi/2) 
+ {x=L+R+R*cos(t); y=l+R*sin(t); label=C1;}
+border C16(t=0,1) 
+ {x=L+R+lf*t; y=l+R; label=C1;}
+border C17(t=0,1) 
+ {x=L+R+lf; y=l+R+d*t; label=C1;}
+border C18(t=1,0) 
+ {x=L+R+lf*t; y=l+R+d; label=C1;}
+border C19(t=1.5*pi,pi) 
+ {x=L+R+R*cos(t); y=l+2*R+d+R*sin(t); label=C1;}
+
+plot(
+  C10(pts*l)
+  +C11(pts*L)
+  +C12(pts*D)
+  +C13(pts*L)
+  +C14(pts*l)
+  +C15(pts*R*pi/2)
+  +C16(pts*lf)
+  +C17(pts*d)
+  +C18(pts*lf)
+  +C19(pts*R*pi/2)
+  ,
+  wait=true
+);
+
+mesh Th=buildmesh(
+  C10(pts*l)
+  +C11(pts*L)
+  +C12(pts*D)
+  +C13(pts*L)
+  +C14(pts*l)
+  +C15(pts*R*pi/2)
+  +C16(pts*lf)
+  +C17(pts*d)
+  +C18(pts*lf)
+  +C19(pts*R*pi/2)
+);
+plot(Th,wait=true);
+
+fespace Vh(Th,P2);
+Vh Phi,w;
+
+solve Laplace(Phi,w)=
+  int2d(Th)(dx(Phi)*dx(w)+dy(Phi)*dy(w))
+  +on(C2,Phi=V)
+  +on(C1,Phi=0)
+  +on(C3,Phi=V*(1-x/L));
+plot(Phi);
+
+{
+  ofstream file("output.dat");
+  for (int j=-pts*d/2; j<=pts*d/2; j++) {
+    for (int i=0; i<=pts*(L+R+lf); i++){
+      file << (j/pts) << " " << (i/pts) << " " << Phi(i/pts,l+R+d/2+j/pts) << endl;
+    }
+    file << endl;
+  }
+}
+
+{
+  ofstream file("onaxis.dat");
+  for (int i=0; i<=pts*(L+R+lf); i++){
+    file << (i/pts) << " " << Phi(i/pts,0) << " " << ((Phi((i+1)/pts,0) - Phi(i/pts,0))*pts) << endl;
+  }
+}
