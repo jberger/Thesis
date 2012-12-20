@@ -15,13 +15,13 @@ sub for_sharpness {
   );
 
   my $acc = DCAccelerator->new(
-    length  => '20 mm',
-    voltage => '20 kilovolts',
+    length  => '0.25 in',
+    voltage => '10 kilovolts',
     sharpness => shift || 10,
   );
 
   my $column = Column->new(
-    length       => '25 mm', 
+    length       => '10 mm', 
     laser        => $laser,
     accelerator  => $acc,
     photocathode => Photocathode->new(Ta),
