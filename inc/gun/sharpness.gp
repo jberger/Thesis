@@ -1,4 +1,4 @@
-set term tikz nopicenvironment
+set term tikz nopicenvironment scale 0.8,1
 set output "sharpness_data.tex"
 set ytics nomirror
 set y2tics

@@ -1,5 +1,5 @@
-set term png
-set output "onaxis.png"
+set term tikz nopicenvironment scale 0.7,1
+set output "onaxis_data.tex"
 
 set xlabel "Position in column (mm)"
 set ylabel "Electric field (kV/mm)"

@@ -1,9 +1,23 @@
 \section{Accelerator Design}
 
 \begin{figure}
+  \centering
   \input{gunfield}
 \end{figure}
 
 \begin{figure}
-  \input{sharpness}
+  \centerline{
+    \subfloat[][]{
+      \label{fig:field_on_axis}
+      \input{onaxis}
+    }
+    \subfloat[][]{
+      \label{fig:tanh_sharpness}
+      \input{sharpness}
+    }
+  }
+  %\caption{
+  %  \protect\subref{fig:laser_schematic}
+  %}
+  \label{fig:laser-cavity}
 \end{figure}
