@@ -1,0 +1,49 @@
+\subsection{Acceleration Region}
+
+Obviously an overall acceleration occurs due to the applied electic field in the acceleration gap.
+The anode must contain an aperture to allow the electrons to continue down the column.
+The electric field that nears this aperture turns outward as expected, causing the anode itself to act as a negative lens. %TODO reference
+What may not be so obvious is that the falling field longitudinally acts as a pulse compression element.
+
+To model an acceleration region, one must assume a form for the accelerating field.
+From that form one may derive the terms governing the pulse dynamics. Initially, assume that the on-axis field is purely in the longitudinal direction, which may be thought of as an implication of radial symmetry.
+Mathematically, that is
+\begin{equation}
+  \vec{F}(r^{\prime}=0,z^{\prime}) = F_z (0,z^{\prime}) \hat{z}
+\end{equation}
+where as before, the primed coordinates are the location of the center of the pulse.
+
+To first model the longitudinal (compression) action at the anode %TODO ref
+on electrons that are a distance $z$ ahead or behind of the center of the pulse feel a slightly different field, 
+\begin{equation}
+  F_z(0,z^{\prime} - z) \approx F_z(0,z^{\prime} - z) + \frac{\partial F_z}{\partial z^{\prime}} z
+\end{equation}
+The leading term does not contribute to the intrapulse dynamic (see Section \ref{sec:const_force}), however the second term is of the proper form to say that
+\begin{equation}
+  M_z = \frac{\partial F_z}{\partial z^{\prime}}
+\end{equation}
+
+To model the radial action (negative lensing), we can expand for electrons that are a distance $r$ radially outward from the center of the pulse,
+\begin{equation}
+  F_r(r,z^{\prime}) \approx F_r(r,z^{\prime}) + \frac{\partial F_r}{\partial r^{\prime}} r
+\end{equation}
+without an analytic form for $F$, we can appeal to Gauss' law (in absense of external charge)
+\begin{equation}
+  \frac{\partial F_x}{\partial x^{\prime}} + \frac{\partial F_y}{\partial y^{\prime}} + \frac{\partial F_z}{\partial z^{\prime}} = 2 \frac{\partial F_{\smallT}}{\partial r^{\prime}} + \frac{\partial F_z}{\partial z^{\prime}} = 0
+\end{equation}
+to see that
+\begin{equation}
+  M_{\smallT} = -\frac{1}{2}\frac{\partial F_z}{\partial z^{\prime}}
+\end{equation}
+
+We may choose to assume that the on-axis field is defined as a smoothed step down function
+\begin{equation}
+  F_z(0,z^{\prime}) = \frac{qV}{2z^{\prime}_A} \left( 1 - \tanh \left( \frac{ z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \right)
+\end{equation}
+where $V$ is the accelerating potential, $z^{\prime}_A$ is the position of the anode (the cathode assumed to be at $z^{\prime} = 0$) and $s$ is a constant quantifying the ``sharpness'' of the fall-off of the electric field.
+Indeed, this form is analgous to the super-Gaussian envalope (\ref{eq:reg_of_influence}), however it is open ended on the cathode side, which is necessary for the electrons to be accelerated away from the photocathode.
+Given this form (justified in Section \ref{sec:gun_design}) the lensing constants are then
+\begin{gather}
+  M_{\smallT} = -\frac{qVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
+  M_z = \frac{qVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right)
+\end{gather}
