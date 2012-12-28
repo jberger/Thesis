@@ -1,9 +1,13 @@
 \subsection{Acceleration Region}
 
-Obviously an overall acceleration occurs due to the applied electic field in the acceleration gap.
-The anode must contain an aperture to allow the electrons to continue down the column.
-The electric field that nears this aperture turns outward as expected, causing the anode itself to act as a negative lens. %TODO reference
-What may not be so obvious is that the falling field longitudinally acts as a pulse compression element.
+In the acceleration region of a UEM column, a constant electric field is applied to the newly created electron pulse, increasing its velocity until it achieves its ultimate velocity just upon leaving the region at the anode aperture.
+As seen in Section \ref{sec:const_force}, this constant electric field does not affect the intrapulse dynamics, however the electric field that nears this aperture turns outward, causing the anode itself to act as a negative lens. %TODO reference
+Additionally, the longitudinal electric field stregth sharply decreases near the anode.
+Because the front of the pulse sees this change before the back, this changing field acts as a pulse compression element.
+
+Since the aforementioned effects are localized in the area very near the anode, the following analysis is only asserted for pulses that are of approximately the same length as the acceleration region or shorter.
+This assumption is very reasonable for UEM and for some of the shorter-pulse DTEM systems.
+Though these effects are expected for longer pulses, they are unlikely to be predominant factors in the dynamics.
 
 To model an acceleration region, one must assume a form for the accelerating field.
 From that form one may derive the terms governing the pulse dynamics. Initially, assume that the on-axis field is purely in the longitudinal direction, which may be thought of as an implication of radial symmetry.
@@ -18,7 +22,7 @@ on electrons that are a distance $z$ ahead or behind of the center of the pulse 
 \begin{equation}
   F_z(0,z^{\prime} - z) \approx F_z(0,z^{\prime} - z) + \frac{\partial F_z}{\partial z^{\prime}} z
 \end{equation}
-The leading term does not contribute to the intrapulse dynamic (see Section \ref{sec:const_force}), however the second term is of the proper form to say that
+As noted before, the constant leading term does not contribute to the intrapulse dynamic, however the second term is of the proper form to say that in this region
 \begin{equation}
   M_z = \frac{\partial F_z}{\partial z^{\prime}}
 \end{equation}
@@ -42,8 +46,33 @@ We may choose to assume that the on-axis field is defined as a smoothed step dow
 \end{equation}
 where $V$ is the accelerating potential, $z^{\prime}_A$ is the position of the anode (the cathode assumed to be at $z^{\prime} = 0$) and $s$ is a constant quantifying the ``sharpness'' of the fall-off of the electric field.
 Indeed, this form is analgous to the super-Gaussian envalope (\ref{eq:reg_of_influence}), however it is open ended on the cathode side, which is necessary for the electrons to be accelerated away from the photocathode.
-Given this form (justified in Section \ref{sec:gun_design}) the lensing constants are then
+Given this form (demonstrated in Section \ref{sec:gun_design}) the lensing constants are then
 \begin{gather}
   M_{\smallT} = -\frac{qVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
   M_z = \frac{qVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right)
 \end{gather}
+
+\begin{figure}
+  \centerline{
+    \subfloat[][]{
+      \label{fig:field_on_axis}
+      \input{onaxis}
+    }
+    \subfloat[][]{
+      \label{fig:tanh_sharpness}
+      \input{sharpness}
+    }
+  }
+  \caption{
+    An example of a tahn form acceleration region (overall length 6.35mm) for three different ``sharpness'' values.
+    The square data points in \protect\subref{fig:field_on_axis} represent the on-axis electric field data from FEM simulations, see Section \ref{sec:gun_design}.
+    The colored electric fields in \protect\subref{fig:field_on_axis} correspond to the pulse width (solid) and length (dashed) in \protect\subref{fig:tanh_sharpness}.
+  }
+  \label{fig:laser-cavity}
+\end{figure}
+
+\ref{fig:laser-cavity} shows an example acceleration region for three values of the ``sharpness'' $s$.
+What is clear from this figure is that the dynamics are not highly coupled to the value of this hard-to-quantify parameter.
+For all values of $s$ the divergence of the beam is equal (thought the size may vary slightly).
+Interestingly the length of the pulse is stabilized on exiting the anode, coming very nearly to a constant length (not expanding nor contracting).
+This effect is due to the slower electrons remaining in the cavity longer and thus receiving an additional kick, as described in \cite{oudheusden_electron_2007}.
