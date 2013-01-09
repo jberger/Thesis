@@ -22,11 +22,12 @@ Immediately after photo-generation, however, it is strictly inaccurate to say th
 This is because the excess photoemission energy $ \Delta E = \hbar \omega - \Phi $, associated with the electron emission from a material with work function $\Phi$ using photons of energy $ \hbar \omega $ (which gives the maximum initial velocity of an electron, $ v_{max} = \sqrt{ 2 \Delta E/m_{e} } $), can produce an initial momentum chirp.
 Nonetheless, the initial non-zero nature of $ \gamma_{z} $ is quickly dominated by the evolution of the pulse, so this approximation will suffice in the region far from the gun.
 
-The single-photon photoemission analysis of Jensen \textit{et al.}\cite{jensen_theoretical_2006} indicates that for a metallic photocathode the transverse momentum variance at $ t = 0 $ is given by
+The careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009} indicates that for a metallic photocathode the transverse momentum variance at $ t = 0 $ is given by
 \begin{equation} \label{eq:jensen_eta}
-( \Delta p_{x} )^{2} = ( \Delta p_{y} )^{2} = \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} \epsilon_{\smallF} ( \hbar \omega - \Phi ) } { \hbar \omega + \epsilon_{\smallF} } \; \text{,}
+  \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} }{ 3 } ( \hbar \omega - \Phi ) \; \text{,}
 \end{equation}
-in the limit where the Fermi energy $ \epsilon_{\smallF} $ of the metal photocathode and excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
+%in the limit where the Fermi energy $ \epsilon_{\smallF} $ of the metal photocathode and excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
+in the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
 From a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
 This implies that the uncertainty in the longitudinal direction is half that of the transverse directions; that is to say
 \begin{equation}
@@ -45,7 +46,7 @@ These initial conditions at $t=0$ for an incident Gaussian laser pulse of the fo
 %alternative formulation + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
 \gamma_{ \smallT } ( 0 ) = 0 \\
 \gamma_{ z } ( 0 ) = 0 \\
-\eta_{ \smallT } ( 0 ) = \frac{ m_{e} \epsilon_{ F } ( \hbar \omega - \Phi ) }{ 3 ( \hbar \omega + \epsilon_{ \smallF } ) } \\
+\eta_{ \smallT } ( 0 ) = \frac{ m_{e} } { 3 } ( \hbar \omega - \Phi ) \\
 \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
 \end{gather}
 \end{subequations}
