@@ -12,53 +12,69 @@ real
   pts=50, // Number of point PER UNIT LENGTH on the edges
   V=-10; // Voltage on cathode
 
-border C10(t=0,1) 
+border AnodeTop(t=0,1) 
  {x=L; y=D-l+l*t; label=C1;}
-border C11(t=1,0) 
+border GapTop(t=1,0) 
  {x=L*t; y=D; label=C3;}
-border C12(t=1,0) 
- {x=0; y=D*t; label=C2;}
-border C13(t=0,1) 
+border CathodeTop(t=0,1) 
+ {x=0; y=D-l*t; label=C2;}
+border CathodeRadiusTop(t=0,-pi/2) 
+ {x=R*cos(t)-R; y=D-l+R*sin(t); label=C2;}
+border CathodeBoreBack(t=0,1) 
+ {x=R*cos(pi/2)-R; y=D-l-R-d*t; label=C2;}
+border CathodeRadiusBottom(t=-pi/2,0) 
+ {x=R*cos(t)-R; y=l-R*sin(t); label=C2;}
+border CathodeBottom(t=1,0) 
+ {x=0; y=l*t; label=C2;}
+border GapBottom(t=0,1) 
  {x=L*t; y=0; label=C3;}
-border C14(t=0,1) 
+border AnodeBottom(t=0,1) 
  {x=L; y=l*t; label=C1;}
-border C15(t=pi,pi/2) 
+border AnodeRadiusBottom(t=pi,pi/2) 
  {x=L+R+R*cos(t); y=l+R*sin(t); label=C1;}
-border C16(t=0,1) 
+border AnodeBoreBottom(t=0,1) 
  {x=L+R+lf*t; y=l+R; label=C1;}
-border C17(t=0,1) 
+border AnodeBoreBack(t=0,1) 
  {x=L+R+lf; y=l+R+d*t; label=C1;}
-border C18(t=1,0) 
+border AnodeBoreTop(t=1,0) 
  {x=L+R+lf*t; y=l+R+d; label=C1;}
-border C19(t=1.5*pi,pi) 
+border AnodeRadiusTop(t=1.5*pi,pi) 
  {x=L+R+R*cos(t); y=l+2*R+d+R*sin(t); label=C1;}
 
 plot(
-  C10(pts*l)
-  +C11(pts*L)
-  +C12(pts*D)
-  +C13(pts*L)
-  +C14(pts*l)
-  +C15(pts*R*pi/2)
-  +C16(pts*lf)
-  +C17(pts*d)
-  +C18(pts*lf)
-  +C19(pts*R*pi/2)
+  AnodeTop(pts*l)
+  +GapTop(pts*L)
+  +CathodeTop(pts*l)
+  +CathodeRadiusTop(pts*R*pi/2)
+  +CathodeBoreBack(pts*d)
+  +CathodeRadiusBottom(pts*R*pi/2)
+  +CathodeBottom(pts*l)
+  +GapBottom(pts*L)
+  +AnodeBottom(pts*l)
+  +AnodeRadiusBottom(pts*R*pi/2)
+  +AnodeBoreBottom(pts*lf)
+  +AnodeBoreBack(pts*d)
+  +AnodeBoreTop(pts*lf)
+  +AnodeRadiusTop(pts*R*pi/2)
   ,
   wait=true
 );
 
 mesh Th=buildmesh(
-  C10(pts*l)
-  +C11(pts*L)
-  +C12(pts*D)
-  +C13(pts*L)
-  +C14(pts*l)
-  +C15(pts*R*pi/2)
-  +C16(pts*lf)
-  +C17(pts*d)
-  +C18(pts*lf)
-  +C19(pts*R*pi/2)
+  AnodeTop(pts*l)
+  +GapTop(pts*L)
+  +CathodeTop(pts*l)
+  +CathodeRadiusTop(pts*R*pi/2)
+  +CathodeBoreBack(pts*d)
+  +CathodeRadiusBottom(pts*R*pi/2)
+  +CathodeBottom(pts*l)
+  +GapBottom(pts*L)
+  +AnodeBottom(pts*l)
+  +AnodeRadiusBottom(pts*R*pi/2)
+  +AnodeBoreBottom(pts*lf)
+  +AnodeBoreBack(pts*d)
+  +AnodeBoreTop(pts*lf)
+  +AnodeRadiusTop(pts*R*pi/2)
 );
 plot(Th,wait=true);
 

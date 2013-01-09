@@ -1,24 +1,32 @@
 \begin{tikzpicture}
-  \node at (0,0) {\includegraphics{gunfield.png}};
-  \draw [fill=blue!40]
-    (-1.4,-3.1)
-    -- ++(0,6.2)
-    -- ++(-1.1,0)
-      node [above, pos=0.5] {$-V$}
-    -- ++(0,-6.2)
-      node [right=0.5, rotate=90, pos=0.7] {Photocathode}
+  \node at (0,0) {\includegraphics[scale=0.4]{gunfield.png}};
+  \draw [fill=blue!40, radius=0.6]
+    (-1.35,-2.55)
+    -- ++(0,1.35)
+    arc [start angle=0, end angle=90]
+    -- ++(0,-2.35)
+      coordinate [pos=0.1] (sample bottom)
+    -- ++(-1,0)
+    -- ++(0,-0.4)
+    -- ++(1,0)
+    arc [start angle=-90, end angle=0]
     -- cycle
   ;
-  \fill
-    (-1.4,-0.4)
-    -- ++(0,0.8)
-      coordinate [pos=0.5] (source)
-    -- ++(-0.1,0)
-    -- ++(0,-0.8)
+  \draw [fill=blue!40, radius=0.6]
+    (-1.35,1.4)
+    -- ++(0,1.35)
+    arc [start angle=0, end angle=90]
+    -- ++(-1,0)
+      node [pos=0.1,above] {$-V$}
+    -- ++(0,-0.4)
+    -- ++(1,0)
+    -- ++(0,-2.35)
+      coordinate [pos=0.9] (sample top)
+    arc [start angle=-90, end angle=0]
     -- cycle
   ;
-  \draw [fill=blue!40, radius=0.7]
-    (-0.15,-2.45)
+  \draw [fill=blue!40, radius=0.6]
+    (0.15,-2.55)
     -- ++(0,1.35)
     arc [start angle=180, end angle=90]
     -- ++(0.4,0)
@@ -27,8 +35,8 @@
     arc [start angle=270, end angle=180]
     -- cycle
   ;
-  \draw [fill=blue!40, radius=0.7]
-    (-0.15,1.1)
+  \draw [fill=blue!40, radius=0.6]
+    (0.15,1.4)
     -- ++(0,1.35)
     arc [start angle=180, end angle=90]
     -- ++(0.4,0)
@@ -38,9 +46,17 @@
     arc [start angle=270, end angle=180]
     -- cycle
   ;
+  \fill
+   (sample top)
+    -- (sample bottom)
+      coordinate [pos=0.5] (source)
+    -- ++(-0.2,0)
+    -- ($(sample top) + (-0.2,0)$)
+    -- cycle
+  ;
   \draw [green, <-, ultra thick]
     (source)
-    -- ++(-70:4)
-      node [black,right] {Laser}
+    -- ++(-56:4.2)
+      node [black,below] {Laser}
   ;
 \end{tikzpicture}
