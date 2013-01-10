@@ -1,11 +1,13 @@
 set term png
-set output "Vmax.png"
-file="Vmax.dat"
+# need to set data variable `gnuplot -e 'data="Vmax"' plot.gp
+
+set output data.".png"
+file=data.".dat"
 
 stats file using 3 name "A"
-s(x)=A_max*exp(-((x-A_index_max)**2/(2*s1**2)))
-s1=15
-fit s(x) file using 1:3 via s1
+s(x)=s0*exp(-((x-s1)**2/(2*s2**2)))
+s2=15
+fit s(x) file using 1:3 via s0,s1,s2
 
 g(x)=g1+g2*x
 fit g(x) file using 1:4 via g1,g2
