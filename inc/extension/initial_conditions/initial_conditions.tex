@@ -4,32 +4,42 @@
 For a DTEM or UED apparatus, where the electron pulse is produced in a laser-driven photo-electron gun, the implementation of the AG model of Michalik and Sipe \cite{michalik_analytic_2006} requires knowledge of the initial ($ t = 0 $) bunch parameters immediately after generation at the photocathode surface inside the acceleration region of the gun.
 For the purposes of this paper, we will make a simple approximation to the behavior of the gun in order to provide generic initial conditions for the electron pulse.
 
-For single-photon photoemission process with a spatially cylindrically symmetric incident Gaussian laser beam with Gaussian temporal irradiance profile 
+% transverse
+Consider a single-photon photoemission process with a spatially cylindrically symmetric incident Gaussian laser beam with Gaussian temporal irradiance profile 
 \begin{equation}\label{eq:laser_form}
 I ( x , y , t ) = I_{0} \exp \left ( - \frac{ ( x^{2} +y^{2} ) }{ w^{2} } - \frac{ t^{ 2 } }{ \tau^{ 2 } } \right ) \text{ ,}
 \end{equation}
-where $w$ is the half-width 1/e maximum (HW1/eM) of the spatial irradiance distribution, $\tau$ is the HW1/e pulse duration and $I_{0}$ is the peak pulse irradiance, the electron pulse's initial spatial variance is
+where $w$ is the half-width 1/e maximum (HW1/eM) of the spatial irradiance distribution, $\tau$ is the HW1/e pulse duration and $I_{0}$ is the peak pulse irradiance incident on a flat metallic photocathode.
+The initial tranverse ($\smallT$) properties of the beam are easily understood.
+The electron pulse's initial spatial variance is simply
 \begin{equation}
 \sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \text{ .}
 \end{equation}
-For the longitudinal direction, and in the limit where dispersion effects in the acceleration region of the electron gun can be neglected, we may write
-\begin{equation} \label{eq:initial_sigma_z}
-\sigma_{ z } ( 0 ) = ( \Delta z)^{2} = \frac{ ( v_{{ \scriptscriptstyle 0}} \tau )^{2} }{ 2 } \text{ ,}
-\end{equation}
-with the velocity of the pulse in the lab frame $v_{{ \scriptscriptstyle 0}} = \sqrt{ 2 e V / m_{e} d } $, where $ V $ and $ d $ are the potential and cathode-anode separation of the gun's DC acceleration region respectively.
 For spatially-uniform photoemission from a planar photocathode, we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial spatial momentum chirp in the electron bunch.
-Immediately after photo-generation, however, it is strictly inaccurate to say that $ \gamma_{ z } ( 0 ) = 0 $.
-This is because the excess photoemission energy $ \Delta E = \hbar \omega - \Phi $, associated with the electron emission from a material with work function $\Phi$ using photons of energy $ \hbar \omega $ (which gives the maximum initial velocity of an electron, $ v_{max} = \sqrt{ 2 \Delta E/m_{e} } $), can produce an initial momentum chirp.
-Nonetheless, the initial non-zero nature of $ \gamma_{z} $ is quickly dominated by the evolution of the pulse, so this approximation will suffice in the region far from the gun.
-
-The careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009} indicates that for a metallic photocathode the transverse momentum variance at $ t = 0 $ is given by
+Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009}, we know that metallic photocathode's initial transverse momentum variance at $ t = 0 $ is given by
 \begin{equation} \label{eq:jensen_eta}
   \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} }{ 3 } ( \hbar \omega - \Phi ) \; \text{,}
 \end{equation}
-%in the limit where the Fermi energy $ \epsilon_{\smallF} $ of the metal photocathode and excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
-in the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
+in the limit where the excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
+%in the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
+
+% longitudinal
+In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the properties of the electron bunch.
+Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) by the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than that traveled by electrons with the maximum photoemission velocity $ v_{max} $ alone over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
+
+% dc dominated
+In the long-pulse regime, the DC field dominated case, we assume that the intrinsic velocity of the emitted electrons is negligable.
+Clearly the first emitted electrons travel a distance $ \Delta z = \frac{ 1 }{ 2 } a ( \Delta t_{L} )^{ 2 } = \sqrt{ \sigma_{ z } ( 0 ) } $, during the  $ \Delta t_{ L } $ rms laser pulse duration: for a laser pulse described above, we have $ ( \Delta t_{L} )^{ 2 } = \tau^{ 2 } / 2 $.
+This result may be restated as,
+\begin{equation}
+  \sigma_{ z } ( 0 ) = \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 }
+\end{equation}
+By a similar logic, we can say that the `front' of the pulse then has a velocity equal to $ a \Delta t_{ L } $, while the `back' of the pulse (a distance $ \frac{ 1 }{ 2 } \sqrt{ \sigma_{ z } ( 0 ) } $ from the electron bunch peak) has zero velocity since it has just been generated. From this one sees that the initial linear chirp across the pulse is given by 
+\begin{equation}
+  \gamma_{ z } ( 0 ) = m \sigma_{ z } ( 0 ) \frac{ \Delta v }{ \Delta z } = m a \Delta t_{ L } \sqrt{ \sigma_{ z } ( 0 ) } = \frac{ e E_{ DC } \tau }{ \sqrt{ 2 } }\, .
+\end{equation} 
 From a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
-This implies that the uncertainty in the longitudinal direction is half that of the transverse directions; that is to say
+This implies that the local momentum uncertainty in the longitudinal direction is half that of the transverse directions; that is to say
 \begin{equation}
 ( \Delta p_{ z } )^{2} = \left ( \frac{\Delta p_{ x , y }}{ 2 } \right )^{2} \text{,}
 \end{equation}
@@ -38,17 +48,22 @@ so that
 \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
 \end{equation}
 
+% v_0 dominated
+with the velocity of the pulse in the lab frame $v_{{ \scriptscriptstyle 0}} = \sqrt{ 2 e V / m_{e} d } $, where $ V $ and $ d $ are the potential and cathode-anode separation of the gun's DC acceleration region respectively.
+Immediately after photo-generation, however, it is strictly inaccurate to say that $ \gamma_{ z } ( 0 ) = 0 $.
+This is because the excess photoemission energy $ \Delta E = \hbar \omega - \Phi $, associated with the electron emission from a material with work function $\Phi$ using photons of energy $ \hbar \omega $ (which gives the maximum initial velocity of an electron, $ v_{max} = \sqrt{ 2 \Delta E/m_{e} } $), can produce an initial momentum chirp.
+Nonetheless, the initial non-zero nature of $ \gamma_{z} $ is quickly dominated by the evolution of the pulse, so this approximation will suffice in the region far from the gun.
+
 These initial conditions at $t=0$ for an incident Gaussian laser pulse of the form given in \ref{eq:laser_form}, will be used for the remainder of this paper.
 \begin{subequations} \label{eq:summary}
-\begin{gather}
-\sigma_{ \smallT } ( 0 ) = \frac{ w^{ 2 } }{ 2 } \\
-\sigma_{ z } ( 0 ) = \frac{ ( v_{{ \scriptscriptstyle 0}} \tau )^{ 2 } }{ 2 } \\
-%alternative formulation + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
-\gamma_{ \smallT } ( 0 ) = 0 \\
-\gamma_{ z } ( 0 ) = 0 \\
-\eta_{ \smallT } ( 0 ) = \frac{ m_{e} } { 3 } ( \hbar \omega - \Phi ) \\
-\eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
-\end{gather}
+  \begin{gather}
+    \sigma_{ \smallT } ( 0 ) = \frac{ w^{ 2 } }{ 2 } \\
+    \sigma_{ z } ( 0 ) = \frac{ ( v_{ max } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
+    \gamma_{ \smallT } ( 0 ) = 0 \\
+    \gamma_{ z } ( 0 ) = \sqrt{ \sigma_{ z } ( 0 ) } \left ( 0.06 m v_{ max } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
+    \eta_{ \smallT } ( 0 ) = \frac{ m \epsilon_{ F } ( \hbar \omega - \Phi ) }{ 3 ( \hbar \omega + \epsilon_{ F } ) } \\
+    \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 3.85 }
+  \end{gather}
 \end{subequations}
 
 We recognize that these initial conditions for an electron pulse generated by a laser-driven DC gun are idealized in that they neglect several important effects; in particular, the interplay of dispersive ($ \eta_{i}(0) \neq 0 $) and space-charge effects in the acceleration region of the photoelectron gun and transverse and longitudinal effects due to the divergence of the DC field in the vicinity of the gun anode.\cite{berger_dc_2009,togawa_ceb6_2007}
