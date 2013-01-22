@@ -8,7 +8,7 @@ set logscale xy
 set xtics format "%.0e"
 set ytics format "%.0e"
 
-set xrange [1e-15:1e-12]
+set xrange [1e-14:1e-11]
 
 file="long.dat"
 es1=8.79e10
@@ -26,8 +26,8 @@ set output "long_gamma.png"
 eg1=3.82e-25
 eg2=1.13e-13
 gam(x) = sqrt(sigma(x)) * ( g1*eg1 + g2*eg2*x )
-g1=1
-g2=1
+g1=0.132
+g2=1.061
 fit gam(x) file using 1:7 via g1,g2
 plot file using 1:6 with points lt 1,\
      file using 1:7 with points lt 2,\
