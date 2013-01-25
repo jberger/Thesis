@@ -51,7 +51,8 @@ so that
 %v0 dominated
 In the short pulse limit, where the acceleration in the DC gun field over the incident laser pulse duration can be neglected, the initial electron bunch properties are determined primarily by the photoemission physics.
 %TODO describe new model
-Careful analysis of the electron generation using the longitudinal $ v^{3} $ photoemission velocity distribution (Appendix \ref{sec:step_model}) and iterative time steps through the incident laser pulse reveals that, although the spatial electron bunch distribution is slightly skewed with respect to the symmetric incident laser pulse, its initial variance $ \sqrt{ \sigma_{ z } ( 0 ) } $ (or width) is nearly equal to that of the laser pulse of the normalization by the velocity ratio $ v_{ 0 }/c $; in other words,
+Careful analysis of the electron generation using the longitudinal $ v^{3} $ photoemission velocity distribution %TODO reference bin model
+and iterative time steps through the incident laser pulse reveals that, although the spatial electron bunch distribution is slightly skewed with respect to the symmetric incident laser pulse, its initial variance $ \sqrt{ \sigma_{ z } ( 0 ) } $ (or width) is nearly equal to that of the laser pulse of the normalization by the velocity ratio $ v_{ 0 }/c $; in other words,
 \begin{equation} \label{eq:initial_sigma_z}
 \sqrt{ \sigma_{ z } ( 0 ) } = v_{ 0 } \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \, \text{.}
 \end{equation}
@@ -65,7 +66,8 @@ in this regime.
 Additionally the iterative time-step analysis clearly shows that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
 In fact, $ \sqrt{ \eta_{ z } ( 0 ) } $ varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch with the narrowest momentum distribution at the front of the bunch where only the faster electrons with velocity near $ v_{ 0 } $ initially reside.
 Unfortunately, the mean-field theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch.
-Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $ (see Appendix \ref{sec:step_model}): indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
+Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: %TODO reference bin model
+indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
 
 These initial conditions at $t=0$ for an incident Gaussian laser pulse of the form given in \ref{eq:laser_form}, will be used for the remainder of this paper.
 \begin{subequations} \label{eq:summary}
