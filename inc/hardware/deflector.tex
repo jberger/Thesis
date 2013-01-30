@@ -1,1 +1,30 @@
 \section{Deflection Plates}
+
+In order to redirect the beam down the column, in conjunction with the accelerator alignment mechanisms, custom large area deflector plates were employed.
+Four plates are arranged on a hollow tube with a square profile, one on each side.
+One of each pair is held at ground while the other has a variable potential.
+By varying each potential the beam may be turned in flight.
+
+\begin{figure}
+  \centering
+  \include{deflector_schematic}
+  \caption{
+    Schematic diagram of one pair of deflection plates.
+    The blue ray represents the path of the pulse as a whole (not to be confused with the plot of a lens).
+  }
+  \label{fig:deflector_schematic}
+\end{figure}
+
+A schematic description of such a system is shown in \ref{fig:deflector_schematic}.
+To estimate the required voltage on the plates $V$, consider the applied impulse provided to the beam by the plate's electric field
+\begin{gather}
+  F \Delta t = m \Delta v \\
+  \frac{ e V }{ d } \frac{ L }{ v_z } = m_e \Delta v_x
+\end{gather}
+where (as seen in the figure) $L$ is the length of the plate (in the direction of travel $\hat{z}$) and $d$ is the separation of the plates.
+Then in the small angle approximation, the angle that the plate may correct for is approximately
+\begin{equation}
+  \theta = \frac{ \Delta v_x }{ v_z } = \frac{ e }{ m_e } \frac{ L }{ d } \frac{ V }{ v_z^2 }
+\end{equation}
+Using this result, when $L \sim d$ and $v_z = c/3$ a voltage of 1kV will deflect the beam approximately one degree.
+These plates therefore are used as a fine adjustment, as opposed to the coarse adjustment provided by aligning the acceleration gap.

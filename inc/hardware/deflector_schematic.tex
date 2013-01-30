@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+  \draw [very thick]
+    (0,0) -- ++(0,3)
+      node (left plate) [pos=0.7] {}
+      node [above, pos=1] {0V}
+  ;
+  \draw [very thick]
+    (4,0) -- ++(0,3)
+      node [right, pos=0.5] {$L$}
+      node (right plate) [pos=0.7] {}
+      node [above, pos=1] {$\pm V$}
+  ;
+  \draw [dashed, <->]
+    (left plate) -- (right plate)
+    node [above, pos=0.15] {$d$}
+    node [fill=white, pos=0.5] {\hphantom{XXXX}}
+  ;
+
+  \draw [thick, dashed]
+    (2,-3) coordinate (start)
+      -- ++(0,7)
+      node [pos=0.3, right] {$\theta$}
+  ;
+  \draw [very thick, blue, -> ]
+    (start) 
+      -- ++(75:3)
+        node [right, pos=0.3, black] {$\vec{v}$}
+      to [out=75,in=270] ++(0.5,3)
+      -- ++(0,1)
+  ;
+
+  % axes
+  \draw [red, ->] 
+    (0.5,-1.5) coordinate (axes start)
+    -- ++(0,0.5)
+      node [pos=1, above, black] {$\hat{z}$}
+  ;
+  \draw [red, ->] 
+    (axes start) -- ++(0.5,0)
+      node [pos=1, above, black] {$\hat{x}$}
+  ;
+\end{tikzpicture}
