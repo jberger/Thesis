@@ -9,6 +9,23 @@ Also, in transit from the cathode to the anode, this large beam is more suscepta
 
 \begin{figure}
   \centering
+  \centerline{\includegraphics{cathode.jpg} \includegraphics{anode.jpg}}
+  \caption{
+    Pictured are the cathode (left) and anode (right) of the accelerator built at UIC from a design by Togawa \protect\textit{et al.} \protect\cite{togawa_ceb6_2007}.
+    The photocathode is visible in the cathode Wehnelt aperture.
+    The anode is viewed as installed in the column, through the opened port normally occupied by the cathode and high voltage feedthrough.
+    The white material seen in both images helps to prevent electrical arcing under high voltage.
+  }
+  \label{fig:togawa-pic}
+\end{figure}
+
+These requirements lead to the fabrication of cathode/Wehnelt and anode pair based on the design of Togawa \textit{et al.} \cite{togawa_ceb6_2007} (pictured in \ref{fig:togawa-pic}).
+A schematic of this design, overlayed by a Finite Element Model (FEM) simulation of the electic field, is shown in \ref{fig:gun-field}.
+The schematic shows that the aperture concerns are easily satisfied.
+From the field equipotentials, it is clear that this design has a consistently flat electric field for large displacements off the central axis.
+
+\begin{figure}
+  \centering
   \input{gunfield}
   \caption{
     Schematic of the employed Togawa inspired cathode ($-V$) and anode (0V) pair.
@@ -18,11 +35,6 @@ Also, in transit from the cathode to the anode, this large beam is more suscepta
   }
   \label{fig:gun-field}
 \end{figure}
-
-These requirements lead to the fabrication of cathode/Wehnelt and anode pair based on the design of Togawa \textit{et al.} \cite{togawa_ceb6_2007}.
-A schematic of this design, overlayed by a Finite Element Model (FEM) simulation of the electic field, is shown in \ref{fig:gun-field}.
-The schematic shows that the aperture concerns are easily satisfied.
-From the field equipotentials, it is clear that this design has a consistently flat electric field for large displacements off the central axis.
 
 Of course, as derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electic field.
 This field will cause a divergence of the beam.
