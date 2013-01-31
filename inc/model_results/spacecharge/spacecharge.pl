@@ -38,13 +38,13 @@ sub for_number {
 
 open my $fh, '>', 'spacecharge.dat';
 
-my @nums = map { ("1e$_", "2.2e$_", "4.6e$_") } (0..9);
+my @nums = map { ("1e$_", "2.2e$_", "4.6e$_") } (0..8);
 pop @nums for 1..2;
 
 for my $num ( @nums ) {
   my $result = for_number($num);
   for (@$result) {
-    next unless $_->[1] >= 0.015;
+    next unless $_->[1] >= 0.15;
     print {$fh} $num . ' ' . sqrt( 2 * $_->[3] ) * 1e3 . ' ' . sqrt( 2 * $_->[4] ) * 1e3 . "\n";
     last;
   }
