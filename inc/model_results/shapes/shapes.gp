@@ -1,10 +1,11 @@
 set term tikz
+# need to set data variable `gnuplot -e 'num="1"' shapes.gp`
 
-prolate = "shape_prolate.dat"
-sphere  = "shape_sphere.dat"
-oblate  = "shape_oblate.dat"
+prolate = "shape_prolate_N". num . ".dat"
+sphere  = "shape_sphere_N" . num . ".dat"
+oblate  = "shape_oblate_N" . num . ".dat"
 
-set output "figure_shapes.tex"
+set output "shapes_N" . num . ".tex"
 
 set xlabel "Position in Column (m)"
 set ylabel "Normalized Pulse Width, Length (A.U.)"

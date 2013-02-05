@@ -6,6 +6,27 @@ use warnings;
 use Physics::UEMColumn alias => [qw':standard Pulse'];
 use Physics::UEMColumn::Auxiliary ':constants';
 
+my $n = shift or die "Please specify a number of electrons";
+
+my $length = 0.15; # 15 cm
+my $eta_t = me * qe * (0.5) / 3; # 0.5 eV excess energy
+my $vol = (1e-3)**3;
+
+my $for_xi = gen_xi_series( $n, $vol, $eta_t, $length );
+
+for my $spec ( [1/3, 'prolate' ], [1.0001, 'sphere'], [3, 'oblate'] ) {
+  my ( $xi, $shape ) = @$spec;
+  my $file = "shape_${shape}_N$n.dat";
+  open my $fh, '>', $file or die "Cannot open $file: $!\n";
+
+  my $result = $for_xi->($xi);
+  my ($st0, $sz0) = @{$result->[0]}[3,4];
+  for (@$result) {
+    print {$fh} $_->[1] . ' ' . sqrt( $_->[3] / $st0 ) . ' ' . sqrt( $_->[4] / $sz0 ) . "\n";
+    last if $_->[1] >= $length;
+  }
+}
+
 sub gen_xi_series {
   my ($n, $vol, $eta_t, $length) = @_; 
 
@@ -40,23 +61,3 @@ sub gen_xi_series {
   }
 }
 
-my $prefix = 'shape_';
-
-my $length = 0.15; # 15 cm
-my $eta_t = me * qe * (0.5) / 3; # 0.5 eV excess energy
-my $vol = (1e-3)**3;
-
-my $for_xi = gen_xi_series( 1, $vol, $eta_t, $length );
-
-for my $spec ( [1/3, 'prolate' ], [1.0001, 'sphere'], [3, 'oblate'] ) {
-  my ( $xi, $shape ) = @$spec;
-  my $file = "${prefix}${shape}.dat";
-  open my $fh, '>', $file or die "Cannot open $file: $!\n";
-
-  my $result = $for_xi->($xi);
-  my ($st0, $sz0) = @{$result->[0]}[3,4];
-  for (@$result) {
-    print {$fh} $_->[1] . ' ' . sqrt( $_->[3] / $st0 ) . ' ' . sqrt( $_->[4] / $sz0 ) . "\n";
-    last if $_->[1] >= $length;
-  }
-}
