@@ -7,7 +7,7 @@ oblate  = "shape_oblate_N" . num . ".dat"
 
 set output "shapes_N" . num . ".tex"
 
-set xlabel "Position in Column (m)"
+set xlabel "Position in Column (cm)"
 set ylabel "Normalized Pulse Width, Length (A.U.)"
 
 set xrange [0:15]
