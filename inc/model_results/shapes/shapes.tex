@@ -1,5 +1,13 @@
 \subsection{Trends for Initial Shapes}
 
+The initial `space-time' eccentricity \ref{eq:define_xi}, $\xi ( 0 ) = v_{{ \scriptscriptstyle 0}} \tau / w $ , of the photo-generated electron pulse plays a major role in the bunch propagation dynamics, particularly when space-charge effects dominate.
+\ref{fig:compare_shape} illustrates the typical dynamics of initially spherical ($ \sigma_{ \smallT }(0) = \sigma_{z} ( 0 ) $), `disk-like' ($ \sigma_{ \smallT } ( 0 ) > \sigma_{ z } ( 0 ) $), and `cigar-like' ($ \sigma_{ z } ( 0 ) > \sigma_{ \smallT } ( 0 ) $) pulses.
+%TODO rewrite using w?
+Unlike most simulations in this paper, the pulses in this simulation are not ``generated'' from laser parameters, but are defined directly.
+The initial bunch dimensions are given by the ellipticities $ \xi(0) = \{ 1/3 , 1 , 3 \} $ while in each case the product of the initial HW1/eM bunch widths $w_{\smallT}^2 w_z = $ 1mm$^3$.
+Since the initial pulse volumn is consistent between all runs, initial peak pulse charge density is six orders of magnitude greater in \ref{fig:compare_shape}\subref{fig:compare_N106} ($ N = 10^{6} $ electrons in the bunch) than in \ref{fig:compare_shape}\subref{fig:compare_N1} ($ N = 10^{0} $).
+The pulse velocity is $ v_{{ \scriptscriptstyle 0}} \approx c/3 $, i.e. a DC photogun with $V = 30\text{kV} $.
+
 \begin{figure}
   \centering
   \include{figure_shapes}
@@ -7,4 +15,36 @@
     Transverse (solid) and longitudinal (dashed) dynamics of three example pulses for three length/width ratios ($\xi$). 
     The red lines represent a prolate pulse (a ``pancake'') with $\xi=1/3$, green lines for a spherical pulse with $\xi=1$, and blue for oblate (a ``cigar'') having $\xi=3$.
   }
+  \label{fig:compare_shape}
 \end{figure}
+
+%\begin{figure}[t]
+%\centering
+%\subfloat[][]
+%{
+%
+%\label{fig:compare_N1}
+%\includegraphics{compare_N1}
+%}
+%\\
+%\subfloat[][]
+%{
+%
+%\label{fig:compare_N106}
+%\includegraphics{compare_N106}
+%}
+%\caption
+%{
+%Comparison of the propagation dynamics of disk-like ($ \xi (0) = 0.1 $), spherical ($ \xi (0) = 1 $) and cigar-like ($ \xi (0) = 10 $) pulses, generated from a 261nm laser driven Ta photocathode in a 20kV DC electron gun, at \subref{fig:compare_N1} negligible charge densities ($ N = 10^{0} $) and \subref{fig:compare_N106} charge densities suitable for single shot UED studies ($ N = 10^{6} $): the normalized transverse beam width ($ \sqrt{ \sigma_{\smallT} / \sigma_{\smallT} ( 0 ) } $) (solid line) and normalized longitudinal pulse width ($ \sqrt{ \sigma_{z} / \sigma_{z} ( 0 ) } $) (dashed line).
+%}
+%\label{fig:compare_shape}
+%\end{figure}
+
+%The bunch propagation dynamics for negligible pulse charge density ($ N = 10^{0} $) shown in \Fig \ref{fig:compare_shape}\subref{fig:compare_N1} display the trends expected from the initial photoemission conditions. In particular, in the initially spherical case ($ \sigma_{\smallT} (0) = \sigma_{z} (0) $), the transverse bunch width $ \sqrt{2 \sigma_{\smallT}} $ expands twice as rapidly as the longitudinal length $ \sqrt{2 \sigma_{z}} $ due to the factor of two difference in the initial momentum variances $ \Delta p_{i} $ and the zero initial pulse chirp ($ \gamma_{i} = 0 $). Naturally, for initially non-spherical electron bunches, the pulse propagation model also shows that the relative bunch broadening $ \sqrt{ \sigma_{i} / \sigma_{i} (0) } $ for comparable $ \eta_{i} $ is greatest for the smallest initial $ \sigma_{i} (0) $; that is both disk- and cigar-like pulses are initially driven towards the spherical regime. In all cases, this intrinsic electron pulse broadening due to non-zero $ \eta_{i} $ generates a momentum chirp across the electron bunch; in the longitudinal dimension the faster electrons photoemitted with larger excess energy leading the slower electrons.
+
+%For an electron pulse with a higher initial space-charge density, intra-pulse Coulomb effects can dominate the propagation dynamics. In \Fig \ref{fig:compare_shape}\subref{fig:compare_N106}, we display the predicted temporal dynamics of electron pulses with the same initial size and photoemission conditions as \Fig \ref{fig:compare_shape}\subref{fig:compare_N1}, but with $ N = 10^{6} $ electrons --- the number required for single-shot diffraction pattern measurements in a DTEM.\cite{berger_dc_2009,armstrong_practical_2007}
+%Above is probably true for UED but never done
+%The significant influence of space-charge effects for the initial peak pulse charge density of $0.0287\text{C}/\text{m}^{3}$ is clearly evident. In the spherical case, space-charge induced bunch broadening overwhelms the initial difference between $\eta_{\smallT}$ and $\eta_{z}$, producing an almost uniform three-dimensional `Coulomb explosion' of the electron pulse with a one-dimensional bunch broadening rate roughly one order of magnitude greater than that for $ N = 10^{0} $ (\Fig \ref{fig:compare_shape}\subref{fig:compare_N1}). For $ \xi (0) > 1 $ (or $ \xi (0) < 1 $), the smaller initial transverse (longitudinal) bunch dimension experiences the greatest relative expansion in free-space propagation. This is to be expected, because the initial $\eta_{i}$ are non-zero (but comparable in magnitude) while Coulomb effects will produce differential pulse broadening in the dimension with the largest internal space-charge field (i.e., the dimension with the largest electrostatic potential gradient). In fact, both the $ N = 10^{6} $ disk- and cigar-like pulse examples shown in \Fig \ref{fig:compare_shape}\subref{fig:compare_N106} transition through a spherical bunch shape ($ \xi \approx 1 $) after a time of flight of $\sim$0.5ns, at which point the peak pulse charge density has already been reduced by a factor of $\sim$100. The initial impulse induced by the strong space-charge field then provides for continued linear expansion (in time), resulting in a linear pulse chirp in the dimension associated with the smallest initial HW1/eM bunch width\cite{michalik_analytic_2006,berger_dc_2009} $ \sqrt{ 2 \sigma_{i} (0) } $.
+
+%The data presented in \Fig \ref{fig:compare_shape} using the AG model of Michalik and Sipe \cite{michalik_analytic_2006} are entirely consistent with prior works.\cite{reed_femtosecond_2006,siwick_ultrafast_2002} In femtosecond UED experiments, significant efforts are made to offset space-charge induced temporal (longitudinal, $z$) pulse broadening by reducing the time of flight from the gun photocathode to the sample.\cite{siwick_ultrafast_2002,reed_evolution_2009} Moreover, efforts are now underway to compensate for temporal electron pulse broadening using RF cavity pulse compression techniques.\cite{oudheusden_electron_2007} In UEM, employing a standard retro-fitted electron microscope column driven by MHz repetition-rate sub-picosecond lasers,\cite{lobastov_four-dimensional_2005} deleterious space-charge effects have obliged operation in the $\sim$1 electron/pulse regime to maintain high spatial resolution. Even for nanosecond DTEM (the extreme cigar-like pulse ($\xi \gg 1 $)), transverse space-charge induced beam broadening has necessitated the insertion of an additional magnetic electron lens in a microscope column to allow more efficient delivery of electrons to the specimen when $ N > 10^{6} $.\cite{lagrange_nanosecond_2008} In this paper, however, we will restrict the discussion to ultrashort (ps and sub-ps) electron pulses which (i) allow for the temporal resolution of fundamental events occurring on ultrafast time scales in materials science, biology and chemistry \cite{king_ultrafast_2005} and (ii) can be generated in the disk-like regime ($ \xi < 1 $) where transverse bunch broadening effects are minimized (\Fig \ref{fig:compare_shape})(enabling more efficient beam propagation) and RF cavities can be used to compensate and reverse longitudinal (temporal) pulse broadening.\cite{veisz_hybrid_2007}
+
