@@ -4,6 +4,8 @@
 For a DTEM or UED apparatus, where the electron pulse is produced in a laser-driven photo-electron gun, the implementation of the AG model of Michalik and Sipe \cite{michalik_analytic_2006} requires knowledge of the initial ($ t = 0 $) bunch parameters immediately after generation at the photocathode surface inside the acceleration region of the gun.
 For the purposes of this paper, we will make a simple approximation to the behavior of the gun in order to provide generic initial conditions for the electron pulse.
 
+\subsection{A Simplistic Analytic Form} 
+
 % transverse
 Consider a single-photon photoemission process with a spatially cylindrically symmetric incident Gaussian laser beam with Gaussian temporal irradiance profile 
 \begin{equation}\label{eq:laser_form}
@@ -15,6 +17,8 @@ The electron pulse's initial spatial variance is simply
 \begin{equation}
 \sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \text{ .}
 \end{equation}
+A laser pulse of this form has a temporal uncertainty given simply $ ( \Delta t_{L} )^{ 2 } = \tau^{ 2 } / 2 $.
+
 For spatially-uniform photoemission from a planar photocathode, we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial spatial momentum chirp in the electron bunch.
 Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009}, we know that metallic photocathode's initial transverse momentum variance at $ t = 0 $ is given by
 \begin{equation} \label{eq:jensen_eta}
@@ -24,50 +28,41 @@ in the limit where the excess photoemission energy, $ \Delta E = \hbar \omega - 
 %in the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
 
 % longitudinal
-In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the properties of the electron bunch.
-Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) by the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than that traveled by electrons with the maximum photoemission velocity $ v_{0} $ alone over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
+In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the properties $\sigma_z$ and $\gamma_z$ of the electron bunch.
+Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) by the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than that traveled by electrons with the maximum photoemission velocity $ v_{0} = \sqrt{ 2 \Delta E / m } $ alone over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
 
 % dc dominated
 In the long-pulse regime, the DC field dominated case, we assume that the intrinsic velocity of the emitted electrons is negligable.
-Clearly the first emitted electrons travel a distance $ \Delta z = \frac{ 1 }{ 2 } a ( \Delta t_{L} )^{ 2 } = \sqrt{ \sigma_{ z } ( 0 ) } $, during the  $ \Delta t_{ L } $ rms laser pulse duration: for a laser pulse described above, we have $ ( \Delta t_{L} )^{ 2 } = \tau^{ 2 } / 2 $.
-This result may be restated as,
+The emitted electrons travel an average distance $ \Delta z $, during the $ \Delta t_{ L } $ rms laser pulse duration given by,
 \begin{equation}
-  \sigma_{ z } ( 0 ) = \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 }
+  \sqrt{ \sigma_{ z } ( 0 ) } = \Delta z = \frac{ 1 }{ 2 } a ( \Delta t_{L} )^{ 2 }  = \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m }
 \end{equation}
 By a similar logic, we can say that the `front' of the pulse then has a velocity equal to $ a \Delta t_{ L } $, while the `back' of the pulse (a distance $ \frac{ 1 }{ 2 } \sqrt{ \sigma_{ z } ( 0 ) } $ from the electron bunch peak) has zero velocity since it has just been generated. From this one sees that the initial linear chirp across the pulse is given by 
 \begin{equation}
-  \gamma_{ z } ( 0 ) = m \sigma_{ z } ( 0 ) \frac{ \Delta v }{ \Delta z } = m a \Delta t_{ L } \sqrt{ \sigma_{ z } ( 0 ) } = \frac{ e E_{ DC } \tau }{ \sqrt{ 2 } }\, .
+  \gamma_{ z } ( 0 ) = m \Delta v \Delta z = m a \Delta t_{ L } \sqrt{ \sigma_{ z } ( 0 ) } = \frac{ e E_{ DC } \tau }{ \sqrt{ 2 } }\sqrt{ \sigma_{ z } ( 0 ) }\, .
 \end{equation} 
-From a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
-This implies that the local momentum uncertainty in the longitudinal direction is half that of the transverse directions; that is to say
-\begin{equation}
-( \Delta p_{ z } )^{2} = \left ( \frac{\Delta p_{ x , y }}{ 2 } \right )^{2} \text{,}
-\end{equation}
-so that
-\begin{equation}
-\eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
-\end{equation}
 
 %v0 dominated
 In the short pulse limit, where the acceleration in the DC gun field over the incident laser pulse duration can be neglected, the initial electron bunch properties are determined primarily by the photoemission physics.
-%TODO describe new model
-Careful analysis of the electron generation using the longitudinal $ v^{3} $ photoemission velocity distribution %TODO reference bin model
-and iterative time steps through the incident laser pulse reveals that, although the spatial electron bunch distribution is slightly skewed with respect to the symmetric incident laser pulse, its initial variance $ \sqrt{ \sigma_{ z } ( 0 ) } $ (or width) is nearly equal to that of the laser pulse of the normalization by the velocity ratio $ v_{ 0 }/c $; in other words,
+Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_0$ (the velocity associated with the excess photoemission energy) and the back is essentially stationary just after generation.
+The pulse's initial spatial variance $\Delta z$ is therefore equal to the distance that the front of the pulse travels during the laser pulse duration $\Delta t_L$,
 \begin{equation} \label{eq:initial_sigma_z}
-\sqrt{ \sigma_{ z } ( 0 ) } = v_{ 0 } \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \, \text{.}
+  \sqrt{ \sigma_{ z } ( 0 ) } = \Delta z = v_{ 0 } \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \, \text{.}
 \end{equation}
-Not unexpectedly, the analysis also indicates that the initial electron bunch has a velocity chirp.
-%TODO description again
-Its value is only roughly 6\% of $ v_{ 0 }/\sqrt{ \sigma_{z} ( 0 ) } $ since the photoemission generates the $ v^{ 3 } $ velocity distribution throughout the laser pulse; thus 
+Once again we can use this information to determine a velocity chirp across the pulse in this regime,
 \begin{equation}
-\gamma_{ z } ( 0 ) = m \sigma_{ z } ( 0 ) \frac{ d v }{ d z } \approx 0.06 m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \, ,
+  \gamma_{ z } ( 0 ) = m \Delta v \Delta z = m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \, ,
 \end{equation}
-in this regime.
-Additionally the iterative time-step analysis clearly shows that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
-In fact, $ \sqrt{ \eta_{ z } ( 0 ) } $ varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch with the narrowest momentum distribution at the front of the bunch where only the faster electrons with velocity near $ v_{ 0 } $ initially reside.
-Unfortunately, the mean-field theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch.
-Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: %TODO reference bin model
-indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
+
+Finally, from a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
+This implies that the final initial condition, the local momentum uncertainty in the longitudinal direction $\eta_z$, is half that of the transverse directions; that is to say
+\begin{equation}
+  ( \Delta p_{ z } )^{2} = \left ( \frac{\Delta p_{ x , y }}{ 2 } \right )^{2} \text{,}
+\end{equation}
+so that
+\begin{equation}
+  \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
+\end{equation}
 
 These initial conditions at $t=0$ for an incident Gaussian laser pulse of the form given in \ref{eq:laser_form}, will be used for the remainder of this paper.
 \begin{subequations} \label{eq:summary}
@@ -75,9 +70,9 @@ These initial conditions at $t=0$ for an incident Gaussian laser pulse of the fo
     \sigma_{ \smallT } ( 0 ) = \frac{ w^{ 2 } }{ 2 } \\
     \sigma_{ z } ( 0 ) = \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
     \gamma_{ \smallT } ( 0 ) = 0 \\
-    \gamma_{ z } ( 0 ) = \sqrt{ \sigma_{ z } ( 0 ) } \left ( 0.06 m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
+    \gamma_{ z } ( 0 ) = \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
     \eta_{ \smallT } ( 0 ) = \frac{ m }{ 3 } ( \hbar \omega - \Phi ) \\
-    \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 3.85 }
+    \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
   \end{gather}
 \end{subequations}
 
@@ -86,5 +81,13 @@ Such effects and the limits of the validity of \ref{eq:initial_sigma_z}, within 
 However, \ref{eq:summary} also represent a defined set of initial conditions that allows the effect of electron optics (i.e., magnetic lenses and RF cavities) on electron pulse propagation to be more readily understood.
 Moreover, they reflect the fact that the majority of DC photoelectron guns are driven by laser pulses with spatial and temporal profiles that are close to Gaussian.\cite{williamson_clocking_1997,sciaini_electronic_2009}
 Only for specialized cases, such as the generation of uniform ellipsoid electron bunch shapes, is spatial and temporal manipulation of the incident laser pulse considered.\cite{luiten_how_2004,li_generating_2008}
+
+\subsection{Iterative Spatial/Temporal Bin Model}
+
+Additionally the iterative time-step analysis clearly shows that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
+In fact, $ \sqrt{ \eta_{ z } ( 0 ) } $ varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch with the narrowest momentum distribution at the front of the bunch where only the faster electrons with velocity near $ v_{ 0 } $ initially reside.
+Unfortunately, the mean-field theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch.
+Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: %TODO reference bin model
+indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
 
 \input{bin_model_figure}
