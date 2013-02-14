@@ -17,9 +17,9 @@ The electron pulse's initial spatial variance is simply
 \begin{equation}
 \sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \text{ .}
 \end{equation}
-A laser pulse of this form has a temporal uncertainty given simply $ ( \Delta t_{L} )^{ 2 } = \tau^{ 2 } / 2 $.
+A laser pulse of this form has a temporal uncertainty $ \Delta t_{L} = \tau / \sqrt{2} $.
 
-For spatially-uniform photoemission from a planar photocathode, we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial spatial momentum chirp in the electron bunch.
+For spatially-uniform photoemission from a planar photocathode, from symmetry we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial transverse spatial momentum chirp across the electron bunch.
 Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009}, we know that metallic photocathode's initial transverse momentum variance at $ t = 0 $ is given by
 \begin{equation} \label{eq:jensen_eta}
   \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} }{ 3 } ( \hbar \omega - \Phi ) \; \text{,}
@@ -35,24 +35,36 @@ Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $
 In the long-pulse regime, the DC field dominated case, we assume that the intrinsic velocity of the emitted electrons is negligable.
 The emitted electrons travel an average distance $ \Delta z $, during the $ \Delta t_{ L } $ rms laser pulse duration given by,
 \begin{equation}
-  \sqrt{ \sigma_{ z } ( 0 ) } = \Delta z = \frac{ 1 }{ 2 } a ( \Delta t_{L} )^{ 2 }  = \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m }
+  \sqrt{ \sigma_{ z } ( 0 ) } \approx \Delta z = \frac{ 1 }{ 2 } a ( \Delta t_{L} )^{ 2 }  = \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m }
 \end{equation}
 By a similar logic, we can say that the `front' of the pulse then has a velocity equal to $ a \Delta t_{ L } $, while the `back' of the pulse (a distance $ \frac{ 1 }{ 2 } \sqrt{ \sigma_{ z } ( 0 ) } $ from the electron bunch peak) has zero velocity since it has just been generated. From this one sees that the initial linear chirp across the pulse is given by 
 \begin{equation}
-  \gamma_{ z } ( 0 ) = m \Delta v \Delta z = m a \Delta t_{ L } \sqrt{ \sigma_{ z } ( 0 ) } = \frac{ e E_{ DC } \tau }{ \sqrt{ 2 } }\sqrt{ \sigma_{ z } ( 0 ) }\, .
+  \gamma_{ z } ( 0 ) \approx \Delta v \Delta z = m a \Delta t_{ L } \sqrt{ \sigma_{ z } ( 0 ) } = \frac{ e E_{ DC } \tau }{ \sqrt{ 2 } }\sqrt{ \sigma_{ z } ( 0 ) }\, .
 \end{equation} 
 
 %v0 dominated
 In the short pulse limit, where the acceleration in the DC gun field over the incident laser pulse duration can be neglected, the initial electron bunch properties are determined primarily by the photoemission physics.
 Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_0$ (the velocity associated with the excess photoemission energy) and the back is essentially stationary just after generation.
-The pulse's initial spatial variance $\Delta z$ is therefore equal to the distance that the front of the pulse travels during the laser pulse duration $\Delta t_L$,
-\begin{equation} \label{eq:initial_sigma_z}
-  \sqrt{ \sigma_{ z } ( 0 ) } = \Delta z = v_{ 0 } \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \, \text{.}
+Further, since the photoemission efficiency goes like $\Delta E^2$ \cite{shalaev_electron_1994} the distribution of emitted electrons vs velocity goes like $v^4$; therefore for a first approximation it is reasonable to say that in this case $\Delta v \approx v_0$.
+The pulse's initial spatial variance $\Delta z$ is therefore approximately to the spread of distances traveled during the laser pulse duration $\Delta t_L$,
+\begin{equation} 
+  \sqrt{ \sigma_{ z } ( 0 ) } \approx \Delta z = \Delta v \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \, \text{.}
 \end{equation}
 Once again we can use this information to determine a velocity chirp across the pulse in this regime,
 \begin{equation}
-  \gamma_{ z } ( 0 ) = m \Delta v \Delta z = m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \, ,
+  \gamma_{ z } ( 0 ) \approx m \Delta v \Delta z = m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \, ,
 \end{equation}
+
+For simplicity of use, one may combine the initial conditions resulting from these two cases.
+Because they arise from independent processes, the initial spatial uncertainties $\sigma_{ z } ( 0 )$ may be added naively.
+\begin{equation} \label{eq:initial_sigma_z}
+  \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 }
+\end{equation}
+While it is perhaps more rigorously correct to naively add the initial momentum chirp terms $\gamma_{ z } ( 0 )$ with the spatial variance evaluated in each respective limit, we propose that the evaluation be done in terms of the resultant form presented in \ref{eq:initial_sigma_z}.
+\begin{equation}
+  \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right )
+\end{equation}
+In this way the the model may, in an intermediate case, more closely reflect the pulse as modeled rather than the pulse as idealized in each case.
 
 Finally, from a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
 This implies that the final initial condition, the local momentum uncertainty in the longitudinal direction $\eta_z$, is half that of the transverse directions; that is to say
@@ -61,18 +73,18 @@ This implies that the final initial condition, the local momentum uncertainty in
 \end{equation}
 so that
 \begin{equation}
-  \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
+  \eta_{ z } ( 0 ) \approx \frac{ \eta_{ \smallT } ( 0 )}{ 4 } \; \text{.}
 \end{equation}
 
 These initial conditions at $t=0$ for an incident Gaussian laser pulse of the form given in \ref{eq:laser_form}, will be used for the remainder of this paper.
 \begin{subequations} \label{eq:summary}
   \begin{gather}
-    \sigma_{ \smallT } ( 0 ) = \frac{ w^{ 2 } }{ 2 } \\
-    \sigma_{ z } ( 0 ) = \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
-    \gamma_{ \smallT } ( 0 ) = 0 \\
-    \gamma_{ z } ( 0 ) = \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
-    \eta_{ \smallT } ( 0 ) = \frac{ m }{ 3 } ( \hbar \omega - \Phi ) \\
-    \eta_{ z } ( 0 ) = \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
+    \sigma_{ \smallT } ( 0 ) \approx \frac{ w^{ 2 } }{ 2 } \\
+    \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
+    \gamma_{ \smallT } ( 0 ) \approx 0 \\
+    \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
+    \eta_{ \smallT } ( 0 ) \approx \frac{ m }{ 3 } ( \hbar \omega - \Phi ) \\
+    \eta_{ z } ( 0 ) \approx \frac{ \eta_{ \smallT } ( 0 ) }{ 4 }
   \end{gather}
 \end{subequations}
 
