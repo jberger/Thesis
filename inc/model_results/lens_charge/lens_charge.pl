@@ -4,43 +4,54 @@ use strict;
 use warnings;
 use v5.10;
 
-use Physics::UEMColumn alias => ':standard';
+use Physics::UEMColumn alias => [qw/:standard Pulse/];
+use Physics::UEMColumn::Auxiliary ':constants';
 
 use PDL;
 use PDL::Graphics::Prima::Simple;
 
 sub gen_sim {
   my ($lens_position, $strength) = @_;
-  my $column_length = 3 * $lens_position;
+  my $column_length = 4 * $lens_position;
 
   return sub {
     my $num = shift;
-    my $laser = Laser->new(
-      width    => '1 mm',
-      duration => '1 ps',
-      energy   => '4.75 eV',
-    );
+#    my $laser = Laser->new(
+#      width    => '1 mm',
+#      duration => '1 ps',
+#      energy   => '4.75 eV',
+#    );
 
-    my $acc = DCAccelerator->new(
-      length  => '20 mm',
-      voltage => '20 kilovolts',
+#    my $acc = DCAccelerator->new(
+#      length  => '20 mm',
+#      voltage => '20 kilovolts',
+#    );
+
+    my $pulse = Pulse->new(
+      number => $num,
+      velocity => vc / 3,
+      sigma_t => (500**2/2) . 'um^2',
+      sigma_z => ((0.6*1e8)**2/2) . ' (ps m / s)^2',
+      eta_t => (me * 0.5 / 3) . 'kg eV',
     );
 
     my $column = Column->new(
-      length       => $column_length, 
-      laser        => $laser,
-      accelerator  => $acc,
-      photocathode => Photocathode->new( work_function => '4.25 eV' ), # Ta
+      length       => $column_length . 'mm',
+#      laser        => $laser,
+#      accelerator  => $acc,
+#      photocathode => Photocathode->new( work_function => '4.25 eV' ), # Ta
     );
 
     my $sim = Physics::UEMColumn->new(
       column => $column,
-      number => $num,
+      pulse => $pulse,
+#      number => $num,
+      steps => 200,
     );
 
     my $lens1 = MagneticLens->new(
-      location => $lens_position,
-      length   => '1 in',
+      location => $lens_position . 'mm',
+      length   => '0.1 in',
       strength => $strength,
     );
 
@@ -50,18 +61,30 @@ sub gen_sim {
   }
 }
 
-my $out;
-my $sim = gen_sim( 0.20, 26.5e-13 );
+my @sets = (
+  [ 6,  730e-12 ],
+  [ 60, 675e-13 ],
+);
 
-for ( qw/ 1e0 1e4 1e5 1e6 1e7 / ) {
-  my $result = $sim->($_);
-  my $z  = $result->slice('(1),');
-  my $st = $result->slice('(3),');
+foreach my $set ( @sets ) {
+  my $lens = $set->[0];
 
-  wcols $z, $st, "lens_20cm_n$_.dat";
+  say "$lens mm";
+  my $sim = gen_sim( @$set );
 
-  my $min_ind = $st->minimum_ind;
-  say $z->at($min_ind) / 0.40;
+  for ( qw/ 1e0 1e4 1e5 1e6 1e7 / ) {
+    print "\t$_:";
+
+    my $result = $sim->($_);
+    my $z  = $result->slice('(1),') / ( $lens * 1e-3 ) - 1;
+    my $w = sqrt( 2 * $result->slice('(3),') ) * 1000;
+
+    wcols $z, $w, "lens_${lens}mm_n$_.dat";
+
+    my $min_ind = $w->minimum_ind;
+    say "\t" . $z->at($min_ind);
+  }
+
 }
 
 #line_plot $z, $st;
