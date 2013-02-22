@@ -1,0 +1,30 @@
+\subsection{Space-charge Effects in Magnetic Lenses}
+
+In the transverse spatial dimension, space-charge effects that increase $ \sigma_{ \smallT } $ can be compensated for by using magnetic electron lenses.\cite{oudheusden_electron_2007,lagrange_nanosecond_2008}
+In an UEM, of course, the electron pulse will also need to be focused onto the specimen --- the focal spot size, post specimen image magnification, and CCD detector pixelation determining the spatial resolution in a TEM geometry.\cite{berger_dc_2009}
+The extent to which space-charge effects limit the focal fidelity is expected to be dependent upon both $N$ and the pulse shape (i.e., the pulse's space-time eccentricity).
+
+In the preceding sections it has already been established that prolate eccentricities are preferred for UEM in general.
+When focusing the pulse it can be shown that prolate pulses will also have markedly better performance.
+Therefore, in the sake of simplicity, only the prolate case will be demonstrated here.
+For more information see reference \cite{berger_semi-analytic_2010}.
+
+\begin{figure}
+  \centering
+  \subfloat[][] {
+    \label{fig:focus_lens_charge_long}
+    \input{lens_60mm}
+  }
+  \\
+  \subfloat[][] { 
+    \label{fig:focus_lens_charge_short}
+    \input{lens_6mm}
+  }
+  \caption{ PLACEHOLDER
+  %Focal behavior of perfect magnetic lenses predicted by the AG model (with DC acceleration voltage of 20kV) as a function of pulse charge $N$: \subref{fig:LongPancake} $f = $ 63.5mm and disk-like ($ w = 500 \mu \text{m}$ and $ \xi ( 0 ) = 0.1 $); \subref{fig:LongCigar} $ f = $ 63.5mm and cigar-like ($ w = 107.7 \mu \text{m}$ and $ \xi ( 0 ) = 10 $); \subref{fig:ShortPancake} $ f = $ 6.35mm and disk-like ($ w = 500 \mu \text{m}$ and $ \xi ( 0 ) = 0.1 $); \subref{fig:ShortCigar} $ f = $ 6.35mm and cigar-like ($ w = 107.7 \mu \text{m}$ and $ \xi ( 0 ) = 10 $). A logarithmic scale is used for comparative clarity.
+  }
+  \label{fig:focus_lens_charge}
+\end{figure}
+
+\ref{fig:focus_lens_charge} shows the predicted dynamics of the spatial electron pulse waist (HW1/eM) for prolate pulses under perfect focusing for lenses of two focal lengths; a `long' focal length of 60mm (\ref{fig:focus_lens_charge}\subref{fig:focus_lens_charge_long}) and a `short' focal length of 6.0mm (\ref{fig:focus_lens_charge}\subref{fig:focus_lens_charge_short}).
+%In all cases, the pulse is assumed to be accelerated to 20kV and generated from a Ta photocathode with a negligible excess photoemission energy (i.e., $ \eta_{i} \rightarrow 0 $) in order to highlight the effect of space-charge. For both lens strengths, the deleterious effects of space-charge are evident as the number of electrons/pulse $ N $ is increased. The single-electron ($ N = 1 $) focal spot sizes of $\sim$6 microns for the $ f = 63.5 \text{mm} $ lens and $\sim$0.6 microns for the shorter $ f = 6.35 \text{mm} $ lens increase markedly for $ N \gtrsim 10^{ 5 } $ and $ N \gtrsim 10^{ 6 }$, respectively. This order of magnitude difference is fundamentally related to the greater time of flight before the focus of the $ f = 63.5\text{mm} $ lens; it increases the impulse that the internal Coulomb force can exert on the pulse as its charge density is increased under focusing. A consequent further effect is a shift in the focal position to $ z > f $.  A more subtle effect is that disk-like pulses are more readily focused than cigar-like pulses --- the rate of transverse pulse broadening due to space-charge effects already being intrinsically greater in the latter (\Fig \ref{fig:compare}). Thus, the electron pulse propagation model predicts that higher fidelity focusing will be achieved with shorter focal length magnetic lenses, higher acceleration energy electrons (time of flight reduction), and pulses with $ \sigma_{ \smallT } \gg \sigma_{ z } $ at the entrance aperture of the lens. 
