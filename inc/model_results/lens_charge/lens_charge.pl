@@ -31,7 +31,7 @@ sub gen_sim {
       number => $num,
       velocity => vc / 3,
       sigma_t => (500**2/2) . 'um^2',
-      sigma_z => ((0.6*1e8)**2/2) . ' (ps m / s)^2',
+      sigma_z => ((0.5*1e8)**2/2) . ' (ps m / s)^2',
       eta_t => (me * 0.5 / 3) . 'kg eV',
     );
 
@@ -82,7 +82,7 @@ foreach my $set ( @sets ) {
     wcols $z, $w, "lens_${lens}mm_n$_.dat";
 
     my $min_ind = $w->minimum_ind;
-    say "\t" . $z->at($min_ind);
+    say "\t" . $w->at($min_ind) . 'mm at z = ' . $z->at($min_ind) . 'f';
   }
 
 }
