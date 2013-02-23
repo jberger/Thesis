@@ -11,19 +11,20 @@ For more information see reference \cite{berger_semi-analytic_2010}.
 
 \begin{figure}
   \centering
-  \subfloat[][] {
-    \label{fig:focus_lens_charge_long}
-    \input{lens_60mm}
-  }
-  \\
-  \subfloat[][] { 
-    \label{fig:focus_lens_charge_short}
-    \input{lens_6mm}
+  \centerline{
+    \subfloat[][] {
+      \label{fig:focus_lens_charge_long}
+      \input{lens_60mm}
+    }
+    \subfloat[][] { 
+      \label{fig:focus_lens_charge_short}
+      \input{lens_6mm}
+    }
   }
   \caption[AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$]{
-    Focal behavior of perfect magnetic lenses predicted by the AG model (with DC acceleration voltage of 20kV) as a function of pulse charge $N$.
-    Pulses begin at the lens' front focal plane with HW1/eM width $ 500 \mu \text{m}$ and duration 500 fs at 20 kV velocity ($c/3$) or ellipticiy $ \xi ( 0 ) = 0.1 $ (prolate).
-    Distance traveled in column is measured relative to the lens at $z=0$, in units of the focal lenth, \subref{fig:focus_lens_charge_long} $f = $ 60mm and \subref{fig:focus_lens_charge_short} $ f = $ 6.35mm.
+    AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$.
+    Pulses begin at the lens' front focal plane with HW1/eM width $ 500 \mu \text{m}$ and duration 500 fs at 20 kV velocity ($c/3$) for an ellipticiy $ \xi ( 0 ) = 0.1 $ (prolate).
+    Distance traveled in column is measured relative to the lens at $z=0$, in units of the focal lenth, \subref{fig:focus_lens_charge_long} $f = $ 60mm and \subref{fig:focus_lens_charge_short} $ f = $ 6.0mm.
     A logarithmic scale is used for comparative clarity.
   }
   \label{fig:focus_lens_charge}

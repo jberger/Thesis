@@ -1,4 +1,4 @@
-set term tikz solid nopicenvironment
+set term tikz solid nopicenvironment scale 0.7,0.7
 
 # need to set data variable `gnuplot -e 'length="60"' lens_charge.gp`
 
@@ -10,7 +10,7 @@ set logscale y
 
 #set yrange [0.1:1.5]
 
-set xlabel "Pulse location in column (units of focal length $f$=".length."mm)"
+set xlabel "Pulse location rel. to $f$=".length."mm lens"
 set ylabel "HW1/eM beam width (mm)"
 
 plot file."_n1e0.dat" using 1:2 with lines title "",\
