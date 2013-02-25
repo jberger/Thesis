@@ -99,11 +99,11 @@ To help simplify what is already becoming a complex problem, these equations may
 \begin{equation} \label{eq:coordinate_vector}
 u_i = \{x, p_x, y, p_y, z, p_z\}\text{ .}
 \end{equation}
-In this space, \ref{eq:gaussian_exponent} becomes a 9x9 matrix
+In this space, \ref{eq:gaussian_exponent} becomes
 \begin{equation}
   G(\vec{r}, \vec{p}; t) = \frac{1}{2}\sum\limits_{ij} A_{ij} u_i u_j
 \end{equation}
-where
+where the 9 x 9 matrix $A$ is defined as
 \begin{equation}
   A = 
   \begin{pmatrix}
@@ -118,13 +118,13 @@ where
     \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) & 1/\eta_{\alpha}
   \end{pmatrix}
 \end{equation}
-where again ${\scriptstyle \alpha} = \smallT \text{ or } z$. 
+and again ${\scriptstyle \alpha} = \smallT \text{ or } z$. 
 A nice property of Gaussians of this form is the convenient ``Multidimensional Gaussian Integral'' given by
 \begin{equation} \label{eq:gaussian_integral}
   (A^{-1})_{ij} = \frac{1}{N} \int u_i u_j f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
 \end{equation}
 which is a common form of integral analysis in Quantum Field Theory (see for example Peskin and Schroeder Equation 9.70). 
-Application of this integral yields another 9x9 matrix
+Application of this integral yields another 9 x 9 matrix
 \begin{equation}
   A = 
   \begin{pmatrix}
