@@ -6,14 +6,15 @@ One of the most well known theorems in physics (and mathematics) is Liouville's 
 This theorem can be summarized succinctly as a `the total phase space of a system is conserved.'
 %TODO find a good reference for this
 
-To evaluate the effect of this theorem on these equations, consider the time derivative of the product $\sigma_{\alpha} \eta_{\alpha}$.
+In the AG model this phase space product is simply $\sigma_{\alpha} \eta_{\alpha}$
+To evaluate the effect of this theorem on these equations, consider the time derivative of this product
 Using \ref{eq:ag_original} it is easy to show that
 \begin{gather}
   \frac{d}{dt} (\sigma_{\alpha} \eta_{\alpha}) = \sigma_{\alpha} \frac{d \eta_{\alpha}}{dt} + \eta_{\alpha} \frac{d \sigma_{\alpha}}{dt} = 0\\
   \label{eq:define_big_gamma}
   \therefore \sigma_{\alpha} \eta_{\alpha} \equiv \Gamma_{\alpha}^2 = \text{Constant}
 \end{gather}
-This analysis shows that the Analytic Gaussian model explicitly obeys the Liouville Theorem.
+showing that the Analytic Gaussian model explicitly obeys the Liouville Theorem.
 
 Not only is this an interesting result, but it can be both instructive and computationally useful.
 By rewriting \ref{eq:define_big_gamma} as $\eta_{\alpha} = \Gamma_{\alpha}^2 / \sigma_{\alpha}$, evaulating at some time (presumably $t=0$) and substituting into \ref{eq:ag_original}.
