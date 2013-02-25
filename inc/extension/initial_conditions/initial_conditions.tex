@@ -12,7 +12,7 @@ Consider a single-photon photoemission process with a spatially cylindrically sy
 I ( x , y , t ) = I_{0} \exp \left ( - \frac{ ( x^{2} +y^{2} ) }{ w^{2} } - \frac{ t^{ 2 } }{ \tau^{ 2 } } \right ) \punct{,}
 \end{equation}
 where $w$ is the half-width 1/e maximum (HW1/eM) of the spatial irradiance distribution, $\tau$ is the HW1/eM pulse duration and $I_{0}$ is the peak pulse irradiance incident on a flat metallic photocathode.
-The initial tranverse ($\smallT$) properties of the beam are easily understood.
+The initial tranverse properties of the beam are easily understood.
 The electron pulse's initial spatial variance is simply
 \begin{equation}
 \sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \punct{.}
@@ -25,11 +25,11 @@ Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quan
   \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} }{ 3 } ( \hbar \omega - \Phi ) \punct{,}
 \end{equation}
 in the limit where the excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
-%in the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
+In other words, this is the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
 
 % longitudinal
 In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the properties $\sigma_z$ and $\gamma_z$ of the electron bunch.
-Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) by the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than that traveled by electrons with the maximum photoemission velocity $ v_{0} = \sqrt{ 2 \Delta E / m } $ alone over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
+Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) when the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than the distance traveled by electrons moving with a constant velocity $ v_{0} = \sqrt{ 2 \Delta E / m } $, the maximum photoemission velocity, over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
 
 % dc dominated
 In the long-pulse regime, the DC field dominated case, we assume that the intrinsic velocity of the emitted electrons is negligable.
@@ -60,13 +60,13 @@ Because they arise from independent processes, the initial spatial uncertainties
 \begin{equation} \label{eq:initial_sigma_z}
   \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \punct{.}
 \end{equation}
-While it is perhaps more rigorously correct to naively add the initial momentum chirp terms $\gamma_{ z } ( 0 )$ with the spatial variance evaluated in each respective limit, we propose that the evaluation be done in terms of the resultant form presented in \ref{eq:initial_sigma_z} 
+In the case of the initial momentum chirp terms $\gamma_{ z } ( 0 )$, while it is perhaps more rigorously correct to naively add  the terms with the spatial variance evaluated in each respective limit, we propose that the evaluation be done in terms of the resultant form presented in \ref{eq:initial_sigma_z}, keeping $\sigma_{z}$ unevaluated, 
 \begin{equation}
   \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \punct{.}
 \end{equation}
-In this way the the model may, in an intermediate case, more closely reflect the pulse as modeled rather than the pulse as idealized in each case.
+In this way the model may, in an intermediate case, more closely reflect the pulse length as modeled rather than the pulse length as idealized in each limiting case.
 
-Finally, from a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
+Finally, and again from a simplistic viewpoint, only the electrons generated with positive longitudinal momentum will contribute to the pulse since those electrons generated with negative momentum do not leave the photocathode.
 This implies that the final initial condition, the local momentum uncertainty in the longitudinal direction $\eta_z$, is half that of the transverse directions; that is to say
 \begin{equation}
   ( \Delta p_{ z } )^{2} = \left ( \frac{\Delta p_{ x , y }}{ 2 } \right )^{2} \punct{,}
@@ -98,10 +98,10 @@ Only for specialized cases, such as the generation of uniform ellipsoid electron
 \subsection{Iterative Spatial/Temporal Bin Model}
 
 To test the validity of the simplistic model presented above I also designed a bin model that depends on nothing other than basic physics and a ``transmission'' function.
-This function is the likelihood of emission by emission energy, the maximum energy being the the excess photoemission energy.
+This function represents the likelihood of emission versus emission energy; the maximum energy being the full excess photoemission energy $\Delta E$.
 
 In the model the space in front of the photocathode is binned into segments in ranges of distance from the photocathode.
-The laser pulse duration is then binned into slices of time for a total duration of $N \tau$ where the peak of the pulse occurs at $N \tau / 2$.
+The laser pulse duration is then binned into slices of time for a total duration of $N \tau$ where the peak of the pulse occurs at $N \tau / 2$; $N$ is a number selected to accumulate enough of the total laser pulse for an accurate simulation.
 For each slice of time, one can determine the relative number of electrons generated in that slice (normalized to the total number that will be created by the end of the simulation), and the velocity distribution of those electrons.
 Knowing the remaining time in the simulation and the acceleration due to the electric field, the velocity distribution can be used to place these electrons into final spatial bins.
 Additionally, as the electrons are placed into these bins, their average velocity is stored as well.
@@ -113,15 +113,15 @@ At this time, the earliest fastest electrons will be a distance
 \end{equation}
 away from the the photocathode, and the the electrons created in the last slice will be at $d=0$.
 By counting the electrons in each spatial bin and fitting to a gaussian, we can determine $\sigma_z(0)$, the inital spatial uncertainty in the pulse.
-Taking a weighted average of the velocity of the electrons in each spatial bin and fitting to a linear function across the pulse, we can determine the velocity (momentum) chirp $\gamma_z(0)$.
-The shapes of the actual output compare well with the fitted functional form for both of these parameters for all reasonable ranges of field and laser pulse duration.
+Taking a weighted average of the velocity of the electrons in each spatial bin and fitting to a linear function across the pulse (as allowed by the AG model), we can determine the velocity (momentum) chirp $\gamma_z(0)$.
+As seen in \ref{fig:bin_model}, the shapes of the actual output compare well with the fitted functional form for both of these parameters for all reasonable ranges of field and laser pulse duration.
 
 \input{bin_model_figure}
 
 Finally the velocity uncertainty in each pulse can be computed, however unlike the previous parameters, the AG model only allows for a constant value of local momentum uncertainty across the pulse $\eta_z(0)$.
-As seen in \ref{fig:bin_model} this limitation on functional form severely limits the accuracy with which the determined value of $\eta_z(0)$ represents the actual distribution of momentum uncertainties computed by the binning model.
+\ref{fig:bin_model} shows that this limitation on functional form severely limits the accuracy with which the determined value of $\eta_z(0)$ represents the actual distribution of momentum uncertainties computed by the binning model.
 
-Additionally the iterative time-step analysis clearly shows that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
+Additionally the iterative time-step analysis clearly demonstrates that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
 In fact, $ \sqrt{ \eta_{ z } ( 0 ) } $ varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch with the narrowest momentum distribution at the front of the bunch where only the faster electrons with velocity near $ v_{ 0 } $ initially reside.
 Unfortunately, the mean-field theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch.
 Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: %TODO reference bin model
