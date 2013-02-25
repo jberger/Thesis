@@ -95,7 +95,7 @@ However, \ref{eq:summary} also represent a defined set of initial conditions tha
 Moreover, they reflect the fact that the majority of DC photoelectron guns are driven by laser pulses with spatial and temporal profiles that are close to Gaussian.\cite{williamson_clocking_1997,sciaini_electronic_2009}
 Only for specialized cases, such as the generation of uniform ellipsoid electron bunch shapes, is spatial and temporal manipulation of the incident laser pulse considered.\cite{luiten_how_2004,li_generating_2008}
 
-\subsection{Iterative Spatial/Temporal Bin Model}
+\subsection{Iterative Spatial/Temporal Bin Model} \label{sec:bin_model}
 
 To test the validity of the simplistic model presented above I also designed a bin model that depends on nothing other than basic physics and a ``transmission'' function.
 This function represents the likelihood of emission versus emission energy; the maximum energy being the full excess photoemission energy $\Delta E$.
@@ -116,14 +116,13 @@ By counting the electrons in each spatial bin and fitting to a gaussian, we can 
 Taking a weighted average of the velocity of the electrons in each spatial bin and fitting to a linear function across the pulse (as allowed by the AG model), we can determine the velocity (momentum) chirp $\gamma_z(0)$.
 As seen in \ref{fig:bin_model}, the shapes of the actual output compare well with the fitted functional form for both of these parameters for all reasonable ranges of field and laser pulse duration.
 
-\input{bin_model_figure}
+\input{bin_model_figure} %TODO do another run of this data, so I can have the run parameters
 
 Finally the velocity uncertainty in each pulse can be computed, however unlike the previous parameters, the AG model only allows for a constant value of local momentum uncertainty across the pulse $\eta_z(0)$.
 \ref{fig:bin_model} shows that this limitation on functional form severely limits the accuracy with which the determined value of $\eta_z(0)$ represents the actual distribution of momentum uncertainties computed by the binning model.
 
 Additionally the iterative time-step analysis clearly demonstrates that the local longitudinal momentum variance $ \eta_{ z } $ is not constant over the inital photo-generated electron bunch.
 In fact, $ \sqrt{ \eta_{ z } ( 0 ) } $ varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch with the narrowest momentum distribution at the front of the bunch where only the faster electrons with velocity near $ v_{ 0 } $ initially reside.
-Unfortunately, the mean-field theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch.
-Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: %TODO reference bin model
-indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
+Unfortunately, the self-similar theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch; to allow a more realistic fit to the simulated initial data, the pulse would eventually evolve to be non-Gaussian.
+%Consequently, we will assume that $ \eta_{ z } $ is a constant over the bunch with a value given by $ \eta_{\smallT } ( 0 ) \cong 3.85 \eta{ z } ( 0 ) $: indeed in this short pulse regime, one can show that over the central $ \sim 75 \% $ of the electrons in the inital photo-generated bunch the variation in $ \sqrt{ \eta_{ z } ( 0 ) } $ is only about $ \pm 25 \% $.
 
