@@ -2,8 +2,10 @@
 
 \section{Formal Extension to Include Generic External Forces} \label{sec:external_forces}
 
-Besides a set of initial conditions, the Analytic Gaussian model presented by Michalik and Sipe (see Section \ref{sec:ms_model}) is only useful for modeling free-space propagation.
+Simulation of electron pulse propagation in UEM and modern UED apparatus\cite{siwick_ultrafast_2002,oudheusden_electron_2007,reed_femtosecond_2006} requires the ability to model electron-optical elements designed to control the three-dimensional space-charge and dispersion induced broadening of the pulse, and hence deliver electron pulses of the desired quality to the specimen. 
+The Analytic Gaussian model as presented by Michalik and Sipe (see Section \ref{sec:ms_model}) is only useful for modeling free-space propagation.
 This is because there is no allowance for external forces, such as those imparted by the ``optical'' elements of an electron microscope column.
+In this section, I show that the AG model can be extended to include external forces on the pulse, such as the influence of magnetic electron lenses and RF pulse compression cavities.\cite{oudheusden_electron_2007,veisz_hybrid_2007} 
 
 \subsection{Mathematical Formulation of External Force Contribution}
 
@@ -14,13 +16,14 @@ Because this force is self-influencing, it is the major souce of complexity in t
 The internal Coulombic repulsion force enters the model in \ref{eq:potential_integral}.
 Since both potentials and integrals are linear, one may add additional potentials so that it becomes
 \begin{equation}
-  V(\vec{r} - \vecprime{r}) \rightarrow V(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r})
+  V(\vec{r} - \vecprime{r}) \rightarrow V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r})
 \end{equation}
-Following this new term through the derivation, we see that
+In doing so, we rename the old potential, the internal repulsive Coulomb force, $V^{int}$.
+Following these new terms through the derivation, we see that
 \begin{equation}
   \begin{split}
-    \Phi(\vec{r};t) = & \int d\vecprime{r} \left( V(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
-    = & \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum_{k} \int d\vecprime{r} V_{k}^{ext}(\vec{r}) n(\vecprime{r}; t) \\
+    \Phi(\vec{r};t) = & \int d\vecprime{r} \left( V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
+    = & \int d\vecprime{r} V^{int}(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum_{k} \int d\vecprime{r} V_{k}^{ext}(\vec{r}) n(\vecprime{r}; t) \\
     \equiv & \Phi^{int}(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t)
   \end{split}
 \end{equation}
@@ -28,16 +31,17 @@ Therefore each external force contributes an additional term defined as
 \begin{equation}
   \Phi^{ext}(\vec{r};t) \equiv \int d\vecprime{r} V^{ext}(\vec{r}) n(\vecprime{r}; t)
 \end{equation}
-These external terms are not self-influencing, and thus are not subject to the complexities of the internal Coulombic repulsion force. For clarity we now define $\Phi^{int}(\vec{r};t)$ as the old $\Phi(\vec{r};t)$, which results from the Coulomb force, while our new $K^{force}$ now includes these exteral terms.
+These external terms are not self-influencing, and thus are not subject to the complexities of the internal Coulombic repulsion force.
+For consistency we have now defined $\Phi^{int}(\vec{r};t)$ as the old $\Phi(\vec{r};t)$, which results from the Coulomb force. 
 
-This form of $\Phi(\vec{r};t)$ can now be substituted into the definition of $K^{force}$ matrix (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
+This new form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^{force}$ matrix (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
 \begin{equation}
   \begin{split}
     K^{force}_{ij} = & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
     \equiv & K^{int}_{ij} + \sum_{k} (K_{k}^{ext})_{ij}
   \end{split}
 \end{equation}
-Like the potential integrals, we are left with an additional matrix for each external force. Again, for clarity, we now define $K^{int}$ as the $K$ matrix resulting from the internal Coulombic repulsion.
+Like the potential integrals, we are left with an additional matrix for each external force. Again, for consistency, we have defined $K^{int}$ as the $K$ matrix resulting from the internal Coulombic repulsion.
 
 Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force is given by
 \begin{equation} \label{eq:Kint}
@@ -58,8 +62,8 @@ For example, consider a field consider a field $ \vec{E} = -E \hat{z} $ such tha
  \end{split}
 \end{equation}
 but it is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ (or equivalently $ K^{ext} = \hat{0} $) meaning that this static field has no effect on the parameters of the pulse.
-Of course, this is only true in the pulse frame, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m_{e} $ is unchanged.
-However, in the lab frame, where  $ \Delta E = p \Delta p / m_{e} $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
+Of course, this is only true in the pulse frame, the frame of the simulation, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m_{e} $ is unchanged.
+In the lab frame however, where  $ \Delta E = p \Delta p / m_{e} $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
 
 \subsection{Linear External Forces}
 
@@ -70,7 +74,8 @@ For the case of a perfect lens, or in the longitudinal direction a perfect RF co
 \begin{equation} \label{eq:linear_force}
 \vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \text{ .}
 \end{equation}
-Here, $M_{ \smallT }$ and $M_{z}$ characterize the strength of a lens or a compressor, respectively, and are chosen to be positive for pulse focusing. Substitution into the integral equation for the $ K^{ext} $ matrix elements,
+Here, $M_{ \smallT }$ and $M_{z}$ characterize the strength of a lens or a compressor, respectively, and are chosen to be positive for focusing/compression elements.
+Substitution into the integral equation for the $ K^{ext} $ matrix elements,
 \begin{equation}
  \begin{split} 
   K^{ext}_{ij} & \equiv \dfrac{1} {N} \int u_{i} u_{j} ( \vec{\nabla}_{p} f ) \cdot \vec{F}_{ext} d^{3} x d^{3} p \\ & = \dfrac{1} {N} \int u_{i} u_{j} \biggl[ x \left( \dfrac{ p_{x} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } x } { \sigma_{ \smallT } \eta_{ \smallT } } \right) + y \left( \dfrac{ p_{y} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } y } { \sigma_{ \smallT } \eta_{ \smallT } } \right) \\ & \quad + z \left( \dfrac{ p_{z} } { \eta_{z} } - \dfrac{ \gamma_{z} z } { \sigma_{z} \eta_{z} } \right) \biggr] f d^{3} x d^{3} p ,
@@ -94,6 +99,14 @@ M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha} \text{.}
 \end{pmatrix} \text{ .}
 \end{equation}
 which by \ref{eq:dainvdt} yields an additional term $M_{\alpha} \sigma_{\alpha}$ which is added to the original $\dfrac{d \gamma_{\alpha}}{d t}$ equation.
+This derivation has been for a single force, in practice however there may be multiple forces, therefore \ref{eq:ag_big_gamma_gamma} may be restated as
+\begin{equation}
+  \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2(0) + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sum M_{\alpha} \sigma_{\alpha}
+\end{equation}
+
+Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analysis of Liouville's Theorem, shown in Section \ref{sec:liouville}, is unaffected.
+The extended AG model still explicitly satisfies Liouvilles's Theorem.
 
 \subsection{Validity and Limitations}
 
