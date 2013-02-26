@@ -102,7 +102,7 @@ which by \ref{eq:dainvdt} yields an additional term $M_{\alpha} \sigma_{\alpha}$
 This derivation has been for a single force, in practice however there may be multiple forces, therefore \ref{eq:ag_big_gamma_gamma} may be restated as
 \begin{equation}
   \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2(0) + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
-    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sum M_{\alpha} \sigma_{\alpha}
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum M_{\alpha} 
 \end{equation}
 
 Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analysis of Liouville's Theorem, shown in Section \ref{sec:liouville}, is unaffected.
@@ -123,7 +123,7 @@ Consequently, the AG approach is applicable to both the single electron per puls
 It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
 Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
 
-\section{Practical Extension to Include Magnetic Lenses and RF Cavities}
+\section{Practical Extension to Include Magnetic Lenses, RF Cavities and DC Accelerators}
 
 \subsection{Region of Influence}
 
@@ -137,10 +137,17 @@ We connect $z^{\prime}$ to $t$ through $ v_{{ \scriptscriptstyle 0}} $; the kine
 
 \subsection{Magnetic Lenses}
 
-A magnetic lens may be modeled using one linear force contribution.
+In the transverse ($ \smallT $) direction, a magnetic lens may be modeled using one linear force contribution.
 Unfortunately, it is not practical to write an analytic form of the magnitude of this term; the field distribution is very complicated to describe \cite{montgomery_some_1961} and the ``lensing'' action is actually a compound force (first rotating the beam, then lensing).
-We have found that in practice, characterizing a specific magnetic lens ($M_{\smallT}(I)$ where $I$ is the current in the magnetic lens) is much easier than attempting to find a generic functional form.
-Further discussion of magnetic lenses can be found in Section \ref{sec:mag_lens}.
+Further discussion of the mathematics of magnetic lenses can be found in Section \ref{sec:mag_lens}.
+We have found that in practice, characterizing a specific magnetic lens ($M_{\smallT}^{mag}(I)$ where $I$ is the current in the magnetic lens) is much easier than attempting to find a generic functional form.
+
+For localizing the region of influence of the lens, I have commonly modelled a thin magnetic lens as having a super-Gaussian order value $n=1$, a simple Gaussian; of course this may depend on the specifics of the lens.
+To simulate the effect of magnetic lenses in a UEM by the extended AG model, for each magnetic lens, add a term like
+\begin{equation} \label{eq:reg_of_influence}
+  M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
+\end{equation}
+to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
 
 \subsection{RF Cavities}
 
