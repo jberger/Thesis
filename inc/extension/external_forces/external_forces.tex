@@ -138,14 +138,14 @@ We connect $z^{\prime}$ to $t$ through $ v_{{ \scriptscriptstyle 0}} $; the kine
 \subsection{Magnetic Lenses}
 
 In the transverse ($ \smallT $) direction, a magnetic lens may be modeled using one linear force contribution.
-Unfortunately, it is not practical to write an analytic form of the magnitude of this term; the field distribution is very complicated to describe \cite{montgomery_some_1961} and the ``lensing'' action is actually a compound force (first rotating the beam, then lensing).
+Unfortunately, it is not practical to write an analytic form of the magnitude of this term; the field distribution is surprisingly complicated to describe \cite{montgomery_some_1961} and the ``lensing'' action is in fact a compound force (first rotating the beam, then lensing).
 Further discussion of the mathematics of magnetic lenses can be found in Section \ref{sec:mag_lens}.
 We have found that in practice, characterizing a specific magnetic lens ($M_{\smallT}^{mag}(I)$ where $I$ is the current in the magnetic lens) is much easier than attempting to find a generic functional form.
 
 For localizing the region of influence of the lens, I have commonly modelled a thin magnetic lens as having a super-Gaussian order value $n=1$, a simple Gaussian; of course this may depend on the specifics of the lens.
 To simulate the effect of magnetic lenses in a UEM by the extended AG model, for each magnetic lens, add a term like
 \begin{equation} \label{eq:reg_of_influence}
-  M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
+  M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
 \end{equation}
 to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
 
