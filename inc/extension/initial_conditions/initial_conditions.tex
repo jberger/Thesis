@@ -12,23 +12,23 @@ Consider a single-photon photoemission process with a spatially cylindrically sy
 I ( x , y , t ) = I_{0} \exp \left ( - \frac{ ( x^{2} +y^{2} ) }{ w^{2} } - \frac{ t^{ 2 } }{ \tau^{ 2 } } \right ) \punct{,}
 \end{equation}
 where $w$ is the half-width 1/e maximum (HW1/eM) of the spatial irradiance distribution, $\tau$ is the HW1/eM pulse duration and $I_{0}$ is the peak pulse irradiance incident on a flat metallic photocathode.
-The initial tranverse properties of the beam are easily understood.
+A laser pulse of this form has a temporal uncertainty $ \Delta t_{L} = \tau / \sqrt{2} $.
+
+The initial tranverse properties of the emitted electron beam are easily understood.
 The electron pulse's initial spatial variance is simply
 \begin{equation}
 \sigma_{\smallT } ( 0 ) = ( \Delta x )^{2} = ( \Delta y)^{2} = \frac{ w^{2} }{ 2 } \punct{.}
 \end{equation}
-Similarly, a laser pulse of this form has a temporal uncertainty $ \Delta t_{L} = \tau / \sqrt{2} $.
-
 For spatially-uniform photoemission from a planar photocathode, from symmetry we have $ \gamma_{\smallT} ( 0 ) = 0 $; i.e., there is no initial transverse spatial momentum chirp across the electron bunch.
-Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009}, we know that metallic photocathode's initial transverse momentum variance at $ t = 0 $ is given by
+Finally, thanks to the careful analysis of Dowell and Schmerge \cite{dowell_quantum_2009} (confirmed by Jensen \textit{et. al.} \cite{jensen_emittance_2010}), we know that metallic photocathode's initial transverse momentum variance at $ t = 0 $ is given by
 \begin{equation} \label{eq:jensen_eta}
-  \eta_{ \smallT } ( 0 ) \approx \frac{ m_{e} }{ 3 } ( \hbar \omega - \Phi ) \punct{,}
+  \eta_{ \smallT } ( 0 ) \approx \frac{ m }{ 3 } ( \hbar \omega - \Phi ) \punct{,}
 \end{equation}
-in the limit where the excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ are significantly greater that the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
-In other words, this is the limit where the temperature is low enough to consider the system well described by Fermi-Dirac statistics where the chemical potential is nearly equal to the Fermi energy.
+in the limit where the maximum excess photoemission energy, $ \Delta E = \hbar \omega - \Phi $ is significantly greater than the thermal energy $ k_{B} T $ of the electrons in the photocathode -- a condition that is generally met in laser-driven DC photoelectron guns.
+%TODO include TE value for $\Delta E < 0$  is $\eta_{\smallT} = m k_B T$.
 
 % longitudinal
-In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the properties $\sigma_z$ and $\gamma_z$ of the electron bunch.
+In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the initial values of $\sigma_z$, the longitudinal spatial variance, and $\gamma_z$, the longitudinal momentum chirp, of an electron bunch.
 Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) when the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than the distance traveled by electrons moving with a constant velocity $ v_{0} = \sqrt{ 2 \Delta E / m } $, the maximum photoemission velocity, over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
 
 % dc dominated
@@ -44,19 +44,19 @@ By a similar logic, we can say that the `front' of the pulse then has a velocity
 
 %v0 dominated
 In the short pulse limit, where the acceleration in the DC gun field over the incident laser pulse duration can be neglected, the initial electron bunch properties are determined primarily by the photoemission physics.
-Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_0$ (the velocity associated with the excess photoemission energy) and the back is essentially stationary just after generation.
-Further, since the photoemission efficiency goes like $\Delta E^2$ \cite{shalaev_electron_1994} the distribution of emitted electrons vs velocity goes like $v^4$; therefore for a first approximation it is reasonable to say that in this case $\Delta v \approx v_0$.
+Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_0$ and the back is essentially stationary just after generation.
+Further, since the photoemission efficiency is proportional to $\Delta E^2$ \cite{shalaev_electron_1994} the distribution of emitted electrons vs velocity is proportional to $v^4$; therefore to a first approximation it is reasonable to say that in this case $\Delta v \approx v_0$.
 The pulse's initial spatial variance $\Delta z$ is therefore approximately to the spread of distances traveled during the laser pulse duration $\Delta t_L$,
 \begin{equation} 
   \sqrt{ \sigma_{ z } ( 0 ) } \approx \Delta z = \Delta v \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \punct{.}
 \end{equation}
-Once again we can use this information to determine a velocity chirp across the pulse in this regime,
+Once again, we can use this information to determine a velocity chirp across the pulse in this regime,
 \begin{equation}
   \gamma_{ z } ( 0 ) \approx m \Delta v \Delta z = m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \punct{,}
 \end{equation}
 
 For simplicity of use, one may combine the initial conditions resulting from these two cases.
-Because they arise from independent processes, the initial spatial uncertainties $\sigma_{ z } ( 0 )$ may be added naively 
+Since they arise from independent processes, the initial spatial uncertainties $\sigma_{ z } ( 0 )$ may be added naively 
 \begin{equation} \label{eq:initial_sigma_z}
   \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \punct{.}
 \end{equation}
