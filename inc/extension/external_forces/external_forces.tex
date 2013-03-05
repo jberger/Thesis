@@ -148,6 +148,7 @@ To simulate the effect of magnetic lenses in a UEM by the extended AG model, for
   M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
 \end{equation}
 to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
+%TODO include discussion and plot of beam size versus aberrations
 
 \subsection{RF Cavities}
 
@@ -175,10 +176,10 @@ For the usual case of a spatially compact electron pulse with respect to the dim
 \begin{equation} \label{eq:RF_Efield_approx}
   E ( r , z , z^{\prime} ) = E_{0} \biggl [ \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) - \frac{ \Omega z }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \biggr ] \text{,}
 \end{equation}
-which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device.
-The second term then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
+which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device. %TODO clarify this sentance and the next
+The linear term (second) then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
 \begin{equation} \label{eq:RF_Force_z}
-  \boldsymbol{F}_{ z , RF } = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
+  \boldsymbol{F}_{ z , RF }^{linear} = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
 \end{equation}
 
 By considering the impulse exerted by the RF cavity field on the electrons in the pulse, it is straightforward to show that pulse compression (when $\phi = 0$) is maximized for $ \Omega d / (2 v_{\smallzero} ) = \pi /2 $; that is, the time of flight of the electron pulse through the RF cavity of length $ d $ is equal to half the RF period.
