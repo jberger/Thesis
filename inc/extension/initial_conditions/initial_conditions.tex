@@ -29,7 +29,7 @@ in the limit where the maximum excess photoemission energy, $ \Delta E = \hbar \
 
 % longitudinal
 In the longitudinal direction ($z$), the interplay between acceleration, $ a = e E_{DC}/m $, in the DC gun and the physics of the photoemission process determine the initial values of $\sigma_z$, the longitudinal spatial variance, and $\gamma_z$, the longitudinal momentum chirp, of an electron bunch.
-Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) when the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than the distance traveled by electrons moving with a constant velocity $ v_{0} = \sqrt{ 2 \Delta E / m } $, the maximum photoemission velocity, over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
+Two limiting regimes for the initial longitudinal variances $ \sigma_{i} ( 0 ) $ are readily identified: (i) when the incident drive laser pulse duration is sufficently long to ensure that the distance the electrons travel due to acceleration in $ E_{DC} $ over the laser pulse duration is much greater than the distance traveled by electrons moving with a constant velocity $ v_{max} = \sqrt{ 2 \Delta E / m } $, the maximum photoemission velocity, over the same time period; and (ii) the opposite regime for sufficiently short laser pulse durations.
 
 % dc dominated
 In the long-pulse regime, the DC field dominated case, we assume that the intrinsic velocity of the emitted electrons is negligable.
@@ -44,25 +44,25 @@ By a similar logic, we can say that the `front' of the pulse then has a velocity
 
 %v0 dominated
 In the short pulse limit, where the acceleration in the DC gun field over the incident laser pulse duration can be neglected, the initial electron bunch properties are determined primarily by the photoemission physics.
-Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_0$ and the back is essentially stationary just after generation.
-Further, since the photoemission efficiency is proportional to $\Delta E^2$ \cite{shalaev_electron_1994} the distribution of emitted electrons vs velocity is proportional to $v^4$; therefore to a first approximation it is reasonable to say that in this case $\Delta v \approx v_0$.
+Since the electric field has no time to influence the front of the pulse before the back is also generated we can say that the front of the pulse has a velocity equal to $v_{max}$ and the back is essentially stationary just after generation.
+Further, since the photoemission efficiency is proportional to $\Delta E^2$ \cite{shalaev_electron_1994} the distribution of emitted electrons vs velocity is proportional to $v^4$; therefore to a first approximation it is reasonable to say that in this case $\Delta v \approx v_{max}$.
 The pulse's initial spatial variance $\Delta z$ is therefore approximately to the spread of distances traveled during the laser pulse duration $\Delta t_L$,
 \begin{equation} 
-  \sqrt{ \sigma_{ z } ( 0 ) } \approx \Delta z = \Delta v \Delta t_{L} = \frac{ v_{ 0 } \tau }{ \sqrt{ 2 } } \punct{.}
+  \sqrt{ \sigma_{ z } ( 0 ) } \approx \Delta z = \Delta v \Delta t_{L} = \frac{ v_{max} \tau }{ \sqrt{ 2 } } \punct{.}
 \end{equation}
 Once again, we can use this information to determine a velocity chirp across the pulse in this regime,
 \begin{equation}
-  \gamma_{ z } ( 0 ) \approx m \Delta v \Delta z = m v_{ 0 } \sqrt{ \sigma_{ z } ( 0 ) } \punct{,}
+  \gamma_{ z } ( 0 ) \approx m \Delta v \Delta z = m v_{max} \sqrt{ \sigma_{ z } ( 0 ) } \punct{,}
 \end{equation}
 
 For simplicity of use, one may combine the initial conditions resulting from these two cases.
 Since they arise from independent processes, the initial spatial uncertainties $\sigma_{ z } ( 0 )$ may be added naively 
 \begin{equation} \label{eq:initial_sigma_z}
-  \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \punct{.}
+  \sigma_{ z } ( 0 ) \approx \frac{ ( v_{max} \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \punct{.}
 \end{equation}
 In the case of the initial momentum chirp terms $\gamma_{ z } ( 0 )$, while it is perhaps more rigorously correct to naively add  the terms with the spatial variance evaluated in each respective limit, we propose that the evaluation be done in terms of the resultant form presented in \ref{eq:initial_sigma_z}, keeping $\sigma_{z}$ unevaluated, 
 \begin{equation}
-  \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \punct{.}
+  \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{max} + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \punct{.}
 \end{equation}
 In this way the model may, in an intermediate case, more closely reflect the pulse length as modeled rather than the pulse length as idealized in each limiting case.
 
@@ -81,9 +81,9 @@ In conclusion, the resulting set of analytic initial conditions for an incident 
 \begin{subequations} \label{eq:summary}
   \begin{gather}
     \sigma_{ \smallT } ( 0 ) \approx \frac{ w^{ 2 } }{ 2 } \\
-    \sigma_{ z } ( 0 ) \approx \frac{ ( v_{ 0 } \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
+    \sigma_{ z } ( 0 ) \approx \frac{ ( v_{max} \tau )^{ 2 } }{ 2 } + \left ( \frac{ e E_{ DC } \tau^{ 2 } }{ 4 m } \right )^{ 2 } \\
     \gamma_{ \smallT } ( 0 ) \approx 0 \\
-    \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{ 0 } + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
+    \gamma_{ z } ( 0 ) \approx \sqrt{ \sigma_{ z } ( 0 ) } \left ( m v_{max} + \frac{ e E_{DC} \tau }{ \sqrt{ 2 } } \right ) \\
     \eta_{ \smallT } ( 0 ) \approx \frac{ m }{ 3 } ( \hbar \omega - \Phi ) \\
     \eta_{ z } ( 0 ) \approx \frac{ \eta_{ \smallT } ( 0 ) }{ 4 } \punct{.}
   \end{gather}
@@ -111,7 +111,7 @@ Additionally, as the electrons are placed into these bins, their average velocit
 This simulation repeats for each time slice until the finish time, at which point the laser has essentially stopped creating electrons.
 At this time, the earliest fastest electrons will be a distance 
 \begin{equation}
-  z_{max} = v_0 N \tau + \frac{e E_{ DC }}{2 m} (N \tau)^2 
+  z_{max} = v_{max}N \tau + \frac{e E_{ DC }}{2 m} (N \tau)^2 
 \end{equation}
 away from the the photocathode, and the the electrons created in the last slice will be at $z=0$.
 By counting the electrons in each spatial bin and fitting to a gaussian, we can determine $\sigma_z(0)$, the inital longitudinal spatial variance of the pulse.
@@ -122,7 +122,7 @@ As seen in \ref{fig:bin_model}, the shapes of the actual output compare well wit
 
 Finally, the velocity uncertainty in each bin can be computed, however unlike the previous parameters, the AG model only allows for a constant value of $\eta_z(0)$, the local momentum variance across the pulse.
 Unfortunately, \ref{fig:bin_model} clearly demonstrates that the local momentum variance is not constant over the inital photo-generated electron bunch; in fact it varies by almost an order of magnitude over the $ 1/e^{2} $ maximum full-width of the electron bunch. 
-The narrowest momentum distribution are clearly at the front of the bunch where only the earliest generated electrons with initial velocity near $ v_{ 0 } $ initially reside; the largest distribution is at the back where the last electrons generated still haven't had time to seperate from one another.
+The narrowest momentum distribution are clearly at the front of the bunch where only the earliest generated electrons with initial velocity near $ v_{max} $ initially reside; the largest distribution is at the back where the last electrons generated still haven't had time to seperate from one another.
 
 This limitation on functional form severely limits the accuracy with which a determined spatially constant value of $\eta_z(0)$ represents the actual distribution of momentum uncertainties computed by the binning model.
 The self-similar theory of Michalik and Sipe \cite{michalik_analytic_2006} is not equipped to handle such a variation as it assumes a constant $ \eta_{ z } $ over the electron bunch; with a more realistic fit to the simulated initial data, the pulse would eventually evolve to be non-Gaussian.

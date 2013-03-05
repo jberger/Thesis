@@ -133,7 +133,7 @@ To specify the physical region of influence of the lenses, it is convenient to r
 \end{equation}
 where $z_{lens}^{\prime}$ is the position of the center of the lens, $L_{lens}$ is the length of the lens and $n$ is the super-Gaussian order parameter.
 The order parameter defines the ``sharpness'' of the edge of the region of influence with integer values ranging from 1 (a simple Gaussian) through $\infty$ (a top-hat).
-We connect $z^{\prime}$ to $t$ through $ v_{{ \scriptscriptstyle 0}} $; the kinetic equations are simply defined for the position of the peak of the pulse.
+We connect $z^{\prime}$ to $t$ through $ v_{\smallzero} $; the kinetic equations are simply defined for the position of the peak of the pulse.
 
 \subsection{Magnetic Lenses}
 
@@ -161,7 +161,7 @@ The known mathematical forms of the electric and magnetic components of this res
 
 The spatial dependence of the axial RF electric field experienced by the electron pulse in a TM$_{010}$ cavity of radius $a$ may be written as
 \begin{equation} \label{eq:RF_Efield}
-  E ( r , z , z^{\prime} ) = E_{0} \sin \left ( \frac{ \Omega ( z^{\prime} - z ) }{ v_{{ \scriptscriptstyle 0}} } + \phi \right )\operatorname{J_{0}} \left ( \frac{ k r }{ a } \right ) \text{,}
+  E ( r , z , z^{\prime} ) = E_{0} \sin \left ( \frac{ \Omega ( z^{\prime} - z ) }{ v_{\smallzero} } + \phi \right )\operatorname{J_{0}} \left ( \frac{ k r }{ a } \right ) \text{,}
 \end{equation}
 where $ E_{ 0 } $ is the oscillating field amplitude, $\Omega$ is the RF frequency and $\phi$ is a phase factor determining whether the RF cavity acts as a pulse compressor $ ( \phi \approx 0 ) $ or an electron accelerator $ ( \phi \approx \pm \pi/2 ) $.
 The coordinate $z^{\prime} $ describes the position of the center of the pulse in the RF cavity, which extends from $ z^{\prime} = - d / 2 $ to $ z^{\prime} = d / 2 $, and $z$ is the position of any electron in the pulse with respect to the center of the pulse.
@@ -171,18 +171,18 @@ For the $\text{TM}_{010}$ oscillation mode, the RF frequency is given by
 \end{equation}
 where $c$ is the speed of light in a vacuum and $ k = 2.405 $ is the first zero of the $\operatorname{ J_{0} }$ Bessel function.
 
-For the usual case of a spatially compact electron pulse with respect to the dimension of the RF cavity (i.e., $ \Omega z \ll v_{{ \scriptscriptstyle 0}} $ and $ \sqrt{\sigma_{\smallT}} \ll a $), \ref{eq:RF_Efield} can be rewritten as
+For the usual case of a spatially compact electron pulse with respect to the dimension of the RF cavity (i.e., $ \Omega z \ll v_{\smallzero} $ and $ \sqrt{\sigma_{\smallT}} \ll a $), \ref{eq:RF_Efield} can be rewritten as
 \begin{equation} \label{eq:RF_Efield_approx}
-  E ( r , z , z^{\prime} ) = E_{0} \biggl [ \sin \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) - \frac{ \Omega z }{ v_{{ \scriptscriptstyle 0}} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) \biggr ] \text{,}
+  E ( r , z , z^{\prime} ) = E_{0} \biggl [ \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) - \frac{ \Omega z }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \biggr ] \text{,}
 \end{equation}
 which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device.
 The second term then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
 \begin{equation} \label{eq:RF_Force_z}
-  \boldsymbol{F}_{ z , RF } = - \left [ \frac{ e \Omega E_{0} }{ v_{{ \scriptscriptstyle 0}} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
+  \boldsymbol{F}_{ z , RF } = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
 \end{equation}
 
-By considering the impulse exerted by the RF cavity field on the electrons in the pulse, it is straightforward to show that pulse compression (when $\phi = 0$) is maximized for $ \Omega d / (2 v_{{ \scriptscriptstyle 0}} ) = \pi /2 $; that is, the time of flight of the electron pulse through the RF cavity of length $ d $ is equal to half the RF period.
-Such a calculation assumes that the pulse velocity $v_{{ \scriptscriptstyle 0}}$ is constant; so that, the condition that $ \phi = 0 $ when the pulse is at the center of the RF cavity (i.e., when the pulse is at $ z^{\prime} = 0 $) is readily met.
+By considering the impulse exerted by the RF cavity field on the electrons in the pulse, it is straightforward to show that pulse compression (when $\phi = 0$) is maximized for $ \Omega d / (2 v_{\smallzero} ) = \pi /2 $; that is, the time of flight of the electron pulse through the RF cavity of length $ d $ is equal to half the RF period.
+Such a calculation assumes that the pulse velocity $v_{\smallzero}$ is constant; so that, the condition that $ \phi = 0 $ when the pulse is at the center of the RF cavity (i.e., when the pulse is at $ z^{\prime} = 0 $) is readily met.
 As suggested by the acceleration term in \ref{eq:RF_Efield_approx}, this is only a good approximation if the RF field amplitude $E_{0}$ is sufficiently small to not affect the velocity of the peak of the pulse as it propagates through the cavity.
 As a result, in practice, the phase $\phi$ of the RF field is adjusted to optimize the performance of the cavity.
 
@@ -193,11 +193,11 @@ In practice, of course, the exact form of $E_{r}(z)$ is strongly tied to the siz
 For the case of an evacuated cavity, these two contributions result in a net force,
 \begin{equation} \label{eq:RF_Force_r}
   \boldsymbol{F}_{ r , RF } = e E_{0} \left [ 
-    \frac{ v_{{ \scriptscriptstyle 0}} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{{ \scriptscriptstyle 0}} } + \phi \right )
+    \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
    \right ] r \hat{\operatorname{ \boldsymbol{r} }} \text{.}
 \end{equation}
 In obtaining \ref{eq:RF_Force_r}, which is also of the form for use in \ref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \ref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
-For the examples shown below under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{{\scriptscriptstyle 0}} / \Omega $,\cite{kim_rf_1989} even though its magnitude is maximized for $\phi = 0$.
+For the examples shown below under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $,\cite{kim_rf_1989} even though its magnitude is maximized for $\phi = 0$.
 Other effects, such as magnetic fringe field aperture effects, could also be included, but are significantly weaker.
 
 % excluded example section from JAP paper as it will need new graphics
