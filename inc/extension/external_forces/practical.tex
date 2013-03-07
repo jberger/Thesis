@@ -58,9 +58,6 @@ This may be done in comparison to either experimental data or, as shown in \ref{
   \input{mag_lens_plot}
   \caption[Comparison of the AG model and a kinematic model of a magnetic lens]{
     Comparison of electron rays tracked kinematically through a realistic magnetic lens simulation (green) and an AG model simulation of a Guassian electron beam (red) of a similar HW1/eM beam width $ w = 500 \mu\text{m} $.
-    The kinematic model employs ten individual current loops occupying a total length of 635$\mu$m at position $z=0$.
-    Each ray bunch consists of one ray parallel to the axis of propagation and one each having transverse velocity related to an excess photoemission energy $\Delta E \approx $ 0.1eV; the related transverse variance is used in the AG model.
-    The bunches are distributed evenly from $r=0$ to $r = 2 w$.
   }
   \label{fig:mag_lens_loops}
 \end{figure}
@@ -72,6 +69,16 @@ To simulate the effect of magnetic lenses in a UEM by the extended AG model, for
 \end{equation}
 to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
 %TODO include discussion and plot of beam size versus aberrations
+
+\ref{fig:mag_lens_loops} shows electron rays tracked kinematically (by employing \ref{eq:lens_eq_of_motion}) through a realistic magnetic lens simulation (shown in green).
+The kinematic model employs ten individual current loops generating magnetic fields described by \ref{eq:field_of_loop}; these loops occupy a total length of 635$\mu$m at position $z=0$.
+Each ray bunch consists of one ray parallel to the axis of propagation and one each having an inward or outward transverse velocity related to an excess photoemission energy $\Delta E \approx $ 0.1eV.
+The bunches are distributed evenly from $r=0$ to $r = 1$mm.
+These are compared with an AG model simulation of a Guassian electron beam of HW1/eM beam width $ w = 500 \mu\text{m} $ having an initial transverse variance of the same $\Delta E$.
+
+The AG model very accurately mimics the behavior of the kinematic model for an appropriate choice of the free parameter $M_{\smallT}^{mag}$.
+In fact, when the rays are weighted by a Gaussian of width $w$ the minimum ``radius'' of the beam is 100$\mu$m, while the AG model has a minimum HW1/eM width of 73$\mu$m.
+(The kinematic model actually overestimates the width as there are two rays at the outer convergence zone for every one which converges at the axis.) %TODO footnote?
 
 \subsection{RF Cavities}
 

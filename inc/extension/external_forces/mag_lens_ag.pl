@@ -53,5 +53,5 @@ line_plot $z, $w;
 wcols $z, $w, "mag_lens_ag.csv", { COLSEP => ',' };
 
 my $min_ind = $w->minimum_ind;
-say "\t" . $w->at($min_ind) . 'mm at z = ' . $z->at($min_ind) . 'f';
+say "\t" . $w->at($min_ind) . 'm at z = ' . $z->at($min_ind) . 'f';
 
