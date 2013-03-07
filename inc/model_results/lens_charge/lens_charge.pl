@@ -8,7 +8,6 @@ use Physics::UEMColumn alias => [qw/:standard Pulse/];
 use Physics::UEMColumn::Auxiliary ':constants';
 
 use PDL;
-use PDL::Graphics::Prima::Simple;
 
 sub gen_sim {
   my ($lens_position, $strength) = @_;
@@ -16,16 +15,6 @@ sub gen_sim {
 
   return sub {
     my $num = shift;
-#    my $laser = Laser->new(
-#      width    => '1 mm',
-#      duration => '1 ps',
-#      energy   => '4.75 eV',
-#    );
-
-#    my $acc = DCAccelerator->new(
-#      length  => '20 mm',
-#      voltage => '20 kilovolts',
-#    );
 
     my $pulse = Pulse->new(
       number => $num,
@@ -37,15 +26,11 @@ sub gen_sim {
 
     my $column = Column->new(
       length       => $column_length . 'mm',
-#      laser        => $laser,
-#      accelerator  => $acc,
-#      photocathode => Photocathode->new( work_function => '4.25 eV' ), # Ta
     );
 
     my $sim = Physics::UEMColumn->new(
       column => $column,
       pulse => $pulse,
-#      number => $num,
       steps => 200,
     );
 
@@ -86,6 +71,4 @@ foreach my $set ( @sets ) {
   }
 
 }
-
-#line_plot $z, $st;
 
