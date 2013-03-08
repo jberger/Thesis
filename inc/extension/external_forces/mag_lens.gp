@@ -2,8 +2,6 @@ set term tikz solid
 set output "mag_lens_plot.tex"
 set datafile separator ","
 
-set multiplot
-
 set xlabel "Position in column (cm)"
 set ylabel "Radial Ray Position, Beam Width ($\\mu$m)"
 
