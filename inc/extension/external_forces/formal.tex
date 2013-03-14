@@ -99,20 +99,21 @@ M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha} \text{.}
 \end{pmatrix} \text{ .}
 \end{equation}
 which by \ref{eq:dainvdt} yields an additional term $M_{\alpha} \sigma_{\alpha}$ which is added to the original $\dfrac{d \gamma_{\alpha}}{d t}$ equation.
-This derivation has been for a single force, in practice however there may be multiple forces, therefore \ref{eq:ag_big_gamma_gamma} may be restated as
+This derivation has been for a single force, in practice however there may be multiple forces.
+Therefore if each force is labeled by $f$, \ref{eq:ag_big_gamma_gamma} may be restated as
 \begin{equation}
   \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2 + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
-    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum M_{\alpha} 
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum\limits_{f} M_{\alpha}^{\lbrace f \rbrace} 
 \end{equation}
 
-Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analysis of Liouville's Theorem, shown in Section \ref{sec:liouville}, is unaffected.
-The extended AG model still explicitly satisfies Liouvilles's Theorem.
+Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analysis of Liouville's Theorem, shown in Section \ref{sec:liouville}, is unaffected: the \textit{extended} AG model still explicitly satisfies Liouvilles's Theorem.
 
 \subsection{Validity and Limitations}
 
 The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
 As a result, we emphasize that the presented AG model extension is valid only for the action of linear forces (i.e., forces that have a linear dependence on distance in the pulse frame) on the electron pulse due to the model's self-similar Gaussian approximation.
-The inclusion of the action of nonlinear forces (e.g., due to space-charge effects, spherical magnetic lens aberrations, etc.) will require the use of more sophisticated electron pulse propagation models such as full particle tracking simulations, which should be employed to gauge the accuracy (and hence limits) of our extended AG approach at some point.
+The inclusion of the action of nonlinear forces (e.g., due to higher-order space-charge effects, spherical magnetic lens aberrations, etc.) will require the use of more sophisticated electron pulse propagation models such as full particle tracking simulations.%, which should be employed to gauge the accuracy (and hence limits) of our extended AG approach at some point.
+%TODO consider adding a replacement sentance like: "It would be interesting to employ ..." or "A future goal is to ..."
 
 It should also be noted that these analyses are performed in the non-relativistic limit, which is a reasonable approximation for the typical 20-200keV electron energies employed in UED and electron microscopy.
 Extension to include relativistic effects is conceptually straightforward using standard transformations between the laboratory and electron pulse reference frames.
