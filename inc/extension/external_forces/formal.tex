@@ -9,16 +9,15 @@ In this section, I show that the AG model can be extended to include external fo
 
 \subsection{Mathematical Formulation of External Force Contribution}
 
-While the free-space AG model does not contain any external forces, it does include an internal force.
-The Coulomb force is included to model the repulsion of the pulse's electrons from each other.
-Because this force is self-influencing, it is the major souce of complexity in the model; indeed without this term, a complete analytic solutions is possible, which is identically ``Gaussian'' optics.\cite{michalik_analytic_2006}
+While the free-space AG model does not contain any external forces, it does include an internal force: the Coulomb force is included to model the repulsion of the pulse's electrons from each other.
+As this force is self-influencing, it is the major souce of complexity in the model; indeed without this term, a complete analytic solutions is possible, which is identical to ``Gaussian'' optics.\cite{michalik_analytic_2006}
 
 The internal Coulombic repulsion force enters the model in \ref{eq:potential_integral}.
-Since both potentials and integrals are linear, one may add additional potentials so that it becomes
+Since both potentials and integrals are linear, one may add additional potentials, so that it becomes
 \begin{equation}
   V(\vec{r} - \vecprime{r}) \rightarrow V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r})
 \end{equation}
-In doing so, we rename the old potential, the internal repulsive Coulomb force, $V^{int}$.
+In doing so, we rename the potential due to the internal repulsive Coulomb force $V^{int}$.
 Following these new terms through the derivation, we see that
 \begin{equation}
   \begin{split}
@@ -34,34 +33,35 @@ Therefore each external force contributes an additional term defined as
 These external terms are not self-influencing, and thus are not subject to the complexities of the internal Coulombic repulsion force.
 For consistency we have now defined $\Phi^{int}(\vec{r};t)$ as the old $\Phi(\vec{r};t)$, which results from the Coulomb force. 
 
-This new form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^{force}$ matrix (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector} 
+This new form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^{force}$ matrix (\ref{eq:Kforce}), again in the basis defined in \ref{eq:coordinate_vector}, to give
 \begin{equation}
   \begin{split}
     K^{force}_{ij} = & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
     \equiv & K^{int}_{ij} + \sum_{k} (K_{k}^{ext})_{ij}
   \end{split}
 \end{equation}
-Like the potential integrals, we are left with an additional matrix for each external force. Again, for consistency, we have defined $K^{int}$ as the $K$ matrix resulting from the internal Coulombic repulsion.
+Like the potential integrals, we are left with an additional matrix for each external force.
+Again, for consistency, we have defined $K^{int}$ as the $K$ matrix resulting from the internal Coulombic repulsion.
 
-Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force is given by
+Noting that the spatial derivative of a potential is just the force, we can now define the matrix contributed by each external force as given by
 \begin{equation} \label{eq:Kint}
-  K^{ext}_{ij} = \frac{1}{N} \iint u_i u_j \left [ \frac{\partial}{\partial \vec{p}} f(\vec{r}, \vec{p}; t) \right ] \cdot \vec{F}_{ext}\;d^{3}x\,d^{3}p
+  K^{ext}_{ij} = \frac{1}{N} \iint u_i u_j \left [ \frac{\partial}{\partial \vec{p}} f(\vec{r}, \vec{p}; t) \right ] \cdot \vec{F}_{ext}\;d^{3}x\,d^{3}p \,\text{.}
 \end{equation}
 Finally, the general form of \ref{eq:gaussian_integral_dt_k} for (possibly multiple) external force ($\vec{F}_{ext}$) contributions is now
 \begin{equation}
-  \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij}
+  \frac{\partial}{\partial t} A^{-1}_{ij} = K^{flow}_{ij} + K^{int}_{ij} + \sum K^{ext}_{ij} \,\text{.}
 \end{equation}
 
 \subsection{Constant External Forces} \label{sec:const_force}
 
 For constant static forces having no dependence in $ x $, $ y $, $ z $, or $ t $, one can readily show that there is no effect on the pulse propagation parameters $ \sigma_{ \alpha } $, $ \eta_{ \alpha } $, and $ \gamma_{ \alpha } $.
-For example, consider a field consider a field $ \vec{E} = -E \hat{z} $ such that electrons are accelerated in the positive $ z $ direction by $ \vec{F}_{ext} = qE \hat{z} = q ( V / d ) \hat{z} $, so that from \ref{eq:Kint} we have
+For example, consider an acceleration electric field $ \vec{E} = -E \hat{z} $ such that electrons are accelerated in the positive $ z $ direction.
+%TODO e = |q| ?
+The force is then $ \vec{F}_{ext} = qE \hat{z} $, so that from \ref{eq:Kint} we have
 \begin{equation}
- \begin{split} 
-  K^{ext}_{ij} = \frac{1} {N} \dfrac{qV} {d} \int{ u_{i} u_{j} \left( \frac{p_{z}} {\eta_{z}} - \frac{\gamma_{z} z} {\sigma_{z} \eta_{z}} \right) f d^{3}x   d^{3}p } ;
- \end{split}
+  K^{ext}_{ij} = \frac{qE} {N} \int{ u_{i} u_{j} \left( \frac{p_{z}} {\eta_{z}} - \frac{\gamma_{z} z} {\sigma_{z} \eta_{z}} \right) f d^{3}x d^{3}p } \,\text{.}
 \end{equation}
-but it is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ (or equivalently $ K^{ext} = \hat{0} $) meaning that this static field has no effect on the parameters of the pulse.
+It is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ (or equivalently $ K^{ext} = \hat{0} $) meaning that this static field has no effect on the parameters of the pulse.
 Of course, this is only true in the pulse frame, the frame of the simulation, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m_{e} $ is unchanged.
 In the lab frame however, where  $ \Delta E = p \Delta p / m_{e} $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
 
@@ -70,7 +70,7 @@ In the lab frame however, where  $ \Delta E = p \Delta p / m_{e} $, there is an 
 %External forces that vary with position in the pulse reference frame (i.e., are not constant) act to change the electron pulse propagation dynamics, most often by affecting $\gamma_{\alpha}$ --- the spatial dependence of the local relative mean electron momenta.
 %Below, we consider two examples of electron optical elements that are being used, or are under consideration, for controlling and manipulating the space-time dynamics of electron pulses in DTEM and UED instrumentation; namely, magnetic lenses for spatial focusing and RF pulse compression cavities.
 
-For the case of a perfect lens, or in the longitudinal direction a perfect RF compression element, with a parabolic potential, the external force is linear with distance from the center of the electron pulse: 
+For the case of a cylindrically symmetric perfect lens, or in the longitudinal direction a perfect RF compression element, with a parabolic potential, the external force is linear with distance from the center of the electron pulse: 
 \begin{equation} \label{eq:linear_force}
 \vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \text{ .}
 \end{equation}
