@@ -31,7 +31,7 @@ These objects are managed by a central ``simulation'' class (called \verb!Physic
 The source package contains an example script analogous to the optical Cooke triplet, containing a magnetic lens, RF cavity and another magnetic lens.
 This script is included as Appendix \ref{sec:script}.
 
-Many scripts which use \verb!Physics::UEMColumn! were need to generate data used in the writing of this paper.
+Many scripts which use \verb!Physics::UEMColumn! were need to generate data used in the writing of this thesis.
 I have included most of them in the source repository which is available at \url{https://github.com/jberger/Thesis}.
 
 Additionally, a development version of the bin model presented in Section \ref{sec:bin_model} is available at \url{https://github.com/jberger/Physics-Photoemission}.
@@ -39,4 +39,6 @@ Once I am sufficently confident in its implementation, and more importantly its 
 This module depends on the much larger Perl project PDL (\url{http://pdl.perl.org}), a matrix-oriented numerical library, making it slightly more difficult to install, however the speed and implementational simplicy benefit added by that dependency is marked.
 
 Of particular interest to users of \verb!Physics::UEMColumn!, \verb!Physics::Photoemission! also includes a subclass of \verb!Physics::UEMColumn::Photoemission! which uses this binning model to generate the pulse's $z$ direction initial conditions.
+
+%TODO compare to luiten RF compressed pulse system as example (or might go in results section)
 
