@@ -55,7 +55,8 @@ sub for_number {
   return $result;
 }
 
-open my $fh, '>', 'spacecharge.dat';
+my $outfilename = $use_acc ? 'spacecharge_acc.dat' : 'spacecharge_noacc.dat';
+open my $fh, '>', $outfilename or die "Cannot open $outfilename for writing";
 
 my @nums = map { ("1e$_", "2.2e$_", "4.6e$_") } (0..8);
 pop @nums for 1..2;
