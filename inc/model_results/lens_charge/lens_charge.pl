@@ -10,7 +10,7 @@ use Physics::UEMColumn::Auxiliary ':constants';
 use PDL;
 
 sub gen_sim {
-  my ($lens_position, $strength) = @_;
+  my ($lens_position, $strength, $is_prolate) = @_;
   my $column_length = 4 * $lens_position;
 
   return sub {
@@ -19,13 +19,13 @@ sub gen_sim {
     my $pulse = Pulse->new(
       number => $num,
       velocity => vc / 3,
-      sigma_t => (500**2/2) . 'um^2',
-      sigma_z => ((0.5*1e8)**2/2) . ' (ps m / s)^2',
-      eta_t => (me * 0.5 / 3) . 'kg eV',
+      initial_width  => $is_prolate ? '500 um' : '50 um',
+      initial_length => $is_prolate ? '50 um'  : '500 um',
+      excess_photoemission_energy => '0.5 eV',
     );
 
     my $column = Column->new(
-      length       => $column_length . 'mm',
+      length => $column_length . 'mm',
     );
 
     my $sim = Physics::UEMColumn->new(
@@ -47,8 +47,8 @@ sub gen_sim {
 }
 
 my @sets = (
-  [ 6,  730e-12 ],
-  [ 60, 675e-13 ],
+  [ 6,  730e-12, 1 ],
+  [ 60, 675e-13, 1 ],
 );
 
 foreach my $set ( @sets ) {
