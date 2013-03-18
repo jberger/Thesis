@@ -37,8 +37,6 @@ As noted in Section \ref{sec:initial_shapes}, pulses under the influence of the 
 Of course in a more realistic system, the electron pulse is generated from a photocathode and then accelerated.
 These forces play an interesting role in the system.
 
-Consider now a simulation comparable to the one presented above, but which uses the initial conditions presented in \ref{eq:summary} and accelerated by an electron gun as modelled in Section \ref{sec:gun_model} which is 20mm in length.
-The results of this simulation are presented in \ref{fig:spacecharge_acc}.
 \begin{figure}
   \centering
   \begin{tikzpicture}
@@ -51,4 +49,13 @@ The results of this simulation are presented in \ref{fig:spacecharge_acc}.
   }
   \label{fig:spacecharge_acc}
 \end{figure}
+
+Consider now a simulation comparable to the one presented above, but which uses the initial conditions presented in \ref{eq:summary} and accelerated by an electron gun as modelled in Section \ref{sec:gun_model} which is 20mm in length.
+The results of this simulation are presented in \ref{fig:spacecharge_acc}.
+It is immediately obvious that the final transverse width is larger than in the ideal case presented in \ref{fig:spacecharge_noacc}, even in the low charge-density regime; this is primarily due to the additional divergence imparted by the negative lensing at the anode (see Section \ref{sec:gun_model}).
+One can see that though the pulse size does increase beyond a certain total pulse charge, and while that trend appears to start at a higher charge-density, due to the complexity of the pulse dynamics it is rather difficult to compare the exact charge-density from this plot.
+What can be seen is that the transverse size increases more sharply with pulse charge at higher levels.
+Since the pulse is already diverging in the transverse direction, this is compounded by the increased pulse charge.
+This divergence then lowers the overall charge-density more quickly and thus the longitudinal width is not affected as strongly as was seen in \ref{fig:spacecharge_noacc}.
+
 
