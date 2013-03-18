@@ -7,9 +7,14 @@
 % Joel A. Berger, Michael J. Greco, and W. Andreas Schroeder
 % 9 June 2008 / Vol. 16, No. 12 / OPTICS EXPRESS
 
-%\subsection{Introduction}
+In order to experiment using very short laser pulses, we have designed and built a custom Ytterbium-doped potassium gadolinium tungstate (\ce{Yb$:$KGd(WO4)2} or Yb:KGW) laser system.\cite{berger_high-power_2008}
+In practice, the flexibility afforded by having a custom-built system has outweighed its original performance benefit.
+I have shown in Section \ref{sec:initial_conditions} that the electron pulse duration is not a simple function of the laser pulse duration, yet, at the time the laser was built, this fact was not yet obvious.
+As such, our laser was designed to produce relatively high power output while generating ultrashort pulses, on the order of 250 fs for some conditions.
+
+\subsection{Laser Introduction}
 % page 8630
-Ytterbium-doped potassium gadolinium tungstate (\ce{Yb$:$KGd(WO4)2} or Yb:KGW) is becoming a widely used solid-state gain medium for ultrafast laser systems.
+Yb:KGW is becoming a widely used solid-state gain medium for ultrafast laser systems.
 As with other Yb-doped laser crystals \cite{Brenier_new_criteria}, this is primarily due to the gain medium's advantageous absorption properties for direct laser diode pumping at 980nm, its broad emission bandwidth around 1040nm, and consequent small ($\sim$ 6\%) quantum defect that results in a relatively low thermal load. 
 Mode-locked (ML), diode-pumped, Yb:KGW laser oscillators generating pulses with sub-picosecond durations at average output powers in excess of 1W have been demonstrated \cite{Brunner_diode_pumped,Courjaud_high_power,Major_femtosecond_2006,Holtom_mode_locked_2006} and are now available commercially \cite{website_amplitude,website_solar}.
 Such lasers have used dichroic mirrors \cite{Brunner_diode_pumped,Major_femtosecond_2006,Paunescu_diode_2004,Major_extended_2006}, polarization-coupling \cite{Holtom_mode_locked_2006}, or more complex optical geometries (e.g., thin disk lasers \cite{website_amplitude,Brunner_pulses_2002}) to pump the laser crystal in an efficient manner.
@@ -19,7 +24,7 @@ The spectroscopic properties of the biaxial Yb:KGW laser crystal \cite{Biswal_th
 However, as is the case for Yb-doped potassium yttrium tungstate (Yb:KYW) \cite{Liu_diode_pumped_2001,Killi_high_peak_2005}, mode-locked Yb:KGW lasers should ideally oscillate with radiation polarized parallel to the optical $N_p$-axis to access the broadest gain bandwidth around 1040nm, where the emission cross-section is comparable to that along the optical $N_m$-axis \cite{Holtom_mode_locked_2006,Biswal_thermo_optical_05}. This optimal requirement for orthogonal linear pump and laser polarizations led Holtom \cite{Holtom_mode_locked_2006} to employ a polarization-coupling scheme to diode pump longitudinally a 10W, sub-500fs, Yb:KGW laser.
 
 %TODO is this first sentance correct or should I use "I" voice?
-In this section, a high-power, femtosecond Yb:KGW oscillator is presented that also accesses the broader emission bandwidth parallel to the optical $N_p$-axis (parallel to the crystallographic $b$-axis), yet employs a simpler geometry for polarized diode-pumping on the strongest 980nm absorption line parallel to the optical $N_m$-axis (rotated by $\sim\,20^\circ$ from the crystallographic $a$-axis \cite{Biswal_thermo_optical_05,mochalov_laser_1997,pujol_crystalline_1999}).
+In this chapter, a high-power, femtosecond Yb:KGW oscillator is presented that also accesses the broader emission bandwidth parallel to the optical $N_p$-axis (parallel to the crystallographic $b$-axis), yet employs a simpler geometry for polarized diode-pumping on the strongest 980nm absorption line parallel to the optical $N_m$-axis (rotated by $\sim\,20^\circ$ from the crystallographic $a$-axis \cite{Biswal_thermo_optical_05,mochalov_laser_1997,pujol_crystalline_1999}).
 The laser head design is based on the thermal lens shaping (TLS) technique developed in-house for astigmatism compensation in diode-pumped Nd-doped lasers with Brewster-cut gain media \cite{Rimington_thermal_lens_2004}.
 It employs a simple single layer \ce{SiO2} anti-reflection coating on the gain medium to provide minimal loss for $p$-polarized intracavity 1040nm laser radiation and less than 0.5\% surface reflection for orthogonal $s$-polarized 980nm pump light.
 The result is a simple and robust, soliton mode-locked and directly diode-pumped, solid-state laser oscillator delivering over 4W of average output power in a 63MHz train of pulses with a duration less than 300fs.
