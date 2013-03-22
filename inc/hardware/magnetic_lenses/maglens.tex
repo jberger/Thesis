@@ -32,8 +32,8 @@ This geometry is presented schematically as \ref{fig:polepiece-schematic}.
 \begin{figure}
   \centering
   \input{polepiece-schematic}
-  \caption[Side-view schematic of a shielded magnetic lens with a pole-piece]{
-    Side-view schematic of a shielded magnetic lens with a pole-piece.
+  \caption[Schematic of a generic magnetic lens with a pole-piece]{
+    Side-view schematic of a generic magnetic lens with a pole-piece.
     The windings (current loops) are contained within the shielding.
     The magnetic field created by these windings is contained inside the shielding except in the gap.
   }
@@ -55,8 +55,34 @@ where $N$ is the number of loops, $I$ is the current in a single loop, $B_0$ is 
 They then derive a number of formulae and tabulate the results for a variety of parameters.
 Using these tabulated results, and for a choice of parameters one can determine the number of ampere-turns ($NI$) to create a certain focal length.
 
-%TODO need a description of the steel inner tube causing an effective diameter larger than the actual bore
-For the UEM, I chose a bore diameter $D=2R=$0.5in and a pole-piece gap $S$=0.1in, for an ratio $S/D=0.2$.
+\begin{figure}
+  \centering
+  \input{polepiece-design}
+  \caption[Design schematic of our magnetic lens with a pole-piece]{
+    Side-view schematic of the magnetic lens with a pole-piece designed for the UEM at UIC.
+    On the center axis is the inner drift tube, with pole-piece gap separation disk.
+    The end pieces are shown top and bottom.
+    One bridge piece is shown detached (left) and one attached (right).
+    Note that this figure is not drawn to the scale of the lenses at UIC, but rather to match the general schematic in \ref{fig:polepiece-schematic}.
+  }
+  \label{fig:polepiece-design}
+\end{figure}
+
+\ref{fig:polepiece-design} shows a simplistic design schematic of the lens designed and built for the UEM at UIC.
+The central bore is a tube of stainless steel having a magnetic permeability of 1; this behaves magnetically as if it is not involved in the field shaping.
+In this way the inner bore of the tube is in vacuum with minimal welding necessary.
+The outer diameter of tube is milled down to an outer diameter of $D=2R=$0.5in, though a disk of larger diameter, and length $S$=0.1in, is left at the midpoint, which will separate the shielding material and be the pole-piece gap.
+
+The high magnetic permeability shielding is in eleven pieces.
+There are two end pieces end pieces are revolution solid of ``L'' profile.
+These ends are slid together touching the disk at the midpoint of the drift tube; the disk is of the proper outer diameter to match the sheilding's smaller outer diameter.
+The combination of the two ends and this disk make a ``U'' shape which contains the windings.
+
+The top side of the end's larger outer side is flattend on eight sides.
+These are the mount points for eight bridge pieces which connect the ends, completing the field-capturing shielding loop.
+The gaps between the shielding bridges also allow for direct air cooling of the magnetic coils (see Section \ref{sec:mag_lens_thermal}).
+
+I chose drift tube outer diameter to be $D=$0.5in and a pole-piece gap $S$=0.1in, for an ratio $S/D=0.2$.
 By their table 8.2a this results in $\beta=0.0146$. Then, to create a focal length of 4in ($f/R=16$) table 8.13 gives a value for $k^2 \approx 0.06$.
 Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx356$A.
 
@@ -72,13 +98,14 @@ In that picture the two lenses are shown, however a placeholder is inserted betw
   \includegraphics{maglens.jpg}
   \caption[Side-view picture of the employed two custom large-bore magnetic lenses]{
     Side-view of the two custom large-bore magnetic lenses designed and built at UIC, seen installed in the prototype UEM.
-    The coils are visible as is high permeability shielding used for the pole-piece.
+    The coils are visible in the gaps between the high permeability shielding ``bridges''.
+    The bridges are attached to the tops of the end pieces by bolts to complete the shielding loop.
     The outer (larger) plates and struts are for structural integrity only.
   }
   \label{fig:maglens-pic}
 \end{figure}
 
-\subsection{Thermal Properties}
+\subsection{Thermal Properties} \label{sec:mag_lens_thermal}
 
 %TODO need reference for equation and \alpha_{Cu}
 Since the lenses have no cooling devices, it was prudent to characterize the thermal response to a moderate current load.
@@ -87,15 +114,4 @@ One can calculate the temperature increase of the system by monitoring the chang
 Maintaining a constant current of 4A through the lens, the voltage drop increased from 1.22V ($R_0 = 0.305\Omega$) to 1.25V ($R=0.3125\Omega$) as the lens warmed.
 The resultant temperature increase is only $T - T_0 = 2\text{K}$.
 This result is easily confirmed manually; the oxygen-free copper wire coils remain cool to the touch under these operating conditions.
-
-\begin{figure}
-  \centering
-  \input{polepiece-design}
-  \caption[Side-view schematic of a shielded magnetic lens with a pole-piece]{
-    Side-view schematic of a shielded magnetic lens with a pole-piece.
-    The windings (current loops) are contained within the shielding.
-    The magnetic field created by these windings is contained inside the shielding except in the gap.
-  }
-  \label{fig:polepiece-design}
-\end{figure}
 
