@@ -1,5 +1,5 @@
-set term tikz scale 0.7,1
-set output "onaxis.tex"
+set term tikz nopicenvironment scale 0.7,1
+set output "onaxis_FEM.tex"
 
 set xlabel "Position in column (mm)"
 set ylabel "Electric field (kV/mm)"
@@ -14,5 +14,5 @@ set yrange [0:3.5]
 #fit f(x,20) "onaxis.dat" using ($1*25.4):(2*$3/25.4) via V,xp
 plot f(x,5)  with lines linecolor rgb "red"   lt 1 title "",\
      f(x,10) with lines linecolor rgb "green" lt 1 title "",\
-     f(x,20) with lines linecolor rgb "blue"  lt 1 title ""#,\
-     #"onaxis.dat" using ($1*25.4):(2*$3/25.4) with points linecolor rgb "black" lt 4 title ""
+     f(x,20) with lines linecolor rgb "blue"  lt 1 title "",\
+     "onaxis.dat" using ($1*25.4):(2*$3/25.4) with points linecolor rgb "black" lt 4 title ""

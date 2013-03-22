@@ -47,7 +47,7 @@ We may choose to assume that the on-axis field is defined as a smoothed step dow
 \end{equation}
 where $V$ is the accelerating potential, $z^{\prime}_A$ is the position of the anode (the cathode assumed to be at $z^{\prime} = 0$) and $s$ is a constant quantifying the ``sharpness'' of the fall-off of the electric field.
 Indeed, this form is analgous to the super-Gaussian envalope (\ref{eq:reg_of_influence}), however it is open ended on the cathode side, which is necessary for the electrons to be accelerated away from the photocathode.
-Given this form (demonstrated in Section \ref{sec:gun_design}) the ``lensing'' strengths are then
+Given this form the ``lensing'' strengths are then
 \begin{gather}
   M_{\smallT} = -\frac{eVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
   M_z = \frac{eVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \, \text{.}
@@ -58,7 +58,9 @@ As with the RF cavity, one needs to include the on-axis force (\ref{eq:anode_tan
   \centerline{
     \subfloat[][]{
       \label{fig:field_on_axis}
-      \input{onaxis}
+      \begin{tikzpicture}
+        \input{onaxis}
+      \end{tikzpicture}
     }
     \subfloat[][]{
       \label{fig:tanh_sharpness}
@@ -67,15 +69,17 @@ As with the RF cavity, one needs to include the on-axis force (\ref{eq:anode_tan
   }
   \caption[An example of a tanh form acceleration region for three different ``sharpness'' values]{
     An example of a tahn form acceleration region (overall length 6.35mm) for three different ``sharpness'' values.
-    The square data points in \protect\subref{fig:field_on_axis} represent the on-axis electric field data from FEM simulations, see Section \ref{sec:gun_design}.
     The colored electric fields in figure \protect\subref{fig:field_on_axis} correspond to the pulse width (solid) and length (dashed) in figure \protect\subref{fig:tanh_sharpness}.
+    This form is compared to FEM simulated electric field data in \ref{fig:field_on_axis_fem}.
   }
   \label{fig:gun-sharpness}
 \end{figure}
 
-\ref{fig:gun-sharpness} shows an example acceleration region for three values of the ``sharpness'' $s$ as well as longitudinal FEM field data which is explained further in Section \ref{sec:gun_design}.
-%TODO possibly remove the FEM data? it doesn't help much here and is confusing since it hasn't been introduced
+\ref{fig:gun-sharpness} shows an example acceleration region for three values of the ``sharpness'' $s$.
 What is clear from this figure is that the dynamics are not highly coupled to the value of this hard-to-quantify parameter.
 For all values of $s$ the divergence of the beam is equal (though the size may vary slightly).
 Interestingly the length of the pulse is stabilized on exiting the anode, coming very nearly to a constant length (not expanding nor contracting).
 This effect is due to the slower electrons remaining in the cavity longer and thus receiving an additional kick, as described in \cite{oudheusden_electron_2007}.
+This longitudinal electric field shape is compared to the electric field computed by finite-element (FEM) simulations of our acceleration cavity in Section \ref{sec:gun_design}.
+
+

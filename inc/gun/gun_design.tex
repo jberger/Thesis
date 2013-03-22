@@ -42,6 +42,21 @@ Since the shape of the field is scale independent, the schematic shows that the 
   \label{fig:gun-field}
 \end{figure}
 
+\begin{figure}
+  \centering
+
+  \begin{tikzpicture}
+    \input{onaxis_FEM}
+  \end{tikzpicture}
+
+  \caption[An example of a tanh form acceleration region for three different ``sharpness'' values]{
+    An example of a tahn form acceleration region (overall length 6.35mm) for three different ``sharpness'' values, the same data as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
+    The square data points represent the on-axis electric field data from FEM simulations.
+  }
+  \label{fig:field_on_axis_fem}
+\end{figure}
+
+\ref{fig:field_on_axis_fem} compares the FEM computed electric field to the assumed model form (\label{eq:anode_tanh}) for several values of the sharpness parameter $s$; the lines are the same as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
 As derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electic field.
 This field will cause a divergence of the beam.
 Future work will include investigating the designs of Butler %TODO reference
