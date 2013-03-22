@@ -27,6 +27,7 @@ Further --- as suggested by the use of the auxiliary field $H$ field in \ref{eq:
 These materials, called ``magnetic shielding'' since it captures the magnetic field lines, can direct the field lines to a small gap, known as the ``pole-piece gap''.
 The field lines exit the shielding in the gap and it is this field that acts as the lens.
 This gap can be much smaller than the total width of the coil turns, and yet contain in a field commensurate with the full coil.
+This geometry is presented schematically as \ref{fig:polepiece-schematic}.
 
 \begin{figure}
   \centering
@@ -36,9 +37,10 @@ This gap can be much smaller than the total width of the coil turns, and yet con
     The windings (current loops) are contained within the shielding.
     The magnetic field created by these windings is contained inside the shielding except in the gap.
   }
+  \label{fig:polepiece-schematic}
 \end{figure}
 
-El-Kareh and El-Kareh \cite{el-kareh_electron_1970} provide an analysis of symmetric lenses with magnetic shielding and a pole-piece in chapter 8, with the most useful information being in section 8.7.
+El-Kareh and El-Kareh provide an analysis of symmetric lenses with magnetic shielding and a pole-piece (see Ref. \cite{el-kareh_electron_1970} chapter 8, with the most useful information being in section 8.7).
 They define
 \begin{subequations}
 \begin{gather}
@@ -53,9 +55,8 @@ where $N$ is the number of loops, $I$ is the current in a single loop, $B_0$ is 
 They then derive a number of formulae and tabulate the results for a variety of parameters.
 Using these tabulated results, and for a choice of parameters one can determine the number of ampere-turns ($NI$) to create a certain focal length.
 
-%TODO check S and D as I seem to remember we have S=0.1in
 %TODO need a description of the steel inner tube causing an effective diameter larger than the actual bore
-For the UEM, I chose a bore diameter $D=2R=$0.1in and a pole-piece gap $S$=0.5in, for an ratio $S/D=0.2$.
+For the UEM, I chose a bore diameter $D=2R=$0.5in and a pole-piece gap $S$=0.1in, for an ratio $S/D=0.2$.
 By their table 8.2a this results in $\beta=0.0146$. Then, to create a focal length of 4in ($f/R=16$) table 8.13 gives a value for $k^2 \approx 0.06$.
 Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx356$A.
 
@@ -86,4 +87,15 @@ One can calculate the temperature increase of the system by monitoring the chang
 Maintaining a constant current of 4A through the lens, the voltage drop increased from 1.22V ($R_0 = 0.305\Omega$) to 1.25V ($R=0.3125\Omega$) as the lens warmed.
 The resultant temperature increase is only $T - T_0 = 2\text{K}$.
 This result is easily confirmed manually; the oxygen-free copper wire coils remain cool to the touch under these operating conditions.
+
+\begin{figure}
+  \centering
+  \input{polepiece-design}
+  \caption[Side-view schematic of a shielded magnetic lens with a pole-piece]{
+    Side-view schematic of a shielded magnetic lens with a pole-piece.
+    The windings (current loops) are contained within the shielding.
+    The magnetic field created by these windings is contained inside the shielding except in the gap.
+  }
+  \label{fig:polepiece-design}
+\end{figure}
 
