@@ -63,7 +63,7 @@ We note that \ref{eq:n_crit} does not express a limit on the number of electrons
 More electrons can be produced, at the expense of a severely distorted temporal electron pulse profile \cite{valfells_effects_2002}.
 
 This finally leads to the first consideration for UEM design mentioned in the introduction: for the clean pulsed emission of sufficient to create a useful image, the generated beam should have a HW1/eM width 
-\begin{equation}
+\begin{equation} \label{eq:minimum_w}
   w \gtrsim \sqrt{\frac{N e d}{\pi \varepsilon_0 V_{DC}}} \,\text{.}
 \end{equation}
 For our example case of a 1k $\times$ 1k CCD, $N \ge 10^8$ electrons/pulse, we require $w \gtrsim $ 0.56 mm.
@@ -78,12 +78,20 @@ where $m$ is the electron mass, $c$ is the speed of light in vacuum and $x$ and 
 By Liouville's Theorem (Section \ref{sec:liouville}), we know that this quantity is conserved throught the propagation of the pulse, and therefore is related directly to the initial photoemission properties of the system.
 For a laser of the form of \ref{eq:laser_form} we have simply
 \begin{equation} \label{eq:emittance_definition_w}
-  \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \left < p_x^2 \right > } \,\text{.}
+  \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \frac{\left < p_x^2 \right >}{2} } \,\text{.}
 \end{equation}
 
 This normalized transverse emittance limits the resolving capablility of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred.
-In Ref. \ref{berger_dc_2009}, we explore these limitations, eventually arriving at the following result.
-For a desired spatial resolution per pixel $\Delta X$ (related to the magnification) using a $N_p$ x $N_p$ detector, in the M$^{th}$ diffraction order, one may only resolve dynamics arising from a diffraction peak shift $\Delta a / a$ where the Bragg plane spacing is $a$ if 
+Since \ref{eq:minimum_w} specifies a lower bound on the emission spot size $w$, knowing a UEM will exhibit higher resolution by employing an electron source with the minimum possible transverse emittance directly implies that every effort must be made to reduce the initial transverse momentum spread.
+Though deriving an absolute limit on the allowable transverse emittance for imaging in a UEM would depend on many column-specific factors, since diffraction is expected to impose less stringent requirements on the beam than imaging, we may consider it when searching for an upper bound on transverse emittance.
+
+In Ref. \cite{berger_dc_2009}, we explore the impact of these limitations for an Ultrafast Electron Diffraction (UED) experiment.
+We find that for a desired spatial resolution per pixel $\Delta X$ (related to the magnification) using a $N_p$ x $N_p$ detector, one may only resolve a fractional change $\Delta a / a$ in a crystalline material's Bragg plane spacing $a$ in the M$^{th}$ diffraction order if
 \begin{equation}
   \varepsilon_{\smallT} \le \frac{5 \hbar}{m c} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
 \end{equation}
+However, because of lower limit that exists on $w$ from \ref{eq:minimum_w}, we can say that these requirements impose an upper limit on the initial transverse momentum spread
+\begin{equation}
+  \sqrt{ \left < p_x^2 \right > } = \sqrt{ \eta_{\smallT} (0) } \le \frac{5\sqrt{2} \hbar}{w} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
+\end{equation}
+
