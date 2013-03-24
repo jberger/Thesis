@@ -11,10 +11,6 @@ In this chapter, I will first convince the reader of these considerations.
 As a direct consequence of these considerations, it is our belief that a successful UEM project cannot simply stem from small modifications to the platform of a conventional electron microscope.
 In the following chapters I will show how we are addressing these considerations for the prototype system at UIC.
 
-%Ultrafast Electron Microscopy (UEM) is a subclass of a more general concept, Dynamic Transmission Electron Microscopy (DTEM).
-%DTEM is a more general term for any electron microscope with higher time resolution, typically employing laser-stimulated photoemission.
-
-
 \section{Pulse Charge Requirement}
 
 It is easy to believe that in order to make a useful image in an electron microcope, the number of electrons collected must be above some minimum number.
@@ -74,3 +70,20 @@ For our example case of a 1k $\times$ 1k CCD, $N \ge 10^8$ electrons/pulse, we r
 
 \section{Beam Quality and Resolution Limit}
 
+A common figure of merit for electron beams is its normalized transverse emittance \cite{jensen_emittance_2010}, $\varepsilon_{\smallT}$, defined as 
+\begin{equation} \label{eq:emittance_definition}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > } \,\text{,}
+\end{equation}
+where $m$ is the electron mass, $c$ is the speed of light in vacuum and $x$ and $p_x$ are the transverse position and momentum respectively.
+By Liouville's Theorem (Section \ref{sec:liouville}), we know that this quantity is conserved throught the propagation of the pulse, and therefore is related directly to the initial photoemission properties of the system.
+For a laser of the form of \ref{eq:laser_form} we have simply
+\begin{equation} \label{eq:emittance_definition_w}
+  \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \left < p_x^2 \right > } \,\text{.}
+\end{equation}
+
+This normalized transverse emittance limits the resolving capablility of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred.
+In Ref. \ref{berger_dc_2009}, we explore these limitations, eventually arriving at the following result.
+For a desired spatial resolution per pixel $\Delta X$ (related to the magnification) using a $N_p$ x $N_p$ detector, in the M$^{th}$ diffraction order, one may only resolve dynamics arising from a diffraction peak shift $\Delta a / a$ where the Bragg plane spacing is $a$ if 
+\begin{equation}
+  \varepsilon_{\smallT} \le \frac{5 \hbar}{m c} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
+\end{equation}
