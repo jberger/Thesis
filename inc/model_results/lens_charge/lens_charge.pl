@@ -19,8 +19,8 @@ sub gen_sim {
     my $pulse = Pulse->new(
       number => $num,
       velocity => vc / 3,
-      initial_width  => $is_prolate ? '500 um' : '50 um',
-      initial_length => $is_prolate ? '50 um'  : '500 um',
+      initial_width  => $is_prolate ? '500 um' : '107.7 um',
+      initial_length => $is_prolate ? '50 um'  : '1077 um',
       excess_photoemission_energy => '0.5 eV',
     );
 
@@ -48,13 +48,18 @@ sub gen_sim {
 
 use Tie::Array::CSV;
 
+my @charges = qw/ 1e0 1e4 1e5 1e6 1e7 /;
+
 my @sets = (
-  [ 6,  730e-12, 1 ],
-  [ 60, 675e-13, 1 ],
+  [ 6,  730e-12, 1, \@charges ],
+  [ 60, 675e-13, 1, \@charges ],
+  [ 6,  730e-12, 0, \@charges ],
+  [ 60, 920e-13, 0, [ @charges[0..$#charges-1] ] ],
 );
 
 foreach my $set ( @sets ) {
   my $lens = $set->[0];
+  my $charges = pop @$set;
 
   my $filename = "lens_${lens}mm_" . ( $set->[2] ? 'prolate' : 'oblate' ) . '.dat';
   tie my @out, 'Tie::Array::CSV', $filename, sep_char => ' ';
@@ -63,7 +68,7 @@ foreach my $set ( @sets ) {
   say "$lens mm";
   my $sim = gen_sim( @$set );
 
-  for ( qw/ 1e0 1e4 1e5 1e6 1e7 / ) {
+  for ( @$charges ) {
     print "\t$_:";
 
     my $result = $sim->($_);

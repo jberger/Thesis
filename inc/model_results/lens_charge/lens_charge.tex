@@ -6,29 +6,8 @@ The extent to which space-charge effects limit the focal fidelity is expected to
 
 In the preceding sections it has already been established that prolate eccentricities are preferred for UEM in general.
 When focusing the pulse it can be shown that prolate pulses will also have markedly better performance.
-Therefore, in the sake of simplicity, only the prolate case will be demonstrated here.
-For more information see reference \cite{berger_semi-analytic_2010}.
 
-\begin{figure}
-  \centering
-  \centerline{
-    \subfloat[][] {
-      \label{fig:focus_lens_charge_long}
-      \input{lens_60mm}
-    }
-    \subfloat[][] { 
-      \label{fig:focus_lens_charge_short}
-      \input{lens_6mm}
-    }
-  }
-  \caption[AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$]{
-    AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$.
-    Pulses begin at the lens' front focal plane with HW1/eM width $ 500 \mu \text{m}$ and duration 500 fs at 20 kV velocity ($c/3$) for an ellipticiy $ \xi ( 0 ) = 0.1 $ (prolate).
-    Distance traveled in column is measured relative to the lens at $z=0$, in units of the focal lenth, \subref{fig:focus_lens_charge_long} $f = $ 60mm and \subref{fig:focus_lens_charge_short} $ f = $ 6.0mm.
-    A logarithmic scale is used for comparative clarity.
-  }
-  \label{fig:focus_lens_charge}
-\end{figure}
+\input{lens_charge_plot}
 
 \ref{fig:focus_lens_charge} shows the predicted dynamics of the spatial electron pulse waist (HW1/eM) for prolate pulses under perfect focusing for lenses of two focal lengths; a `long' focal length of 60mm (\ref{fig:focus_lens_charge}\subref{fig:focus_lens_charge_long}) and a `short' focal length of 6.0mm (\ref{fig:focus_lens_charge}\subref{fig:focus_lens_charge_short}).
 For both lens strengths, the deleterious effects of space-charge are evident as the number of electrons/pulse $ N $ is increased.
