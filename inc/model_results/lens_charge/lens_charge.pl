@@ -46,6 +46,8 @@ sub gen_sim {
   }
 }
 
+use Tie::Array::CSV;
+
 my @sets = (
   [ 6,  730e-12, 1 ],
   [ 60, 675e-13, 1 ],
@@ -53,6 +55,10 @@ my @sets = (
 
 foreach my $set ( @sets ) {
   my $lens = $set->[0];
+
+  my $filename = "lens_${lens}mm_" . ( $set->[2] ? 'prolate' : 'oblate' ) . '.dat';
+  tie my @out, 'Tie::Array::CSV', $filename, sep_char => ' ';
+  my $column = 0;
 
   say "$lens mm";
   my $sim = gen_sim( @$set );
@@ -64,10 +70,16 @@ foreach my $set ( @sets ) {
     my $z  = $result->slice('(1),') / ( $lens * 1e-3 ) - 1;
     my $w = sqrt( 2 * $result->slice('(3),') ) * 1000;
 
-    wcols $z, $w, "lens_${lens}mm_n$_.dat";
+    #wcols $z, $w, "lens_${lens}mm_n$_.dat";
+    my $i = 0;
+    $out[$i++][$column] = $_ for $z->list;
+    $i = 0;
+    $out[$i++][$column+1] = $_ for $w->list;
+    $column += 2;
 
     my $min_ind = $w->minimum_ind;
     say "\t" . $w->at($min_ind) . 'mm at z = ' . $z->at($min_ind) . 'f';
+
   }
 
 }
