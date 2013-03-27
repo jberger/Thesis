@@ -10,7 +10,7 @@ use Physics::UEMColumn::Auxiliary ':constants';
 use PDL;
 
 sub gen_sim {
-  my ($lens_position, $strength, $is_prolate) = @_;
+  my ($lens_position, $strength, $is_oblate) = @_;
   my $column_length = 4 * $lens_position;
 
   return sub {
@@ -19,8 +19,8 @@ sub gen_sim {
     my $pulse = Pulse->new(
       number => $num,
       velocity => vc / 3,
-      initial_width  => $is_prolate ? '500 um' : '107.7 um',
-      initial_length => $is_prolate ? '50 um'  : '1077 um',
+      initial_width  => $is_oblate ? '500 um' : '107.7 um',
+      initial_length => $is_oblate ? '50 um'  : '1077 um',
       excess_photoemission_energy => '0.5 eV',
     );
 
@@ -61,7 +61,7 @@ foreach my $set ( @sets ) {
   my $lens = $set->[0];
   my $charges = pop @$set;
 
-  my $filename = "lens_${lens}mm_" . ( $set->[2] ? 'prolate' : 'oblate' ) . '.dat';
+  my $filename = "lens_${lens}mm_" . ( $set->[2] ? 'oblate' : 'prolate' ) . '.dat';
   tie my @out, 'Tie::Array::CSV', $filename, sep_char => ' ';
   my $column = 0;
 

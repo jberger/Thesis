@@ -14,7 +14,7 @@ my $vol = (1e-3)**3;
 
 my $for_xi = gen_xi_series( $n, $vol, $dE, $length );
 
-for my $spec ( [ prolate => 1/3 ], [ sphere => 1.0001 ], [ oblate => 3 ] ) {
+for my $spec ( [ oblate => 1/3 ], [ sphere => 1.0001 ], [ prolate => 3 ] ) {
   my ( $shape, $xi ) = @$spec;
   my $file = "shape_${shape}_N$n.dat";
   open my $fh, '>', $file or die "Cannot open $file: $!\n";
