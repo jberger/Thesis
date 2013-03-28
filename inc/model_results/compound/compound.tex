@@ -1,6 +1,11 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-\subsection{Compound Element Systems} \label{sec:compound}
+\subsection{UEM Column Example} \label{sec:compound}
+
+Through the use of \ref{eq:reg_of_influence} to specify the position and influence of electron optical components such as magnetic lenses and RF cavities, the extended AG model can be employed to design and assess a full UEM column from pulse generation to sample stage.
+The design of such a compound system is, of course, a cornerstone of modern electron microscope development, although space-charge effects are generally not included, since, on average, there is usually no more than one electron in the microscope column at a time.
+However, for a nanosecond DTEM,\cite{lagrange_nanosecond_2008,reed_evolution_2009} the microscope column must be designed to compensate for transverse ($\smallT$) space-charge effects, which dominate the propagation dynamics for the prolate electron pulses employed in such instruments (see \ref{fig:compare_shape}).
+For the ultrashort (i.e., picosecond and femtosecond) electron pulse durations used in UEMs\cite{park_direct_2009} and UED experiments,\cite{oudheusden_electron_2007} the longitudinal ($z$) pulse dynamics due to both dispersion and space-charge effects must also be considered (as indicated in \ref{fig:compare_shape}).
 
 \begin{figure}
   \centering
@@ -9,7 +14,32 @@
   \end{tikzpicture}
   \caption[Example model of a compound system of electron-optical elements]{
     Example model of a compound system of electron-optical elements.
+    The length (green) of the pulse is compressed to a ``focus'' 10 cm after the RF cavity at 20 cm.
+    The width (red) is affected by two magnetic lenses (5 cm before and after the RF cavity) as well as by the cavity itself.
+    The lenses are tuned to produce a simultaneous focus with the pulse length, creating a small spatial and temporal probe should this focal point represent a sample holder.
   }
   \label{fig:compound}
 \end{figure}
+
+%Mask starts at 20.67mm
+%w after anode: 579.33um
+%Min Width: 29.50um at 301.49mm
+%Min Length: 22.58um (269.30fs) at 299.45mm
+
+\ref{fig:compound} shows an example of a compound element system for the delivery of an ultrashort electron pulse to the specimen area; in this case, optimized for $ N = 10^{ 6 } $ --- the number of electrons per pulse required for single shot diffraction measurements.\cite{armstrong_practical_2007}
+The displayed electron pulse dynamics are for a $\tau = $ 100fs electron pulse with $w = $ 0.1mm generated from a laser driven Ta photocathode, with $\Delta E = $ 0.5eV using $ \hbar \omega = $ 4.75eV photons, then accelerated by 20 kV to a velocity of $8.4 \times 10^{7} \text{m}/\text{s}$.
+In this simple system, an optimum RF cavity ($ \Omega = \pi v_{{ \scriptscriptstyle 0}} / d $) is surrounded by two magnetic lenses (positioned a realistic 5cm to either side of the RF cavity) that compensate for the electron beam divergence due to the non-zero $ \eta_{\smallT} (0) $ and the negative spatial lensing of the RF pulse compression cavity.
+For the transverse dimension, this arrangement of electron optical elements is similar to the Cooke triplet in optics.
+The magnetic lenses are assumed to be identical (but oppositely wound to allow for the compensation of rotational effects in the magnetic focusing through the use of oppositely directed axial magnetic fields).
+The three lensing elements are positioned at a distance of 15cm from the cathode to the front of the first magnetic lens, adjusted to space-time image the electron pulse 5cm behind the second magnetic lens.
+The dependencies of the the spatial variances, $\sigma_{\alpha}$, shown in \ref{fig:compound} as the electron pulse propagates through the multi-element system clearly illustrate the effect of the magnetic lenses and RF cavity in the transverse ($\smallT$) and longitudinal ($z$) dimensions.
+As the image-to-object distance ratio is less than unity in this case, both the transverse and longitudinal imaged pulse dimensions are reduced relative to their initial values. %TODO comment futher
+
+As seen in Section \ref{sec:free_spacecharge}, with increasing pulse charge, $ N e $, space-charge effects in general will act to degrade the space-time imaging by increasing the three-dimensional pulse size delivered to the reference plane positioned 5cm behind the second magnetic lens.
+At $ N = 10^{6} $, space-charge effects moderate the image demagnification due to the $\sim$2 object-to-image distance ratio in \ref{fig:compound}. 
+In other words, for the displayed compound element system, which could be employed in UED experiments,\cite{oudheusden_electron_2007} the initial space-time resolution associated with the $\sim$0.1mm spot size and $\sim$100fs pulse duration can be maintained (or bettered) for $N \lesssim 10^{6} $.
+For a UEM, on the other hand, it may be necessary to separate longitudinally the space and time images produced by the compound element column.
+This is because the inclusion of the microscope's objective lens will likely require the pulse's time focus to be at the objective's back focal plane (i.e., in the specimen) while the column's spatial image may need to be located at the objective's front focal plane (i.e., entrance aperture) for efficient beam transfer with minimal spherical aberration.
+Fortunately, a compound component system of the type shown in \ref{fig:compound} with a RF cavity can meet this challenge since the longitudinal positions of the two foci can be manipulated independently.
+
 
