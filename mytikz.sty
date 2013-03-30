@@ -3,9 +3,16 @@
 
 %% handle externalizing images, problematic, but faster
 \newif\if@mytikzexternal\@mytikzexternalfalse
+
 \DeclareOption{external}{
   \@mytikzexternaltrue
 }
+
+\DeclareOption{noexternal}{
+  \@mytikzexternalfalse
+}
+
+\ExecuteOptions{noexternal}
 
 \ProcessOptions*
 
