@@ -26,6 +26,7 @@ uictman.pdf
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+*.auxlock
 
 *.run.xml
 *-blx.bib
