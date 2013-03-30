@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{mytikz}[2013/01/13 Custom Package]
+
+%% handle externalizing images, problematic, but faster
+\newif\if@mytikzexternal\@mytikzexternalfalse
+\DeclareOption{external}{
+  \@mytikzexternaltrue
+}
+
+\ProcessOptions*
+
+\RequirePackage{tikz}
+\usetikzlibrary{calc,positioning,intersections,arrows,shapes.geometric,shapes.arrows}
+
+\if@mytikzexternal
+  \usetikzlibrary{external}
+  \tikzexternalize
+  \tikzsetexternalprefix{figure_cache/}
+\fi
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\RequirePackage{gnuplot-lua-tikz}
+
+\endinput
+
