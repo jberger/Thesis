@@ -2,42 +2,41 @@
 
 \section{Effect of Space Charge on Dynamics} \label{sec:free_spacecharge}
 
-A full analysis of how high the charge density may be before deleterious space-charge become unmanagable would be a sizable task.
-Much discussion could be had on the degree of distortion allowable as well as considerations of the initial shape of the pulse and length and arrangement of the column and its constituent elements.
 Simplistically stated, at low pulse charge densities (low number of electrons/pulse), the propagation dynamics should be largely determined by the effects associated with the intrinsic geometric pulse broadening; for most photoemission processes this is related to the excess photoemission energy $\Delta E$.
 On the other hand, space-charge effects are expected to dominate at large pulse charge densities.
+A full analysis of how high the charge density may be before deleterious space-charge become unmanagable would be a sizable task.
+While much discussion could be had on the degree of distortion allowable as well as considerations of the initial shape of the pulse and length and arrangement of the column and its constituent elements, a certain amount of intuition can be gained simply by considering a typical example.
 
 \begin{figure}
   \centering
   \begin{tikzpicture}
     \input{spacecharge_data_noacc}
   \end{tikzpicture}
-  \caption[Simplistic free-space pulse evolution vs charge density]{
-    The final HW1/eM width (solid) and length (dashed) of pulses which are intially similar except for the number of electrons in the pulse.
-    The pulse is initially 1 mm (HW1/eM) width and 1 ps in duration travelling at $c/3$ with 0.5eV excess photoemission energy.
-    It then traverses a 15cm drift region upon which the final length and width are recorded.
+  \caption[Idealistic free-space pulse evolution vs charge density]{
+    The final HW1/eM pulse width (solid) and length (dashed) after a 15 cm propagation. 
+    Pulses are intially similar except for the number of electrons in the pulse, each having 1 mm (HW1/eM) width and 1 ps in duration travelling at $c/3$ with 0.5eV excess photoemission energy.
   }
   \label{fig:spacecharge_noacc}
 \end{figure}
 
-This trend is clearly evident in \ref{fig:spacecharge_noacc} which presents the predicted HW1/eM pulse width $\sqrt{2 \sigma_{\smallT}}$ (solid line) and longitudinal length $\sqrt{2 \sigma_{z}}$ (dashed line) as a function of the number of electrons in the pulse after a propagation distance of 15cm.
-The pulses are not accelerated but rather start with a velocity of $c/3$ (where $c$ is the speed of light in a vacuum), initial width of 1 mm, HW1/eM pulse duration 1 ps, have the initial momentum chirps $\gamma_{\smallT} = \gamma{z} = 0 $ and momentum uncertainties related to an excess photoemission energy of $\Delta E = $ 0.5 eV.
+The expected trend is clearly evident in \ref{fig:spacecharge_noacc} which presents the predicted HW1/eM pulse width $\sqrt{2 \sigma_{\smallT}}$ (solid line) and longitudinal length $\sqrt{2 \sigma_{z}}$ (dashed line) after a propagation distance of 15cm as a function of the number of electrons in the pulse.
+Once again, this simulation employs the idealistic pulse described earlier, starting with a velocity of $c/3$ (where $c$ is the speed of light in a vacuum), initial width of 1 mm, HW1/eM pulse duration 1 ps, have the initial momentum chirps $\gamma_{\smallT} = \gamma{z} = 0 $ and momentum uncertainties related to an excess photoemission energy of $\Delta E = $ 0.5 eV.
 These naive conditions are needed to isolate the behavior of a propagating pulse from its creation environment.
 The simulations clearly indicate that both the electron beam width and length at the end of the simulation will remain unchanged below about $10^5$ electrons/pulse; that is, global space-charge effects only significantly influence the pulse propagation for pulses having more than $10^5$ electrons/pulse.
-In the absence of space-charge effects, the presented oblate shaped pulses should be maintained as such during unforced propagation because the electron pulse divergence and its temporal broadening rate are both proportional to $\Delta E^{1/2}$.
+In the absence of space-charge effects, the presented oblate shaped pulses should be maintained as such during unforced propagation because the initial values of the electron pulse' divergence and temporal broadening rate are both proportional to $\Delta E^{1/2}$ but not to $N$.
 
 %TODO highlight the following in the experimental section
 %In other words, the spatial and temporal dispersive effects due to the nonzero value of $\Delta E$ are expected to dominate the space-time dynamics of the electron pulse during its propagation
 %in our investigations because less than 10 5 electrons/pulse
 %are generated.
 
-As the number of electrons/pulse increases beyond $10^6$, both the pulse length and diameter rapidly increase.
+In this example, as the number of electrons/pulse increases beyond $10^6$, both the pulse length and diameter rapidly increase.
 The model predicts that space-charge effects produce a spherical charge distribution of approximately five times larger width at $10^8$ electrons/pulse for these conditions.
 As noted in Section \ref{sec:initial_shapes}, pulses under the influence of the internal space-charge field expand preferentially in the dimension that was smallest initially; this causes the pulse to initially trend towards being spherical.
 
-\ref{fig:spacecharge_noacc} is specifically created to isolate the behavior of and ``ideal'' pulse which is independent of its creation environment.
+\ref{fig:spacecharge_noacc} employed the idealistic conditions specifically to isolate the behavior of an ``ideal'' pulse which is independent of its creation environment.
 Of course in a more realistic system, the electron pulse is generated from a photocathode and then accelerated.
-These forces play an interesting role in the system.
+Now that we have seen how the ideal case behaves, it is important to consider the interesting role that these more realistic factors play in the system.
 
 \begin{figure}
   \centering
@@ -45,14 +44,14 @@ These forces play an interesting role in the system.
     \input{spacecharge_data_acc}
   \end{tikzpicture}
   \caption[More realistic free-space pulse evolution vs charge density]{
-    The final HW1/eM width (solid) and length (dashed) of pulses which are intially similar except for the number of electrons in the pulse.
-    The pulse is generated by 1 mm (HW1/eM) width 1 ps laser pulses with 0.5eV excess photoemission energy.
-    It then traverses a 15cm column, a 20mm acceleration region followed by drift region.
+    The final HW1/eM pulse width (solid) and length (dashed) after a 15 cm propagation. 
+    Pulses are intially similar except for the number of electrons in the pulse, each is generated by 1 mm (HW1/eM) width 1 ps laser pulses with 0.5eV excess photoemission energy and then traverses a 20mm acceleration region followed by drift region, accelerating to a velocity of $c/3$.
   }
   \label{fig:spacecharge_acc}
 \end{figure}
 
-Consider now a simulation comparable to the one presented above, but which uses the initial conditions presented in \ref{eq:summary} and accelerated by an electron gun as modelled in Section \ref{sec:gun_model} which is 20mm in length.
+Consider now a simulation comparable to the one presented above, but which uses the realistic initial conditions set.
+The pulse is generated by a 1 mm width 1 ps laser (HW1/eM) and accelerated by an electron gun which is 20mm in length and which has an accelerating voltage of 30 kV to speed $c/3$, the same velocity in the idealistic case.
 The results of this simulation are presented in \ref{fig:spacecharge_acc}.
 It is immediately obvious that the final transverse width is larger than in the ideal case presented in \ref{fig:spacecharge_noacc}, even in the low charge-density regime; this is primarily due to the additional divergence imparted by the negative lensing at the anode (see Section \ref{sec:gun_model}).
 One can see that though the pulse size does increase beyond a certain total pulse charge, and while that trend appears to start at a higher charge-density, due to the complexity of the pulse dynamics it is rather difficult to compare the exact charge-density from this plot.
