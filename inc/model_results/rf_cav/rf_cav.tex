@@ -2,12 +2,13 @@
 
 \section{Space-charge Effects in RF Cavities} \label{sec:rf_cav_charge}
 
-\input{rf_cav_plot}
-
-\ref{fig:rf_cav_num} illustrates the operation of a $ \Omega / 2 \pi = $ 3GHz $\text{TM}_{010}$ RF cavity of axial length $ d = \pi v_{\smallzero} / \Omega $ as an electron pulse compressor tuned to produce the shortest pulse at a distance $ z^{\prime} = $ 10cm behind the cavity for $N=1$ and middle $N=10^5$ pulse charge.
-The mathematical model of the RF cavity (see Section \ref{rf_cav_model}) employs $L_{RF} = d \approx $ 14mm, $ z^{\prime}_{RF} = 0 $, and $n=2$ (in \ref{eq:reg_of_influence}) to reflect the sharper end to the region-of-influence of the RF cavity.
+In comparison to using magnetic lenses to compensate for transverse pulse broadening by using magnetic lenses, RF cavities are being employed to compensate for longitudinal broadening in the ultrashort pulses used by UEM.\cite{oudheusden_electron_2007}
+\ref{fig:rf_cav_num} illustrates the operation of a $ \Omega / 2 \pi = $ 3GHz $\text{TM}_{010}$ RF cavity of axial length $ d = \pi v_{\smallzero} / \Omega $ as an electron pulse compressor tuned to produce the shortest pulse at a distance $ z^{\prime} = $ 10cm behind the cavity for $N=1$ and $N=10^5$ pulse charges.
+The mathematical model of the RF cavity (see Section \ref{rf_cav_model}) employs $L_{RF} = d \approx $ 14mm, $ z^{\prime}_{RF} = 0 $, and a region of influence super-Gaussian of order 2 ($n=2$ in \ref{eq:reg_of_influence}) to reflect the sharper end to the region-of-influence of the RF cavity.
 In both cases, the idealized initial conditions are used, starting the pulse at $ z^{\prime} = -10$ cm, an excess photoemission energy $\Delta E = 0.5$ eV, velocity related to a $V_{DC} = $ 20kV acceleration potential, HW1/eM $ w = $ 0.1mm and duration $\tau = $ 100fs ($v_{\smallzero} \tau \approx 8.4 \mu$m).
 This electron pulse is therefore initially in the preferred highly oblate regime ($ \sigma_{\smallT}(0) \gg \sigma_{z} (0) $), for which space-charge effects predominantly act in the longitudinal direction, broadening the pulse in time (see \ref{fig:compare_shape}).
+
+\input{rf_cav_plot}
 
 \ref{fig:rf_cav_num}\subref{fig:rf_cav_N1} depicts the optimized RF cavity performance with $N=1$ electrons in the pulse.
 The internal pulse space-charge effects are negligible under these conditions, so that the RF cavity only compensates for the `dispersive' electron pulse broadening to $\sim$1.67ps at the RF cavity entrance that is due to the initial longitudinal momentum spread caused by the $\Delta E = $ 0.5eV excess photoemission energy.
@@ -24,7 +25,7 @@ By equating the differential impulse applied by the RF cavity across the electro
   E_{0} \approx V_{DC} \left ( \frac{1}{ L_{1} } + \frac{1}{ L_{2} } \right ) \text{,}
 \end{equation}
 where $L_{1}$ is the distance from the pulse source (the DC photoelectron gun) to the RF cavity (the object distance) and $L_{2}$ is the distance to the temporal pulse focus behind the RF cavity (the image distance).
-For the considered case, $V_{DC} = $ 20kV and $ L_{1} = L_{2} = $ 10cm, giving $ E_{0} \approx $ 400kV/m, which is in reasonably good agreement with the optimum value of 450kV/m employed for the simulation displayed in \ref{fig:rf_cav_num}\subref{fig:rf_cav_N1}.
+For the considered case, $V_{DC} = $ 20kV and $ L_{1} = L_{2} = $ 10cm, giving $ E_{0} \approx $ 400kV/m, which is in reasonably good agreement with the simulation-determined optimum value of 450kV/m employed for the simulation displayed in \ref{fig:rf_cav_num}\subref{fig:rf_cav_N1}.
 \ref{eq:RF_field_required} also clearly indicates that the DC photoelectron gun and $\text{TM}_{010}$ RF pulse compression cavity should be considered as a single system, since the temporal `focal length' of the RF cavity, $ V_{DC} / E_{0} $, is dependent upon the acceleration voltage.
 
 The optimized RF cavity performance for the temporal compression of a pulse with the same initial photoemission conditions, but with $N = 10^{5}$ electrons, is shown in \ref{fig:rf_cav_num}\subref{fig:rf_cav_N1e5}.
