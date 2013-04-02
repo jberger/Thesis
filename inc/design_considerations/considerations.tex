@@ -14,7 +14,7 @@ In the following chapters, I will show how we are addressing these consideration
 
 \section{Pulse Charge Requirement}
 
-It is easy to believe that in order to make a useful image in an electron microcope, the number of electrons collected must be above some minimum number.
+It is straightforward to show that in order to make a useful image in an electron microcope, the number of electrons collected must be above some minimum number.
 The Rose criterion \cite{rose_television_1948} indicates that an average detector signal strength of $\sim$100 electrons/pixel is required for adequate gray scaling of the image.
 For a 1k $\times$ 1k CCD camera, this implies an incident electron pulse with $N=10^8$ \cite{armstrong_prospects_2007}.
 
@@ -26,8 +26,8 @@ For conventional electron microscopes without time resolution, the Rose criterio
 Further, high beam current may be damaging to the sample over time, so a lower beam current is often preferred.
 
 By definition, for single-shot imaging with a DTEM, all of the electrons used to form an image must be contained in a single pulse.
-In a single-shot DTEM, destructive measurements will usually result in useful images, in fact, the dynamics being studied are often destructive, regardless of the knock-on damage cause by the probe.
-However, although sample damage concerns may be neglected, the use of a pinhole is likely to reduce the pulse charge below the useful level.
+In a single-shot DTEM, the dynamics being studied are often destructive, regardless of the knock-on damage cause by the probe pulse; what matters is that the system be able to probe the sample before it is destroyed.
+Nevertheless, although sample damage concerns may be neglected, the use of a pinhole is likely to reduce the pulse charge below the useful level.
 This means that the designer of a DTEM must endeavor to retain and utilize all of the generated electrons.
 
 It should be noted that for diffraction studies performed in a DTEM, many fewer electrons per pulse are required for single-shot experiments; typically, about $10^6$ electrons/pulse \cite{armstrong_practical_2007} as significantly less signal is required to determine the position of discrete single-crystal Bragg diffraction spots or diffraction rings for polycrystalline specimens.
@@ -35,7 +35,7 @@ It should be noted that for diffraction studies performed in a DTEM, many fewer 
 \section{Generation Current Limitations} \label{sec:childs_law}
 
 Since we are now aware that there is a large minimum number of electrons needed per pulse, it is only natural to ask if there is the practical limit on how much charge (i.e., the number of electrons/pulse, $N$) can be extracted from a pulsed laser-driven DC photoelectron gun.
-When the incident laser pulse duration $\tau$ is longer than the time-of-flight (TOF) $t_{gun}$ of a single electron across the acceleration gap $d$ of the DC gun with a potential $V_{DC}$, $\tau > t_{gun} = d \sqrt{2m/eV_{DC}}$, then the maximum photocurrent density $J_{CL}$ is given by the well-known Child-Langmuir law \cite{child_discharge_1911,langmuir_effect_1923}:
+When the incident laser pulse duration $\tau$ is longer than the time-of-flight (TOF) $t_{gun}$ of a single electron across the acceleration gap $d$ of the DC gun with a potential $V_{DC}$, $\tau > t_{gun} = d \sqrt{2m/eV_{DC}} \approx 0.1-1$ns, typically, then the maximum photocurrent density $J_{CL}$ is given by the well-known Child-Langmuir law \cite{child_discharge_1911,langmuir_effect_1923}:
 \begin{equation}
   J_{CL} = \frac{4 \varepsilon_0}{9} \sqrt{\frac{2e}{m}} \frac{V_{DC}^{3/2}}{d^2}
 \end{equation}
@@ -60,7 +60,7 @@ This relation may be rewritten to yield a critical number of photoemitted electr
   N_{crit} = \frac{\pi \varepsilon_0 w^2 V_{DC}}{e d}
 \end{equation}
 In obtaining the above equation, we have used an irradiated photocathode area of $\pi w^2$ associated with an incident Gaussian laser pulse of the form of \ref{eq:laser_form}.
-The relation clearly indicates that $N_{crit}$ is only dependent upon the initial DC surface field (i.e., $E_{DC}$) at the photocathode and the illuminated area --- as expected because a virtual cathode forms when the initial photocathode surface charge density associated with $E_{DC}$ is photoemitted, effectively screening the cathode from the acceleration field.
+The relation clearly indicates that $N_{crit}$ is only dependent upon the initial DC surface field (i.e., $E_{DC}$) at the photocathode and the illuminated area --- as expected, because a virtual cathode forms when the initial photocathode surface charge density associated with $E_{DC}$ is photoemitted, effectively screening the cathode from the acceleration field.
 
 For a typical DC gun with $E_{DC} \approx $ 30 kV/cm (e.g., $V_{DC} = $ 100 kV and $d \approx $ 3 cm), \ref{eq:n_crit} reveals that the generation of $10^8$ electrons/pulse needed for single-shot imaging applications in a DTEM with a 1k $\times$ 1k CCD detector requires an incident laser beam area $\pi w^2$ of about 1 mm$^2$ --- the virtual cathode being formed for the extraction of more than $1.7 \times 10^8$ electrons/mm$^2$ in this short pulse regime.
 We note that \ref{eq:n_crit} does not express a limit on the number of electrons/pulse $N$ that can be emitted from a pulsed laser-driven DC photoelectron gun, it merely indicates a critical number before virtual cathode formation occurs.
@@ -71,7 +71,7 @@ This finally leads to the first consideration for UEM design mentioned in the in
   w \gtrsim \sqrt{\frac{N e d}{\pi \varepsilon_0 V_{DC}}} \,\text{.}
 \end{equation}
 For our example case above, to cleanly extract $N \ge 10^8$ electrons/pulse we require $w \gtrsim 0.56 \text{ mm}$.
-I will discuss the effect that accomodating a large pulse size has on designing an Ultrafast Electron Microscope in Chapter \ref{chap:prototype}. 
+The effect that accomodating a large transverse pulse size has on designing an Ultrafast Electron Microscope will be discussed in Chapter \ref{chap:prototype}. 
 
 \section{Beam Quality and Resolution Limit}
 
