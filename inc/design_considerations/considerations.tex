@@ -77,21 +77,26 @@ The effect that accomodating a large transverse pulse size has on designing an U
 
 A common figure of merit for electron beams is its normalized transverse emittance \cite{jensen_emittance_2010}, $\varepsilon_{\smallT}$, defined as 
 \begin{equation} \label{eq:emittance_definition}
-  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > } \,\text{,}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > - \left < x p_x \right >^2 } \,\text{,}
 \end{equation}
 where $m$ is the electron mass, $c$ is the speed of light in vacuum and $x$ and $p_x$ are the transverse position and momentum respectively.
-By Liouville's Theorem (Section \ref{sec:liouville}), we know that this quantity is conserved throught the propagation of the pulse, and therefore is related directly to the initial photoemission properties of the system.
-For a laser of the form of \ref{eq:laser_form} we have simply
+For the usual case of axially symmetric electron pulses, we may use the simplified form
+\begin{equation} \label{eq:emittance_definition}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > } \,\text{.}
+\end{equation}
+By Liouville's Theorem (Section \ref{sec:liouville}), we know that this quantity is conserved throughout pulse propagation (for free-space and perfect electron-optical elements), and therefore is related directly to the initial photoemission properties of the system.
+For a laser pulse of the form of \ref{eq:laser_form} we have simply
 \begin{equation} \label{eq:emittance_definition_w}
   \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \frac{\left < p_x^2 \right >}{2} } \,\text{.}
 \end{equation}
+Note that imperfect electron-optical elements may cause ``emittance growth'' \cite{oshea_reversible_1998}, increasing the pulse's emittance after these elements.
 
 This normalized transverse emittance limits the resolving capablility of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred \cite{berger_dc_2009}.
 Since \ref{eq:minimum_w} specifies a lower bound on the emission spot size $w$, knowing a UEM will exhibit higher resolution by employing an electron source with the minimum possible transverse emittance directly implies that every effort must be made to reduce the initial transverse momentum spread.
 Though deriving an absolute limit on the allowable transverse emittance for imaging in a UEM would depend on many column-specific factors, since diffraction is expected to impose less stringent requirements on the beam than imaging, we may consider it when searching for an upper bound on transverse emittance.
 
-In Ref. \cite{berger_dc_2009}, we explore the impact of these limitations for an Ultrafast Electron Diffraction (UED) experiment.
-We find that for a desired spatial resolution per pixel $\Delta X$ (related to the magnification) using a $N_p$ x $N_p$ detector, one may only resolve a fractional change $\Delta a / a$ in a crystalline material's Bragg plane spacing $a$ in the M$^{th}$ diffraction order if
+In Ref. \cite{berger_dc_2009}, we explore the impact of these limitations for an ultrafast electron diffraction (UED) experiment.
+We find that for a desired spatial resolution per pixel $\Delta X$ (related to the magnification) using a $N_p$ x $N_p$ detector, one may only resolve a fractional change $\Delta a / a$ in a crystalline material's Bragg plane spacing $a$ in the $M^{th}$ diffraction order if
 \begin{equation}
   \varepsilon_{\smallT} \le \frac{5 \hbar}{m c} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
 \end{equation}
@@ -101,8 +106,8 @@ However, because of lower limit that exists on $w$ from \ref{eq:minimum_w}, we c
 \end{equation}
 
 To have $\Delta X = $1 nm spatial resolution, and be able to measure a 10\% change ($\Delta a / a = 0.1$) in a Bragg spacing $a \sim$ 1-2 \AA{} in the 1$^{st}$ diffraction order, the example DTEM from Section \ref{sec:childs_law}, equipped with a 1k x 1k CCD will require $\varepsilon_{\smallT} \lesssim$ 2 nm.
-For comparison, using the simplistic initial conditions in \ref{eq:summary}, exciting carriers from a HW1/eM $w = 0.56 \text{ mm}$ Gaussian spot-size on a Tantalum metal photocathode (work function $\Phi =$ 4.25 eV) using our laser (photon energy $\hbar \omega =$ 4.75 eV, further described in Section \ref{sec:laser}), for an excess photoemission energy $\Delta E = \hbar \omega - \Phi =$ 0.5 eV, the normalized transverse emittance is 226 nm.
+For comparison, using the simplistic initial conditions in \ref{eq:summary}, exciting carriers from a HW1/eM $w = 0.56 \text{ mm}$ Gaussian spot-size on a Tantalum metal photocathode (work function $\Phi =$ 4.25 eV) using our laser (photon energy $\hbar \omega =$ 4.75 eV, further described in Section \ref{sec:laser}), for an excess photoemission energy $\Delta E = \hbar \omega - \Phi =$ 0.5 eV, the normalized transverse emittance is about 200 nm.
 
-One might think to narrow this discrepancy by simply better matching the photocathode work function and the laser photon energy, reducing the excess photoemission energy $\Delta E$.
+One might think to narrow this discrepancy by simply better matching the photocathode work function and the laser photon energy, thereby reducing the excess photoemission energy $\Delta E$.
 Unfortunately, since the photoemission efficiency is proportional to $\Delta E^2$ \cite{shalaev_electron_1994}, though this would indeed reduce the transverse emittance, it would do so at the cost of a much reduced pulse charge.
 In Chapter \ref{chap:photocathode}, I will explore several more exotic photoemission processes in an attempt to reduce $\varepsilon_{\smallT}$ without this penalty.
