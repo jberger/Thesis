@@ -21,7 +21,7 @@ Such lasers have used dichroic mirrors \cite{Brunner_diode_pumped,Major_femtosec
 
 % page 8631
 The spectroscopic properties of the biaxial Yb:KGW laser crystal \cite{Biswal_thermo_optical_05} indicate that the optimum diode pumping arrangement is for 980nm radiation polarized parallel to the optical $N_m$-axis since the crystal has the largest absorption cross-section in this configuration and, hence, the smallest absorption saturation intensity to drive the gain medium into a quasi 4-level system or to achieve transparency at the emission wavelength \cite{Brenier_new_criteria}.
-However, as is the case for Yb-doped potassium yttrium tungstate (Yb:KYW) \cite{Liu_diode_pumped_2001,Killi_high_peak_2005}, mode-locked Yb:KGW lasers should ideally oscillate with radiation polarized parallel to the optical $N_p$-axis to access the broadest gain bandwidth around 1040nm, where the emission cross-section is comparable to that along the optical $N_m$-axis \cite{Holtom_mode_locked_2006,Biswal_thermo_optical_05}. This optimal requirement for orthogonal linear pump and laser polarizations led Holtom \cite{Holtom_mode_locked_2006} to employ a polarization-coupling scheme to diode pump longitudinally a 10W, sub-500fs, Yb:KGW laser.
+However, as is the case for Yb-doped potassium yttrium tungstate (Yb:KYW) \cite{Liu_diode_pumped_2001,Killi_high_peak_2005}, mode-locked Yb:KGW lasers should ideally oscillate with radiation polarized parallel to the optical $N_p$-axis to access the broadest gain bandwidth around 1040nm, where the emission cross-section is comparable to that of the absorption along the optical $N_m$-axis \cite{Holtom_mode_locked_2006,Biswal_thermo_optical_05}. This optimal requirement for orthogonal linear pump and laser polarizations led Holtom \cite{Holtom_mode_locked_2006} to employ a polarization-coupling scheme to diode pump longitudinally a 10W, sub-500fs, Yb:KGW laser.
 
 %TODO is this first sentance correct or should I use "I" voice?
 In this chapter, a high-power, femtosecond Yb:KGW oscillator is presented that also accesses the broader emission bandwidth parallel to the optical $N_p$-axis (parallel to the crystallographic $b$-axis), yet employs a simpler geometry for polarized diode-pumping on the strongest 980nm absorption line parallel to the optical $N_m$-axis (rotated by $\sim\,20^\circ$ from the crystallographic $a$-axis \cite{Biswal_thermo_optical_05,mochalov_laser_1997,pujol_crystalline_1999}).
@@ -62,7 +62,8 @@ Thus, in this Yb:KGW laser crystal geometry, the largest absorption cross-sectio
     \includegraphics{coating.jpg}
   }
   \caption[Laser crystal and anti-reflection coating]{
-    \protect\subref{fig:crystal_geo} Top view of the 3x3x10mm AR coated Yb:KGW laser crystal showing the crystal cut, the direction of propagation of p-polarized laser radiation at 1040nm, and the $x$ (tangential) and $y$ (saggital) directions (in blue) employed in the thermal analysis;
+    \protect\subref{fig:crystal_geo} Top view of the 3x3x10mm AR coated Yb:KGW laser crystal showing the crystal cut, the direction of propagation of p-polarized laser radiation at 1040nm, and the $x$ (tangential) and $y$ (saggital) directions (in blue) employed in the thermal analysis.
+    Pump laser radiation (at $\sim 20^{\circ}$ to the crystal face) is not pictured.
     \protect\subref{fig:crystal_coating} Calculated reflectivity of the 193nm \ce{SiO2} AR coating as a function of incidence angle for $p$-polarized 1040nm laser radiation (solid line) and $s$-polarized 980nm pump radiation (dashed line).
   }
   \label{fig:crystal}
@@ -71,7 +72,7 @@ Thus, in this Yb:KGW laser crystal geometry, the largest absorption cross-sectio
 Efficient pumping is achieved with two, 35W, dual-axis collimated and TM-polarized laser diode arrays operating at 980nm (HLU35C10x5-980 from LIMO GmbH \cite{website_limo}).
 The $\sim$3nm emission linewidth of the two laser diode arrays is well matched to the 3.7nm full-width half-maximum (FWHM) 980nm absorption line of Yb:KGW \cite{Paunescu_diode_2004,Biswal_thermo_optical_05,website_EKSPLA}.
 Moreover, the two dual-axis collimated laser diodes have full-angle $1/e^2$ intensity beam divergences of $\theta_y \approx$ 4.4mrad and $\theta_x \approx$ 6.8mrad in the horizontal ($x$-direction parallel to the emitter array) and vertical ($y$) directions respectively. 
-With 100mm focal length lenses, this allows the pump radiation to be focused to a pump spot diameter 2W $\approx$ 400$\mu$m, yielding a maximum incident pump irradiance of $\sim$28kW/cm$^2$ from one laser diode array.
+With 100mm focal length lenses, this allows the pump radiation to be focused to a pump spot diameter $2W \approx 400\mu$m, yielding a maximum incident pump irradiance of $\sim$28kW/cm$^2$ from one laser diode array.
 The Yb concentration was chosen to be 2\% atomic doping to ensure that more than 90\% of the pump radiation was absorbed over the 3mm Yb:KGW crystal thickness.
 With the employed counter-propagating pump geometry, the resultant maximum average pump irradiance over the crystal length is then roughly 3 times the $\sim$6kW/cm$^2$ saturation intensity of the dominant 980nm absorption line \cite{Brunner_powerful_2004}.
 The laser crystal was obtained from NovaPhase \cite{website_nova}.
@@ -86,13 +87,13 @@ is the on-axis temperature, is given by
 %TODO check W symbol consistent with the rest of the paper
 \begin{equation} \label{eq:laser_ratio_ba}
   \frac{B_\smallT}{A_\smallT} = 
-  \frac{ \cos^2 \theta_2 \left( \dfrac{dn}{dT} \right) + 2 \Delta \alpha_\smallT \left( n \cos\theta_2 - \cos\theta_1 \right) }
-       { \cos^2 \theta_1 \left[ \left( \dfrac{dn}{dT} \right) + 2 \Delta \alpha_\smallT \left( n \cos\theta_2 - \cos\theta_1 \right) \right] }
+  \frac{ \cos^2 \theta_2 \left( \dfrac{dn}{dT} \right) + 2 \alpha_{\smallT} \Delta \left( n \cos\theta_2 - \cos\theta_1 \right) }
+       { \cos^2 \theta_1 \left[ \left( \dfrac{dn}{dT} \right) + 2 \alpha_{\smallT} \Delta \left( n \cos\theta_2 - \cos\theta_1 \right) \right] }
   \quad\text{.}
 \end{equation}
 Here, $\frac{dn}{dT}$ and $n$ are the thermo-optic coefficient and refractive index of the medium respectively (in this case for radiation polarized along the optical $N_p$-axis), $\theta_1$ is the 32.3$^\circ$ angle of incidence, $\theta_2$ = 15.7$^\circ$ is the angle of refraction (as $n_p$ = 1.98 \cite{Biswal_thermo_optical_05,pujol_crystalline_1999}), and $\Delta$ is the fraction of the crystal length $l$ contributing to the bowing of the crystal faces under thermal
 expansion with coefficient $\alpha T$ \cite{Rimington_thermal_lens_2004}.
-Generally, $\Delta \approx W l$ , where $W$ is the transverse size (radius) of the pumped region \cite{Koechner_thermal_1970}.
+Generally, $\Delta \approx W / l$ , where $W$ is the transverse size (radius) of the pumped region \cite{Koechner_thermal_1970}.
 In our case, $l \approx$ 3mm and $W \approx$ 0.2mm, so that $\Delta < 0.1$, implying that the thermal duct due to a non-zero $\frac{dn}{dT}$ primarily determines the required $B_T$/$A_T$ ratio.
 In other words, for the potassium gadolinium tungstate (\ce{KGd(WO4)2}) crystal geometry of \ref{fig:crystal}\subref{fig:crystal_geo}, we expect from \ref{eq:laser_ratio_ba} to require $\dfrac{B_\smallT}{A_\smallT} \approx \dfrac{ \cos^2 \theta_2 }{ \cos^2 \theta_1 } = 1.3$.
 
@@ -115,7 +116,7 @@ This analytical result for the central region around the laser beam axis is show
 %page 8634
 horizontal ($y = 0$, \ref{fig:laser-thermal}(a)) and vertical ($x = 0$, \ref{fig:laser-thermal}(b)) sections, respectively, through the $Q(x,y)$ and $T(x,y)$ distributions.
 Also shown are the parabolic approximations to the pump-induced temperature distribution (dashed lines) and representative TEM$_{00}$ Gaussian laser modes (shaded area) in the Yb:KGW crystal with a HW1/eM field mode sizes of $w_y = 160\mu$m and $w_x = 182 \mu$m (14\% larger due to refraction (\ref{fig:crystal}\subref{fig:crystal_geo}).
-This mode size ensures efficient pump-probe overlap while minimizing the loss due to ground state absorption in the unpumped regions of the Yb-doped gain medium \cite{Brenier_new_criteria}; in particular, in the vertical direction (\ref{fig:laser-thermal}(b)) where $w_y$ greater than about $0.8 W_y$ leads to significant absorptive loss as the extrema of the laser mode extend beyond the sharply-bounded super-Gaussian pump region.
+This mode size ensures efficient pump-probe overlap for the TEM$_{00}$-mode while minimizing the loss due to ground state absorption in the unpumped regions of the Yb-doped gain medium \cite{Brenier_new_criteria}; in particular, in the vertical direction (\ref{fig:laser-thermal}(b)) where $w_y$ greater than about $0.8 W_y$ leads to significant absorptive loss as the extrema of the laser mode extend beyond the sharply-bounded super-Gaussian pump region.
 
 \begin{figure}
   \centering
@@ -134,11 +135,8 @@ However, even though $W_x > w_x$, the Gaussian (rather than super-Gaussian) hori
 
 We note that the above thermal lens analysis neglects the anisotropy of the thermal conductivity $\kappa$ in potassium gadolinium tungstate (\ce{KGd(WO4)2}) \cite{Biswal_thermo_optical_05,mochalov_laser_1997} and stress-induced refractive index changes \cite{Yumashev_laser_2007}.
 For the employed crystal cut in our TLS geometry (\ref{fig:crystal}\subref{fig:crystal_geo}), the anisotropy in $\kappa$ \cite{mochalov_laser_1997,website_EKSPLA} is not expected to have a significant effect; the laser head geometry dictates that the dominant pump-induced heat conduction will be in the saggital ($y$) direction along the crystal $a$-axis where $\kappa \approx 2.6$W/(mK) (heat extraction only through the top and bottom 3x10mm crystal faces), so that the 46\% larger value of $\kappa$ along the $b$-axis ($x$) direction at 3.8W/(mK) should not have a large influence on the heat conduction.
-The refractive index
 %page 8635
-changes due to stress in the pumped gain medium are difficult to quantify since the substantial variations in the reported values of the thermo-optic coefficients in KGW make it impossible to extract either the sign or magnitude of the stress dependence of the refractive index \cite{website_time_bandwidth}.
-Moreover, nearly all analyses of thermal lensing effects Nd:KGW and Yb:KGW lasers have been performed for laser radiation polarized along the optical $N_m$-axis, which accesses the largest emission cross-section for both Nd- and Yb-doping \cite{Yumashev_laser_2007,Hellstrom_efficient_2006}.
-Consequently, for our laser polarized along the optical $N_p$-axis \cite{Holtom_mode_locked_2006}, there is insufficient information to include accurately the effects of stress-induced refractive index changes.
+We see no observable effect from changes due to stress in the pumped gain medium, due both to the much stronger effect of the natural birefringence of the crystal and the laser polarization being along the optical $N_p$-axis \cite{Holtom_mode_locked_2006}.
 
 \subsection{The Yb:KGW laser cavity}
 
@@ -205,7 +203,7 @@ The switching to ML operation is accompanied by a 250mW increase in output
 %page 8637
 power indicating a higher cavity Q for ML operation.
 This is consistent both with the laser accessing more of the available inhomogeneous gain bandwidth and with our resonator design favoring operation with a strong Kerr lens in the Yb:KGW gain medium.
-Given a value of $n^2 \approx 15 \cdot 10^{-16}\text{cm}^2/\text{W}$ for 1040nm radiation polarized parallel to the KGW crystal's optical $N_p$-axis \cite{Major_characterization_2003,Selivanov_nonlinear_2006,Vodchits_zscan_2006} and a calculated peak pulse irradiance of $\sim$4GW/cm$^2$ in the gain medium at 24A, we expect a Kerr lens strength of approximately 2m$^-1$.
+Given a value of nonlinear refractive index $n_2 \approx 15 \cdot 10^{-16}\text{cm}^2/\text{W}$ for 1040nm radiation polarized parallel to the KGW crystal's optical $N_p$-axis \cite{Major_characterization_2003,Selivanov_nonlinear_2006,Vodchits_zscan_2006} and a calculated peak pulse irradiance of $\sim$4GW/cm$^2$ in the gain medium at 24A, we expect a Kerr lens strength of approximately 2m$^{-1}$.
 From \ref{fig:laser-cavity}\subref{fig:laser_stability}, we see that the resulting increase in the strength of the lensing in the Yb:KGW crystal will result in a reduction of the laser mode size in the gain medium, which produces a better spatial match to gain duct produced by the laser diode pumps (less absorptive loss), thus generating an increase in output power.
 
 \begin{figure}
