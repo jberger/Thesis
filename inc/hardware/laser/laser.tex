@@ -228,11 +228,11 @@ Similar laser performance is observed with the insertion of an additional $-5,60
 
 \subsection{Frequency doubling}
 
-For most photoemission sources, the fundamental laser output's 1.19 eV photons do not provide enough energy to excite electrons above the vacuum level, either in single or two-photon emission.\cite{eastman_photoelectric_1970,johnson_optical_1972,dowell_quantum_2009}
+For most photoemission sources, the fundamental laser photon energy of 1.19 eV does not provide enough energy to excite electrons above the vacuum level, either for single or two-photon emission.\cite{eastman_photoelectric_1970,johnson_optical_1972,dowell_quantum_2009}
 By appropriate application of crystals with strong non-linear properties, two photons at frequency $\omega$ may be converted into one photon at frequency $2 \omega$.\cite{shen_principles_2002}
 Since these higher harmonics will be necessary for stimulating photoemission it is important to optimize and characterize the efficiency of this process.
 
-The ML output from the femtosecond Yb:KGW laser with a net negative GVD of $-5,200\text{fs}^2$ per round-trip was frequency doubled in a critically phase-matched, 2mm, Type I Lithium triborate (LBO) crystal.
+The ML output from the femtosecond Yb:KGW laser with a net negative GVD of $-5,200\text{fs}^2$ per round-trip was intially frequency doubled in a critically phase-matched, 2mm, Type I Lithium triborate (LBO) crystal.
 The crystal is uncoated and cut for frequency doubling with the fundamental $p$-polarized radiation at 1046nm incident at Brewster's angle --- a geometry that ensures both minimum loss for the fundamental radiation and, more importantly, a high damage threshold.
 The doubling crystal is positioned at the focus of a $z$-fold comprising a 1040nm high reflector with a radius of curvature of 75mm followed by a collimating mirror with a radius of curvature of 100mm reflective at both the fundamental and second harmonic wavelengths.
 At the 3.5W ML output power, with a pulse duration of 250fs, the estimated focal irradiance for the fundamental is $\sim50\text{GW}/\text{cm}^2$ in the LBO doubling crystal.
@@ -251,21 +251,36 @@ Also plotted in \ref{fig:laser-performance} is the frequency doubling efficiency
 The maximum doubling efficiency of over 60\% occurs at 27-28A of diode drive current when the ML laser output power is $\sim$3W.
 At a ML output power of 3.5W (29-30A), the frequency doubling efficiency is still $\sim$60\% and slowly decreases above 30A as the DC spectral component absorbs the residual power above the soliton power limit.
 
-\subsection{Summary}
+\subsection{Long-term Performance Enhancements}
 
-A robust, high-power ($\sim$5W), diode-pumped and thermal-lens-shaped, femtosecond (220-350fs) Yb:KGW oscillator is presented.
-The ML operation of the laser is self-starting above a critical output power of $\sim$2W, being initiated by a 1\% modulation depth SBR and subsequently supported in the soliton regime through a balance of self-phase modulation (Kerr lensing) in the gain medium and negative GVD (introduced using dispersion compensating mirrors).
-The use of the TLS technique in the diode-pumped laser head provides for astigmatism-compensated TEM$_{00}$-mode operation (a spatial beam quality $M^2 <1.2$), while proper cavity design accommodates the strong Kerr lens (up to $\sim4\text{m}^{-1}$) in the Yb:KGW crystal under ML operation.
-A full analysis of the thermal conduction in our 3x3x10mm Yb:KGW crystal is used to determine the correct TLS pump conditions, which lead to both excellent pump-laser beam overlap for the near collinear pump geometry and a near perfect pump-induced thermal lens (i.e., parabolic temperature distribution) experienced by the intracavity laser beam in the gain medium.
+Since the initial construction and characterization of this laser system, described above, several improvements have been made, primarily to improve the long-term stability of the laser.
+Due to the laser's role as a component of the larger UEM system, its stability is a tremendously important factor, both for repeatability of measurements and suitability for use in a user instrument.
 
-The laser head design also employs a simple single layer \ce{SiO2} anti-reflection coating on the gain medium to provide simultaneously (i) minimal loss for the intracavity 1040nm laser radiation $p$-polarized along the optical $N_p$-axis (crystallographic $b$-axis) associated with the largest gain bandwidth and (ii) less than 0.5\% surface reflection for the orthogonally $s$-polarized 980nm laser diode radiation (polarized parallel to the crystallographic $a$-axis) to enable efficient pumping of the strongest absorption line along the optical $N_m$-axis (rotated by $\sim20^\circ$ from the crystal $a$-axis).
-In this near optimal pump-emission Yb:KGW crystal geometry for ML operation, the pump-induced thermal lens in the gain medium is observed to be positive, indicating that the sum of the thermo-optical coefficient and the stress-generated refractive index change with temperature is positive for 1$\mu$m radiation polarized parallel to the optical $N_p$-axis (crystallographic $b$-axis).
+The second harmonic generation system now employs a 3mm non-critically phase matched LBO crystal. This has two benefits, in this geometry the walk-off angle between the fundamental and second harmonic is zero while the group velocity mismatch of 150fs ($\sim$ 50fs/mm) is much less than the pulse duration 250fs. Second, because the non-critically phase matched crystal is constantly held at a temperature above the boiling point of water, this prevents the deleterious absorption of water which is inherent in the hygroscopic crystal. In the place of the curved mirrors originally employed, this second harmonic system uses 75mm lenses to focus the laser into the crystal and collimate the output.
 
-The 250fs ML pulses generated at 3.5W of average output power and a 63.5MHz repetition rate are frequency doubled in a 2mm-thick, Brewster-cut and critically phase-matched Lithium triborate (LBO) crystal.
-The resultant efficient frequency doubling, which exceeds 60\% at a ML fundamental power of $\sim$3W, yields 1.65W of average power at 523nm ---
+Although the laser system had been relatively robust, maintaining mode-locking was initially problematic. To prevent dust from entering interrupting mode locking, a dust cover was added above the laser cavity. More importantly, a 1.4mm aperture (approximately four times the HW1/eM beam width at the output coupler) was added to suppress higher-order transverse modes. As this is an additional loss in the cavity, the output coupler was changed from 93\% to 95\% reflectivity to maintain the soliton modelocking power.
+
+These changes have greatly improved the mode locking stability.
+The laser now regularly operates at $1.9 \pm 0.1$W in mode locked operation with 250fs pulse durations, with minimal regular maintenance.
+The 40-50\% efficient second harmonic generation yields 0.8-1W of green output.
+The green radiation can be again doubled to the ultraviolet (UV) in a 6mm $\beta$-Barium borate (BBO) crystal, though the group velocity mismatch results in a 4ps pulse duration.
+All data presented in this thesis has been acquired subsequent to these performance enhancements.
+
+%\subsection{Summary}
+
+%A robust, high-power ($\sim$5W), diode-pumped and thermal-lens-shaped, femtosecond (220-350fs) Yb:KGW oscillator is presented.
+%The ML operation of the laser is self-starting above a critical output power of $\sim$2W, being initiated by a 1\% modulation depth SBR and subsequently supported in the soliton regime through a balance of self-phase modulation (Kerr lensing) in the gain medium and negative GVD (introduced using dispersion compensating mirrors).
+%The use of the TLS technique in the diode-pumped laser head provides for astigmatism-compensated TEM$_{00}$-mode operation (a spatial beam quality $M^2 <1.2$), while proper cavity design accommodates the strong Kerr lens (up to $\sim4\text{m}^{-1}$) in the Yb:KGW crystal under ML operation.
+%A full analysis of the thermal conduction in our 3x3x10mm Yb:KGW crystal is used to determine the correct TLS pump conditions, which lead to both excellent pump-laser beam overlap for the near collinear pump geometry and a near perfect pump-induced thermal lens (i.e., parabolic temperature distribution) experienced by the intracavity laser beam in the gain medium.
+%
+%The laser head design also employs a simple single layer \ce{SiO2} anti-reflection coating on the gain medium to provide simultaneously (i) minimal loss for the intracavity 1040nm laser radiation $p$-polarized along the optical $N_p$-axis (crystallographic $b$-axis) associated with the largest gain bandwidth and (ii) less than 0.5\% surface reflection for the orthogonally $s$-polarized 980nm laser diode radiation (polarized parallel to the crystallographic $a$-axis) to enable efficient pumping of the strongest absorption line along the optical $N_m$-axis (rotated by $\sim20^\circ$ from the crystal $a$-axis).
+%In this near optimal pump-emission Yb:KGW crystal geometry for ML operation, the pump-induced thermal lens in the gain medium is observed to be positive, indicating that the sum of the thermo-optical coefficient and the stress-generated refractive index change with temperature is positive for 1$\mu$m radiation polarized parallel to the optical $N_p$-axis (crystallographic $b$-axis).
+%
+%The 250fs ML pulses generated at 3.5W of average output power and a 63.5MHz repetition rate are frequency doubled in a 2mm-thick, Brewster-cut and critically phase-matched Lithium triborate (LBO) crystal.
+%The resultant efficient frequency doubling, which exceeds 60\% at a ML fundamental power of $\sim$3W, yields 1.65W of average power at 523nm ---
 %page 8640
-a peak green pulse power of $\sim$130kW.
-This laser is the short-pulse photon source used to photoemit electrons for all the experimental results shown in this thesis.
+%a peak green pulse power of $\sim$130kW.
+%This laser is the short-pulse photon source used to photoemit electrons for all the experimental results shown in this thesis.
 
 %% Acknowledgements
 % This research was supported in part by the National Science Foundation under award DMR-
