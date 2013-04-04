@@ -2,13 +2,14 @@
 
 \section{Accelerator Design} \label{sec:gun_design}
 
-The acceleration region of our prototype UEM system has several requirement which are unique in comparison to standard electron guns.
-As discussed in \ref{chap:considerations} notable requirements include the need to handle a large photoemission area and the inability to employ a pin-hole to selectively clean the electron beam.
-This concern leads to several additional criteria.
+The acceleration region of our prototype UEM system has several features which are unique in comparison to standard electron guns.
+As discussed in \ref{chap:considerations} notable requirements for a UEM electron gun include the need to handle a large photoemission area and yet to retain all of the electrons, it may not employ a pin-hole to selectively clean the electron beam.
+These necessities lead to several additional criteria.
 The system must first be able to accept the large laser spot size needed to generate the electron beam.
-Then, in order to accomodate this large electron pulse, both the cathode Wehnelt and anode aperture must be similarly large; in fact, the beam size at the anode aperture will typically be larger than at the emission source due to beam expansion during acceleration.
+Then, in order to accomodate this large electron pulse, both the cathode Wehnelt and anode aperture must be similarly large; in fact, the beam size at the anode aperture will typically be larger than at the emission source due to transverse beam expansion during acceleration.
 Also, care must be taken to ensure a relatively uniform electric field for acceleration of the pulse.
-While in transit from the cathode to the anode, this large beam is more susceptable to non-uniformities in the electic field given that it will span a wider proportion of the accelerator than the thin beams used in conventional TEM.
+While in transit from the cathode to the anode, this large beam is more susceptable to non-uniformities in the electic field given that it will span a wider proportion %TODO andreas wrote "larger <<something unreadable>>"
+of the acceleration region than the thin beams used in conventional TEM.
 
 \begin{figure}
   \centering
@@ -22,7 +23,7 @@ While in transit from the cathode to the anode, this large beam is more suscepta
   \label{fig:togawa-pic}
 \end{figure}
 
-These requirements lead to the fabrication of cathode/Wehnelt and anode pair based on the design of Togawa \textit{et al.} \cite{togawa_ceb6_2007} (pictured in \ref{fig:togawa-pic}).
+These requirements led to the fabrication of cathode/Wehnelt and anode pair based on the design of Togawa \textit{et al.} \cite{togawa_ceb6_2007} (pictured in \ref{fig:togawa-pic}).
 A schematic of this design, overlayed by a Finite Element Model (FEM) simulation of the electic field, is shown in \ref{fig:gun-field}.
 The simulation was performed using \texttt{FreeFEM++}, a free finite element partial differential equation solver and meshing toolkit (\url{http://www.freefem.org/ff++/index.htm}).
 The FEM simulation modeled the features of the anode and cathode, while emulating gap walls at infinity by placing a linear potential on gap edges at a large distance.
@@ -57,17 +58,16 @@ Since the shape of the field is scale independent, the schematic shows that the 
 \end{figure}
 
 \ref{fig:field_on_axis_fem} compares the FEM computed electric field to the form asserted for the AG model (\ref{eq:anode_tanh}) for several values of the sharpness parameter $s$; the lines are the same as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
-As derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electic field.
-This field will cause a divergence of the beam.
+As derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electic field which, in turn, will cause a divergence of the beam.
 Future work will include investigating the designs of Butler %TODO reference
 which may be able to build in an intrinsic lensing to compensate for this effect.
 
 A gross realignment of the cathode and anode is sometimes necessary to direct the emitted beam down the center axis of the column.
-To facilitate this, the prototype column has the photocathode and Wehnelt mounted on the end of the high voltage feedthrough, which is in turn mounted on a two axis alignment mechanism.
-Although this mechanism, called a ``port aligner,'' is typically used to couple two non-colinear vacuum ports, for use in this instrument it has been modified to be able to manually adjust the aligner during use.
-In contrast to this flexibility, the anode is mounted to column using Kimball Physics's ``eV Parts'' mounting systems.
+To facilitate this in the prototype column, the photocathode and Wehnelt are mounted on the end of the high voltage feedthrough which is, in turn, mounted on a two axis alignment mechanism.
+Although this mechanism, called a ``port aligner,'' is typically used to couple two non-colinear vacuum ports, for use in this instrument it has been modified to be able to manually adjust the aligner (i.e. cathode position) during use.
+In contrast, the anode is mounted to column using Kimball Physics's ``eV Parts'' fixed mounting systems.
 These strictly manufactured mounting hardwares ensure that the anode is properly aligned with the remainder of the microscope column.
-Thus, by iteratively repositioning the input laser and then the gun alignment, the beam may be walked to pass as near as possible down the axis of the column.
+Thus, by iteratively repositioning the input laser on the cathode and then the gun cathode alignment, the beam may be walked to pass as near as possible down the axis of the column.
 
 \begin{figure}
   \centering
