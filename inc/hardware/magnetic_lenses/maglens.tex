@@ -6,9 +6,9 @@
 % montgomery_some_1961
 % el-kareh_electron_1970
 
-In many ways, an electron beam can be thought of in terms of an optical equivalent system. 
+In many ways, an electron beams and electron microscope columns can be thought of in terms of an optical equivalents. 
 Of course there are notable exceptions; photons don't repel each other; photon energies are hard to change.
-Electron optical systems do have an analogous system to the lens, in this case using magnetic fields rather than glass. 
+Electron optical systems do have an element which is analogous to the optical lens, in this case using magnetic fields rather than glass. 
 The magnetic lens is a common element in electron microscopes and other electron-optical systems.
 %TODO refs needed
 
@@ -24,9 +24,9 @@ The lenses I present in this section were designed, in part, using information c
 Discussion of the formal mathematics of magnetic lenses can be found in Section \ref{sec:mag_lens_model}.
 While in principle one could design a magnetic lens using \ref{eq:lens_eq_of_motion} and \ref{eq:field_of_loop}, the process wouldn't be very practical or instructive.
 Further --- as suggested by the use of the auxiliary field $H$ field in \ref{eq:field_of_loop} --- better performance of the lens can be achieved by concentrating the field using materials with high magnetic permeablility.
-These materials, called ``magnetic shielding'' since it captures the magnetic field lines, can direct the field lines to a small gap, known as the ``pole-piece gap''.
+These materials, called ``magnetic shielding'' since they capture the magnetic field lines, can direct the field lines to a small gap, known as the ``pole-piece gap''.
 The field lines exit the shielding in the gap and it is this field that acts as the lens.
-This gap can be much smaller than the total width of the coil turns, and yet contain in a field commensurate with the full coil.
+This gap can be much smaller than the total width of the coil turns, and yet contain a field strength commensurate with that of the full coil.
 This geometry is presented schematically as \ref{fig:polepiece-schematic}.
 
 \begin{figure}
@@ -53,31 +53,31 @@ This geometry is presented schematically as \ref{fig:polepiece-schematic}.
   \label{fig:polepiece-design}
 \end{figure}
 
-\ref{fig:polepiece-design} shows a simplistic design schematic of the lens designed and built for the UEM at UIC.
+\ref{fig:polepiece-design} shows a schematic of the lens designed and built for the UEM at UIC.
 The central drift tube is made of stainless steel having a magnetic permeability of 1, thus magnetically not involved in the field shaping.
-In this way the inner bore of the tube is in vacuum with minimal welding necessary.
-The outer diameter of tube is machined down to $D=2R=$0.5in, though a disk of larger diameter, and length $S$=0.1in, is left at the midpoint, which will separate the shielding material and be the pole-piece gap.
+In this way only the inner bore of the tube may be in vacuum thus minimizing necessary welding.
+The outer diameter of tube is machined down to $ D = 2R = 0.5 \text{in}$, though a disk of larger diameter, and length $ S = $ 0.1in, is left at the midpoint, which will separate the shielding material and be the pole-piece gap.
 
-The high magnetic permeability shielding is in eleven pieces.
+The high magnetic permeability shielding is made of eleven pieces.
 There are two end pieces which are revolution solids of an ``L'' shaped profile.
 These ends slide together over the drift tube until touching the disk at the midpoint; the disk is of the proper outer diameter to match the sheilding's smaller outer diameter.
 The combination of the two ends and this disk make a ``U'' shape which contains the windings.
-
 The top of the each end's large outer disk (the walls of the winding container) are flattend on eight sides.
 These are the mount points for eight bridge pieces which connect the ends to complete the field-capturing shielding loop.
 The gaps between the shielding bridges also allow for direct air cooling of the magnetic coils (see Section \ref{sec:mag_lens_thermal}).
 
-El-Kareh and El-Kareh provide an analysis of symmetric lenses with magnetic shielding and a pole-piece (see Ref. \cite{el-kareh_electron_1970} chapter 8, with the most useful information being in section 8.7).
-They define
-\begin{subequations}
-\begin{gather}
-  k^2 \equiv \frac{e}{8 m V_r} B_0^2 R^2 \\
-  \beta \equiv k^2 V_r / (NI)^2 \label{eq:elkareh_k2}
-\end{gather}
-\end{subequations}
+El-Kareh and El-Kareh provide an analysis for symmetric lenses with magnetic shielding and a pole-piece (see Ref. \cite{el-kareh_electron_1970} chapter 8, with the most useful information being in section 8.7).
+They define two parameters,
+\begin{equation}
+  k^2 \equiv \frac{e}{8 m V_r} B_0^2 R^2
+\end{equation}
+and
+\begin{equation} \label{eq:elkareh_k2}
+  \beta \equiv k^2 V_r / (NI)^2 \,\text{,}
+\end{equation}
 where $N$ is the number of loops, $I$ is the current in a single loop, $B_0$ is the maximum axial magnetic field strength, $R$ is the bore radius and $V_r$ is the relativity corrected acceleration potential, given by
 \begin{equation}
-  V_r = V ( 1 + \frac{0.978 \cdot 10^{-6}}{\text{Volt}} V )
+  V_r = V ( 1 + \frac{0.978 \cdot 10^{-6}}{\text{Volt}} V ) \,\text{.}
 \end{equation}
 They then derive a number of formulae and tabulate the results for a variety of parameters.
 Using these tabulated results, and for a choice of parameters one can determine the number of ampere-turns ($NI$) to create a certain focal length.
