@@ -85,10 +85,10 @@ By their table 8.2a this results in $\beta=0.0146$.
 Then, to create a focal length of 4in ($f/R=16$) table 8.13 in Ref. \cite{el-kareh_electron_1970} gives a value for $k^2 \approx 0.06$.
 Finally substituting this value into \ref{eq:elkareh_k2}, with $V=30$kV ($V_r\approx30.88$kV), one can deduce that $NI\approx356$A.
 
-For the UEM system at UIC, two of these lenses are employed to manage the divergence created by an RF cavity and focus the pulses to a focal spot. 
-These lenses are positioned one before and one after the cavity, forming a lens system of a combined effective focal length.
-For the purposes of design, one can make a reasonable approximation that the two lenses together may together provide the total necessary number of amp-turns.
-As each lens has 100 turns, a current of only about 2A is needed to drive the two lenses in series.
+For the UEM system at UIC, two of these lenses are employed to manage the divergence created by an RF cavity and the anode aperture, then focus the pulses to a focal spot. 
+These lenses are positioned one before and one after the RF cavity, forming a lens system of a combined effective focal length; the two lenses are wound oppositely to counteract beam rotation.
+For the purposes of design, one can make a reasonable approximation that the two lenses together provide the total necessary number of amp-turns.
+As each lens has 100 turns, a current of only about 2A is needed to drive the two lenses in series to attain a 4in focal length.
 A picture of this system is shown in \ref{fig:maglens-pic}.
 In that picture the two lenses are shown, however a placeholder is shown inserted between them rather than an actual RF cavity.
 
@@ -107,7 +107,7 @@ In that picture the two lenses are shown, however a placeholder is shown inserte
 \subsection{Thermal Properties} \label{sec:mag_lens_thermal}
 
 %TODO need reference for equation and \alpha_{Cu}
-Since the lenses have no active cooling system, it was prudent to characterize the thermal response to a moderate current load.
+As the lenses have no active cooling system, it was prudent to characterize the thermal response to a moderate current load.
 Resistance of metals changes as a function of temperature by $ R = R_0 [ 1 + \alpha ( T - T_0 ) ] $, where $\alpha$ is a material contant; for copper, $\alpha = 3.9 * 10^{-3} \text{K}^{-1}$. 
 One can calculate the temperature increase of the system by monitoring the change in resistance.
 Maintaining a constant current of 4A through the lens, the voltage drop increased from 1.22V ($R_0 = 0.305\Omega$) to 1.25V ($R=0.3125\Omega$) as the lens warmed.
