@@ -2,9 +2,10 @@
 
 \begin{tikzpicture}
   \draw [fill=blue!50] 
-    (-0.5,0)
+    (-0.5,0.5)
     -- ++(0,2)
     -- ++(-1.25,0)
+      node [pos=0.2] (assemble top) {}
     -- ++(0,-0.5)
     -- ++(0.75,0)
     -- ++(0,-1.5)
@@ -12,16 +13,32 @@
     -- cycle
   ;
 
+  \draw [very thick, <-, gray]
+    (assemble top)
+    -- ++(0,0.75)
+  ;
+
   \draw [fill=blue!50]
     (-2,2)
     -- ++(-0.75,0)
     -- ++(0,-5)
+      node [pos=0.2] (assemble left upper) {}
+      node [pos=0.8] (assemble left lower) {}
     -- ++(0.75,0)
     -- ++(0,0.5)
     -- ++(-0.25,0)
     -- ++(0,4)
     -- ++(0.25,0)
     -- cycle
+  ;
+
+  \draw [very thick, <-, gray]
+    (assemble left upper)
+    -- ++(-0.75,0)
+  ;
+  \draw [very thick, <-, gray]
+    (assemble left lower)
+    -- ++(-0.75,0)
   ;
 
   \draw [fill=blue!50] 
@@ -46,14 +63,12 @@
     -- ++(0,2)
       coordinate [pos=0] (D right)
     -- ++(0.5,0)
-      coordinate [pos=0.25] (S top)
     -- ++(0,-1.5)
     -- ++(1,0)
     -- ++(0,4)
     -- ++(-1,0)
     -- ++(0,-1.5)
     -- ++(-0.5,0)
-     coordinate [pos=0.75] (S bottom)
     -- cycle
   ;
 
@@ -75,8 +90,10 @@
     (0.5,2)
     -- ++(-0,-2)
     -- ++(0.5,0)
+      coordinate [pos=0.4] (S top)
     -- ++(0,-1)
     -- ++(-0.5,0)
+      coordinate [pos=0.6] (S bottom)
     -- ++(0,-2)
     -- ++(-0.25,0)
     -- ++(0,5)
@@ -98,7 +115,7 @@
   \draw [very thick,<->] 
     (B left) 
     -- (B right)
-      node [above,pos=0.5,align=center] {Bore Diameter}
+      node [above right,pos=0.5,align=center] {Bore Diameter}
   ;
   \node [rotate=90] at (1.6,-0.5) {Windings};
 \end{tikzpicture}
