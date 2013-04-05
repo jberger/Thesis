@@ -3,57 +3,55 @@
 \section{Nanopatterned (Plasmonic) Photocathodes}
 
 In the search for alternative mechanisms to reduce the intrinsic divergence of the electron beam upon photoemission, a possible area of interest was Plasmon-Assisted Photoemission (PAPE). 
-This avenue of investigation was motivated by Zawadzka et al \cite{zawadzka_evanescent_2001} who indicate that when driving a surface plasmon on gold they witnessed a reduction in the emission angle of photoemitted electrons.
-In their paper, the authors mount a gold foil on a prism; the laser is incident on the gold through the prism.
-This geometry is called the Kretschmann geometry.
+As the name suggests, a plasmon is the quasiparticle of plasma oscillation.
+When this occurs at the surface of a material, the resultant quasiparticles are called ``surface plasmon-polaritons.''
+Since these will be the only plasmons discussed in this paper, the word ``plasmon'' will be used interchangeably for the name ``surface plasmon-polariton.''
+%TODO should this be formalized, either one way (SPP) or the other
+Electrons in a material can couple with electromagnetic fields, in this case a laser field, and oscillate accordingly.
+This overall oscillation of electrons near the surface of the material creates strong oscillatory local surface electric field \cite{cottam_introduction_2004,concepts_2002}.
+In PAPE, the goal is use this field to both enhance the emission and `control' the divergence of photoemitted electrons through the combined action of photoemission barrier suppression and ponderomotive acceleration.
 
-While this geometry is common, due to fears about the lack of heat conduction through the glass and the power needed to generate a sufficient electron beam current, that UEM applications should explore the ``grating coupling'' geometry.
+This avenue of investigation was motivated by Zawadzka et al \cite{zawadzka_evanescent_2001} who indicate that when driving a surface plasmon on gold they witnessed a reduction in the emission angle of photoemitted electrons.
+In their paper, the authors mount a thin gold foil on a prism; the laser then ``back illuminates'' the gold through the prism, ejecting electrons on vacuum side of the foil.
+This arrangement is called the Kretschmann geometry.
+While this geometry is common, due to fears about the lack of heat conduction through the glass and the power needed to generate a sufficient electron beam current, we felt that for UEM applications we should explore the ``grating coupling'' geometry.
 In this geometry, the plasmon is driven on a periodic surface rather than a flat surface attached to glass.
 Futher, in this geometry the back surface is now free to be attached to a heat sink.
 
-%\subsection{Driving the Surface Plasmon}
-
-As the name suggests, a plasmon is the quasiparticle of plasma oscillation.
-Electrons in a material can couple with electromagnetic fields, in this case a laser field, and oscillate accordingly.
-When this occurs at the surface of a material, the resultant quasiparticles are called ``surface plasmon-polaritons.''
-Since these will be the only plasmons discussed in this paper, the word ``plasmon'' will be used interchangeably for the name ``surface plasmon-polaritons.''
-%TODO should this be formalized, either one way (SPP) or the other
-
-The mathematical formalism of surface plasmon-polaritons is a lengthy subject and well described elsewhere \cite{cottam_introduction_2004,concepts_2002}.
+\subsection{The Grating Coupling Geometry}
 
 Every material has an intrinsic plasma frequency given by 
 \begin{equation}
-  \omega_{P} = \sqrt{\frac{\rho_{e} e^2}{\varepsilon_{0} m^*}}
+  \omega_{P} = \sqrt{\frac{\rho_{e} e^2}{\varepsilon_{0} m^*}} \,\text{,}
 \end{equation}
 where $\rho_{e}$ is the electron density and $m*$ is the effective mass of the material.
-And in the most simple (undamped) approximations, the dielectric function of the material may be written in terms of this constant.
+And in the most simple (undamped) approximations, the dielectric function of the material may be written in terms of this constant
 \begin{equation} \label{eq:dielectric_as_omega}
-  \varepsilon(\omega) = 1 - \frac{ \omega_{P}^2 }{ \omega^2 }
+  \varepsilon(\omega) = 1 - \frac{ \omega_{P}^2 }{ \omega^2 } \,\text{.}
 \end{equation}
 
 At the interface of a vacuum and such a simple material material, contstraints on the material parameters which may allow surface plasmons result in the condition that the dielectric constant at the oscillation frequency of the surface plasmon $ \varepsilon(\omega_{SP}) = -1 $.
 Substituting this result into \ref{eq:dielectric_as_omega} show that this frequency of oscillation is simply related to intrinsic plasma frequency by
 \begin{equation}
-  \omega_{SP} = \omega_{P} / \sqrt{2}
+  \omega_{SP} = \omega_{P} / \sqrt{2} \,\text{.}
 \end{equation}
-
 Further, plasmons carry momentum whose magnitude is given by
 \begin{equation}
-  k_{P}^2 = \frac{\omega^2}{c^2} \left( \frac{\varepsilon_{1} \varepsilon_{2}}{\varepsilon_{1} + \varepsilon_{2}} \right)
+  k_{P}^2 = \frac{\omega^2}{c^2} \left( \frac{\varepsilon_{1} \varepsilon_{2}}{\varepsilon_{1} + \varepsilon_{2}} \right) \,\text{,}
 \end{equation}
 but of course for a vacuum interface this is simplified to 
 \begin{equation}
-  k_{SP}^2 = \frac{\omega^2}{c^2} \left( \frac{ \varepsilon }{ 1 + \varepsilon } \right)
+  k_{SP}^2 = \frac{\omega^2}{c^2} \left( \frac{ \varepsilon }{ 1 + \varepsilon } \right) \,\text{.}
 \end{equation}
 
 In the grating coupling scheme (shown in \ref{fig:plasmon_schematic}) a laser of wavelength $\lambda$ is incident on a material with a grating of period $d$, making an angle $\theta$ from the surface normal. A surface plasmon is driven when the portion of the laser wave-vector parallel to the plasmon ($k_{Lx}$) and a fourier component ($k_{G} = 2 \pi / d$) of the grating matches the wave-vector of the surface plasmon
 \begin{equation}
-  k_{SP} = k_{Lx} + n k_{G}
+  k_{SP} = k_{Lx} + n k_{G} \,\text{,}
 \end{equation}
 where $n$ here is an integer.
 Which reduces to 
 \begin{equation} \label{eq:plasmon_condition}
-  \sqrt{ \frac{ \varepsilon }{ 1 + \varepsilon } } = \sin \theta + \frac{ n \lambda }{ d }
+  \sqrt{ \frac{ \varepsilon }{ 1 + \varepsilon } } = \sin \theta + \frac{ n \lambda }{ d } \,\text{.}
 \end{equation}
 For a given grating period, \ref{eq:plasmon_condition} determines the angle of incidence that the laser must make with the surface in order to drive the plasmon.
 Further, it is used to design the grating, allowing for angles that the microscope column will accept.
@@ -73,14 +71,15 @@ The aforementioned laser (emitting $\sim$200fs pulses of green light at 30MW/cm$
 
 The input laser angle was slowly changed until the plasmon oscillation is visible.
 At the instant that the plasmon started, a bright flash was visible on the scintillator screen then disappeared.
-
 After this, the grating showed visual signs of damage, both on the surface and in the reflected light pattern.
 \ref{fig:grating-damage} shows the results of Scanning Electron Microscopy (SEM) on the grating.
 The damage pattern is round and of the size of the laser spot used to drive the plasmon.
 The extent of the damage indicates a large temperature increase, which given the other evidence of the test, can be assumed to be from the sudden appearance of a surface plasmon.
 
-Though this conclusively shows that a plasmon was driven successfully, the heat generated by the plasmon oscillation destroyed the grating.
-Further this experiment validated the decision not to pursue a Kretschmann geometry for fear of heat damage at these high powers.
+There are several conclusions that can be drawn from this experiment.
+Most importantly, it shows that a plasmon was driven successfully given the angular dependence and large response, few other processes could have occurred.
+The heat generated by the plasmon oscillation destroyed the grating, therefore it validated the decision not to pursue a Kretschmann geometry over fears of heat damage at these high powers.
+Finally, it suggests that if using a thermally conductive and structurally sound photoemission material and mount for the plasmonic photocathode, PAPE might generate a large number of electrons (as evident by the bright flash).
 
 \begin{figure}
   \centering
@@ -97,7 +96,7 @@ The thermal conductivity of silicon is approximately 100 times that of glass. %T
 
 Collaborators at Argonne National Laboratory's Electron Microscopy Center, Material Science Division employed a defocused Gallium focused ion beam (FIB) (Zeiss 1540XB) to iteratively mill an approximately sinusoidal shape into the surface of a silicon wafer.
 Several regions were created each 100x100$\mu$m in area, having a $\sim$1$\mu$m period and $\sim$10\% modulation depth.
-Given a laser wavelength of 523nm ($\varepsilon_{Au} \approx -3.95$ \cite{johnson_optical_1972}), this choice of periodicity corresponds by \ref{eq:plasmon_condition} to an incidence angle of $\sim39^{\circ}$, which is within the acceptance range of our experimental setup (35-75$^{\circ}$). %TODO point to Togawa section
+By \ref{eq:plasmon_condition}, given a laser wavelength of 523nm ($\varepsilon_{Au} \approx -3.95$ \cite{johnson_optical_1972}), this choice of periodicity corresponds to an incidence angle of $\sim39^{\circ}$, which is within the acceptance range of our experimental setup (35-75$^{\circ}$) (see Section \ref{sec:gun_design}).
 An SEM image of one such region is shown in \ref{fig:fib-si-sem}.
 
 \begin{figure}
@@ -111,8 +110,8 @@ An SEM image of one such region is shown in \ref{fig:fib-si-sem}.
   \label{fig:fib-si-sem}
 \end{figure}
 
-Using the Varian e-beam deposition chamber at the UIC Nano Core Facility (NCF), I deposited a thin layer of chromium as a binding agent, then a 300nm film of gold.
-This thickness of gold is several times thicker than the skin depth of green light on gold, therefore the laser radiation cannot interact with the silicon.
+A 300nm film of gold was deposited onto the silicon using the Varian e-beam deposition chamber at the UIC Nano Core Facility (NCF); a thin layer of chromium was deposited between the silicon and gold as a binding agent.
+As the gold film is several times thicker than the penetration depth of green light on gold, the laser radiation cannot interact with the silicon.
 %TODO should I comment on the coating acting to smooth the surface to a proper sinusoid?
 
 \begin{figure}
@@ -131,7 +130,7 @@ This thickness of gold is several times thicker than the skin depth of green lig
 \end{figure}
 
 % Content taken from 2010 ANL report
-Note that for this measurement, relative emission efficiencies are calculated from the integration of the luminosity detected on the YAG scintillator screen.
+Note that for the following measurement, relative emission efficiencies are calculated from the integration of the luminosity detected on the YAG scintillator screen.
 The scintillator and CCD camera detection scheme was also shown to be linear (i.e., integrated signal proportional to number of electrons per pulse) for at least $10^4$ electrons per pulse, using the known linearity of single-photon photoemission from Ta irradiated by our 261nm ultraviolet laser source.
 As a result, the detection scheme will accurately determine any laser power law dependence to the electron emission from the photocathode.
 
@@ -163,9 +162,6 @@ This field is parallel to the surface plasmon vector $k_{SP}$ (assumed here to b
 The third possible cause is local field enhancement of the accelerating electric field due to the peaks in the sinusoidal shape of the surface, commonly known as the ``lightning rod'' effect.
 For the employed one dimensional grating, this effect is necessarily parallel to the grating vector $k_G$.
 
-Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
-However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
-
 \begin{figure}
   \centering
   \input{rotated}
@@ -178,12 +174,13 @@ However, if instead the grating is rotated --- and the laser incidence angle is 
   \label{fig:rotated}
 \end{figure}
 
+Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
+However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
 \ref{fig:rotated} shows the comparison of the grating vector geometries for the original scheme (top) and one in which the grating is rotated by $45^{\circ}$ (bottom).
 For this rotation, the laser angle must be increased from $39^{\circ}$ to $47^{\circ}$.
 
 The results are shown to the right in \ref{fig:rotated}.
 As the divergence is clearly shown to be rotated by $45^{\circ}$ with respect to the colinear case, this experiment demonstrates that the cause of the divergence increase is due to the local field enhancements near the peaks of the grating.
-
 This result is commensurate with the results shown by Zawadzka et al \cite{zawadzka_evanescent_2001}, who showed a reduced divergence in the Kretschmann geometry.
 As that geometry does not employ a patterned surface, it would is not subject to such local field enhancements of the accelerating electric field.
 
@@ -206,7 +203,7 @@ Finally, upon further investigation of the surface by SEM, evidence seen of inco
 Although plasmonic photocathodes are still an interesting field of research in photocathode physics, we have concluded that they are not a promising candidate for an electron source for UEM at this time.
 They have been difficult to manufacture and thus would be expensive for owners.
 They are very intolerant to misalignment and would therefore be problematic for users.
-Finally, the cannot be shown to produce the performance needed to justify the previous concerns.
+Finally, they cannot be shown to produce the performance (that is, a reduced transverse emittance) needed to justify the previous concerns.
 
 Other nano-engineered surfaces, including quantum-wells, are still being considered for future work.
 
