@@ -110,8 +110,8 @@ An SEM image of one such region is shown in \ref{fig:fib-si-sem}.
   \label{fig:fib-si-sem}
 \end{figure}
 
-Using the Varian e-beam deposition chamber at the UIC Nano Core Facility (NCF), I deposited a thin layer of chromium as a binding agent, then a 300nm film of gold.
-This thickness of gold is several times thicker than the skin depth of green light on gold, therefore the laser radiation cannot interact with the silicon.
+A 300nm film of gold was deposited onto the silicon using the Varian e-beam deposition chamber at the UIC Nano Core Facility (NCF); a thin layer of chromium was deposited between the silicon and gold as a binding agent.
+As the gold film is several times thicker than the penetration depth of green light on gold, the laser radiation cannot interact with the silicon.
 %TODO should I comment on the coating acting to smooth the surface to a proper sinusoid?
 
 \begin{figure}
@@ -130,7 +130,7 @@ This thickness of gold is several times thicker than the skin depth of green lig
 \end{figure}
 
 % Content taken from 2010 ANL report
-Note that for this measurement, relative emission efficiencies are calculated from the integration of the luminosity detected on the YAG scintillator screen.
+Note that for the following measurement, relative emission efficiencies are calculated from the integration of the luminosity detected on the YAG scintillator screen.
 The scintillator and CCD camera detection scheme was also shown to be linear (i.e., integrated signal proportional to number of electrons per pulse) for at least $10^4$ electrons per pulse, using the known linearity of single-photon photoemission from Ta irradiated by our 261nm ultraviolet laser source.
 As a result, the detection scheme will accurately determine any laser power law dependence to the electron emission from the photocathode.
 
@@ -162,9 +162,6 @@ This field is parallel to the surface plasmon vector $k_{SP}$ (assumed here to b
 The third possible cause is local field enhancement of the accelerating electric field due to the peaks in the sinusoidal shape of the surface, commonly known as the ``lightning rod'' effect.
 For the employed one dimensional grating, this effect is necessarily parallel to the grating vector $k_G$.
 
-Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
-However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
-
 \begin{figure}
   \centering
   \input{rotated}
@@ -177,12 +174,13 @@ However, if instead the grating is rotated --- and the laser incidence angle is 
   \label{fig:rotated}
 \end{figure}
 
+Given the geometry of the previous measurement, notably the colinear arrangement of plasmon vector and the grating vector, the true cause is difficult to determine.
+However, if instead the grating is rotated --- and the laser incidence angle is corrected to account for the longer effective periodicity of the surface --- the directionality of these effects may be separated.
 \ref{fig:rotated} shows the comparison of the grating vector geometries for the original scheme (top) and one in which the grating is rotated by $45^{\circ}$ (bottom).
 For this rotation, the laser angle must be increased from $39^{\circ}$ to $47^{\circ}$.
 
 The results are shown to the right in \ref{fig:rotated}.
 As the divergence is clearly shown to be rotated by $45^{\circ}$ with respect to the colinear case, this experiment demonstrates that the cause of the divergence increase is due to the local field enhancements near the peaks of the grating.
-
 This result is commensurate with the results shown by Zawadzka et al \cite{zawadzka_evanescent_2001}, who showed a reduced divergence in the Kretschmann geometry.
 As that geometry does not employ a patterned surface, it would is not subject to such local field enhancements of the accelerating electric field.
 
@@ -205,7 +203,7 @@ Finally, upon further investigation of the surface by SEM, evidence seen of inco
 Although plasmonic photocathodes are still an interesting field of research in photocathode physics, we have concluded that they are not a promising candidate for an electron source for UEM at this time.
 They have been difficult to manufacture and thus would be expensive for owners.
 They are very intolerant to misalignment and would therefore be problematic for users.
-Finally, the cannot be shown to produce the performance needed to justify the previous concerns.
+Finally, they cannot be shown to produce the performance (that is, a reduced transverse emittance) needed to justify the previous concerns.
 
 Other nano-engineered surfaces, including quantum-wells, are still being considered for future work.
 
