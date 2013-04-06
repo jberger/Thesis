@@ -5,12 +5,12 @@
 Simulation of electron pulse propagation in UEM and modern UED apparatus\cite{siwick_ultrafast_2002,oudheusden_electron_2007,reed_femtosecond_2006} requires the ability to model electron-optical elements designed to control the three-dimensional space-charge and dispersion induced broadening of the pulse, and hence deliver electron pulses of the desired quality to the specimen. 
 The Analytic Gaussian model as presented by Michalik and Sipe (see Section \ref{sec:ms_model}) is only useful for modeling free-space propagation.
 This is because there is no allowance for external forces, such as those imparted by the ``optical'' elements of an electron microscope column.
-In this section, I show that the AG model can be extended to include external forces on the pulse, such as the influence of magnetic electron lenses and RF pulse compression cavities.\cite{oudheusden_electron_2007,veisz_hybrid_2007} 
+In this section, I show that the AG model can be extended to include external forces on the pulse, such as the influence of magnetic electron lenses and RF pulse compression cavities \cite{oudheusden_electron_2007,veisz_hybrid_2007}. 
 
 \subsection{Mathematical Formulation of External Force Contribution}
 
 While the free-space AG model does not contain any external forces, it does include an internal force: the Coulomb force is included to model the repulsion of the pulse's electrons from each other.
-As this force is self-influencing, it is the major souce of complexity in the model; indeed without this term, a complete analytic solutions is possible, which is identical to ``Gaussian'' optics.\cite{michalik_analytic_2006}
+As this force is self-influencing, it is the major souce of complexity in the model; indeed without this term, a complete analytic solutions is possible, which is identical to ``Gaussian'' optics \cite{michalik_analytic_2006}.
 
 The internal Coulombic repulsion force enters the model in \ref{eq:potential_integral}.
 Since both potentials and integrals are linear, one may add additional potentials, so that it becomes
@@ -110,7 +110,7 @@ Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analys
 
 \subsection{Validity and Limitations} \label{extension_limitations}
 
-The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations.\cite{michalik_analytic_2006}
+The presented extension to the AG model to include external forces acting on the electron pulse is valid only within the limits of the analytical method itself; in particular, its mean internal space-charge field and self-similar Gaussian approximations \cite{michalik_analytic_2006}.
 As a result, we emphasize that the presented AG model extension is valid only for the action of linear forces (i.e., forces that have a linear dependence on distance in the pulse frame) on the electron pulse due to the model's self-similar Gaussian approximation.
 Since nonlinear forces are not considered, ``emittance growth'' effects arising from imperfect lenses cannot be modeled \cite{oshea_reversible_1998}.
 The inclusion of the action of nonlinear forces (e.g., due to higher-order space-charge effects, spherical magnetic lens aberrations, etc.) will require the use of more sophisticated electron pulse propagation models such as full particle tracking simulations.%, which should be employed to gauge the accuracy (and hence limits) of our extended AG approach at some point.
@@ -119,9 +119,9 @@ The inclusion of the action of nonlinear forces (e.g., due to higher-order space
 It should also be noted that these analyses are performed in the non-relativistic limit, which is a reasonable approximation for the typical 20-200keV electron energies employed in UED and electron microscopy.
 Extension to include relativistic effects is conceptually straightforward using standard transformations between the laboratory and electron pulse reference frames.
 
-Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes,\cite{michalik_analytic_2006,michalik_evolution_2009} including the uniform ellipsoid.\cite{luiten_how_2004}
+Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes \cite{michalik_analytic_2006,michalik_evolution_2009}, including the uniform ellipsoid \cite{luiten_how_2004}.
 This successful benchmarking is due primarily to the versatility of the AG model which results from its use of transverse and longitudinal pulse position and momentum variances.
-Consequently, the AG approach is applicable to both the single electron per pulse limit,\cite{lobastov_four-dimensional_2005} where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate.\cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}
+Consequently, the AG approach is applicable to both the single electron per pulse limit \cite{lobastov_four-dimensional_2005}, where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate \cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}.
 It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
 Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
 
