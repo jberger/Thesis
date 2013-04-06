@@ -13,7 +13,7 @@ do for [shape in "prolate oblate"] {
 
     #set yrange [0.1:1.5]
 
-    set xlabel "Pulse location rel. to $f$=".length."mm lens"
+    set xlabel "Pulse location ($z^{\\prime}/f)$"
 
     plot for [i=1:10:2] file.".dat" using i:i+1 with lines title ""
   }

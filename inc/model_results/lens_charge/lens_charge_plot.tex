@@ -8,15 +8,17 @@
       \label{fig:focus_long_oblate}
       \begin{tikzpicture}
         \input{lens_60mm_oblate_data}
+        \node at (2.7,4.9) [align=left] {$\xi=0.1$\\$f=$ 60mm};
         \node at (5.9,1.65) {$N=10^5$};
-        \node at (4,3) {$N=10^6$};
-        \node at (3,4) {$N=10^7$};
+        \node at (4.5,2.7) {$N=10^6$};
+        \node at (4,3.9) {$N=10^7$};
       \end{tikzpicture}
     }
     \subfloat[][] {
       \label{fig:focus_long_prolate}
       \begin{tikzpicture}
         \input{lens_60mm_prolate_data}
+        \node at (2.7,4.9) [align=left] {$\xi=10$\\$f=$ 60mm};
         \node at (4.2,2.3) {$N=10^5$};
         \node at (3.3,3.5) {$N=10^6$};
       \end{tikzpicture}
@@ -27,6 +29,7 @@
       \label{fig:focus_short_oblate}
       \begin{tikzpicture}
         \input{lens_6mm_oblate_data}
+        \node at (2.7,4.9) [align=left] {$\xi=0.1$\\$f=$ 6mm};
         \node at (6.5,3) {$N=10^7$};
       \end{tikzpicture}
     }
@@ -34,6 +37,7 @@
       \label{fig:focus_short_prolate}
       \begin{tikzpicture}
         \input{lens_6mm_prolate_data}
+        \node at (2.7,4.9) [align=left] {$\xi=10$\\$f=$ 6mm};
         \node at (6.9,2.6) {$N=10^7$};
         \node at (6,2) {$N=10^6$};
       \end{tikzpicture}
@@ -41,7 +45,7 @@
   }
   \caption[AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$]{
     AG model simulated focal behavior of perfect magnetic lenses as a function of pulse charge $N$.
-    Each plot's pulses begin at the lens' front focal plane at 20 kV velocity ($c/3$) and have the same volume.
+    Each plot's pulses begin at the lens' front focal plane at velocity $c/3$ (related to 20 kV energy) and have the same volume.
     The left plots (\subref{fig:focus_long_oblate} and \subref{fig:focus_short_oblate}) are initially oblate shaped, HW1/eM width $ 500 \mu \text{m}$ and ellipticiy $ \xi ( 0 ) = 0.1 $.
     The right plots (\subref{fig:focus_long_prolate} and \subref{fig:focus_short_prolate}) are initially prolate shaped, HW1/eM width $ 107.7 \mu \text{m}$ and ellipticiy $ \xi ( 0 ) = 10 $.
     Distance traveled in column is measured relative to the lens at $z=0$, in units of the focal lenth.
