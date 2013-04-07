@@ -16,7 +16,7 @@ set y2range [0:8000]
 set ylabel "HW1/eM Pulse Width ($\\mu m$)"
 set y2label "Electron Yield (a.u.)"
 
-plot file using 1:2 title "",\
-     file using 1:3 title "" axes x1y2,\
-     yield(x) with lines title "" axes x1y2
+plot file using 1:2 with points lt 5 linecolor rgb "black" title "",\
+     file using 1:3 with points lt 7 linecolor rgb "black" title "" axes x1y2,\
+     yield(x)       with lines  lt 1 linecolor rgb "green" title "" axes x1y2
 
