@@ -1,0 +1,27 @@
+%This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+\section{Two-photon Assisted Thermionic Photoemission} \label{sec:two_photon}
+
+\begin{figure}
+  \centering
+  \input{au_plot}
+  \caption[Measured Fourier plane electron beam size and yield vs incident laser pulse energy on gold photocathode]{
+    Measured Fourier plane electron beam size (HWe$^{-1}$M; squares) and electron yield (circles) as a function of the incident $\sim$200fs, 523nm laser pulse energy for the 300nm-thick gold photocathode.
+    The electron yield is proportional to the square of laser pulse energy (solid line) and the dependence of the beam size with the laser pulse energy fits that predicted by a zero free parameter electron heating model (solid line; dashed lines represent $\pm$10\% error in the laser spot size).
+    A representative raw Fourier plane beam image is also shown.
+  }
+  \label{fig:gold-emission}
+\end{figure}
+
+To verify the efficacy of the experimental technique (see Section \ref{sec:photocathode-method}) for these purposes, we monitored the momentum distribution (Fourier plane spot size) for electrons emitted by 2PTE from gold using the $\sim$200fs green (523nm) $p$-polarized laser pulses.
+Due to the 60$^{\circ}$ angle of incidence, the circular laser beam is focused by the 30cm focal length lens to an elliptical 50x100$\mu$m (half-width 1/e maximum (HWe$^{-1}$M) of the field) spot size on the photocathode surface.
+The results, the measured Fourier plane beam size and electron yield, are displayed in \ref{fig:gold-emission} as a function of the incident laser pulse energy, corrected to account for 10\% optical loss (mainly from the uncoated vacuum system windows).
+
+The quadratic dependence of the electron yield on pulse energy clearly indicates a two-photon emission process.
+This is expected since an excitation energy of two green photons ($\hbar \omega$ = 2.37eV) will be required to overcome the reported $\phi$ = 4.69eV effective work function of a thick gold film contaminated with adsorbed water \cite{monjushiro_ultraviolet_1991} or ensure that at least the tail of the electron Fermi distribution has sufficient energy to overcome the 5.1($\pm$0.1)eV work function of a clean Au surface \cite{eastman_photoelectric_1970}.
+Moreover, when $2\hbar \omega \approx \phi$, the dependence of the yield on the square of the electron's excess energy above the work function \cite{monjushiro_ultraviolet_1991} ensures that predominantly only the high energy (Boltzmann) tail of the Fermi distribution contributes to the emission.
+Consequently, the observed increase in $\Delta p_x$ with incident pulse energy must be due to a heating effect; specifically, laser heating of the free electron Fermi gas as two-photon excitation is instantaneous and the $\sim$200fs green laser pulse duration excludes any coupling to the lattice which occurs on the time scale of a few picoseconds \cite{chen_semiclassical_2006}.
+The solid line in \ref{fig:gold-emission} is the predicted variation derived using a simple zero free parameter model of this effect.
+Using the known optical properties of gold \cite{johnson_optical_1972}, which give a reflectance $R_p$ = 0.53 and an absorption depth of 20nm, and the temperature-dependent heat capacity of a free electron Fermi gas, the model evaluates the average temperature of the laser-heated electron gas that may be two-photon excited assuming that only electrons within a few nanometers of the surface can be emitted, as the mean free path for electrons in Au is $\sim$4nm \cite{seah_quantitative_1979}.
+This average electron temperature $T_e$ is then used in the AG model simulation of the experiment (\ref{fig:transverse-measurement}) to determine the expected Fourier plane spot size on the YAG scintillator; that is, using an initial $\Delta p_x = \sqrt{m_0 k_B T_e}$.  The dashed lines indicate the expected trends for a $\pm$10\% error in the laser spot size $\Delta x_0$ incident on the gold cathode surface.
+The close agreement between the data and the simulation strongly supports our interpretation of the emission mechanism and, as expected, that the effective mass of a free electron in Au is equal to the rest mass $m_0$\cite{johnson_optical_1972}.

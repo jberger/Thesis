@@ -1,5 +1,5 @@
 set term tikz nopicenvironment
-set output "fig2data.tex"
+set output "au_plot_data.tex"
 set xrange [0:14.1]
 set xlabel "Incident Laser Pulse Energy (nJ)"
 set y2range [0:2.5e7]
