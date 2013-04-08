@@ -25,7 +25,7 @@ for my $res (sort {$a->{laser} <=> $b->{laser}} values %$data ) {
     next;
   }
 
-  my $w = $res->{w_av};
+  my $w = $res->{w_av} / 1000;
   my $yield = $res->{yield} - $bg;
 
   print $fh join( " ", $res->{laser} * $pulse_energy, $w, $w*$w_err, $yield, $yield_err ) . "\n";  

@@ -169,13 +169,14 @@ sub xy_fit {
   my $x_lineout = $pdl->slice(",($y)");
   my $y_lineout = $pdl->slice("($x),");
 
+  # pixels are binned in twos
   my (undef, undef, $fwhm_x) = fitgauss1d(
-    $x_lineout->sequence * 5.4,
+    $x_lineout->sequence * 2 * 5.4,
     $x_lineout,
   );
 
   my (undef, undef, $fwhm_y) = fitgauss1d(
-    $y_lineout->sequence * 5.4,
+    $y_lineout->sequence * 2* 5.4,
     $y_lineout,
   );
 
