@@ -1,19 +1,25 @@
 \section{Single-photon Photoemission from Flat Metal Photocathodes}
 
 Single-photon photoemission is the most common photoemission process and the easiest to explain.
-As described by Einstein in his famous paper on ``the photoelectric effect,'' if an electron absorbs a photon whose energy is sufficient to promote the electron above the local vacuum level, it become free to leave the host material.
-In Section \ref{sec:must_reduce_transverse_momentum}, we have already seen that flat metal photocathodes employing single-photon photoemission are not likely to be useful for UEM since the transverse momentum variance $\Delta p_{\smallT} = \sqrt{ m \Delta E / 3 } $ \cite{dowell_quantum_2009} cannot be reduced without also reducing the emission efficiency which is proportional to $\Delta E^2$ \cite{shalaev_electron_1994}.
+As described by Einstein in his famous paper on ``the photoelectric effect'' \cite{einstein_uber_1905}, as it is colloquially known, if an electron absorbs a photon whose energy is sufficient to promote the electron above the local vacuum level, it become free to leave the host material.
 
 \begin{figure}
   \centering
   \input{w_plot}
   \caption[Single-photon photoemission from Tungsten]{
     Single-photon photoemission from Tungsten.
+    Circles indicate relative electron yield (per pulse), the linear fit line indicates a single-photon process.
+    The Fourier plane spot size (squares), related to the initial transverse momentum variance, does not depend on laser pulse energy, as expected.
   }
   \label{fig:single_photon_tungsten}
 \end{figure}
 
-An example of single-photon photoemission is presented in \ref{fig:single_photon_tungsten}, wherein a sample of polished tungsten (W), having a work function $\Phi \approx $ 4.55 eV, %TODO ref
-is used as a photocathode.
+An example of single-photon photoemission is presented in \ref{fig:single_photon_tungsten}, wherein a sample of polished tungsten (W), having a work function $\Phi \approx $ 4.3-4.5 eV \cite{yen_thermally_1980}, is used as a photocathode.
 When paired with our $\hbar \omega = $ 4.75 eV photon energy laser (see Section \ref{sec:laser}) the excess photoemission energy $\Delta E = \hbar \omega - \Phi \approx $ 0.2 eV.
+The linear dependence of the electron yield (circles) on the laser pulse energy is indicative of a single photon process, as expected.
+The fact that the Fourier plane spot-size, directly related the initial transverse momentum variance $\Delta p_{\smallT}$, is unchanged over the full range of laser power is also expected, since by $\Delta p_{\smallT} = \sqrt{ m \Delta E / 3 } $ \cite{dowell_quantum_2009}, $\Delta p_{\smallT}$ only depends on $\Delta E$.
+
+In order to improve performance, one must be able to minimize $\Delta p_{\smallT}$ without negatively affecting the photoemission efficiency, and thus electron yield.
+As it stands currently, and as we have already seen in Section \ref{sec:must_reduce_transverse_momentum}, flat metal photocathodes employing single-photon photoemission are not likely to be useful for UEM since the transverse momentum variance cannot be reduced without also reducing the emission efficiency which is proportional to $\Delta E^2$ \cite{shalaev_electron_1994}.
+However, as I will show in Section \ref{sec:photocathode_future}, this does not quite tell the complete story.
 

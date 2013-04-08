@@ -1,4 +1,4 @@
-set term tikz
+set term tikz scale 0.7,0.7
 
 set output "w_plot.tex"
 file = "w_plot_data.dat"
