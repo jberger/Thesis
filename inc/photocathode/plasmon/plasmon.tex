@@ -146,14 +146,18 @@ As a result, the detection scheme will accurately determine any laser power law 
 
 Above an incident laser pulse intensity of $\sim$32MW/cm$^2$, there is a rapid and dramatic increase in the emission efficiency for the nano-patterned photocathode.
 This can be explained by a suppression of the barrier to photoemission below the two-photon excitation energy, thus allowing direct two-photon photoemission.
-This is likely caused by the laser-excited surface plasmon since a similar increase from the neighboring flat gold surface is not present.
-The observed distinct changes in the momentum distributions (\ref{fig:pape} B and C) in this laser intensity range support this argument.
+The well-known Schottky Effect states that for an applied electric field $E$ the work function will be suppressed by an amount
+\begin{equation}
+  \Delta \Phi = - e\sqrt{\frac{e E}{4 \pi \varepsilon_{\smallzero}}} \,\text{.}
+\end{equation}
+This suppression is likely caused by the laser-excited surface plasmon, since on the neighboring flat gold surface, where the suppression due to the laser (20MV/m) and the 20kV acceleration potential (0.8MV/m) is $\Delta \Phi \approx $ 0.18eV, no similar increase in efficiency is observed.
+If this is indeed the case, and the surface plasmon field futher suppresses the barrier to a total $ \Delta \Phi \approx $ 0.35eV to allow direct two-photon photoemission, the field must be of the order of 60MV/m or three times that of the laser field.
 In \ref{fig:pape} B, at a laser intensity of $\sim$30MW/cm$^2$, there is already a distinct broadening of the momentum distribution in the direction parallel to the wavevector $k_G$ of the sinusoidal modulation on the photocathode (i.e., perpendicular to the FIB-milled grooves). 
 This broadening becomes the dominant feature of the electron emission above $\sim$32MW/cm$^2$; indeed, it becomes so severe that at laser intensities above $\sim$37MW/cm$^2$ the 6mm-diameter bore of the magnetic lenses becomes a strong limiting aperture for the resulting beam --- as is clearly seen in \ref{fig:pape} D and by the cut-off in the detected electron signal (YAG fluorescence).
 
 \subsection{Sinusoidal Grating, Rotated}
 
-In principle, this unexpected increase in transverse momentum could be caused by any of three effects.
+In principle, this unexpected increase in transverse momentum (\ref{fig:pape} B and C) could be caused by any of three effects.
 The first, and most easily ruled out, is that the electric field of the laser itself could affect the electrons, causing the divergence.
 The possibility is easily dismissed as the effect is not observed when off the grating.
 The second possible cause is the divergence of the plasmon's own electric field ($\partial E_{plasmon} / \partial x$).
@@ -180,8 +184,10 @@ For this rotation, the laser angle must be increased from $39^{\circ}$ to $47^{\
 
 The experimental results are shown to the right in \ref{fig:rotated}.
 As the divergence is clearly shown to be rotated by $45^{\circ}$ with respect to the colinear case, this experiment demonstrates that the cause of the divergence increase is due to the local field enhancements near the peaks of the grating.
-This result is commensurate with the results shown by Zawadzka et al \cite{zawadzka_evanescent_2001}, who showed a reduced divergence in the Kretschmann geometry.
+For a mathematical treatment of the transverse electric field of such patterned surfaces, the reader is referred to Ref. \cite{watts_sharp_1997}. 
+Our results are commensurate with the results shown by Zawadzka et al \cite{zawadzka_evanescent_2001}, who showed a reduced divergence in the Kretschmann geometry.
 As that geometry does not employ a patterned surface, it would not be subject to such local field enhancements of the accelerating electric field.
+
 
 \subsection{Trenched Grating}
 
@@ -205,7 +211,7 @@ They are very intolerant to misalignment and would therefore be problematic for 
 Finally, they cannot be shown to produce the performance (that is, a reduced transverse emittance) needed to justify the previous concerns.
 
 Other nano-engineered surfaces are still being considered for future work.
-Various other more exotic nano-structures are under examination for PAPE \cite{li_surface_2013}.
+Various other more exotic nano-structures are under examination for PAPE \cite{li_surface_2013,polyakov_plasmon_2013}.
 Bi-metallic layers are known to enhance PAPE, which may allow for reduced incident laser power for driving the plasmon \cite{kupersztych_anomalous_2005}.
 Photoemission from nano-arrays of quantum-wells also offers the tantalizing hope of reduced rms transverse momentum of the generated electrons.
 
