@@ -2,8 +2,13 @@
 
 \section{The Analytic Gaussian Model} \label{sec:ms_model}
 
-This section introduces the Analytic Gaussian model of Michalik and Sipe \cite{michalik_analytic_2006}.
-%TODO more here (obviously), comparison with GPT, extended in ch. 3, etc
+This section introduces the Analytic Gaussian (AG) model of Michalik and Sipe \cite{michalik_analytic_2006}.
+In the AG model the dynamics of a Gaussian electon pulse are computed using a mean-field self-similar approximation.
+The result is a set of equations that can be solved very quickly using numerical methods on a modern computer.
+When checked against N-body simulations, the authors find that the model is also surprisingly accurate, even for a large set of non-Gaussian pulses \cite{michalik_analytic_2006,michalik_evolution_2009}.
+
+The only force included in the AG model is that of the internal repulsive space-charge field.
+In Chapter \ref{chap:extension}, I will extend this model, adding the influence of external forces, making it more generally applicable for UEM.
 
 \subsection{Formal Evolution} \label{sec:formal_evolution}
 
@@ -252,4 +257,4 @@ This AG formalism of Michalik and Sipe \cite{michalik_analytic_2006} employs a m
 This is of course not strictly accurate for a Gaussian charge distribution and the error leads to a distortion of the pulse shape.
 The ``self-similar'' nature of the model, the fact that the overall shape of the pulse cannot change, prevents inclusion of these distortions.
 Even so, the AG model of charge bunch dynamics has been benchmarked against particle tracking simulations for a number of electron pulse shapes \cite{michalik_analytic_2006,michalik_evolution_2009}, including the uniform ellipsoid which explicitly features a linear internal space-charge field \cite{luiten_how_2004}.
-%TODO add the error found in these benchmarks
+
