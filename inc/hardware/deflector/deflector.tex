@@ -18,15 +18,15 @@ By varying each potential the beam may be turned in flight.
 \end{figure}
 
 A schematic description of such a system is shown in \ref{fig:deflector_schematic}.
-To estimate the required voltage on the plates $V$, consider the applied impulse provided to the beam by the plate's electric field
+To estimate the required voltage on the plates $V$ needed to correct for a lateral velocity $v_x$, consider the applied impulse provided to the beam by the plate's force $F$ of the electric field,
 \begin{gather}
   F \Delta t = m \Delta v \\
-  \frac{ e V }{ d } \frac{ L }{ v_z } = m_e \Delta v_x
+  \frac{ e V }{ d } \frac{ L }{ v_z } = m \Delta v_x \,\text{,}
 \end{gather}
 where (as seen in the figure) $L$ is the length of the plate (in the direction of travel $\hat{z}$) and $d$ is the separation of the plates.
-Then in the small angle approximation, the angle that the plate may correct for is approximately
+If the beam has a velocity $v_z$ down the axis of the column, then in the small angle approximation, the angle that the plate may correct for is approximately
 \begin{equation}
-  \theta = \frac{ \Delta v_x }{ v_z } = \frac{ e }{ m_e } \frac{ L }{ d } \frac{ V }{ v_z^2 }
+  \theta = \frac{ \Delta v_x }{ v_z } = \frac{ e }{ m } \frac{ L }{ d } \frac{ V }{ v_z^2 } \,\text{.}
 \end{equation}
 Using this result, when $L \sim d$ and $v_z = c/3$ a voltage of 1kV will deflect the beam approximately one degree.
 These plates are, therefore, useful as a fine beam adjustment, as contrast to the coarse adjustment provided by manually aligning the acceleration gap.

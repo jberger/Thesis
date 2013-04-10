@@ -81,8 +81,7 @@ is the on-axis temperature, is given by
 \begin{equation} \label{eq:laser_ratio_ba}
   \frac{B_\smallT}{A_\smallT} = 
   \frac{ \cos^2 \theta_2 \left( \dfrac{dn}{dT} \right) + 2 \alpha_{\smallT} \Delta \left( n \cos\theta_2 - \cos\theta_1 \right) }
-       { \cos^2 \theta_1 \left[ \left( \dfrac{dn}{dT} \right) + 2 \alpha_{\smallT} \Delta \left( n \cos\theta_2 - \cos\theta_1 \right) \right] }
-  \quad\text{.}
+       { \cos^2 \theta_1 \left[ \left( \dfrac{dn}{dT} \right) + 2 \alpha_{\smallT} \Delta \left( n \cos\theta_2 - \cos\theta_1 \right) \right] } \,\text{.}
 \end{equation}
 Here, $\frac{dn}{dT}$ and $n$ are the thermo-optic coefficient and refractive index of the medium respectively (in this case for radiation polarized along the optical $N_p$-axis), $\theta_1$ is the 32.3$^\circ$ angle of incidence, $\theta_2$ = 15.7$^\circ$ is the angle of refraction (as $n_p$ = 1.98 \cite{Biswal_thermo_optical_05,pujol_crystalline_1999}), and $\Delta$ is the fraction of the crystal length $l$ contributing to the bowing of the crystal faces under thermal
 expansion with coefficient $\alpha T$ \cite{Rimington_thermal_lens_2004}.
@@ -92,15 +91,13 @@ In other words, for the potassium gadolinium tungstate (\ce{KGd(WO4)2}) crystal 
 
 The spatial pump distribution needed to generate the required $B_T/A_T$ ratio can be found using a cosine Fourier series solution to the thermal diffusion equation for our two-dimensional problem,
 \begin{equation} \label{eq:heat_eqn}
-  \kappa \nabla^2 T(x,y) = Q(x,y)
-  \quad\text{,}
+  \kappa \nabla^2 T(x,y) = Q(x,y) \,\text{,}
 \end{equation}
 where $\kappa$ is the thermal diffusion coefficient.
 Thermal diffusion in the third $z$-direction has been neglected due to the relatively uniform longitudinal heat deposition resulting from our counter-propagating pump geometry \cite{Rimington_thermal_lens_2004}.
 The specifications of our dual-axis collimated diodes \cite{website_limo} indicate that heat source can be represented mathematically as
 \begin{equation}
-  Q(x,y) = Q_0 \exp \left[ - \frac{x^2}{W_x^2} - \left( \frac{y^2}{W_y^2} \right)^3 \right]
-  \quad\text{;}
+  Q(x,y) = Q_0 \exp \left[ - \frac{x^2}{W_x^2} - \left( \frac{y^2}{W_y^2} \right)^3 \right] \,\text{;}
 \end{equation}
 that is, the focused pump radiation is described accurately by a Gaussian irradiance distribution in the horizontal ($x$) direction with half-width 1/e maximum (HW1/eM) spot size $W_x$ and a super-Gaussian of order 3 in the vertical ($y$) direction with spot size $W_y$.
 \ref{eq:heat_eqn} can then be solved using the appropriate boundary conditions for our 3x10mm crystal cross-section for the employed TLS technique \cite{Rimington_thermal_lens_2004}; namely, heat removal only through the top crystal face implies $T(x,y = \pm 1.5\text{mm}) = 0$ (or arbitrary constant) and $\dfrac{\partial T}{\partial x} = 0$ at $ x = \pm 5.0$mm for any $y$.
