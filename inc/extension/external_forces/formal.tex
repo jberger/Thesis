@@ -15,7 +15,7 @@ As this force is self-influencing, it is the major souce of complexity in the mo
 The internal Coulombic repulsion force enters the model in \ref{eq:potential_integral}.
 Since both potentials and integrals are linear, one may add additional potentials, so that it becomes
 \begin{equation}
-  V(\vec{r} - \vecprime{r}) \rightarrow V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r})
+  V(\vec{r} - \vecprime{r}) \rightarrow V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r}) \,\text{.}
 \end{equation}
 In doing so, we rename the potential due to the internal repulsive Coulomb force $V^{int}$.
 Following these new terms through the derivation, we see that
@@ -23,12 +23,12 @@ Following these new terms through the derivation, we see that
   \begin{split}
     \Phi(\vec{r};t) = & \int d\vecprime{r} \left( V^{int}(\vec{r} - \vecprime{r}) + \sum_{k} V_{k}^{ext}(\vec{r}) \right) n(\vecprime{r}; t) \\
     = & \int d\vecprime{r} V^{int}(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) + \sum_{k} \int d\vecprime{r} V_{k}^{ext}(\vec{r}) n(\vecprime{r}; t) \\
-    \equiv & \Phi^{int}(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t)
+    \equiv & \Phi^{int}(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t) \,\text{.}
   \end{split}
 \end{equation}
 Therefore each external force contributes an additional term defined as
 \begin{equation}
-  \Phi^{ext}(\vec{r};t) \equiv \int d\vecprime{r} V^{ext}(\vec{r}) n(\vecprime{r}; t)
+  \Phi^{ext}(\vec{r};t) \equiv \int d\vecprime{r} V^{ext}(\vec{r}) n(\vecprime{r}; t) \,\text{.}
 \end{equation}
 These external terms are not self-influencing, and thus are not subject to the complexities of the internal Coulombic repulsion force.
 For consistency we have now defined $\Phi^{int}(\vec{r};t)$ as the old $\Phi(\vec{r};t)$, which results from the Coulomb force. 
@@ -37,7 +37,7 @@ This new form of $\Phi(\vec{r};t)$ can be substituted into the definition of $K^
 \begin{equation}
   \begin{split}
     K^{force}_{ij} = & \frac{1}{N} \int u_i u_j \frac{\partial f}{\partial \vec{p}} \frac{\partial}{\partial \vec{r}} \left( \Phi(\vec{r};t) + \sum_{k} \Phi_{k}^{ext}(\vec{r};t) \right) d\vec{r} d\vec{p} \\
-    \equiv & K^{int}_{ij} + \sum_{k} (K_{k}^{ext})_{ij}
+    \equiv & K^{int}_{ij} + \sum_{k} (K_{k}^{ext})_{ij} \,\text{.}
   \end{split}
 \end{equation}
 Like the potential integrals, we are left with an additional matrix for each external force.
@@ -56,54 +56,52 @@ Finally, the general form of \ref{eq:gaussian_integral_dt_k} for (possibly multi
 
 For constant static forces having no dependence in $ x $, $ y $, $ z $, or $ t $, one can readily show that there is no effect on the pulse propagation parameters $ \sigma_{ \alpha } $, $ \eta_{ \alpha } $, and $ \gamma_{ \alpha } $.
 For example, consider an acceleration electric field $ \vec{E} = -E \hat{z} $ such that electrons are accelerated in the positive $ z $ direction.
-%TODO e = |q| ?
-The force is then $ \vec{F}_{ext} = qE \hat{z} $, so that from \ref{eq:Kint} we have
+The force is then $ \vec{F}_{ext} = e E \hat{z} $, so that from \ref{eq:Kint} we have
 \begin{equation}
-  K^{ext}_{ij} = \frac{qE} {N} \int{ u_{i} u_{j} \left( \frac{p_{z}} {\eta_{z}} - \frac{\gamma_{z} z} {\sigma_{z} \eta_{z}} \right) f d^{3}x d^{3}p } \,\text{.}
+  K^{ext}_{ij} = \frac{e E} {N} \int{ u_{i} u_{j} \left( \frac{p_{z}} {\eta_{z}} - \frac{\gamma_{z} z} {\sigma_{z} \eta_{z}} \right) f d^{3}x d^{3}p } \,\text{.}
 \end{equation}
 It is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ (or equivalently $ K^{ext} = \hat{0} $) meaning that this static field has no effect on the parameters of the pulse.
-Of course, this is only true in the pulse frame, the frame of the simulation, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m_{e} $ is unchanged.
-In the lab frame however, where  $ \Delta E = p \Delta p / m_{e} $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
+Of course, this is only true in the pulse frame, the frame of the simulation, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m $ is unchanged.
+In the lab frame however, where  $ \Delta E = p \Delta p / m $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
 
 \subsection{Linear External Forces}
 
-%External forces that vary with position in the pulse reference frame (i.e., are not constant) act to change the electron pulse propagation dynamics, most often by affecting $\gamma_{\alpha}$ --- the spatial dependence of the local relative mean electron momenta.
-%Below, we consider two examples of electron optical elements that are being used, or are under consideration, for controlling and manipulating the space-time dynamics of electron pulses in DTEM and UED instrumentation; namely, magnetic lenses for spatial focusing and RF pulse compression cavities.
-
 For the case of a cylindrically symmetric perfect lens, or in the longitudinal direction a perfect RF compression element, with a parabolic potential, the external force is linear with distance from the center of the electron pulse: 
 \begin{equation} \label{eq:linear_force}
-\vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \text{ .}
+\vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \,\text{.}
 \end{equation}
 Here, $M_{ \smallT }$ and $M_{z}$ characterize the strength of a lens or a compressor, respectively, and are chosen to be positive for focusing/compression elements.
 Substitution into the integral equation for the $ K^{ext} $ matrix elements,
 \begin{equation}
- \begin{split} 
-  K^{ext}_{ij} & \equiv \dfrac{1} {N} \int u_{i} u_{j} ( \vec{\nabla}_{p} f ) \cdot \vec{F}_{ext} d^{3} x d^{3} p \\ & = \dfrac{1} {N} \int u_{i} u_{j} \biggl[ x \left( \dfrac{ p_{x} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } x } { \sigma_{ \smallT } \eta_{ \smallT } } \right) + y \left( \dfrac{ p_{y} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } y } { \sigma_{ \smallT } \eta_{ \smallT } } \right) \\ & \quad + z \left( \dfrac{ p_{z} } { \eta_{z} } - \dfrac{ \gamma_{z} z } { \sigma_{z} \eta_{z} } \right) \biggr] f d^{3} x d^{3} p ,
- \end{split}
+  \begin{split} 
+    K^{ext}_{ij} & \equiv \dfrac{1} {N} \int u_{i} u_{j} ( \vec{\nabla}_{p} f ) \cdot \vec{F}_{ext} d^{3} x d^{3} p \\ 
+    & = \dfrac{1} {N} \int u_{i} u_{j} \biggl[ x \left( \dfrac{ p_{x} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } x } { \sigma_{ \smallT } \eta_{ \smallT } } \right) + y \left( \dfrac{ p_{y} } { \eta_{ \smallT } } - \dfrac{ \gamma_{ \smallT } y } { \sigma_{ \smallT } \eta_{ \smallT } } \right) \\
+    & \quad + z \left( \dfrac{ p_{z} } { \eta_{z} } - \dfrac{ \gamma_{z} z } { \sigma_{z} \eta_{z} } \right) \biggr] f d^{3} x d^{3} p \,\text{,}
+  \end{split}
 \end{equation}
 leads to the $6\times6$ matrix
 \begin{equation}
-K^{ext} = 
-\begin{pmatrix}
-\hat{k}^{lin}_{\smallT} & \hat{0} & \hat{0} \\
-\hat{0} & \hat{k}^{lin}_{\smallT} & \hat{0} \\
-\hat{0} & \hat{0} & \hat{k}^{lin}_{z}
-\end{pmatrix} \text{ ,}
+  K^{ext} = 
+  \begin{pmatrix}
+    \hat{k}^{lin}_{\smallT} & \hat{0} & \hat{0} \\
+    \hat{0} & \hat{k}^{lin}_{\smallT} & \hat{0} \\
+    \hat{0} & \hat{0} & \hat{k}^{lin}_{z}
+  \end{pmatrix} \text{,}
 \end{equation}
 where
 \begin{equation}
-\hat{k}^{lin}_{\alpha} =
-\begin{pmatrix}
-0 & M_{\alpha} \sigma_{\alpha} \\
-M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha} \text{.}
-\end{pmatrix} \text{ .}
+  \hat{k}^{lin}_{\alpha} =
+  \begin{pmatrix}
+    0 & M_{\alpha} \sigma_{\alpha} \\
+    M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha}
+  \end{pmatrix} \text{.}
 \end{equation}
 which by \ref{eq:dainvdt} this yields an additional term $M_{\alpha} \sigma_{\alpha}$ which is added to the original $\dfrac{d \gamma_{\alpha}}{d t}$ equation.
 This derivation has been for a single force, in practice however there may be multiple forces.
 Therefore if each force is labeled by $f$, \ref{eq:ag_big_gamma_gamma} may be restated as
 \begin{equation}
   \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2 + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
-    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum\limits_{f} M_{\alpha}^{\lbrace f \rbrace} 
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum\limits_{f} M_{\alpha}^{\lbrace f \rbrace} \,\text{.}
 \end{equation}
 
 Since these terms are only added to $\dfrac{d \gamma_{\alpha}}{d t}$, the analysis of Liouville's Theorem, shown in Section \ref{sec:liouville}, is unaffected: the \textit{extended} AG model still explicitly satisfies Liouvilles's Theorem.
