@@ -4,12 +4,11 @@
 
 The mathematical formalism developed in Section \ref{sec:external_forces} is only an abstract mechanism for including external forces.
 To model electron pulses traveling through realistic electron microcope columns, these abstract mechanisms must be developed further to properly describe each specific electron-optical element.
-In the following section, I demonstrate concrete applications of the extended AG model, including magnetic lenses, radio-frequency (RF) cavities (useful for both pulse compression and acceleration %TODO refs
+In the following section, I demonstrate concrete applications of the extended AG model, including magnetic lenses, radio-frequency (RF) cavities (useful for both pulse compression \cite{oudheusden_electron_2007} and acceleration %TODO refs
 ) and DC acceleration regions (i.e. electron gun dynamics).
 
 \subsection{Region of Influence}
 
-%TODO perhaps this shouldn't be a redefinition, but some other function
 Of course, physical electron-optical elements occupy only a finite space in the column, and thus their influence on the pulse should be limited to a region near the element itself.
 To localize the mathematical result shown in Section \ref{sec:external_forces}, it is convenient to redefine a particular $M_{\alpha}$ to include a super-Gaussian envelope in $z^{\prime}$, the position of the peak of the pulse in the lab frame;
 \begin{equation} \label{eq:reg_of_influence}
@@ -22,7 +21,6 @@ We connect $z^{\prime}$ to $t$ through $ v_{\smallzero} $; the kinetic equations
 \subsection{Magnetic Lenses} \label{sec:mag_lens_model}
 
 A simple magnetic lens is just a solenoid whose axis is collinear with the axis of the microscope column.
-%Initially one would think that electrons moving parallel to this axis would not be affected by the magnetic field lines in the solenoid, however the contribution of the fringing field must be taken into consideration.
 As electrons propagate through the solenoid the fringing magnetic field imparts an azimuthal velocity.
 This ``tumbling'' around the axis, along with the axial magnetic field, is what causes the inward-directed force. 
 
@@ -46,12 +44,6 @@ Montgomery and Terrell \cite{montgomery_some_1961} provide a full treatment for 
   k \equiv \sqrt{ 4 a r / Q }
 \end{gather}
 \end{subequations}
-%%TODO I can't decide whether the Q and k definitions should be numbered or not
-%where
-%\begin{gather*}
-%  Q \equiv (a+r)^2 + z^2 \\
-%  k \equiv \sqrt{ 4 a r / Q }
-%\end{gather*}
 where $\mu$ is the local magnetic permability, $H$ is the auxiliary field, and $F(k)$ and $E(k)$ are the complete elliptic integrals of the first and second kind respectively.
 In the vacuum, $\mu$ is simply the usual free space permeability $\mu_0$; in Section \ref{sec:mag_lens}, we will see how this permeability can be used to improve the performance of magnetic lenses.
 An even more accurate solenoid can be modeled by appropriately summing the fields of many such loops.
@@ -77,7 +69,6 @@ To simulate the effect of magnetic lenses in a UEM by the extended AG model, for
   M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
 \end{equation}
 to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
-%TODO include discussion and plot of beam size versus aberrations
 
 \ref{fig:mag_lens_loops} shows electron rays tracked kinematically (by employing \ref{eq:lens_eq_of_motion}) through a realistic magnetic lens simulation (shown in green).
 The kinematic model employs ten individual current loops generating magnetic fields described by \ref{eq:field_of_loop}; these loops occupy a total length of 635$\mu$m at position $z=0$.
@@ -88,7 +79,7 @@ These are compared with an AG model simulation of a Guassian electron beam of HW
 
 The AG model very accurately mimics the behavior of the kinematic model for an appropriate choice of the free parameter $M_{\smallT}^{mag}$.
 In fact, when the rays are weighted by a Gaussian of width $w$ the minimum ``radius'' of the beam is 100$\mu$m, while the AG model has a minimum HW1/eM width of 73$\mu$m.
-(The kinematic model actually overestimates the width as there are two rays at the outer convergence zone for every one which converges at the axis.) %TODO footnote?
+(The kinematic model actually overestimates the width as there are two rays at the outer convergence zone for every one which converges at the axis.) 
 
 \subsection{RF Cavities} \label{rf_cav_model}
 
@@ -138,8 +129,7 @@ For the case of an evacuated cavity, these two contributions result in a net for
    \right ] r \hat{\operatorname{ \boldsymbol{r} }} \text{.}
 \end{equation}
 In obtaining \ref{eq:RF_Force_r}, which is also of the form for use in \ref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \ref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
-%TODO examples shown below?
-For the examples shown below under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is generally smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $ \cite{kim_rf_1989}, even though its magnitude is maximized for $\phi = 0$.
+As will be seen in Section \ref{sec:rf_cav_charge}, under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is generally smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $ \cite{kim_rf_1989}, even though its magnitude is maximized for $\phi = 0$.
 Other effects, such as magnetic fringe field aperture effects, could also be included, but are significantly weaker.
 
 To summarize, the additional terms are which are added to model the internal pulse dynamics arising from a single TM$_{010}$-mode cylindrical RF cavity are
@@ -155,4 +145,4 @@ Additionally, since an RF cavity can act as a pulse accelerator (as seen in the 
   F_{z}^{RF} = e E_{0} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \, \text{,}
 \end{equation}
 should be added to the equation of motion governing the propagation of the pulse down the column.
-% excluded example section from JAP paper as it will need new graphics
+
