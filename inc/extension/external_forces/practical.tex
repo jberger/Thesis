@@ -12,7 +12,7 @@ In the following section, I demonstrate concrete applications of the extended AG
 Of course, physical electron-optical elements occupy only a finite space in the column, and thus their influence on the pulse should be limited to a region near the element itself.
 To localize the mathematical result shown in Section \ref{sec:external_forces}, it is convenient to redefine a particular $M_{\alpha}$ to include a super-Gaussian envelope in $z^{\prime}$, the position of the peak of the pulse in the lab frame;
 \begin{equation} \label{eq:reg_of_influence}
-  M_{\alpha} \to M_{\alpha} \exp \left [ - \left (  \frac{ z^{\prime} - z_{lens}^{\prime} }{ L_{lens} / 2 } \right )^{ 2 n } \right ] \text{ ,}
+  M_{\alpha} \to M_{\alpha} \exp \left [ - \left (  \frac{ z^{\prime} - z_{lens}^{\prime} }{ L_{lens} / 2 } \right )^{ 2 n } \right ] \,\text{,}
 \end{equation}
 where $z_{lens}^{\prime}$ is the position of the center of the lens, $L_{lens}$ is the axial length of the lens and $n$ is the super-Gaussian order parameter.
 The order parameter defines the ``sharpness'' of the edge of the region of influence with integer values ranging from 1 (a simple Gaussian) through $\infty$ (a top-hat).
@@ -66,7 +66,7 @@ This may be done in comparison to either experimental data or, as shown in \ref{
 For localizing the region of influence of the lens, I have generally modelled a thin magnetic lens as having a super-Gaussian order value $n=1$, a simple Gaussian; of course this may depend on the specifics of the lens.
 To simulate the effect of magnetic lenses in a UEM by the extended AG model, for each magnetic lens, one adds a term like
 \begin{equation}
-  M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{ ,}
+  M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{,}
 \end{equation}
 to the set of $M_{\smallT}$ parameters, where $z_{mag}^{\prime}$ and $L_{mag}$ are the position and length of the lens in question respectively.
 
@@ -136,7 +136,7 @@ To summarize, the additional terms are which are added to model the internal pul
 \begin{gather}
   M_{z}^{RF} = \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \\
   \begin{aligned}
-  M_{\smallT}^{RF} = & e E_{0} \left [ \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \right. \\ \times & \left. \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
+  M_{\smallT}^{RF} &= e E_{0} \left [ \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{L_{RF}} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{L_{RF} / 2} \right )^{2 n - 1} \right. \\ & \times \left. \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
    \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \,\text{.}
   \end{aligned}
 \end{gather}

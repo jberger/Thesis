@@ -12,7 +12,7 @@ For pulses containing $N$ carriers of charge $e$ and mass $m$, the model is simp
 \begin{gather}
   \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
   \frac{d\gamma_{\alpha}}{dt} = \frac{ \Gamma_{\alpha}^2 + \gamma_{\alpha}^2 }{\sigma_{\alpha} m}
-    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum\limits_{f} M_{\alpha}^{\lbrace f \rbrace} \,\text{.}
+    + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi) + \sigma_{\alpha} \sum\limits_{f} M_{\alpha}^{\lbrace f \rbrace} \label{eq:ag_model_gamma_conc} \,\text{.}
 \end{gather}
 \end{subequations}
 where the subscript $\alpha$ denotes the directionality of the dynamics, either $\smallT$ for the transverse or $z$ for the longitudinal.
@@ -52,3 +52,33 @@ Given these generic assumptions, the resulting initial conditions are simply,
   \end{gather}
 \end{subequations}
 In Section \ref{sec:bin_model} I have also presented a binning model which, when fully investigated, may eventually be employed rather than this simplisitc set of initial conditions.
+
+Most UEM systems will employ magnetic lenses and DC accelerators; there is also increasing interest in using RF cavities for pulse compression.
+The AG model can model the influence of these external forces via the $M$ parameters in \ref{eq:ag_model_gamma_conc}, which are in terms of the position of the center of the pulse $z^{\prime}$ and its velocity $v_{\smallzero}$.
+The each magnetic lens, positioned at $z_{mag}^{\prime}$ and of length $L_{mag}$, can be represented simply as 
+\begin{equation}
+  M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \,\text{,}
+\end{equation}
+where $M_{\smallT}^{mag}(I)$ is a lens-specific characterization of the magnetic field strength (versus current $I$).
+A single TM$_{010}$-mode cylindrical RF cavity, positioned at $z_{RF}^{\prime}$, having length $L_{RF}$, and oscillating at frequency $\Omega$ with field strength $E_{0}$ and phase shift $\phi$, may be expressed as
+\begin{gather}
+  M_{z}^{RF} = \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \\
+  \begin{aligned}
+  M_{\smallT}^{RF} &= e E_{0} \left [ \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{L_{RF}} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{L_{RF} / 2} \right )^{2 n - 1} \right. \\ & \times \left. \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
+   \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \,\text{.}
+  \end{aligned}
+\end{gather}
+Additionally, since an RF cavity can act as a pulse accelerator an additional force term
+\begin{equation}
+  F_{z}^{RF} = e E_{0} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \, \text{,}
+\end{equation}
+should be added to the equation of motion governing the propagation of the pulse down the column.
+Finally, if we assume that an acceleration region, with cathode at $z^{\prime} = 0$ and anode at $z^{\prime}_A$ and acceleration potential $V$, has an on-axis force of the form
+\begin{equation} \label{eq:anode_tanh}
+  F_z(0,z^{\prime}) = \frac{eV}{2z^{\prime}_A} \left( 1 - \tanh \left( \frac{ z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \right) \,\text{,}
+\end{equation}
+where $s$ is a parameter that quantifies the sharpness of the field drop at the anode, then accelerator's influence on the pulse dynamics are given by
+\begin{gather}
+  M_{\smallT} = -\frac{eVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
+  M_z = \frac{eVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \, \text{.}
+\end{gather}
