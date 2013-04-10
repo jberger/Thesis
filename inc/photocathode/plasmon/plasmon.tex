@@ -9,12 +9,12 @@ Since these will be the only plasmons discussed in this thesis, the word ``plasm
 Electrons in a conductor can couple with electromagnetic fields, in this case a laser field, and oscillate accordingly.
 This overall oscillation of electrons near the surface of the conductor creates strong oscillatory local surface electric field \cite{cottam_introduction_2004,concepts_2002}.
 In PAPE, the goal is use this field to both enhance the emission and `control' the divergence of photoemitted electrons through the combined action of photoemission barrier suppression and ponderomotive acceleration.
-On the other hand, these oscillating electrons are nothing but an oscillating current, and thus if a large plasmon response is established, resistive heating is a major concern even for small the small resistivities typical of conductors.
+On the other hand, these oscillating electrons are nothing but an oscillating current, and thus if a large plasmon response is established, resistive heating is a major concern even for the small resistivities typical of conductors.
 
 This avenue of investigation was motivated by Zawadzka et al \cite{zawadzka_evanescent_2001} who indicate that when driving a surface plasmon on gold they witnessed a reduction in the emission angle of photoemitted electrons.
-In their paper, the authors mount a thin gold foil on a prism; the laser then ``back illuminates'' the gold through the prism, ejecting electrons on vacuum side of the foil.
+In their paper, the authors coat a thin gold film on a prism; the laser then ``back illuminates'' the gold through the prism, ejecting electrons on vacuum side of the foil.
 This arrangement is called the Kretschmann geometry.
-While this geometry is common, due to fears about the lack of heat conduction through the glass and the power needed to generate a sufficient electron beam current, we felt that for UEM applications we should explore the ``grating coupling'' geometry \cite{kupersztych_ponderomotive_2001,kupersztych_anomalous_2005,li_surface_2013}.
+While this geometry is common, due to fears about the lack of heat conduction through the glass and the power needed to generate a sufficient electron beam current, we felt that for UEM applications we should explore the alternative ``grating coupling'' geometry \cite{kupersztych_ponderomotive_2001,kupersztych_anomalous_2005,li_surface_2013}.
 In this geometry, the plasmon is driven on a periodic surface rather than a flat surface attached to glass.
 Futher, in this front-side illuminated geometry the back surface is now free to be attached to a heat sink.
 
@@ -25,7 +25,7 @@ Every conducting material has an intrinsic plasma frequency given by
   \omega_{P} = \sqrt{\frac{\rho_{e} e^2}{\varepsilon_{0} m^*}} \,\text{,}
 \end{equation}
 where $\rho_{e}$ is the free-electron density and $m^*$ is the electron effective mass in the material.
-And in the most simple (undamped) approximations, the dielectric function of the material may be written in terms of this constant
+And in the most simple (undamped) approximations, $\varepsilon$, the real part of the dielectric function of the material, may be written in the following form:
 \begin{equation} \label{eq:dielectric_as_omega}
   \varepsilon(\omega) = 1 - \frac{ \omega_{P}^2 }{ \omega^2 } \,\text{.}
 \end{equation}
@@ -41,7 +41,7 @@ Further, plasmons propagating along a vacuum interface carry momentum whose magn
 \end{equation}
 
 In the grating coupling scheme (shown in \ref{fig:plasmon_schematic}) a laser of wavelength $\lambda$ is incident on a material with a grating of period $d$, making an angle $\theta$ from the surface normal.
-A surface plasmon is driven when the sum of the component of the laser wave-vector parallel to the material surface ($k_{Lx}$) and a fourier component ($k_{G} = 2 \pi / d$) of the grating matches the wave-vector of the surface plasmon
+A surface plasmon is driven when the sum of the component of the laser wave-vector parallel to the material surface ($k_{Lx}$) and a Fourier component ($k_{G} = 2 \pi / d$) of the grating matches the wave-vector of the surface plasmon
 \begin{equation}
   k_{SP} = k_{Lx} + n k_{G} \,\text{,}
 \end{equation}
@@ -52,7 +52,7 @@ This expression reduces to
 \end{equation}
 where $\lambda$ is the incident laser wavelength.
 For a given grating period, \ref{eq:plasmon_condition} determines the angle of incidence that the laser must make with the surface in order to drive the plasmon.
-Alternatively, it may be used to design the periodic surface structure, for example allowing for angles that the microscope column will accept, different driving orders ($n$) and even other Fourier components of the periodic surface structure.
+Alternatively, it may be used to design the periodic surface structure, for example allowing for angles that the microscope column will accept, different driving orders ($n$), and even other Fourier components of the periodic surface structure.
 
 \begin{figure}
   \centering
@@ -63,7 +63,7 @@ Alternatively, it may be used to design the periodic surface structure, for exam
 
 \subsection{Commerical Grating on Glass}
 
-For proof-of-concept purposes the first experiment was run on a commercially available gold foil on glass holographic grating (750 lines/mm).
+For proof-of-concept purposes, the first experiment was performed on a commercially available gold foil on glass holographic grating (750 lines/mm).
 Like the Kretschmann geometry, a foil on glass grating is vulnerable to heating problems; a plasmon creates a large amount of heat but the glass is a poor heat conductor.
 The aforementioned laser (emitting $\sim$200fs pulses of green light at a peak pulse intensity of 30MW/cm$^2$) was used to drive the plasmon.
 
@@ -82,9 +82,9 @@ The damage pattern is round and of the size of the laser spot used to drive the 
 The extent of the damage indicates a large temperature increase, which given the other evidence of the test, can be assumed to be from the sudden appearance of a surface plasmon.
 
 There are several conclusions that can be drawn from this experiment.
-Most importantly, it shows that a plasmon was driven successfully given the angular dependence and large response, few other processes could have occurred.
+Most importantly, it shows that a plasmon was driven successfully; given the angular dependence and large response, few other processes could have occurred.
 The heat generated by the plasmon oscillation destroyed the grating, therefore it validated the decision not to pursue a Kretschmann geometry over fears of heat damage at the high heating rates of the laser-plasmon interaction.
-Finally, it suggests that if using a thermally conductive and structurally sound photoemission material and mount for the plasmonic photocathode, PAPE might generate a large number of electrons (as evident by the bright flash).
+Finally, it suggests that through the use of a thermally conductive and structurally sound photoemission material and mount for the plasmonic photocathode, PAPE might generate a large number of electrons (as evident by the bright flash).
 
 \subsection{Sinusoidal Grating}
 
@@ -103,12 +103,12 @@ The thermal conductivity of silicon is approximately 100 times that of glass. %T
   \label{fig:fib-si-sem}
 \end{figure}
 
-Collaborators at Argonne National Laboratory's Electron Microscopy Center, Material Science Division employed a defocused Gallium focused ion beam (FIB) (Zeiss 1540XB) to iteratively mill an approximately sinusoidal shape into the surface of a silicon wafer.
+Collaborators at Argonne National Laboratory's Electron Microscopy Center, Material Science Division employed a defocused Gallium focused ion beam (FIB) (Zeiss 1540XB) to mill an approximately sinusoidal shape into the surface of a silicon wafer.
 Several regions were created each 100x100$\mu$m in area, having a $\sim$1$\mu$m period and $\sim$10\% modulation depth.
 By \ref{eq:plasmon_condition}, given a laser wavelength of 523nm ($\varepsilon_{Au} \approx -3.95$ \cite{johnson_optical_1972}), this choice of periodicity corresponds to an incidence angle of $\sim39^{\circ}$, which is within the acceptance range of our experimental setup (35-75$^{\circ}$) (see Section \ref{sec:gun_design}).
 An SEM image of one such region is shown in \ref{fig:fib-si-sem}.
 A 300nm film of gold was deposited onto the silicon using the Varian e-beam deposition chamber at the UIC Nano Core Facility (NCF); a thin layer of chromium was deposited between the silicon and gold as a binding agent.
-As the gold film is several times thicker than the penetration depth of green light on gold, the laser radiation cannot interact with the silicon.
+As the gold film is many times thicker than the penetration depth of green light on gold and several times thicker than the penetration depth of the plasmon field, neither the laser radiation nor the plasmon field will couple with the silicon.
 %TODO should I comment on the coating acting to smooth the surface to a proper sinusoid?
 
 \begin{figure}
@@ -134,7 +134,7 @@ These two properties are known characteristics of plasmon-assisted photoemission
 
 As seen in \ref{fig:pape}, at low incident laser intensities, below a laser intensity of about 25MW/cm$^2$, the emission from the nano-patterned photocathode at the plasmon resonance condition is very similar to that observed from a flat gold surface neighboring the FIB-milled region.
 Specifically, the strength of both emissions have a quadratic dependence on the incident laser intensity.
-This is consistent with a two-photon field emission process --- it requires the absorption of two 2.37eV (green) photons for an electron to acquire sufficient energy to allow any significant field emission as gold has a work function of 5.1eV.
+This is consistent with a two-photon field emission process --- it requires the absorption of two 2.37eV (green) photons for an electron to acquire sufficient energy to allow any significant field emission as gold has a work function of $\sim$5eV.
 Moreover, both emissions have similar momentum distributions (\ref{fig:pape} A and E), again indicating a similar emission process.
 The only difference is that the emission from the nano-patterned region is 3-4 times more efficient.
 This is readily explained by the fact that the periodic surface modulation results in a local enhancement of the $\sim$1MV/m DC gun field at the peaks of the modulation which, through the Schottky effect, then presents a reduced barrier for field emission.
