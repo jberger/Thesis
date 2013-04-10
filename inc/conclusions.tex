@@ -82,3 +82,8 @@ where $s$ is a parameter that quantifies the sharpness of the field drop at the 
   M_{\smallT} = -\frac{eVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
   M_z = \frac{eVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \, \text{.}
 \end{gather}
+
+I have written an implementation of this model for the Perl programming language and released to the Comprehensive Perl Archive Network (CPAN) under the name \verb!Physics::UEMColumn! for use by the UEM community (\url{https://metacpan.org/module/Physics::UEMColumn}).
+This model is fully object-oriented, which makes writing simulations remarkably easy for a user to read, write and change scripts.
+Under the hood, though, it uses a custom set of C level bindings to the GNU Scientific Library (GSL), so that the numerical equation solving is fast and accurate.
+I have found that this speed, combined with the dynamic flexibility offered by object-oriented Perl, has allowed me to easily write optimization scripts and generate figures which might have been nearly impossible previously; several of these have been shown in this thesis.
