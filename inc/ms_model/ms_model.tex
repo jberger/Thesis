@@ -19,53 +19,53 @@ This space may be a 1D line, a 3D space, or even a 6D phase space (three spatial
 The functional form may be chosen to appropriately characterize the objects in a natural way, however one property is true for all distribution functions: when integrated over all relevant space, all objects should be accounted for.
 In $n$ dimensional space, with $N$ objects, this normalization condition on a distribution function $f$ can be written mathematically as
 \begin{equation}
-N = \int\limits_{\text{all space}} \!\!\! f(\vec{x}) \; d^{n}x
+  N = \int\limits_{\text{all space}} \!\!\! f(\vec{x}) \; d^{n}x \,\text{,}
 \end{equation}
 which for 6D phase space is written as
 \begin{equation} \label{eq:normalization}
-N = \int f (\vec{r}, \vec{p}; t) \; d^{3}x\,d^{3}p
+  N = \int f (\vec{r}, \vec{p}; t) \; d^{3}x\,d^{3}p \,\text{.}
 \end{equation}
 This notation suggests to the reader that the distribution function is implicitly a function of time as well as of the spatial and momentum coordinates; for most circumstances however, the total number of particles $N$ will not change with time.
 
 For a classical set of $N$ discreet particles (labelled by the index $i$), distributed in 6D space (3 position, 3 momentum) the distribution function is 
 \begin{equation}
   f_{\smallD}(\vec{r}, \vec{p}; t) = 
-  \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p})
+  \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p}) \,\text{,}
 \end{equation}
 which automatically satisfies \ref{eq:normalization}.
 If the particles have mass $m$ which interact with some potential $V(\vec{r}_{i} - \vec{r}_{j})$, their motion is governed by the equations
 \begin{subequations}\label{eq:std_motion}
 \begin{gather}
   \frac{d\vec{r}_{i}(t)}{dt} = \frac{\vec{p}_{i}(t)}{m}\\
-  \frac{d\vec{p}_{i}(t)}{dt} = -\sum\limits_{j} \frac{d}{d\vec{r}_{i}} V(\vec{r}_{i} - \vec{r}_{j}) \label{eq:std_motion_v}
+  \frac{d\vec{p}_{i}(t)}{dt} = -\sum\limits_{j} \frac{d}{d\vec{r}_{i}} V(\vec{r}_{i} - \vec{r}_{j}) \label{eq:std_motion_v} \,\text{.}
 \end{gather}
 \end{subequations}
 Now let us consider the time evolution of $f_{\smallD}$;
 \begin{equation}
   \frac{\partial f_{\smallD}}{\partial t} = 
   \frac{d\vec{r}}{dt} \frac{\partial f_{\smallD}}{\partial \vec{r}} 
-  + \frac{\partial f_{\smallD}}{\partial \vec{p}} \frac{d\vec{p}}{dt}
+  + \frac{\partial f_{\smallD}}{\partial \vec{p}} \frac{d\vec{p}}{dt} \,\text{,}
 \end{equation}
 but with \ref{eq:std_motion} the final discreet evolution equation is
 \begin{equation} \label{eq:evolution_discreet}
   \frac{d}{dt} f_{\smallD}(\vec{r}, \vec{p}; t) =
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f_{\smallD}(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f_{\smallD} (\vec{r}, \vec{p}; t)
-  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f_{\smallD}(\vecprime{r},\vecprime{p};t)
+  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f_{\smallD}(\vecprime{r},\vecprime{p};t) \,\text{,}
 \end{equation}
-where the extra minus sign comes from the change of perspective of \ref{eq:std_motion_v} from the frame of the individual particle $i$ to the observer frame.
+where the extra negation comes from the change of perspective of \ref{eq:std_motion_v} from the frame of the individual particle $i$ to the observer frame.
 
 This analysis can be extended to continuous distributions by taking the ensemble average over \ref{eq:evolution_discreet}.
 In order to simplify the resulting equation to a useful result, one applies the usual mean-field approximation
 \begin{equation}
-  \left < f_{\smallD} (\vec{r}, \vec{p}; t) f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right > = \left < f_{\smallD} (\vec{r}, \vec{p}; t) \right > \left < f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right >
+  \left < f_{\smallD} (\vec{r}, \vec{p}; t) f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right > = \left < f_{\smallD} (\vec{r}, \vec{p}; t) \right > \left < f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right > \,\text{,}
 \end{equation}
 so that the formal evolution of a continuous distribution is given by
 \begin{equation} \label{eq:formal_evolution}
   \frac{d}{dt} f(\vec{r}, \vec{p}; t) =
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f (\vec{r}, \vec{p}; t)
-  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f(\vecprime{r},\vecprime{p};t)
+  \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f(\vecprime{r},\vecprime{p};t) \,\text{.}
 \end{equation}
 Although this equation looks very similar to \ref{eq:evolution_discreet}, notice that it contains approximations, mean-field that has been seen and in practice the self-similarity of the distribution function, that the discreet discription did not.
 
@@ -76,20 +76,21 @@ For Ultrafast Electron Microscopy, the electron pulse is generated by a laser pu
 How correct this assumption is will be explored in \ref{sec:initial_conditions}.
 In this section we consider a Gaussian distribution function, generally of the form
 \begin{equation}
-  f(\vec{r}, \vec{p}; t) = C(t)\exp \left[ - G(\vec{r}, \vec{p}; t) \right]
+  f(\vec{r}, \vec{p}; t) = C(t)\exp \left[ - G(\vec{r}, \vec{p}; t) \right] \,\text{.}
 \end{equation}
 The analysis presented here will consider a cylindrically symmetric pulse.
 For the remainder of this analysis, the subscripts $\smallT$ (transverse) and $z$ (longitudinal) will accompany many quantites, reflecting the congruence of $x$ and $y$.
 The subscript $\alpha$ will refer to either $\smallT$ or $z$.
 In order to model several important physical characteristics of the pulse, we choose the argument (i.e. the function $G$) as
 \begin{equation} \label{eq:gaussian_exponent}
-  G(\vec{r}, \vec{p}; t) =
-  \frac{x^2 + y^2}{2 \sigma_{\smallT}} + \frac{z^2}{2 \sigma_{z}}
-  + \frac{
-    [p_x - (\gamma_{\smallT}/\sigma_{\smallT}) x ]^2 
-    + [p_y - (\gamma_{\smallT}/\sigma_{\smallT}) y ]^2
-  }{2 \eta_{\smallT}}
-  + \frac{ [p_z - (\gamma_{z}/\sigma_{z}) z ]^2 }{2 \eta_{z}}
+\begin{split}
+  G(\vec{r}, \vec{p}; t) &= \frac{x^2 + y^2}{2 \sigma_{\smallT}} + \frac{z^2}{2 \sigma_{z}} \\
+  &+\frac{
+        [p_x - (\gamma_{\smallT}/\sigma_{\smallT}) x ]^2 
+      + [p_y - (\gamma_{\smallT}/\sigma_{\smallT}) y ]^2
+    }{2 \eta_{\smallT}}
+  + \frac{ [p_z - (\gamma_{z}/\sigma_{z}) z ]^2 }{2 \eta_{z}} \,\text{.}
+\end{split}
 \end{equation}
 This parameterization defines the spatial variance $\sigma_{\alpha}$, the local momentum variance $\eta_{\alpha}$, and the momentum chirp $\gamma_{\alpha}$ in each spatial direction $\alpha$.
 The ``chirp'' of a pulse quantifies the difference in average local momentum from one side of the pulse to the other.
@@ -99,16 +100,16 @@ The normalization constant $C(t)$, for this distributions of $N$ total particles
   C(t) = \frac{N}{(2\pi)^3} 
   \left( 
     \frac{1}{\sigma_{\smallT}^2\eta_{\smallT}^2\sigma_{z}\eta_{z}}
-  \right)^{\frac{1}{2}}
+  \right)^{\frac{1}{2}} \text{.}
 \end{equation}
 
 To help simplify what is already becoming a complex problem, these equations may be viewed from a matrix perspective if we define the ``coordinate vector''
 \begin{equation} \label{eq:coordinate_vector}
-u_i = \{x, p_x, y, p_y, z, p_z\}\text{ .}
+u_i = \{x, p_x, y, p_y, z, p_z\} \,\text{.}
 \end{equation}
 In this space, \ref{eq:gaussian_exponent} becomes
 \begin{equation}
-  G(\vec{r}, \vec{p}; t) = \frac{1}{2}\sum\limits_{ij} A_{ij} u_i u_j
+  G(\vec{r}, \vec{p}; t) = \frac{1}{2}\sum\limits_{ij} A_{ij} u_i u_j \,\text{,}
 \end{equation}
 where the 9 x 9 matrix $A$ is defined as
 \begin{equation}
@@ -123,12 +124,12 @@ where the 9 x 9 matrix $A$ is defined as
   \begin{pmatrix}
     1/\sigma_{\alpha} + \gamma_{\alpha}^2/(\eta_{\alpha} \sigma_{\alpha}) & \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) \\
     \gamma_{\alpha}/(\eta_{\alpha} \sigma_{\alpha}) & 1/\eta_{\alpha}
-  \end{pmatrix}
+  \end{pmatrix} \,\text{,}
 \end{equation}
-and again ${\scriptstyle \alpha} = \smallT \text{ or } z$. 
+again with $\alpha = {\scriptstyle T} \text{ or } z$. 
 A nice property of Gaussians of this form is the convenient ``Multidimensional Gaussian Integral'' given by
 \begin{equation} \label{eq:gaussian_integral}
-  (A^{-1})_{ij} = \frac{1}{N} \int u_i u_j f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p}
+  (A^{-1})_{ij} = \frac{1}{N} \int u_i u_j f(\vec{r}, \vec{p}; t) d\vec{r} d\vec{p} \,\text{,}
 \end{equation}
 which is a common form of integral analysis in Quantum Field Theory (see for example Peskin and Schroeder Equation 9.70). 
 Application of this integral yields another 9 x 9 matrix
@@ -144,12 +145,12 @@ Application of this integral yields another 9 x 9 matrix
   \begin{pmatrix}
     \sigma_{\alpha} & \gamma_{\alpha} \\
     \gamma_{\alpha} & \eta_{\alpha} + \gamma_{\alpha}^2/\sigma_{\alpha}
-  \end{pmatrix}
+  \end{pmatrix} \,\text{.}
 \end{equation}
 
 Since time derivative of \ref{eq:gaussian_integral} is simply
 \begin{equation} \label{eq:gaussian_integral_dt}
-  \frac{d}{dt}(A^{-1})_{ij} = \frac{1}{N} \int u_i u_j \frac{df(\vec{r}, \vec{p}; t)}{dt} d\vec{r} d\vec{p}
+  \frac{d}{dt}(A^{-1})_{ij} = \frac{1}{N} \int u_i u_j \frac{df(\vec{r}, \vec{p}; t)}{dt} d\vec{r} d\vec{p} \,\text{,}
 \end{equation}
 and the time derivative of the components of $A^{-1}$ are
 \begin{equation} \label{eq:dainvdt}
@@ -157,16 +158,16 @@ and the time derivative of the components of $A^{-1}$ are
   \begin{pmatrix}
     \dfrac{d\sigma_{\alpha}}{dt} & \dfrac{d\gamma_{\alpha}}{dt} \\
     \dfrac{d\gamma_{\alpha}}{dt} & \dfrac{d\eta_{\alpha}}{dt} + 2\dfrac{\gamma_{\alpha}}{\sigma_{\alpha}}\dfrac{d\gamma_{\alpha}}{dt}- \dfrac{\gamma^{2}_{\alpha}}{\sigma^{2}_{\alpha}}\dfrac{d\sigma_{\alpha}}{dt}
-  \end{pmatrix}
+  \end{pmatrix} \,\text{,}
 \end{equation}
 these components, when viewed in the context of \ref{eq:formal_evolution}, form the left hand side (LHS) of the system of differential equations governing the evolution of $\sigma_{\alpha}$, $\gamma_{\alpha}$, and $\eta_{\alpha}$, which will be established in the upcoming sections.
 
 \subsection{Generating the Differential Equations}
 
 Inserting \ref{eq:formal_evolution} into \ref{eq:gaussian_integral_dt} yields two integral terms, one related to the propagation of a non-charged Gaussian beam, the other adds the influence of the internal force due to Coulomb repulsion for an electron pulse.
-These terms will be denoted $K^{flow}$ and $K^{force}$ respectively.
+These terms will be denoted $K^{flow}$ and $K^{force}$ respectively, 
 \begin{equation} \label{eq:gaussian_integral_dt_k}
-  \frac{d}{dt}(A^{-1})_{ij} = K^{flow}_{ij} + K^{int}_{ij}
+  \frac{d}{dt}(A^{-1})_{ij} = K^{flow}_{ij} + K^{int}_{ij} \,\text{.}
 \end{equation}
 Collecting and expanding terms where possible gives these forms of the $K$ terms
 \begin{gather}
@@ -176,7 +177,7 @@ Collecting and expanding terms where possible gives these forms of the $K$ terms
   n(\vec{r};t) \equiv \int d\vec{p} f(\vec{r},\vec{p};t) 
     = \frac{N}{(2\pi)^{3/2} \sigma_{\smallT} \sqrt{\sigma_{z}}} \exp \left( -\frac{x^2+y^2}{2\sigma_{T}} - \frac{z^2}{2\sigma_{z}} \right) \\
     \label{eq:potential_integral}
-    \Phi(\vec{r};t) \equiv \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t)
+    \Phi(\vec{r};t) \equiv \int d\vecprime{r} V(\vec{r} - \vecprime{r}) n(\vecprime{r}; t) \,\text{.}
 \end{gather}
 Obviously the $K^{flow}$ term is far easier to evaluate;
 \begin{equation}
@@ -191,7 +192,7 @@ Obviously the $K^{flow}$ term is far easier to evaluate;
   \begin{pmatrix}
     \dfrac{2\sigma_{\alpha}}{m} & \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) \\
     \dfrac{1}{m} \left(\eta_{\alpha} + \dfrac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) & 0
-  \end{pmatrix}
+  \end{pmatrix} \,\text{.}
 \end{equation}
 
 The $K^{force}$ integrals, related to the internal force of the pulse's Coulombic repulsion, are far more complicated to evaluate.
@@ -203,7 +204,7 @@ The final matrices are
     \hat{k}^{force}_{\smallT} & 0 & 0 \\
     0 & \hat{k}^{force}_{\smallT} & 0 \\
     0 & 0 & \hat{k}^{force}_{z}
-  \end{pmatrix}
+  \end{pmatrix} \,\text{,}
 \end{equation}
 where
 \begin{equation}
@@ -212,11 +213,11 @@ where
   \begin{pmatrix}
     0 & 1 \\
     1 & \dfrac{2 \gamma_{\alpha}}{\sigma_{\alpha}}
-  \end{pmatrix}
+  \end{pmatrix} \,\text{.}
 \end{equation}
 The parameter $\xi$ quantifies the spatial ellipticity of the electron pulse, defined as
 \begin{equation} \label{eq:define_xi}
-  \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}}
+  \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}} \,\text{.}
 \end{equation}
 [Note that the original paper of Michalik and Sipe (Reference \cite{michalik_analytic_2006}) contained an error which incorrectly defined $\xi$; this was corrected in an erratum (Reference \cite{michalik_erratum:_2008}).]
 The family of $L$ functions are
@@ -224,7 +225,7 @@ The family of $L$ functions are
   \begin{gather}
     L_{\smallT}(\xi) = \frac{3}{2} \left( L(\xi) + \frac{\xi^2 L(\xi) - \xi}{ 1 - \xi^2 } \right) \\
     L_{z}(\xi) = \frac{ 3 \xi^2 }{ \xi^2 - 1} \left( \xi L(\xi) - 1 \right) \\
-    L(\xi) = \frac{1}{2} \int_0^{\pi} \frac{1}{1+\xi\sin(\theta)} d\theta \label{eq:ag_l}
+    L(\xi) = \frac{1}{2} \int_0^{\pi} \frac{1}{1+\xi\sin(\theta)} d\theta \,\text{.} \label{eq:ag_l}
   \end{gather}
 \end{subequations}
 The integral function $L(\xi)$ (\ref{eq:ag_l}) can be further evaluated to the piecewise function
@@ -232,7 +233,7 @@ The integral function $L(\xi)$ (\ref{eq:ag_l}) can be further evaluated to the p
   L(\xi) = 
   \begin{cases}
     \frac{ \arcsin \sqrt{1-\xi^2} }{ \sqrt{1-\xi^2} } & 0 \le \xi \le 1 \\
-    \frac{ \ln\left( \xi + \sqrt{\xi^2 - 1} \right) }{ \sqrt{\xi^2 - 1} } & \xi \ge 1
+    \frac{ \ln\left( \xi + \sqrt{\xi^2 - 1} \right) }{ \sqrt{\xi^2 - 1} } & \xi \ge 1 \,\text{,}
   \end{cases}
 \end{equation}
 which, although defined piecewise, is a smooth and well behaved function for all physically meaningful $\xi$.
@@ -245,7 +246,7 @@ When these $K$ matrices are summed (\ref{eq:gaussian_integral_dt_k}) to form the
   \frac{d\sigma_{\alpha}}{dt} = \frac{2\gamma_{\alpha}}{m} \\
   \frac{d\gamma_{\alpha}}{dt} = \frac{1}{m} \left(\eta_{\alpha} + \frac{\gamma_{\alpha}^2}{\sigma_{\alpha}} \right) 
     + \frac{N e^2}{4\pi\varepsilon_0} \frac{1}{6 \sqrt{\sigma_{\alpha}\pi}} L_{\alpha}(\xi)\\
-  \frac{d\eta_{\alpha}}{dt} = - \frac{2 \gamma_{\alpha} \eta_{\alpha}}{m \sigma_{\alpha}} 
+  \frac{d\eta_{\alpha}}{dt} = - \frac{2 \gamma_{\alpha} \eta_{\alpha}}{m \sigma_{\alpha}}
 \end{gather}
 \end{subequations}
 These equations are the crux of the model presented by Michalik and Sipe for the time evolution of a Gaussian electron pulse propagating through free space (no external forces).
