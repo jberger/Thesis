@@ -27,9 +27,9 @@ This ``tumbling'' around the axis, along with the axial magnetic field, is what 
 The full description of the motion of an electron (in cylindrical coordinates $r, \theta, z$) in an azimuthally symmetric magnetic field ($\vec{B} = B_r \hat{r} + B_z \hat{z}$) is easily derived \cite{el-kareh_electron_1970},
 \begin{subequations} \label{eq:lens_eq_of_motion}
 \begin{gather}
-  m \ddot{r} = -q B_z r \dot{\theta} + m r \dot{\theta}^2                 \\
-  \frac{d}{dt} ( m r^2 \dot{\theta} ) = q r \dot{r} B_z - q r B_r \dot{z} \\
-  m \ddot{z} = q B_r r \dot{\theta}
+  m \ddot{r} = -e B_z r \dot{\theta} + m r \dot{\theta}^2                 \\
+  \frac{d}{dt} ( m r^2 \dot{\theta} ) = e r \dot{r} B_z - e r B_r \dot{z} \\
+  m \ddot{z} = e B_r r \dot{\theta} \,\text{,}
 \end{gather}
 \end{subequations}
 where each dot denotes a time derivative.
@@ -41,7 +41,7 @@ Montgomery and Terrell \cite{montgomery_some_1961} provide a full treatment for 
   \frac{B_z}{\mu} = H_z = \frac{2I}{\sqrt{Q}} \left(   F(k) + \frac{ a^2 - r^2 - z^2 }{ (1-k^2) Q } E(k) \right) \\
   \frac{B_r}{\mu} = H_r = \frac{2I}{\sqrt{Q}} \left( - F(k) + \frac{ a^2 + r^2 + z^2 }{ (1-k^2) Q } E(k) \right) \\
   Q \equiv (a+r)^2 + z^2 \\
-  k \equiv \sqrt{ 4 a r / Q }
+  k \equiv \sqrt{ 4 a r / Q } \,\text{,}
 \end{gather}
 \end{subequations}
 where $\mu$ is the local magnetic permability, $H$ is the auxiliary field, and $F(k)$ and $E(k)$ are the complete elliptic integrals of the first and second kind respectively.
@@ -137,7 +137,7 @@ To summarize, the additional terms are which are added to model the internal pul
   M_{z}^{RF} = \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \\
   \begin{aligned}
   M_{\smallT}^{RF} = & e E_{0} \left [ \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \right. \\ \times & \left. \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
-   \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ]
+   \right ] \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \,\text{.}
   \end{aligned}
 \end{gather}
 Additionally, since an RF cavity can act as a pulse accelerator (as seen in the leading term of \ref{eq:RF_Efield_approx}) an additional force term
