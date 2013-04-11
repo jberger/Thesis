@@ -75,17 +75,17 @@ The effect that accomodating a large transverse pulse size has on designing an U
 
 A common figure of merit for electron beams is its normalized transverse emittance \cite{jensen_emittance_2010}, $\varepsilon_{\smallT}$, defined as 
 \begin{equation}
-  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > - \left < x p_x \right >^2 } \,\text{,}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_{\smallT}^2 \right > - \left < x p_{\smallT} \right >^2 } \,\text{,}
 \end{equation}
-where $m$ is the electron mass, $c$ is the speed of light in vacuum and $x$ and $p_x$ are the transverse position and momentum respectively.
+where $m$ is the electron mass, $c$ is the speed of light in vacuum and $x$ and $p_{\smallT}$ are the transverse position and momentum respectively.
 For the usual case of axially symmetric electron pulses, we may use the simplified form
 \begin{equation} \label{eq:emittance_definition}
-  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_x^2 \right > } \,\text{.}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_{\smallT}^2 \right > } \,\text{.}
 \end{equation}
 By Liouville's Theorem (Section \ref{sec:liouville}), we know that this quantity is conserved throughout pulse propagation (for free-space and perfect electron-optical elements), and therefore is related directly to the initial photoemission properties of the system.
 For a laser pulse of the form of \ref{eq:laser_form} we have simply
 \begin{equation} \label{eq:emittance_definition_w}
-  \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \frac{\left < p_x^2 \right >}{2} } \,\text{.}
+  \varepsilon_{\smallT} = \frac{w}{m c} \sqrt{ \frac{\left < p_{\smallT}^2 \right >}{2} } \,\text{.}
 \end{equation}
 Note that imperfect electron-optical elements may cause ``emittance growth'' \cite{oshea_reversible_1998}, increasing the pulse's emittance after these elements.
 
@@ -100,7 +100,7 @@ We find that for a desired spatial resolution per pixel $\Delta X$ (related to t
 \end{equation}
 However, because of lower limit that exists on $w$ from \ref{eq:minimum_w}, we can say that these requirements impose an upper limit on the initial transverse momentum spread
 \begin{equation}
-  \sqrt{ \left < p_x^2 \right > } = \sqrt{ \eta_{\smallT} (0) } \le \frac{5\sqrt{2} \hbar}{w} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
+  \sqrt{ \left < p_{\smallT}^2 \right > } = \sqrt{ \eta_{\smallT} (0) } \le \frac{5\sqrt{2} \hbar}{w} N_p \, \Delta X \frac{M}{a} \left ( \frac{\Delta a}{a} \right ) \,\text{.}
 \end{equation}
 
 To have $\Delta X = $1 nm spatial resolution, and be able to measure a 10\% change ($\Delta a / a = 0.1$) in a Bragg spacing $a \sim$ 1-2 \AA{} in the 1$^{st}$ diffraction order, the example DTEM from Section \ref{sec:childs_law}, equipped with a 1k x 1k CCD will require $\varepsilon_{\smallT} \lesssim$ 2 nm.
