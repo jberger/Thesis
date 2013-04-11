@@ -5,7 +5,7 @@ set xlabel "UV Laser Pulse Energy (nJ)"
 set ylabel "HWe$^{-1}$M Beam Size ($\\mu$m)"
 set y2label "Electrons / Pulse"
 set yrange [0:1000]
-#set y2tics format "%.0f"
+set y2tics
 show y2tics
 set style data errorbars
 
