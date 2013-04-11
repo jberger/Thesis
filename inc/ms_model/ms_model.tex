@@ -2,10 +2,10 @@
 
 \section{The Analytic Gaussian Model} \label{sec:ms_model}
 
-This section introduces the Analytic Gaussian (AG) model of Michalik and Sipe \cite{michalik_analytic_2006}.
+This section introduces the Analytic Gaussian (AG) model of Michalik and Sipe~\cite{michalik_analytic_2006}.
 In the AG model the dynamics of a Gaussian electon pulse are computed using a mean-field self-similar approximation.
 The result is a set of equations that can be solved very quickly using numerical methods on a modern computer.
-When checked against N-body simulations, the authors find that the model is also surprisingly accurate, even for a large set of non-Gaussian pulses \cite{michalik_analytic_2006,michalik_evolution_2009}.
+When checked against N-body simulations, the authors find that the model is also surprisingly accurate, even for a large set of non-Gaussian pulses~\cite{michalik_analytic_2006,michalik_evolution_2009}.
 
 The only force included in the AG model is that of the internal repulsive space-charge field.
 In Chapter \ref{chap:extension}, I will extend this model, adding the influence of external forces, making it more generally applicable for UEM.
@@ -196,7 +196,7 @@ Obviously the $K^{flow}$ term is far easier to evaluate;
 \end{equation}
 
 The $K^{force}$ integrals, related to the internal force of the pulse's Coulombic repulsion, are far more complicated to evaluate.
-For more information about the derivation, see \cite{michalik_analytic_2006}. %TODO link to an appendix with Bessel etc for Kforce
+For more information about the derivation, see~\cite{michalik_analytic_2006}. %TODO link to an appendix with Bessel etc for Kforce
 The final matrices are
 \begin{equation}
   K^{force} = 
@@ -219,7 +219,7 @@ The parameter $\xi$ quantifies the spatial ellipticity of the electron pulse, de
 \begin{equation} \label{eq:define_xi}
   \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}} \,\text{.}
 \end{equation}
-[Note that the original paper of Michalik and Sipe (Reference \cite{michalik_analytic_2006}) contained an error which incorrectly defined $\xi$; this was corrected in an erratum (Reference \cite{michalik_erratum:_2008}).]
+[Note that the original paper of Michalik and Sipe (Reference~\cite{michalik_analytic_2006}) contained an error which incorrectly defined $\xi$; this was corrected in an erratum (Reference~\cite{michalik_erratum:_2008}).]
 The family of $L$ functions are
 \begin{subequations} \label{eq:ag_l_family}
   \begin{gather}
@@ -254,8 +254,8 @@ They form the basis upon which much of the work in the following chapters is fou
 
 \subsection{Validity and Limitations}
 
-This AG formalism of Michalik and Sipe \cite{michalik_analytic_2006} employs a mean-field approximation in the evolution of the dynamical effect of the electron pulse's internal space-charge field.
+This AG formalism of Michalik and Sipe~\cite{michalik_analytic_2006} employs a mean-field approximation in the evolution of the dynamical effect of the electron pulse's internal space-charge field.
 This is of course not strictly accurate for a Gaussian charge distribution and the error leads to a distortion of the pulse shape.
 The ``self-similar'' nature of the model, the fact that the overall shape of the pulse cannot change, prevents inclusion of these distortions.
-Even so, the AG model of charge bunch dynamics has been benchmarked against particle tracking simulations for a number of electron pulse shapes \cite{michalik_analytic_2006,michalik_evolution_2009}, including the uniform ellipsoid which explicitly features a linear internal space-charge field \cite{luiten_how_2004}.
+Even so, the AG model of charge bunch dynamics has been benchmarked against particle tracking simulations for a number of electron pulse shapes~\cite{michalik_analytic_2006,michalik_evolution_2009}, including the uniform ellipsoid which explicitly features a linear internal space-charge field~\cite{luiten_how_2004}.
 
