@@ -2,11 +2,11 @@
 
 Ultrafast Electron Microscopy is an exciting new field of instrumentation research which promises to open our eyes to the dynamics occurring in nanoscale processes.
 
-During my time at UIC I have worked to advance this technology, I have developed a model and implemented it, and I have  both the theoretical (simulation/modeling) and experimental (prototyping and photocathode engineering) fronts.
+My contributions to this field have worked to advance this technology, I have developed a model and implemented it, and I have  both the theoretical (simulation/modeling) and experimental (prototyping and photocathode engineering) fronts.
 
 \section{Modeling}
 
-In this thesis I have presented the extended Analytic Gaussian (AG) model, an efficient numerical model based on the work of Michalik and Sipe~\cite{michalik_analytic_2006}, but extended so as to be useful in modeling the dynamics of ultrafast electron pulses in microscope columns.
+In this thesis, I have presented the extended Analytic Gaussian (AG) model, an efficient mean-field numerical model based on the work of Michalik and Sipe~\cite{michalik_analytic_2006}, but extended so as to be useful in modeling the dynamics of ultrafast electron pulses in microscope columns.
 For pulses containing $N$ carriers of charge $e$ and mass $m$, the model is simply these four equations,
 \begin{subequations}
 \begin{gather}
@@ -20,21 +20,24 @@ At any time $t$, the $\sigma_{\alpha}$ quantities characterize the spatial varia
 A third parameter, the local momentum variance $\eta_{\alpha}$, is also encoded in these equations.
 By Liouville's theorem, which the AG model explicitly satisfies, we know that the product of the spatial variance $\sigma_{\alpha}$ and the local momentum variance $\eta_{\alpha}$ is constant throughout propagation (for perfect lensing and without clipping the pulse), so we define the constant,
 \begin{equation} \label{eq:define_big_gamma_conc}
-  \Gamma_{\alpha}^2 \equiv \sigma_{\alpha} \eta_{\alpha} \,\text{.}
+  \Gamma_{\alpha}^2 \equiv \sigma_{\alpha} \eta_{\alpha} \,\text{,}
 \end{equation}
-By evaluating this constant once, presumably from initial conditions, and later applying \ref{eq:define_big_gamma_conc} we can get the extract these $\eta_{\alpha}$ parameters while only needing to compute the other four.
-The parameter $\xi$ characterizes the ellipticity of the pulse,
+which in the transverse direction is explicitly related to the the normalized transverse emittance (for cylindrically symmetric pulses),
+\begin{equation}
+  \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_{\smallT}^2 \right > } = \frac{1}{m c} \sqrt{ \sigma_{\smallT} \eta_{\smallT} } \,\text{.}
+\end{equation}
+By evaluating this constant once, presumably from initial conditions, and later applying \ref{eq:define_big_gamma_conc} one may extract these $\eta_{\alpha}$ parameters, having only needed to compute the other four.
+The parameter $\xi$ characterizes the ellipticity of the cylindrically symmetric pulse,
 \begin{equation}
   \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}} \,\text{,}
 \end{equation}
 and the family of $L$ functions (defined in \ref{eq:ag_l_family}) are smooth and well behaved functions for all physically meaningful $\xi$.
 Finally the $M_{\alpha}^{\lbrace f \rbrace}$ quantities define the $\alpha$ direction influence of the $f^{\text{th}}$ external force.
 
-In UEM, the initial pulse conditions are of notable importance for the performance of the instrument.
-Therefore I have presented a simplistic but useful set of initial conditions for the AG model.
-First lets assume we photocathode which has a work function $\Phi$, the energy an electron must absorb before it is freed to leave the material.
-Lets assume that the photocathode is in an acceleration region, having an applied electric field $E_{DC}$.
-Finally, lets assume we have a laser pulse whose intensity $I$ is of the form,
+In UEM, the initial pulse conditions are of notable importance for the performance of the instrument, therefore having a realistic description of these intial conditions is essential for accurately modeling the pulse dynamics.
+To this end, I have presented a simplistic but useful set of initial conditions for the extended AG model.
+This analysis assumes a photocathode with a work function $\Phi$, the energy an electron must absorb before it is freed to leave the material, placed in a DC gun which accelerates the pulse by an electric field $E_{DC}$.
+It also assumes a laser pulse whose intensity $I$ is of the form,
 \begin{equation}
   I ( x , y , t ) = I_{0} \exp \left ( - \frac{ ( x^{2} +y^{2} ) }{ w^{2} } - \frac{ t^{ 2 } }{ \tau^{ 2 } } \right ) \punct{,}
 \end{equation}
@@ -51,10 +54,10 @@ Given these generic assumptions, the resulting initial conditions are simply,
     \eta_{ z } ( 0 ) \approx \frac{ \eta_{ \smallT } ( 0 ) }{ 4 } \punct{.}
   \end{gather}
 \end{subequations}
-In Section \ref{sec:bin_model} I have also presented a binning model which, when fully investigated, may eventually be employed rather than this simplistic set of initial conditions.
+In Section \ref{sec:bin_model} I have also presented a binning model which is being investigated as a possible improvement to this simplistic set of initial conditions.
 
 Most UEM systems will employ magnetic lenses and DC accelerators; there is also increasing interest in using RF cavities for pulse compression.
-The AG model can model the influence of these external forces via the $M$ parameters in \ref{eq:ag_model_gamma_conc}, which are in terms of the position of the center of the pulse $z^{\prime}$ and its velocity $v_{\smallzero}$.
+The extended AG model can simulate the influence of the external forces imparted by these column elements on the electron pulse via the $M$ parameters in \ref{eq:ag_model_gamma_conc}, which are in terms of the position of the center of the pulse $z^{\prime}$ (in the lab frame) and its velocity $v_{\smallzero}$.
 The each magnetic lens, positioned at $z_{mag}^{\prime}$ and of length $L_{mag}$, can be represented simply as 
 \begin{equation}
   M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \,\text{,}
@@ -83,41 +86,49 @@ where $s$ is a parameter that quantifies the sharpness of the field drop at the 
   M_z = \frac{eVs}{2z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \, \text{.}
 \end{gather}
 
-I have written an implementation of this model for the Perl programming language and released to the Comprehensive Perl Archive Network (CPAN) under the name \verb!Physics::UEMColumn! for use by the UEM community (\url{https://metacpan.org/module/Physics::UEMColumn}).
-This model is fully object-oriented, which makes writing simulations remarkably easy for a user to read, write and change scripts.
-Under the hood, though, it uses a custom set of C level bindings to the GNU Scientific Library (GSL), so that the numerical equation solving is fast and accurate.
-I have found that this speed, combined with the dynamic flexibility offered by object-oriented Perl, has allowed me to easily write optimization scripts and generate figures which might have been nearly impossible previously; several of these have been shown in this thesis.
+Since the extension to the AG model is valid only within the limits of the analytical method itself, in particular, its mean internal space-charge field and self-similar Gaussian approximations~\cite{michalik_analytic_2006}, the extension reflects a first-order (i.e., linear force) analysis of the effects of electron optics upon electron pulse propagation.
+Nonetheless, for free-space propagation, the AG model of charge bunch dynamics has already been shown to be very consistent with full Monte Carlo (i.e., particle tracking) simulations for a wide variety of electron pulse shapes~\cite{michalik_analytic_2006,michalik_evolution_2009}, including the uniform ellipsoid~\cite{luiten_how_2004}.
+This successful benchmarking is due primarily to the versatility of the AG model which results from its use of transverse and longitudinal pulse position and momentum variances.
+Consequently, the AG approach is applicable to both the single electron per pulse limit~\cite{lobastov_four-dimensional_2005}, where momentum variances determine the pulse evolution and the model is exact (obeying Gaussian optics), and the high charge density limit in which space-charge effects dominate~\cite{luiten_how_2004,siwick_ultrafast_2002,cao_femtosecond_2003}.
+It is this versatility combined with its computational efficiency that makes the presented extended AG model particularly suitable for rapid initial assessments of pulsed electron microscope column designs and electron pulse delivery systems in UED experiments.
+%Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
+
+I have written an implementation of this model for the Perl programming language and released it to the Comprehensive Perl Archive Network (CPAN) under the name \verb!Physics::UEMColumn! for use by the UEM community (\url{https://metacpan.org/module/Physics::UEMColumn}).
+This module is fully object-oriented, which makes it remarkably easy for an end-user to read, write, and change simulation scripts which use it.
+Under the hood, though, it uses a custom set of C level bindings to the GNU Scientific Library (GSL, \url{http://www.gnu.org/software/gsl/}), so that the numerical equation solving is fast and accurate.
+This speed, combined with the dynamic flexibility offered by object-oriented Perl, allows one to easily write optimization scripts and generate figures which might have been nearly impossible previously; several of these have been shown in this thesis.
 
 \section{UEM Design}
 
-I have expounded on several factors that we feel are key concepts in designing a UEM.
-I have used the above model to show that an electron pulse, whether oblate (disk-like) or prolate (cigar-like), its initial expansion will be primarily in the the shorter dimension, i.e. an electron pulse ``wants'' to be spherical.
+This thesis expounds on several factors that are key concepts in designing a UEM.
+I have used the above model to show that for a given electron pulse, whether oblate (disk-like) or prolate (cigar-like), its initial expansion will be primarily in the same direction as its shorter dimension, i.e., an electron pulse ``wants'' to be spherical.
 The model predicts that the use of shorter focal-length magnetic lenses will result in higher fidelity focusing; such lenses limit the impulse delivered to the pulse by reducing the time of flight that the pulse experiences the higher charge densities inherent during focusing.
 Additionally, we have seen that oblate pulses are preferred to prolate pulses in terms of focus fidelity.
-The model predicts that when properly designed and driven, RF cavities can effectively recompress electron pulses which have expanded longitudinally.
+The model also demonstrates that when properly designed and driven, RF cavities can effectively recompress electron pulses which have expanded longitudinally.
 Interestingly, the model suggests that the additional bandwidth generated by space-charge repulsion (especially in higher charge-density pulses) can allow for additional pulse compression even at one-to-one image to object distances.
 
-The Rose criterion~\cite{rose_television_1948} states that in order to have proper gray-scaling in a single-shot DTEM employing a 1k X 1k CCD camera, the pulse must contain at least $10^8$ electrons.
-We have proposed that the term ``ultrafast'' be used in the case where an electron pulse may be completely contained inside the acceleration region of the column.
-The reason for this designation is that such pulses are subject to a different form of Child-Langmuir law~\cite{child_discharge_1911,langmuir_effect_1923,valfells_effects_2002}, which limits its the number of electrons $N_{crit}$ that may be generated by a laser of HW1/eM width $w$ before the pulse is subject to deleterious distortions,
+The Rose criterion~\cite{rose_television_1948} states that in order to have sufficient gray-scaling in a single-shot DTEM employing a 1k X 1k CCD camera for imaging, the pulse must contain at least $10^8$ electrons.
+Additionally, the Child-Langmuir Law~\cite{child_discharge_1911,langmuir_effect_1923} governs the upper-limit of charge extraction in an electron gun. 
+Pulses which short enough to be fully contained inside the acceleration region are subject to a modified form of Child-Langmuir Law~\cite{valfells_effects_2002}, which limits its the number of electrons $N_{crit}$ that may be generated by a laser of HW1/eM width $w$ before the pulse is subject to deleterious distortions,
 \begin{equation}
   N_{crit} = \frac{\pi \varepsilon_0 w^2 V_{DC}}{e d} \,\text{,}
 \end{equation}
 where $V_{DC}$ and $d$ are the accelerator voltage and length respectively.
-In order to satisfy the both the Rose criterion and this ultrafast Child-Langmuir restriction, we expect that UEM instruments will need to employ a large-area emission source.
+Due to this distinction, it is proposed that the term ``ultrafast'' should therefore be reserved for pulses of this type.
+In order to satisfy the both the Rose criterion and this ultrafast Child-Langmuir restriction, we expect that UEM instruments will need to employ a relatively large-area emission source, typically of the order of $100\mu\text{m}$ HW1/eM width or greater.
 This has necessitated building a custom acceleration region based on the design of Togawa \textit{et al.}~\cite{togawa_ceb6_2007} which boasts a moderately uniform acceleration field near the axis of the accelerator, as well as other large-aperture electron-optical elements for our prototype UEM column.
 We have also designed and built a custom laser source capable of generating these electron pulses.
 
+\section{Photocathode Engineering}
+
 A common figure of merit for electron beams is its normalized transverse emittance~\cite{jensen_emittance_2010}, $\varepsilon_{\smallT}$, which for the usual case of axially symmetric electron pulses has the form,
 \begin{equation}
-  \varepsilon_{\smallT} = \frac{1}{m c} \Delta x \Delta p_{\smallT} \,\text{,}
+  \varepsilon_{\smallT} = \frac{1}{m c} \Delta x \Delta p_{\smallT} = \frac{\Gamma_{\smallT}}{m c} \,\text{,}
 \end{equation}
 where $\Delta x$ and $\Delta p_{\smallT}$ are the transverse spatial uncertainty and transverse momentum uncertainty, respectively.
 This quantity is conserved under propagation through free space and perfect electron-optical, though it may increase for imperfect ones~\cite{oshea_reversible_1998}.
 The normalized transverse emittance limits the resolving capability of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred~\cite{berger_dc_2009}.
-Since we have already established that a large area emission source must be used, the only avenue to reduce $\varepsilon_{\smallT}$ is to reduce the transverse momentum uncertainty, which is dependent on the photocathode and photoemission process employed.
-
-\section{Photocathode Engineering}
+Since we have already established that a large area emission source must be used in UEM, the only avenue to reduce $\varepsilon_{\smallT}$ is to reduce the transverse momentum uncertainty, which is dependent on the photocathode and photoemission process employed.
 
 The desire to reduce the transverse momentum uncertainty $\Delta p_{\smallT}$ --- in an effort to reduce the rms transverse emittance $\varepsilon_{\smallT}$ and thereby improve the resolving power of the electron pulse~\cite{berger_dc_2009} --- has driven us to explore many photocathodes and even several different photoemission processes.
 I have demonstrated that single photon photoemission and two-photon thermionic photoemission were not likely candidates to reduce the $\Delta p_{\smallT}$ as those processes were tied to intrinsic properties of the material which couldn't provide high-yield and low emittance simultaneously.
@@ -125,11 +136,11 @@ Recently, however, we have discovered that for those processes, the effective el
 
 I have also presented our efforts to employ periodic nanostructured photocathode surfaces, designed to allow the incident laser to drive a surface plasmon, in hopes that a surface plasmon field might reduce the transverse emittance~\cite{zawadzka_evanescent_2001,kupersztych_ponderomotive_2001,kupersztych_anomalous_2005,li_surface_2013}.
 Though we had success in driving the plasmon, we were unable to demonstrate reduction in $\Delta p_{\smallT}$.
-We believe the problems were due to disturbances in the acceleration field near these nanostructures, though efforts to mitigate those disturbances has yet been unsuccessful.
+We believe the problems were due to disturbances in the acceleration field near these nanostructures, though efforts to mitigate those disturbances have yet been unsuccessful.
 
 Our most promising results have come from excited-state thermionic emission (ESTE) sources, GaSb and InSb.
 In this process the laser promotes carriers from the valence band to an upper conduction band close to the vacuum level, reducing the effective work function.
-The electron temperature, elevated by the laser, causes the tail of the Fermi distribution to exceed the effective work function and thus emission occurs.
+The electron temperature, elevated by the laser-driven photoemission process to $\sim10^3$K, causes the tail of the Fermi distribution to exceed the effective work function and thus emission occurs.
 Importantly, the results we observed were inconsistent with predictions until we considered the effective mass of these upper conduction bands.
 Not only did this allow our prediction to match the experimental results, it opened our eyes to the possibilities of low effective mass materials, even for photoemission processes other than ESTE.
 As I have mentioned earlier, this work is ongoing and is a very exciting avenue for future research.
