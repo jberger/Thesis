@@ -147,7 +147,7 @@
  
 \def\maketitle{%
    \begin{titlepage}
-      \centering
+      %\centering
       \thispagestyle{empty}
       \c@page=2
       \vbox to 0pt{%
@@ -155,6 +155,7 @@
             \large\transparentbold\@title
          \end{center}\vss}
       \vfill
+      \begin{center}
       \begin{singlespace}
          BY
          \vskip\baselineskip
@@ -166,13 +167,22 @@
             \begin{center}
                THESIS
                \vskip \baselineskip
-               Submitted in partial fulfillment of the requirements\\
+               Submitted as partial fulfillment of the requirements\\
                for the degree of \@degree\\
                in the Graduate College of the\\
                University of Illinois at Chicago, \@date
                \vskip 3\baselineskip
                Chicago, Illinois
             \end{center}}
+      \end{singlespace}
+      \end{center}
+      \begin{singlespace}
+        Defense Committee: \\
+        \indent\indent W. Andreas Schroeder, Chair and Advisor \\
+        \indent\indent Nestor Zaluzec, Electron Microscopy Center, Argonne National Laboratory \\
+        \indent\indent Alan Nicholls, Research Resources Center \\
+        \indent\indent Christoph Grein \\
+        \indent\indent Robert Klie
       \end{singlespace}
    \end{titlepage}}
 %    \end{macrocode}
