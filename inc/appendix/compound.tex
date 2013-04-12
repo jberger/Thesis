@@ -1,0 +1,87 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PY{c+c1}{\PYZsh{}!/usr/bin/env perl}
+
+\PY{k}{use} \PY{n}{strict}\PY{p}{;}
+\PY{k}{use} \PY{n}{warnings}\PY{p}{;}
+
+\PY{k}{use} \PY{n}{Physics::}\PY{n}{UEMColumn} \PY{n}{alias} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{':standard'}\PY{p}{;}
+
+\PY{k}{use} \PY{n}{PDL}\PY{p}{;}
+\PY{k}{use} \PY{n}{PDL::}\PY{n}{Graphics::}\PY{n}{Prima::}\PY{n}{Simple} \PY{p}{[}\PY{l+m+mi}{700}\PY{p}{,}\PY{l+m+mi}{500}\PY{p}{]}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{laser} \PY{o}{=} \PY{n}{Laser}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{width}    \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'100 um'}\PY{p}{,}
+  \PY{n}{duration} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'0.1 ps'}\PY{p}{,}
+  \PY{n}{energy}   \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'4.75 eV'}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{acc} \PY{o}{=} \PY{n}{DCAccelerator}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{length}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'20 mm'}\PY{p}{,}
+  \PY{n}{voltage} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'20 kilovolts'}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{column} \PY{o}{=} \PY{n}{Column}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{length}       \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'350 mm'}\PY{p}{,} 
+  \PY{n}{laser}        \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{laser}\PY{p}{,}
+  \PY{n}{accelerator}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{acc}\PY{p}{,}
+  \PY{n}{photocathode} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{Photocathode}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(} \PY{n}{work\PYZus{}function} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'4.25 eV'} \PY{p}{)}\PY{p}{,} \PY{c+c1}{\PYZsh{} Ta}
+\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim} \PY{o}{=} \PY{n}{Physics::}\PY{n}{UEMColumn}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{column} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{column}\PY{p}{,}
+  \PY{n}{number} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mf}{1e6}\PY{p}{,}
+  \PY{n}{steps}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mi}{200}\PY{p}{,}
+  \PY{n}{solver\PYZus{}opts} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{\PYZob{}}
+    \PY{n}{h\PYZus{}max} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mf}{5e-13}\PY{p}{,}
+    \PY{n}{h\PYZus{}init} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mf}{5e-14}\PY{p}{,}
+  \PY{p}{\PYZcb{}}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{z\PYZus{}rf}       \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{;} \PY{c+c1}{\PYZsh{}cm}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{l\PYZus{}mag\PYZus{}lens} \PY{o}{=} \PY{l+s}{'1 in'}\PY{p}{;}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{cooke\PYZus{}sep}  \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{;} \PY{c+c1}{\PYZsh{}cm}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{str\PYZus{}mag}    \PY{o}{=} \PY{l+m+mf}{43e-13}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{lens1} \PY{o}{=} \PY{n}{MagneticLens}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{location} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{z\PYZus{}rf} \PY{o}{-} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{cooke\PYZus{}sep}\PY{p}{)} \PY{o}{.} \PY{l+s}{'cm'}\PY{p}{,}
+  \PY{n}{length}   \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{l\PYZus{}mag\PYZus{}lens}\PY{p}{,}
+  \PY{n}{strength} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{str\PYZus{}mag}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{lens2} \PY{o}{=} \PY{n}{MagneticLens}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{location} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{z\PYZus{}rf} \PY{o}{+} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{cooke\PYZus{}sep}\PY{p}{)} \PY{o}{.} \PY{l+s}{'cm'}\PY{p}{,}
+  \PY{n}{length}   \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{l\PYZus{}mag\PYZus{}lens}\PY{p}{,}
+  \PY{n}{strength} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{str\PYZus{}mag}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+\PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{add\PYZus{}element}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{lens1}\PY{p}{)}\PY{p}{;}
+\PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{add\PYZus{}element}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{lens2}\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{rf\PYZus{}cav} \PY{o}{=} \PY{n}{RFCavity}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+  \PY{n}{location}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{z\PYZus{}rf} \PY{o}{.} \PY{l+s}{'cm'}\PY{p}{,}
+  \PY{n}{length}    \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'2 cm'}\PY{p}{,}
+  \PY{n}{strength}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'335 kilovolts / m'}\PY{p}{,}
+  \PY{n}{frequency} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'3 gigahertz'}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+\PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{add\PYZus{}element}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{rf\PYZus{}cav}\PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result} \PY{o}{=} \PY{n}{pdl}\PY{p}{(} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{propagate} \PY{p}{)}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{z}  \PY{o}{=} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{slice}\PY{p}{(}\PY{l+s}{'(1),'}\PY{p}{)}\PY{p}{;}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{st} \PY{o}{=} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{slice}\PY{p}{(}\PY{l+s}{'(3),'}\PY{p}{)}\PY{p}{;}
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sz} \PY{o}{=} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{slice}\PY{p}{(}\PY{l+s}{'(4),'}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{plot}\PY{p}{(}
+  \PY{o}{-}\PY{n}{st} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{ds::}\PY{n}{Pair}\PY{p}{(} 
+    \PY{n+nv}{\PYZdl{}}\PY{n+nv}{z}\PY{p}{,} \PY{n+nb}{sqrt}\PY{p}{(} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{st} \PY{o}{/} \PY{n}{maximum}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{st}\PY{p}{)} \PY{p}{)}\PY{p}{,}
+    \PY{n}{colors} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{pdl}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{rgb\PYZus{}to\PYZus{}color}\PY{p}{,}
+    \PY{n}{plotType} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{ppair::}\PY{n}{Lines}\PY{p}{,}
+    \PY{n}{lineWidths} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mi}{3}\PY{p}{,}
+  \PY{p}{)}\PY{p}{,}
+  \PY{o}{-}\PY{n}{sz} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{ds::}\PY{n}{Pair}\PY{p}{(} 
+    \PY{n+nv}{\PYZdl{}}\PY{n+nv}{z}\PY{p}{,} \PY{n+nb}{sqrt}\PY{p}{(} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sz} \PY{o}{/} \PY{n}{maximum}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{sz}\PY{p}{)} \PY{p}{)}\PY{p}{,}
+    \PY{n}{colors} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{pdl}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{rgb\PYZus{}to\PYZus{}color}\PY{p}{,}
+    \PY{n}{plotType} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{ppair::}\PY{n}{Lines}\PY{p}{,}
+    \PY{n}{lineWidths} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+m+mi}{3}\PY{p}{,}
+  \PY{p}{)}\PY{p}{,}
+  \PY{n}{x} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{\PYZob{}} \PY{n}{label} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'Position (m)'} \PY{p}{\PYZcb{}}\PY{p}{,}
+\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

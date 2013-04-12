@@ -1,0 +1,73 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PY{c+c1}{\PYZsh{}!/usr/bin/env perl}
+
+\PY{k}{use} \PY{n}{strict}\PY{p}{;}
+\PY{k}{use} \PY{n}{warnings}\PY{p}{;}
+
+\PY{k}{use} \PY{n}{Getopt::}\PY{n}{Long}\PY{p}{;}
+\PY{n}{GetOptions}\PY{p}{(} \PY{n}{accelerator} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{o}{\PYZbs{}}\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{use\PYZus{}acc} \PY{p}{)}\PY{p}{;}
+
+\PY{k}{use} \PY{n}{Physics::}\PY{n}{UEMColumn} \PY{n}{alias} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{[}\PY{l+s+sx}{qw/:standard Pulse/}\PY{p}{]}\PY{p}{;}
+\PY{k}{use} \PY{n}{Physics::}\PY{n}{UEMColumn::}\PY{n}{Auxiliary} \PY{l+s+sx}{qw/:materials :constants/}\PY{p}{;}
+
+\PY{k}{sub }\PY{n+nf}{for\PYZus{}number} \PY{p}{\PYZob{}}
+  \PY{k}{my} \PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{num}\PY{p}{,} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{use\PYZus{}acc}\PY{p}{)} \PY{o}{=} \PY{n+nv}{@}\PY{n+nv}{\PYZus{}}\PY{p}{;}
+
+  \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{use\PYZus{}acc} \PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{laser} \PY{o}{=} \PY{n}{Laser}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+      \PY{n}{width}    \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'1 mm'}\PY{p}{,}
+      \PY{n}{duration} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'1 ps'}\PY{p}{,}
+      \PY{n}{energy}   \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'4.75 eV'}\PY{p}{,}
+    \PY{p}{)}\PY{p}{;}
+
+    \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{acc} \PY{o}{=} \PY{n}{DCAccelerator}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+      \PY{n}{length}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'20 mm'}\PY{p}{,}
+      \PY{n}{voltage} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'30 kilovolts'}\PY{p}{,}
+    \PY{p}{)}\PY{p}{;}
+
+    \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{column} \PY{o}{=} \PY{n}{Column}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+      \PY{n}{length}       \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'15 cm'}\PY{p}{,} 
+      \PY{n}{laser}        \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{laser}\PY{p}{,}
+      \PY{n}{accelerator}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{acc}\PY{p}{,}
+      \PY{n}{photocathode} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{Photocathode}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}\PY{n}{Ta}\PY{p}{)}\PY{p}{,}
+    \PY{p}{)}\PY{p}{;}
+
+    \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim} \PY{o}{=} \PY{n}{Physics::}\PY{n}{UEMColumn}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+      \PY{n}{column} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{column}\PY{p}{,}
+      \PY{n}{number} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{num}\PY{p}{,}
+    \PY{p}{)}\PY{p}{;}
+
+  \PY{p}{\PYZcb{}} \PY{k}{else} \PY{p}{\PYZob{}}
+
+    \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim} \PY{o}{=} \PY{n}{Physics::}\PY{n}{UEMColumn}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+      \PY{n}{column} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{Column}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(} \PY{n}{length} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'15 cm'} \PY{p}{)}\PY{p}{,}
+      \PY{n}{pulse}  \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{Pulse}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{k}{new}\PY{p}{(}
+        \PY{n}{number} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{num}\PY{p}{,}
+        \PY{n}{initial\PYZus{}width} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{l+s}{'1 mm'}\PY{p}{,}
+        \PY{n}{initial\PYZus{}length} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{p}{(} \PY{n}{vc} \PY{o}{/} \PY{l+m+mi}{3} \PY{o}{*} \PY{l+m+mf}{1e-12} \PY{p}{)} \PY{o}{.} \PY{l+s}{' m'}\PY{p}{,}
+        \PY{n}{velocity} \PY{o}{=}\PY{o}{\PYZgt{}} \PY{n}{vc} \PY{o}{/} \PY{l+m+mi}{3}\PY{p}{,}
+      \PY{p}{)}\PY{p}{,}
+    \PY{p}{)}\PY{p}{;}
+
+  \PY{p}{\PYZcb{}}
+
+  \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result} \PY{o}{=} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{sim}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{n}{propagate}\PY{p}{;}
+  \PY{k}{return} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{outfilename} \PY{o}{=} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{use\PYZus{}acc} \PY{p}{?} \PY{l+s}{'spacecharge\PYZus{}acc.dat'} \PY{p}{:} \PY{l+s}{'spacecharge\PYZus{}noacc.dat'}\PY{p}{;}
+\PY{n+nb}{open} \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{fh}\PY{p}{,} \PY{l+s}{'\PYZgt{}'}\PY{p}{,} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{outfilename} \PY{o+ow}{or} \PY{n+nb}{die} \PY{l+s}{"Cannot open \PYZdl{}outfilename for writing"}\PY{p}{;}
+
+\PY{k}{my} \PY{n+nv}{@}\PY{n+nv}{nums} \PY{o}{=} \PY{n+nb}{map} \PY{p}{\PYZob{}} \PY{p}{(}\PY{l+s}{"1e\PYZdl{}\PYZus{}"}\PY{p}{,} \PY{l+s}{"2.2e\PYZdl{}\PYZus{}"}\PY{p}{,} \PY{l+s}{"4.6e\PYZdl{}\PYZus{}"}\PY{p}{)} \PY{p}{\PYZcb{}} \PY{p}{(}\PY{l+m+mi}{0}\PY{o}{..}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;}
+\PY{n+nb}{pop} \PY{n+nv}{@}\PY{n+nv}{nums} \PY{k}{for} \PY{l+m+mi}{1}\PY{o}{..}\PY{l+m+mi}{2}\PY{p}{;}
+
+\PY{k}{for} \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{num} \PY{p}{(} \PY{n+nv}{@}\PY{n+nv}{nums} \PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{my} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{result} \PY{o}{=} \PY{n}{for\PYZus{}number}\PY{p}{(}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{num}\PY{p}{,} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{use\PYZus{}acc}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nv}{@\PYZdl{}}\PY{n+nv}{result}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{k}{next} \PY{k}{unless} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{\PYZus{}}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZgt{}=} \PY{l+m+mf}{0.15}\PY{p}{;}
+    \PY{k}{print} \PY{p}{\PYZob{}}\PY{n+nv}{\PYZdl{}}\PY{n+nv}{fh}\PY{p}{\PYZcb{}} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{num} \PY{o}{.} \PY{l+s}{' '} \PY{o}{.} \PY{n+nb}{sqrt}\PY{p}{(} \PY{l+m+mi}{2} \PY{o}{*} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{\PYZus{}}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{p}{)} \PY{o}{*} \PY{l+m+mf}{1e3} \PY{o}{.} \PY{l+s}{' '} \PY{o}{.} \PY{n+nb}{sqrt}\PY{p}{(} \PY{l+m+mi}{2} \PY{o}{*} \PY{n+nv}{\PYZdl{}}\PY{n+nv}{\PYZus{}}\PY{o}{-}\PY{o}{\PYZgt{}}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]} \PY{p}{)} \PY{o}{*} \PY{l+m+mf}{1e3} \PY{o}{.} \PY{l+s}{"\PYZbs{}n"}\PY{p}{;}
+    \PY{k}{last}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

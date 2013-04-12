@@ -4,11 +4,13 @@ use strict;
 use warnings;
 
 use Physics::UEMColumn alias => ':standard';
-use Physics::UEMColumn::Auxiliary ':materials';
+
+use PDL;
+use PDL::Graphics::Prima::Simple [700,500];
 
 my $laser = Laser->new(
-  width    => '1 mm',
-  duration => '1 ps',
+  width    => '100 um',
+  duration => '0.1 ps',
   energy   => '4.75 eV',
 );
 
@@ -18,22 +20,26 @@ my $acc = DCAccelerator->new(
 );
 
 my $column = Column->new(
-  length       => '400 mm', 
+  length       => '350 mm', 
   laser        => $laser,
   accelerator  => $acc,
-  photocathode => Photocathode->new(Ta),
+  photocathode => Photocathode->new( work_function => '4.25 eV' ), # Ta
 );
 
 my $sim = Physics::UEMColumn->new(
-  column      => $column,
-  number      => 1,
-  debug       => 1,
+  column => $column,
+  number => 1e6,
+  steps  => 200,
+  solver_opts => {
+    h_max => 5e-13,
+    h_init => 5e-14,
+  },
 );
 
 my $z_rf       = 20; #cm
 my $l_mag_lens = '1 in';
 my $cooke_sep  = 5; #cm
-my $str_mag    = 33e-13;
+my $str_mag    = 43e-13;
 
 my $lens1 = MagneticLens->new(
   location => ($z_rf - $cooke_sep) . 'cm',
@@ -51,10 +57,30 @@ $sim->add_element($lens2);
 my $rf_cav = RFCavity->new(
   location  => $z_rf . 'cm',
   length    => '2 cm',
-  strength  => '230 kilovolts / m',
+  strength  => '335 kilovolts / m',
   frequency => '3 gigahertz',
 );
 $sim->add_element($rf_cav);
 
-my $result = $sim->propagate;
+my $result = pdl( $sim->propagate );
+
+my $z  = $result->slice('(1),');
+my $st = $result->slice('(3),');
+my $sz = $result->slice('(4),');
+
+plot(
+  -st => ds::Pair( 
+    $z, sqrt( $st / maximum($st) ),
+    colors => pdl(255,0,0)->rgb_to_color,
+    plotType => ppair::Lines,
+    lineWidths => 3,
+  ),
+  -sz => ds::Pair( 
+    $z, sqrt( $sz / maximum($sz) ),
+    colors => pdl(0,255,0)->rgb_to_color,
+    plotType => ppair::Lines,
+    lineWidths => 3,
+  ),
+  x => { label => 'Position (m)' },
+);
 
