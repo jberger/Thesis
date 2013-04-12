@@ -3,7 +3,7 @@
 \section{Practical Extension to Include Magnetic Lenses, RF Cavities and DC Accelerators}
 
 The mathematical formalism developed in Section \ref{sec:external_forces} is only an abstract mechanism for including external forces.
-To model electron pulses traveling through realistic electron microcope columns, these abstract mechanisms must be developed further to properly describe each specific electron-optical element.
+To model electron pulses traveling through realistic electron microscope columns, these abstract mechanisms must be developed further to properly describe each specific electron-optical element.
 In the following section, I demonstrate concrete applications of the extended AG model, including magnetic lenses, radio-frequency (RF) cavities (useful for both pulse compression~\cite{oudheusden_electron_2007} and acceleration %TODO refs
 ) and DC acceleration regions (i.e. electron gun dynamics).
 
@@ -33,7 +33,7 @@ The full description of the motion of an electron (in cylindrical coordinates $r
 \end{gather}
 \end{subequations}
 where each dot denotes a time derivative.
-Attempting to further seperate these equations quickly highlights the tightly coupled nature of the motion of the electron in this system.
+Attempting to further separate these equations quickly highlights the tightly coupled nature of the motion of the electron in this system.
 Compounding the problem, the full description of the off-axis field of a real (non-infinite) air-core solenoid is also surprisingly complicated.
 Montgomery and Terrell~\cite{montgomery_some_1961} provide a full treatment for many lens configurations, including a tractable treatment for a single current loop of radius $a$, again in cylindrical coordinates, 
 \begin{subequations} \label{eq:field_of_loop}
@@ -44,7 +44,7 @@ Montgomery and Terrell~\cite{montgomery_some_1961} provide a full treatment for 
   k \equiv \sqrt{ 4 a r / Q } \,\text{,}
 \end{gather}
 \end{subequations}
-where $\mu$ is the local magnetic permability, $H$ is the auxiliary field, and $F(k)$ and $E(k)$ are the complete elliptic integrals of the first and second kind respectively.
+where $\mu$ is the local magnetic permeability, $H$ is the auxiliary field, and $F(k)$ and $E(k)$ are the complete elliptic integrals of the first and second kind respectively.
 In the vacuum, $\mu$ is simply the usual free space permeability $\mu_0$; in Section \ref{sec:mag_lens}, we will see how this permeability can be used to improve the performance of magnetic lenses.
 An even more accurate solenoid can be modeled by appropriately summing the fields of many such loops.
 
@@ -58,12 +58,12 @@ This may be done in comparison to either experimental data or, as shown in \ref{
   \centering
   \input{mag_lens_plot}
   \caption[Comparison of the AG model and a kinematic model of a magnetic lens]{
-    Comparison of electron rays tracked kinematically through a realistic magnetic lens simulation (green) and an AG model simulation of a Guassian electron beam (red) of a similar HW1/eM beam width $ w = 500 \mu\text{m} $.
+    Comparison of electron rays tracked kinematically through a realistic magnetic lens simulation (green) and an AG model simulation of a Gaussian electron beam (red) of a similar HW1/eM beam width $ w = 500 \mu\text{m} $.
   }
   \label{fig:mag_lens_loops}
 \end{figure}
 
-For localizing the region of influence of the lens, I have generally modelled a thin magnetic lens as having a super-Gaussian order value $n=1$, a simple Gaussian; of course this may depend on the specifics of the lens.
+For localizing the region of influence of the lens, I have generally modeled a thin magnetic lens as having a super-Gaussian order value $n=1$, a simple Gaussian; of course this may depend on the specifics of the lens.
 To simulate the effect of magnetic lenses in a UEM by the extended AG model, for each magnetic lens, one adds a term like
 \begin{equation}
   M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \text{,}
@@ -75,7 +75,7 @@ The kinematic model employs ten individual current loops generating magnetic fie
 These loops each carry a current of 45A; this approximates a more realistic stack of 10 loops carrying 4.5A, thus simulating a  100 turn solenoid in a 10x10 array.
 Each ray bunch consists of one ray parallel to the axis of propagation and one each having a longitudinal velocity of $1 \times 10^{8}$ m/s and an inward or outward transverse velocity related to an excess photoemission energy $\Delta E \approx $ 0.1eV.
 The bunches are distributed evenly from $r=0$ to $r = 1$mm.
-These are compared with an AG model simulation of a Guassian electron beam of HW1/eM beam width $ w = 500 \mu\text{m} $ having an initial transverse momentum variance associated with $\Delta E$.
+These are compared with an AG model simulation of a Gaussian electron beam of HW1/eM beam width $ w = 500 \mu\text{m} $ having an initial transverse momentum variance associated with $\Delta E$.
 
 The AG model very accurately mimics the behavior of the kinematic model for an appropriate choice of the free parameter $M_{\smallT}^{mag}$.
 In fact, when the rays are weighted by a Gaussian of width $w$ the minimum ``radius'' of the beam is 100$\mu$m, while the AG model has a minimum HW1/eM width of 73$\mu$m.
@@ -129,7 +129,7 @@ For the case of an evacuated cavity, these two contributions result in a net for
    \right ] r \hat{\operatorname{ \boldsymbol{r} }} \text{.}
 \end{equation}
 In obtaining \ref{eq:RF_Force_r}, which is also of the form for use in \ref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \ref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
-As will be seen in Section \ref{sec:rf_cav_charge}, under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocusing for the electron pulse and the magnetic contribution is generally smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $~\cite{kim_rf_1989}, even though its magnitude is maximized for $\phi = 0$.
+As will be seen in Section \ref{sec:rf_cav_charge}, under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocussing for the electron pulse and the magnetic contribution is generally smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $~\cite{kim_rf_1989}, even though its magnitude is maximized for $\phi = 0$.
 Other effects, such as magnetic fringe field aperture effects, could also be included, but are significantly weaker.
 
 To summarize, the additional terms are which are added to model the internal pulse dynamics arising from a single TM$_{010}$-mode cylindrical RF cavity are

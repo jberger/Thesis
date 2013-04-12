@@ -4,7 +4,7 @@
 
 In the acceleration region of a UEM column, a constant electric field is applied to the newly created electron pulse, increasing its velocity until it achieves its ultimate velocity just upon leaving the region at the anode aperture.
 As seen in Section \ref{sec:const_force}, this constant electric field does not affect the intrapulse dynamics, however the distortion in the electric field near this aperture causes the anode itself to act as a negative transverse lens. %TODO reference
-Additionally, the longitudinal electric field stregth sharply decreases near the anode.
+Additionally, the longitudinal electric field strength sharply decreases near the anode.
 As the front of the pulse sees this change before the back, this changing field also acts as a pulse compression element.
 
 Since the aforementioned effects are localized in the area very near the anode, the following analysis is only asserted for pulses that are of approximately the same length as the acceleration region or shorter.
@@ -33,7 +33,7 @@ To model the radial action (negative transverse lensing), we can expand the radi
 \begin{equation}
   F_r(r,z^{\prime}) \approx F_r(r,z^{\prime}) + \frac{\partial F_r}{\partial r^{\prime}} r \,\text{.}
 \end{equation}
-Without an analytic form for $F$, we can appeal to Gauss' law (in absense of external charge),
+Without an analytic form for $F$, we can appeal to Gauss' law (in absence of external charge),
 \begin{gather}
   \frac{\partial F_x}{\partial x^{\prime}} + \frac{\partial F_y}{\partial y^{\prime}} + \frac{\partial F_z}{\partial z^{\prime}} = 2 \frac{\partial F_{\smallT}}{\partial r^{\prime}} + \frac{\partial F_z}{\partial z^{\prime}} = 0 \\
   \Rightarrow \frac{\partial F_{\smallT}}{\partial r^{\prime}} = - \frac{1}{2} \frac{\partial F_z}{\partial z^{\prime}} \,\text{,}
@@ -48,7 +48,7 @@ We may choose to assume that the on-axis field is defined as a smoothed step dow
   F_z(0,z^{\prime}) = \frac{eV}{2z^{\prime}_A} \left( 1 - \tanh \left( \frac{ z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \right) \,\text{,}
 \end{equation}
 where $V$ is the accelerating potential, $z^{\prime}_A$ is the position of the anode (the cathode assumed to be at $z^{\prime} = 0$) and $s$ is a constant quantifying the ``sharpness'' of the fall-off of the electric field.
-Indeed, this form is analgous to the super-Gaussian envalope (\ref{eq:reg_of_influence}), however it is open ended on the cathode side, which is necessary for the electrons to be accelerated away from the photocathode.
+Indeed, this form is analogous to the super-Gaussian envelope (\ref{eq:reg_of_influence}), however it is open ended on the cathode side, which is necessary for the electrons to be accelerated away from the photocathode.
 Given this form the ``lensing'' strengths are then
 \begin{gather}
   M_{\smallT} = -\frac{eVs}{4z^{\prime 2}_A} \operatorname{sech}^2 \left( \frac{z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \\
@@ -70,7 +70,7 @@ As with the RF cavity, one needs to include the on-axis force (\ref{eq:anode_tan
     }
   }
   \caption[An example of a tanh form acceleration region for three different ``sharpness'' values]{
-    An example of a tahn form acceleration region (overall length 6.35mm) for three different ``sharpness'' values.
+    An example of a tanh form acceleration region (overall length 6.35mm) for three different ``sharpness'' values.
     The colored electric fields in figure \protect\subref{fig:field_on_axis} correspond to the pulse width (solid) and length (dashed) in figure \protect\subref{fig:tanh_sharpness}.
     This form is compared to FEM simulated electric field data in \ref{fig:field_on_axis_fem}.
   }

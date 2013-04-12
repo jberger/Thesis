@@ -6,9 +6,9 @@ The acceleration region of our prototype UEM system has several features which a
 As discussed in Chapter \ref{chap:considerations}, notable requirements for a UEM electron gun include the need to handle a large photoemission area and yet to retain all of the electrons, it may not employ a pin-hole to selectively clean the electron beam.
 These necessities lead to several additional criteria.
 The system must first be able to accept the large laser spot size needed to generate the electron beam.
-Then, in order to accomodate this large electron pulse, both the cathode Wehnelt and anode aperture must be similarly large; in fact, the beam size at the anode aperture will typically be larger than at the emission source due to transverse beam expansion during acceleration.
+Then, in order to accommodate this large electron pulse, both the cathode Wehnelt and anode aperture must be similarly large; in fact, the beam size at the anode aperture will typically be larger than at the emission source due to transverse beam expansion during acceleration.
 Also, care must be taken to ensure a relatively uniform electric field for acceleration of the pulse.
-While in transit from the cathode to the anode, this large beam is more susceptable to non-uniformities in the electic field given that it will span a larger volume of the acceleration region than the thin beams used in conventional TEM.
+While in transit from the cathode to the anode, this large beam is more susceptible to non-uniformities in the electric field given that it will span a larger volume of the acceleration region than the thin beams used in conventional TEM.
 
 \begin{figure}
   \centering
@@ -23,7 +23,7 @@ While in transit from the cathode to the anode, this large beam is more suscepta
 \end{figure}
 
 These requirements led to the fabrication of cathode/Wehnelt and anode pair based on the design of Togawa \textit{et al.}~\cite{togawa_ceb6_2007} (pictured in \ref{fig:togawa-pic}).
-A schematic of this design, overlayed by a Finite Element Model (FEM) simulation of the electic field, is shown in \ref{fig:gun-field}.
+A schematic of this design, overlaid by a Finite Element Model (FEM) simulation of the electric field, is shown in \ref{fig:gun-field}.
 The simulation was performed using \texttt{FreeFEM++}, a free finite element partial differential equation solver and meshing toolkit (\url{http://www.freefem.org/ff++/index.htm}).
 The FEM simulation modeled the features of the anode and cathode, while emulating gap walls at infinity by placing a linear potential on gap edges at a large distance.
 From the field equipotentials, it is clear that this design has a consistently flat electric field for large displacements off the central axis.
@@ -50,14 +50,14 @@ Since the shape of the field is scale independent, the schematic shows that the 
   \end{tikzpicture}
 
   \caption[An example of a tanh form acceleration region for three different ``sharpness'' values]{
-    An example of a tahn form acceleration region (overall length 6.35mm) for three different ``sharpness'' values, the same data as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
+    An example of a tanh form acceleration region (overall length 6.35mm) for three different ``sharpness'' values, the same data as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
     The square data points represent the on-axis electric field data from FEM simulations.
   }
   \label{fig:field_on_axis_fem}
 \end{figure}
 
 \ref{fig:field_on_axis_fem} compares the FEM computed electric field to the form asserted for the AG model (\ref{eq:anode_tanh}) for several values of the sharpness parameter $s$; the lines are the same as in \ref{fig:gun-sharpness}\subref{fig:field_on_axis}.
-As derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electic field which, in turn, will cause a divergence of the beam.
+As derived in Section \ref{sec:gun_model}, the change of electric field strength near the anode will cause some divergence of the electric field which, in turn, will cause a divergence of the beam.
 Future work will include investigating the designs of Butler %TODO reference
 which may be able to build in an intrinsic lensing to compensate for this effect.
 

@@ -1,12 +1,12 @@
 %This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 United States License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/us/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-Ultrafast Electron Microscopy is an exciting new field of intrumentation research which promises to open our eyes to the dynamics occurring in nanoscale processes.
+Ultrafast Electron Microscopy is an exciting new field of instrumentation research which promises to open our eyes to the dynamics occurring in nanoscale processes.
 
 During my time at UIC I have worked to advance this technology, I have developed a model and implemented it, and I have  both the theoretical (simulation/modeling) and experimental (prototyping and photocathode engineering) fronts.
 
 \section{Modeling}
 
-In this thesis I have presented the extended Analytic Gaussian (AG) model, an effiecient numerical model based on the work of Michalik and Sipe~\cite{michalik_analytic_2006}, but extended so as to be useful in modeling the dynamics of ultrafast electron pulses in microscope columns.
+In this thesis I have presented the extended Analytic Gaussian (AG) model, an efficient numerical model based on the work of Michalik and Sipe~\cite{michalik_analytic_2006}, but extended so as to be useful in modeling the dynamics of ultrafast electron pulses in microscope columns.
 For pulses containing $N$ carriers of charge $e$ and mass $m$, the model is simply these four equations,
 \begin{subequations}
 \begin{gather}
@@ -18,7 +18,7 @@ For pulses containing $N$ carriers of charge $e$ and mass $m$, the model is simp
 where the subscript $\alpha$ denotes the directionality of the dynamics, either $\smallT$ for the transverse or $z$ for the longitudinal.
 At any time $t$, the $\sigma_{\alpha}$ quantities characterize the spatial variance of the pulse and $\gamma_{\alpha}$ represent the momentum chirp across the pulse.
 A third parameter, the local momentum variance $\eta_{\alpha}$, is also encoded in these equations.
-By Liouville's theorem, which the AG model explicitly satisfies, we know that the product of the spatial variance $\sigma_{\alpha}$ and the local momentum variance $\eta_{\alpha}$ is constant throughout propagation (for perfect lensing and without clipping the puse), so we define the constant,
+By Liouville's theorem, which the AG model explicitly satisfies, we know that the product of the spatial variance $\sigma_{\alpha}$ and the local momentum variance $\eta_{\alpha}$ is constant throughout propagation (for perfect lensing and without clipping the pulse), so we define the constant,
 \begin{equation} \label{eq:define_big_gamma_conc}
   \Gamma_{\alpha}^2 \equiv \sigma_{\alpha} \eta_{\alpha} \,\text{.}
 \end{equation}
@@ -28,7 +28,7 @@ The parameter $\xi$ characterizes the ellipticity of the pulse,
   \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}} \,\text{,}
 \end{equation}
 and the family of $L$ functions (defined in \ref{eq:ag_l_family}) are smooth and well behaved functions for all physically meaningful $\xi$.
-Finally the $M_{\alpha}^{\lbrace f \rbrace}$ quantities define the $\alpha$ diretion influence of the $f^{\text{th}}$ external force.
+Finally the $M_{\alpha}^{\lbrace f \rbrace}$ quantities define the $\alpha$ direction influence of the $f^{\text{th}}$ external force.
 
 In UEM, the initial pulse conditions are of notable importance for the performance of the instrument.
 Therefore I have presented a simplistic but useful set of initial conditions for the AG model.
@@ -51,7 +51,7 @@ Given these generic assumptions, the resulting initial conditions are simply,
     \eta_{ z } ( 0 ) \approx \frac{ \eta_{ \smallT } ( 0 ) }{ 4 } \punct{.}
   \end{gather}
 \end{subequations}
-In Section \ref{sec:bin_model} I have also presented a binning model which, when fully investigated, may eventually be employed rather than this simplisitc set of initial conditions.
+In Section \ref{sec:bin_model} I have also presented a binning model which, when fully investigated, may eventually be employed rather than this simplistic set of initial conditions.
 
 Most UEM systems will employ magnetic lenses and DC accelerators; there is also increasing interest in using RF cavities for pulse compression.
 The AG model can model the influence of these external forces via the $M$ parameters in \ref{eq:ag_model_gamma_conc}, which are in terms of the position of the center of the pulse $z^{\prime}$ and its velocity $v_{\smallzero}$.
@@ -114,7 +114,7 @@ A common figure of merit for electron beams is its normalized transverse emittan
 \end{equation}
 where $\Delta x$ and $\Delta p_{\smallT}$ are the transverse spatial uncertainty and transverse momentum uncertainty, respectively.
 This quantity is conserved under propagation through free space and perfect electron-optical, though it may increase for imperfect ones~\cite{oshea_reversible_1998}.
-The normalized transverse emittance limits the resolving capablility of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred~\cite{berger_dc_2009}.
+The normalized transverse emittance limits the resolving capability of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred~\cite{berger_dc_2009}.
 Since we have already established that a large area emission source must be used, the only avenue to reduce $\varepsilon_{\smallT}$ is to reduce the transverse momentum uncertainty, which is dependent on the photocathode and photoemission process employed.
 
 \section{Photocathode Engineering}
