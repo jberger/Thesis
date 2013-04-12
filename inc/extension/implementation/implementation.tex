@@ -25,20 +25,16 @@ A simulation script is composed of creating instances of the classes that repres
 These objects act as containers for the information about the physical object that they represent.
 Further they manage programmatic tasks related to those objects.
 For example, electron-optical element objects manage the Gaussian region-of-influence (\ref{eq:reg_of_influence}) and calculate the force that their fields apply to the pulse.
-This allows for clean, manageable and extensible code.
-
 These objects are managed by a central ``simulation'' class (called \verb!Physics::UEMColumn!) which handles the time evolution of the system.
-The source package contains an example script analogous to the optical Cooke triplet, containing a magnetic lens, RF cavity and another magnetic lens.
-This script is included as Appendix \ref{sec:script}.
+This arrangement allows for clean, manageable and extensible code.
 
-Many scripts which use \verb!Physics::UEMColumn! were need to generate data used in the writing of this thesis.
+Many scripts which use \verb!Physics::UEMColumn! were needed to generate data and figures used for the preparation of this thesis.
 I have included most of them in the source repository which is available at \url{https://github.com/jberger/Thesis}.
+In Appendix \ref{sec:script}, I present the simulation scripts used to create \ref{fig:spacecharge_noacc}, \ref{fig:spacecharge_acc} and \ref{fig:compound}, as examples of this implementation.
 
 Additionally, a development version of the bin model presented in Section \ref{sec:bin_model} is available at \url{https://github.com/jberger/Physics-Photoemission}.
 Once I am sufficiently confident in its implementation, and more importantly its voracity, I intend to release it to the CPAN as well, most likely under the name \verb!Physics::Photoemission!.
 This module depends on the much larger Perl project PDL (\url{http://pdl.perl.org}), a matrix-oriented numerical library, making it slightly more difficult to install, however the speed and implementational simplicity benefit added by that dependency is marked.
-
 Of particular interest to users of \verb!Physics::UEMColumn!, \verb!Physics::Photoemission! also includes a subclass of \verb!Physics::UEMColumn::Photoemission! which uses this binning model to generate the pulse's $z$ direction initial conditions.
 
-%TODO compare to luiten RF compressed pulse system as example (or might go in results section)
 

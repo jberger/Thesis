@@ -1,11 +1,35 @@
 \chapter{Example Simulation Script} \label{sec:script}
 
+In this appendix, I want to introduce the Perl implementation of the extended AG model, called \verb!Physics::UEMColumn!.
+This distribution has been released as open source software under the terms of the Artistic License (a derivative of the GNU General Public License), which allows for free use of the software.
+The current state of development is available at \url{https://github.com/jberger/Physics-UEMColumn}, while official releases are available via the Comprehensive Perl Archive Network (CPAN) and its many tracker websites, see for example \url{https://metacpan.org/module/Physics::UEMColumn}.
+
+The module is implemented as fully object-oriented Perl.
+For ordinary differential equation solving, it employs a custom designed, closure-based interface to the GNU Scientific Library (GSL, \url{http://www.gnu.org/software/gsl/}), which uses a Runge-Kutta Prince-Dormand (8,9) step function (RK8PD), so that the numerical equation solving is both fast and accurate (see \url{https://metacpan.org/module/PerlGSL::DiffEq}).
+I have also developed a system by which the object framework can use input units of the user's choosing for convenience (see \url{https://metacpan.org/module/MooseX::Types::NumUnit}).
+
+To write a simulation script, the end-user need only define physical parameters of the system as instances of certain classes, and appropriately add them to the overall simulation object of class \verb!Physics::UEMColumn!.
+In the following script, which produces \ref{fig:compound} (the compound element system), this occurs in lines 11-63.
+The \verb!propagate! method call (line 65) then performs all of the simulations given the current state of the overall \verb!Physics::UEMColumn! object, which returns a two-dimensional Perl array of results.
+The columns are, in this order: elapsed time $t$, pulse center position $z^{\prime}$, velocity of the pulse center $v_{\smallzero}$, $\sigma_{\smallT}$, $\sigma_{z}$, $\gamma_{\smallT}$, $\gamma_{z}$, $\eta_{\smallT}$, $\eta_{z}$.
+In line 65 I immediately load the returned data into the Perl numerical library PDL (see \url{http://pdl.perl.org}), which is rather like MatLab.
+Using this PDL object, I extract the pulse position (column 1, zero indexed), and the spatial variances (columns 3 and 4).
+I then plot the the data in terms of the normalized width and length of the pulse. 
+
 \begin{singlespace}
   \scriptsize
   \input{compound}
 \end{singlespace}
 
+As a further example, I also include the script used to generate \ref{fig:spacecharge_noacc} and \ref{fig:spacecharge_acc}.
+In this example, in lines 12-56 I define a function, which simulates the pulse dynamics for a given number of electrons with the option of having a realistic photocathode and acceleration region or an idealized pulse.
+From there, I loop over a set of predefined number of charges per pulse, simulate each sequentially and extract the final pulse dimensions after a propagation distance of 15cm.
+I write this data to a file to be plotted elsewhere.
+
 \begin{singlespace}
   \scriptsize
   \input{spacecharge}
 \end{singlespace}
+
+I present these examples to demonstrate the utility of the Perl implementation of the AG model; I hope it will be useful to other members of the UEM community.
+Other examples may be seen in the source repository for this thesis, which is available at \url{https://github.com/jberger/Thesis}.
