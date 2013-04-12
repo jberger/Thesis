@@ -176,8 +176,8 @@
             \end{center}}
       \end{singlespace}
       \end{center}
+      Defense Committee:
       \begin{singlespace}
-        Defense Committee: \\
         \indent\indent W. Andreas Schroeder, Chair and Advisor \\
         \indent\indent Nestor Zaluzec, Electron Microscopy Center, Argonne National Laboratory \\
         \indent\indent Alan Nicholls, Research Resources Center \\
