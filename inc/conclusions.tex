@@ -2,7 +2,7 @@
 
 Ultrafast Electron Microscopy is an exciting new field of instrumentation research which promises to open our eyes to the dynamics occurring in nanoscale processes.
 Through my contributions to this field, I have worked to advance this new technology.
-These include a developing and implementing a model for simulating the dynamics of ultrafast electron pulses in electron microscope systems, deriving necessary design critera for constructing such a system, and laying the theoretical and experimental groundwork towards selecting a useful photocathode for electron pulse generation.
+These include developing and implementing a model for simulating the dynamics of ultrafast electron pulses in electron microscope systems, deriving necessary design criteria for constructing such a system, and laying the theoretical and experimental groundwork towards selecting a useful photocathode for electron pulse generation.
 These advances have guided the design and construction of the prototype ultrafast electron microscope system being built at UIC.
 
 \section{Modeling}
@@ -27,7 +27,7 @@ which in the transverse direction is explicitly related to the the normalized tr
 \begin{equation}
   \varepsilon_{\smallT} = \frac{1}{m c} \sqrt{ \left < x^2 \right > \left < p_{\smallT}^2 \right > } = \frac{1}{m c} \sqrt{ \sigma_{\smallT} \eta_{\smallT} } \,\text{.}
 \end{equation}
-By evaluating this constant once, presumably from initial conditions, and later applying \ref{eq:define_big_gamma_conc} one may extract these $\eta_{\alpha}$ parameters, having only needed to compute the other four.
+By evaluating this constant once, presumably from initial conditions, and later applying \ref{eq:define_big_gamma_conc}, one may extract these $\eta_{\alpha}$ parameters, having only needed to compute the other four.
 The parameter $\xi$ characterizes the ellipticity of the cylindrically symmetric pulse,
 \begin{equation}
   \xi \equiv \sqrt{\dfrac{\sigma_{z}}{\sigma_{\smallT}}} \,\text{,}
@@ -35,7 +35,7 @@ The parameter $\xi$ characterizes the ellipticity of the cylindrically symmetric
 and the family of $L$ functions (defined in \ref{eq:ag_l_family}) are smooth and well behaved functions for all physically meaningful $\xi$.
 Finally the $M_{\alpha}^{\lbrace f \rbrace}$ quantities define the $\alpha$ direction influence of the $f^{\text{th}}$ external force.
 
-In UEM, the initial pulse conditions are of notable importance for the performance of the instrument, therefore having a realistic description of these intial conditions is essential for accurately modeling the pulse dynamics.
+In UEM, the initial pulse conditions are of notable importance for the performance of the instrument, therefore having a realistic description of these initial conditions is essential for accurately modeling the pulse dynamics.
 To this end, I have presented a simplistic but useful set of initial conditions for the extended AG model.
 This analysis assumes a photocathode with a work function $\Phi$, the energy an electron must absorb before it is freed to leave the material, placed in a DC gun which accelerates the pulse by an electric field $E_{DC}$.
 It also assumes a laser pulse whose intensity $I$ is of the form,
@@ -59,7 +59,7 @@ In Section \ref{sec:bin_model} I have also presented a binning model which is be
 
 Most UEM systems will employ magnetic lenses and DC accelerators; there is also increasing interest in using RF cavities for pulse compression.
 The extended AG model can simulate the influence of the external forces imparted by these column elements on the electron pulse via the $M$ parameters in \ref{eq:ag_model_gamma_conc}, which are in terms of the position of the center of the pulse $z^{\prime}$ (in the lab frame) and its velocity $v_{\smallzero}$.
-The each magnetic lens, positioned at $z_{mag}^{\prime}$ and of length $L_{mag}$, can be represented simply as 
+Each magnetic lens, positioned at $z_{mag}^{\prime}$ and of length $L_{mag}$, can be represented simply as 
 \begin{equation}
   M_{\smallT}^{mag} = M_{\smallT}^{mag}(I) \exp \left [ - \left (  \frac{ z^{\prime} - z_{mag}^{\prime} }{ L_{mag} / 2 } \right )^{ 2 } \right ] \,\text{,}
 \end{equation}
@@ -77,7 +77,7 @@ Additionally, since an RF cavity can act as a pulse accelerator an additional fo
   F_{z}^{RF} = e E_{0} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \exp \left [ - \left (  \frac{ z^{\prime} - z_{RF}^{\prime} }{ L_{RF} / 2 } \right )^{ 2 } \right ] \, \text{,}
 \end{equation}
 should be added to the equation of motion governing the propagation of the pulse down the column.
-Finally, if we assume that an acceleration region, with cathode at $z^{\prime} = 0$, anode at $z^{\prime}_A$, and acceleration potential $V$, has an on-axis force of the form
+Finally, if an acceleration region with cathode at $z^{\prime} = 0$, anode at $z^{\prime}_A$, and acceleration potential $V$, has an on-axis force of the form
 \begin{equation}
   F_z(0,z^{\prime}) = \frac{eV}{2z^{\prime}_A} \left( 1 - \tanh \left( \frac{ z^{\prime} - z^{\prime}_A }{ z^{\prime}_A / s } \right) \right) \,\text{,}
 \end{equation}
@@ -95,6 +95,7 @@ It is this versatility combined with its computational efficiency that makes the
 %Verification of the validity (and determination of the limits) of the extended AG model will, of course, require future comparison with both experiment and more complete simulations of electron pulse propagation dynamics (e.g., full particle tracking models) that include nonlinear forces, for both the intra-pulse space-charge field and the description of aberrations in electron optics.
 
 I have written an implementation of this model for the Perl programming language and released it to the Comprehensive Perl Archive Network (CPAN) under the name \verb!Physics::UEMColumn! for use by the UEM community (\url{https://metacpan.org/module/Physics::UEMColumn}).
+It is released as free software under the terms of the Artistic License (a derivative of the GNU General Public License).
 This module is fully object-oriented, which makes it remarkably easy for an end-user to read, write, and change simulation scripts which use it.
 Under the hood, though, it uses a custom set of C level bindings to the GNU Scientific Library (GSL, \url{http://www.gnu.org/software/gsl/}), so that the numerical equation solving is fast and accurate.
 This speed, combined with the dynamic flexibility offered by object-oriented Perl, allows one to easily write optimization scripts and generate figures which might have been nearly impossible previously; several of these have been shown in this thesis.
@@ -103,14 +104,14 @@ This speed, combined with the dynamic flexibility offered by object-oriented Per
 
 This thesis expounds on several factors that are key concepts in designing a UEM.
 I have used the above model to show that for a given electron pulse, whether oblate (disk-like) or prolate (cigar-like), its initial expansion will be primarily in the same direction as its shorter dimension, i.e., an electron pulse ``wants'' to be spherical.
-The model predicts that the use of shorter focal-length magnetic lenses will result in higher fidelity focusing; such lenses limit the impulse delivered to the pulse by reducing the time of flight that the pulse experiences the higher charge densities inherent during focusing.
+The model predicts that the use of shorter focal-length magnetic lenses will result in higher fidelity focusing; such lenses limit the impulse delivered to the pulse by reducing the time of flight during which the pulse experiences the higher charge densities inherent while focusing.
 Additionally, we have seen that oblate pulses are preferred to prolate pulses in terms of focus fidelity.
 The model also demonstrates that when properly designed and driven, RF cavities can effectively recompress electron pulses which have expanded longitudinally.
 Interestingly, the model suggests that the additional bandwidth generated by space-charge repulsion (especially in higher charge-density pulses) can allow for additional pulse compression, to durations shorter than expected, even at one-to-one image to object distances.
 
 The Rose criterion~\cite{rose_television_1948} states that in order to have sufficient gray-scaling in a single-shot DTEM employing a 1k X 1k CCD camera for imaging, the pulse must contain at least $10^8$ electrons.
 Additionally, the Child-Langmuir Law~\cite{child_discharge_1911,langmuir_effect_1923} governs the upper-limit of charge extraction in an electron gun. 
-Pulses which short enough to be fully contained inside the acceleration region are subject to a modified form of Child-Langmuir Law~\cite{valfells_effects_2002}, which limits its the number of electrons $N_{crit}$ that may be generated by a laser of HW1/eM width $w$ before the pulse is subject to deleterious distortions,
+Pulses which are short enough to be fully contained inside the acceleration region are subject to a modified form of Child-Langmuir Law~\cite{valfells_effects_2002}, which limits its the number of electrons $N_{crit}$ that may be generated by a laser of HW1/eM width $w$ before the pulse is subject to deleterious distortions,
 \begin{equation}
   N_{crit} = \frac{\pi \varepsilon_0 w^2 V_{DC}}{e d} \,\text{,}
 \end{equation}
@@ -123,8 +124,8 @@ We have also designed and built a custom laser source capable of generating thes
 The primary laser radiation source for the studies is a home-built, diode-pumped and thermal-lens-shaped, femtosecond Yb:KGW oscillator~\cite{berger_high-power_2008} delivering 250fs duration pulses at 1047nm and a 63MHz repetition rate.
 This 2W average power laser is frequency doubled in a 3mm lithium triborate (LBO) crystal with 50\% efficiency to yield $\sim$200fs green pulses at 523nm (photon energy, $\hbar \omega$ = 2.37eV).
 Further doubling with a cylindrical focusing geometry in a 7mm $\beta$-barium borate (BBO) crystal yields 261nm ($\hbar \omega$ = 4.75eV) UV pulses with a duration of $\sim$4ps (due to the 600fs/mm group velocity mismatch between the green and generated UV).
-As an ancillary benefit of using an in-house built laser source, the cavity length may be changed; for soliton mode-locked lasers, this length is directly related to the repetition rate.
-By tuning the length, one may frequency match a high harmonic of the repetition rate and the natural oscillation of the RF cavity.
+An ancillary benefit of using an in-house built laser source is that the cavity length may be easily changed; for soliton mode-locked lasers, this length is directly related to the repetition rate.
+By tuning the length, one may frequency match a high harmonic of the repetition rate and the natural oscillation of an RF cavity.
 As a result, the laser and the RF cavity may be synchronized in an essentially passive manner, obviating the need for expensive electronic devices which would be add deleterious electronic phase noise (jitter) to the system.
 
 \section{Photocathode Engineering}
@@ -135,7 +136,7 @@ A common figure of merit for electron beams is its normalized transverse emittan
 \end{equation}
 where $\Delta x$ and $\Delta p_{\smallT}$ are the transverse spatial uncertainty and transverse momentum uncertainty, respectively.
 This quantity is conserved under propagation through free space and perfect electron-optical, though it may increase for imperfect ones~\cite{oshea_reversible_1998}.
-The normalized transverse emittance limits the resolving capability of the beam, so this quantity can be thought of as a measure of the beam quality, where a lower number is preferred~\cite{berger_dc_2009}.
+The normalized transverse emittance limits the resolving capability of the beam, so this quantity can be thought of as a measure of the beam quality, where a smaller value is preferred~\cite{berger_dc_2009}.
 Since we have already established that a large area emission source must be used in UEM, the only avenue to reduce $\varepsilon_{\smallT}$ is to reduce the transverse momentum uncertainty, which is dependent on the photocathode and photoemission process employed.
 
 The desire to reduce the transverse momentum uncertainty $\Delta p_{\smallT}$ --- in an effort to reduce the rms transverse emittance $\varepsilon_{\smallT}$ and thereby improve the resolving power of the electron pulse~\cite{berger_dc_2009} --- has driven us to explore many photocathodes and even several different photoemission processes.
