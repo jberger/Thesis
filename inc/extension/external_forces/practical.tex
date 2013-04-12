@@ -4,8 +4,7 @@
 
 The mathematical formalism developed in Section \ref{sec:external_forces} is only an abstract mechanism for including external forces.
 To model electron pulses traveling through realistic electron microscope columns, these abstract mechanisms must be developed further to properly describe each specific electron-optical element.
-In the following section, I demonstrate concrete applications of the extended AG model, including magnetic lenses, radio-frequency (RF) cavities (useful for both pulse compression~\cite{oudheusden_electron_2007} and acceleration %TODO refs
-) and DC acceleration regions (i.e. electron gun dynamics).
+In the following section, I demonstrate concrete applications of the extended AG model, including magnetic lenses, radio-frequency (RF) cavities (useful for both pulse compression~\cite{oudheusden_electron_2007} and acceleration~\cite{kim_rf_1989}) and DC acceleration regions (i.e. electron gun dynamics).
 
 \subsection{Region of Influence}
 
@@ -107,7 +106,7 @@ For the usual case of a spatially compact electron pulse with respect to the dim
 \begin{equation} \label{eq:RF_Efield_approx}
   E ( r , z , z^{\prime} ) = E_{0} \biggl [ \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) - \frac{ \Omega z }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \biggr ] \text{,}
 \end{equation}
-which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \eqref{eq:RF_Efield_approx}) device. %TODO clarify this sentance and the next
+which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \ref{eq:RF_Efield_approx}) device. %TODO clarify this sentance and the next
 The linear term (second) then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
 \begin{equation} \label{eq:RF_Force_z}
   \boldsymbol{F}_{ z , RF }^{linear} = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
