@@ -24,7 +24,7 @@ which for 6D phase space is written as
 \end{equation}
 This notation suggests to the reader that the distribution function is implicitly a function of time as well as of the spatial and momentum coordinates; for most circumstances however, the total number of particles $N$ will not change with time.
 
-For a classical set of $N$ discreet particles (labeled by the index $i$), distributed in 6D space (3 position, 3 momentum) the distribution function is 
+For a classical set of $N$ discrete particles (labeled by the index $i$), distributed in 6D space (3 position, 3 momentum) the distribution function is 
 \begin{equation}
   f_{\smallD}(\vec{r}, \vec{p}; t) = 
   \sum\limits^{N}_{i=1} \delta(\vec{r}_{i} - \vec{r}) \delta(\vec{p}_{i} - \vec{p}) \,\text{,}
@@ -43,8 +43,8 @@ Now let us consider the time evolution of $f_{\smallD}$;
   \frac{d\vec{r}}{dt} \frac{\partial f_{\smallD}}{\partial \vec{r}} 
   + \frac{\partial f_{\smallD}}{\partial \vec{p}} \frac{d\vec{p}}{dt} \,\text{,}
 \end{equation}
-but with \ref{eq:std_motion} the final discreet evolution equation is
-\begin{equation} \label{eq:evolution_discreet}
+but with \ref{eq:std_motion} the final discrete evolution equation is
+\begin{equation} \label{eq:evolution_discrete}
   \frac{d}{dt} f_{\smallD}(\vec{r}, \vec{p}; t) =
   -\frac{\vec{p}}{m} \frac{\partial}{\partial \vec{r}} f_{\smallD}(\vec{r}, \vec{p}; t)
   + \frac{\partial}{\partial \vec{p}} f_{\smallD} (\vec{r}, \vec{p}; t)
@@ -52,7 +52,7 @@ but with \ref{eq:std_motion} the final discreet evolution equation is
 \end{equation}
 where the extra negation comes from the change of perspective of \ref{eq:std_motion_v} from the frame of the individual particle $i$ to the observer frame.
 
-This analysis can be extended to continuous distributions by taking the ensemble average over \ref{eq:evolution_discreet}.
+This analysis can be extended to continuous distributions by taking the ensemble average over \ref{eq:evolution_discrete}.
 In order to simplify the resulting equation to a useful result, one applies the usual mean-field approximation
 \begin{equation}
   \left < f_{\smallD} (\vec{r}, \vec{p}; t) f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right > = \left < f_{\smallD} (\vec{r}, \vec{p}; t) \right > \left < f_{\smallD} (\vecprime{r}, \vecprime{p}; t) \right > \,\text{,}
@@ -64,7 +64,7 @@ so that the formal evolution of a continuous distribution is given by
   + \frac{\partial}{\partial \vec{p}} f (\vec{r}, \vec{p}; t)
   \frac{\partial}{\partial \vec{r}} \iint d\vecprime{r} d\vecprime{p} V(\vec{r} - \vecprime{r}) f(\vecprime{r},\vecprime{p};t) \,\text{.}
 \end{equation}
-Although this equation looks very similar to \ref{eq:evolution_discreet}, notice that it contains approximations, mean-field that has been seen and in practice the self-similarity of the distribution function, that the discreet description did not.
+Although this equation looks very similar to \ref{eq:evolution_discrete}, notice that it contains approximations, mean-field that has been seen and in practice the self-similarity of the distribution function, that the discrete description did not.
 
 \section{Evolution of a Gaussian Distribution}
 
