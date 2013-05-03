@@ -109,7 +109,7 @@ For the usual case of a spatially compact electron pulse with respect to the dim
 which demonstrates that the RF cavity acts both as a pulse acceleration (first term on RHS of \ref{eq:RF_Efield_approx}) and a pulse compression or expansion (second term on RHS of \ref{eq:RF_Efield_approx}) device. %TODO clarify this sentance and the next
 The linear term (second) then gives the desired form (see \ref{eq:linear_force}) for the force manipulating the temporal dynamics and characteristics during electron pulse compression;
 \begin{equation} \label{eq:RF_Force_z}
-  \boldsymbol{F}_{ z , RF }^{linear} = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{\operatorname{ \boldsymbol{z} }} \text{.}
+  F_{ z , RF }^{linear} = - \left [ \frac{ e \Omega E_{0} }{ v_{\smallzero} } \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) \right ] z \hat{ z } \text{.}
 \end{equation}
 
 By considering the impulse exerted by the RF cavity field on the electrons in the pulse, it is straightforward to show that pulse compression (when $\phi = 0$) is maximized for $ \Omega d / (2 v_{\smallzero} ) = \pi /2 $; that is, the time of flight of the electron pulse through the RF cavity of length $ d $ is equal to half the RF period.
@@ -123,9 +123,9 @@ Symmetry and Gauss' Law dictate that in the vicinity of the axial center of the 
 In practice, of course, the exact form of $E_{r}(z)$ is strongly tied to the size and shape of the RF cavity apertures (see for example $1 \frac{1}{2}$-cell RF photo-gun designs~\cite{mcdonald_design_1988}). 
 For the case of an evacuated cavity, these two contributions result in a net force,
 \begin{equation} \label{eq:RF_Force_r}
-  \boldsymbol{F}_{ r , RF } = e E_{0} \left [ 
+  F_{ r , RF } = e E_{0} \left [ 
     \frac{ v_{\smallzero} \Omega }{c^{2}} \cos \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right ) + \frac{2 n}{d} \left ( \frac{z^{\prime} - z^{\prime}_{RF}}{d / 2} \right )^{2 n - 1} \sin \left ( \frac{ \Omega z^{\prime} }{ v_{\smallzero} } + \phi \right )
-   \right ] r \hat{\operatorname{ \boldsymbol{r} }} \text{.}
+   \right ] r \hat{ r } \text{.}
 \end{equation}
 In obtaining \ref{eq:RF_Force_r}, which is also of the form for use in \ref{eq:linear_force}, we have again used an arbitrary super-Gaussian of order $n$ as a region of influence envelope (see \ref{eq:reg_of_influence}) with $L_{RF} \equiv d$, the RF cavity length.
 As will be seen in Section \ref{sec:rf_cav_charge}, under the pulse compression conditions ($\phi = 0$ when the pulse is at $z^{\prime} = 0$), both effects are defocussing for the electron pulse and the magnetic contribution is generally smaller than the transverse lenses associated with the RF cavity apertures when $ d = \pi v_{\smallzero} / \Omega $~\cite{kim_rf_1989}, even though its magnitude is maximized for $\phi = 0$.

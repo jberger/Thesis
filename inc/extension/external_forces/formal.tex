@@ -60,7 +60,7 @@ The force is then $ \vec{F}_{ext} = e E \hat{z} $, so that from \ref{eq:Kint} we
 \begin{equation}
   K^{ext}_{ij} = \frac{e E} {N} \int{ u_{i} u_{j} \left( \frac{p_{z}} {\eta_{z}} - \frac{\gamma_{z} z} {\sigma_{z} \eta_{z}} \right) f d^{3}x d^{3}p } \,\text{.}
 \end{equation}
-It is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ (or equivalently $ K^{ext} = \hat{0} $) meaning that this static field has no effect on the parameters of the pulse.
+It is clear that no function of this form multiplying $ f $, which is a Gaussian distribution, can avoid creating an odd integrand, and thus $ K_{ij}^{ext} = 0 $ for all $ i $ and $ j $ meaning that this static field has no effect on the parameters of the pulse.
 Of course, this is only true in the pulse frame, the frame of the simulation, where there is no total momentum and thus $ \Delta E = \left( \Delta p \right)^{2} / 2 m $ is unchanged.
 In the lab frame however, where  $ \Delta E = p \Delta p / m $, there is an increase in the momentum spread, as the pulse now has the large momentum $p$ imparted by the accelerating field.
 
@@ -68,7 +68,7 @@ In the lab frame however, where  $ \Delta E = p \Delta p / m $, there is an incr
 
 For the case of a cylindrically symmetric perfect lens, or in the longitudinal direction a perfect RF compression element, with a parabolic potential, the external force is linear with distance from the center of the electron pulse: 
 \begin{equation} \label{eq:linear_force}
-\vec{F}_{ext} = - M_{ \smallT } r \hat{\operatorname{r}} - M_{z} z \hat{\operatorname{z}} \,\text{.}
+\vec{F}_{ext} = - M_{ \smallT } r \hat{r} - M_{z} z \hat{z} \,\text{.}
 \end{equation}
 Here, $M_{ \smallT }$ and $M_{z}$ characterize the strength of a lens or a compressor, respectively, and are chosen to be positive for focusing/compression elements.
 Substitution into the integral equation for the $ K^{ext} $ matrix elements,
@@ -83,14 +83,14 @@ leads to the $6\times6$ matrix
 \begin{equation}
   K^{ext} = 
   \begin{pmatrix}
-    \hat{k}^{lin}_{\smallT} & \hat{0} & \hat{0} \\
-    \hat{0} & \hat{k}^{lin}_{\smallT} & \hat{0} \\
-    \hat{0} & \hat{0} & \hat{k}^{lin}_{z}
+    k^{lin}_{\smallT} & 0 & 0 \\
+    0 & k^{lin}_{\smallT} & 0 \\
+    0 & 0 & k^{lin}_{z}
   \end{pmatrix} \text{,}
 \end{equation}
 where
 \begin{equation}
-  \hat{k}^{lin}_{\alpha} =
+  k^{lin}_{\alpha} =
   \begin{pmatrix}
     0 & M_{\alpha} \sigma_{\alpha} \\
     M_{\alpha} \sigma_{\alpha} & 2 M_{\alpha} \gamma_{\alpha}
