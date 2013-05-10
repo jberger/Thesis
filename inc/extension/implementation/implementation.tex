@@ -25,6 +25,7 @@ A simulation script is composed of creating instances of the classes that repres
 These objects act as containers for the information about the physical object that they represent.
 Further they manage programmatic tasks related to those objects.
 For example, electron-optical element objects manage the Gaussian region-of-influence (\ref{eq:reg_of_influence}) and calculate the force that their fields apply to the pulse.
+While the pulse object may be created manually, the toolkit contains the class \verb!Physics::UEMColumn::Photocathode! which implements the simple initial conditions described in Section \ref{sec:initial_conditions}.
 These objects are managed by a central ``simulation'' class (called \verb!Physics::UEMColumn!) which handles the time evolution of the system.
 This arrangement allows for clean, manageable and extensible code.
 
@@ -35,6 +36,6 @@ In Appendix \ref{sec:script}, I present the simulation scripts used to create \r
 Additionally, a development version of the bin model presented in Section \ref{sec:bin_model} is available at \url{https://github.com/jberger/Physics-Photoemission}.
 Once I am sufficiently confident in its implementation, and more importantly its veracity, I intend to release it to the CPAN as well, most likely under the name \verb!Physics::Photoemission!.
 This module depends on the much larger Perl project PDL (\url{http://pdl.perl.org}), a matrix-oriented numerical library, making it slightly more difficult to install, however the speed and implementational simplicity benefit added by that dependency is marked.
-Of particular interest to users of \verb!Physics::UEMColumn!, \verb!Physics::Photoemission! also includes a subclass of \verb!Physics::UEMColumn::Photoemission! which uses this binning model to generate the pulse's $z$ direction initial conditions.
+Of particular interest to users of \verb!Physics::UEMColumn!, \verb!Physics::Photoemission! also includes a subclass of \verb!Physics::UEMColumn::Photocathode! which uses this binning model to generate the pulse's $z$ direction initial conditions.
 
 
