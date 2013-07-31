@@ -130,10 +130,10 @@
 % \verb+\date+ is redefined so that it only prints the year.
 % The title is forced to uppercase.
 %    \begin{macrocode}
-\def\title#1{\gdef\@title{\expandafter\uppercase{#1}}}
-\def\author#1{
-   \gdef\@author{#1}
-   \gdef\@upauthor{\expandafter\uppercase{#1}}}
+%\def\title#1{\gdef\@title{\expandafter\uppercase{#1}}}
+%\def\author#1{
+%   \gdef\@author{#1}
+%   \gdef\@upauthor{\expandafter\uppercase{#1}}}
  
 \def\@date{\the\year}
 \def\degree#1{\def\@degree{#1}}
@@ -160,7 +160,7 @@
          BY
          \vskip\baselineskip
          \begin{tabular}{c}
-            \@upauthor\\\@pdegrees
+            \@author\\\@pdegrees
          \end{tabular}
          \vfill
          \vbox to 0pt{\vss
